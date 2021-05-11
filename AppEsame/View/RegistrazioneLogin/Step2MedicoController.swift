@@ -10,6 +10,9 @@ import UIKit
 
 class Step2MedicoController: UIViewController{
     
+    //In questa variabile riceverò i dati dalla view precedente
+    var pazienteStep1 = Utente(nome: "", cognome: "", dataNascita: "", codiceFiscale: "", telefono: "", email: "", tipo: "", password: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

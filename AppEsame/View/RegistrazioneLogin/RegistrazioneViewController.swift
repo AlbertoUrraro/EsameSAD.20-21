@@ -57,21 +57,38 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
         } else {
             //Se inserisco tutti i campi correttamente controllo il tipo utente inserito cosi da passare allo step 2 paziente o medico
             if(self.tipoUtenteSelezionato == "Paziente"){
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let step2PazienteController = mainStoryboard.instantiateViewController(withIdentifier: "Step2PazienteController") as! Step2PazienteController
-                step2PazienteController.modalPresentationStyle = .fullScreen
-               
-                self.present(step2PazienteController, animated: true, completion: nil)
+
+                performSegue(withIdentifier: "SegueStep2Paziente", sender: self)
+                
             } else {
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let step2MedicoController = mainStoryboard.instantiateViewController(withIdentifier: "Step2MedicoController") as! Step2MedicoController
-                step2MedicoController.modalPresentationStyle = .fullScreen
-               
-                self.present(step2MedicoController, animated: true, completion: nil)
+                performSegue(withIdentifier: "SegueStep2Medico", sender: self)
             }
         }
     
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let pazientePerSegue = Utente( nome: self.nome.text!, cognome: self.cognome.text!, dataNascita: self.dataNascita.date.description, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, tipo: self.tipoUtenteSelezionato, password: self.password.text!)
+        
+        //Con queste istruzioni controllo in quale view sto andando per passare i dati con il prepare for segue
+        if segue.identifier == "SegueStep2Paziente"
+        {
+            if let destinazione = segue.destination as? Step2PazienteController {
+               
+
+                destinazione.pazienteStep1 = pazientePerSegue
+            }
+        }
+        
+        if segue.identifier == "SegueStep2Medico"
+        {
+            if let destinazione = segue.destination as? Step2MedicoController {
+               
+
+                destinazione.pazienteStep1 = pazientePerSegue
+            }
+        }
+    }
+    
     
     
     //Queste due funzioni servono a fare il dismis keyboard quando si tocca fuori dal text field in uso o se si clicca invio

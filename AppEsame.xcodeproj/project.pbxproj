@@ -18,6 +18,7 @@
 		1CC63CA82649F2BD001AEDEA /* Step3Paziente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CA72649F2BD001AEDEA /* Step3Paziente.swift */; };
 		1CC63CAB2649F38B001AEDEA /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CAA2649F38B001AEDEA /* RegistrationController.swift */; };
 		1CC63CAD2649F4B7001AEDEA /* Errore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CAC2649F4B7001AEDEA /* Errore.swift */; };
+		1CDE415F264B48FA0077A163 /* Step4PazienteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE415E264B48FA0077A163 /* Step4PazienteController.swift */; };
 		8849864F3CE6C47255D155E2 /* Pods_AppEsame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E15E5C5A7A0AD9E9597180 /* Pods_AppEsame.framework */; };
 		951FC7AA264ABCA5001E8C8A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC7A9264ABCA5001E8C8A /* LoginViewModel.swift */; };
 		951FC7D5264ADF01001E8C8A /* AllergiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC7D4264ADF01001E8C8A /* AllergiaTableViewCell.swift */; };
@@ -50,6 +51,7 @@
 		1CC63CA72649F2BD001AEDEA /* Step3Paziente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step3Paziente.swift; sourceTree = "<group>"; };
 		1CC63CAA2649F38B001AEDEA /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		1CC63CAC2649F4B7001AEDEA /* Errore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errore.swift; sourceTree = "<group>"; };
+		1CDE415E264B48FA0077A163 /* Step4PazienteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4PazienteController.swift; sourceTree = "<group>"; };
 		2CBC011D93070918A69A866E /* Pods-AppEsame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppEsame.release.xcconfig"; path = "Target Support Files/Pods-AppEsame/Pods-AppEsame.release.xcconfig"; sourceTree = "<group>"; };
 		88E15E5C5A7A0AD9E9597180 /* Pods_AppEsame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppEsame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		951FC7A9264ABCA5001E8C8A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				1CC63CA32649EF76001AEDEA /* Step2MedicoController.swift */,
 				1CC63CA52649EF9C001AEDEA /* Step2PazienteController.swift */,
 				1CC63CA72649F2BD001AEDEA /* Step3Paziente.swift */,
+				1CDE415E264B48FA0077A163 /* Step4PazienteController.swift */,
 				951FC7D4264ADF01001E8C8A /* AllergiaTableViewCell.swift */,
 			);
 			path = RegistrazioneLogin;
@@ -323,6 +326,7 @@
 				1CC63C9D2649CDFD001AEDEA /* PazienteViewController.swift in Sources */,
 				95CF84AA26499EC7006D6517 /* Richiesta.swift in Sources */,
 				951FC7D5264ADF01001E8C8A /* AllergiaTableViewCell.swift in Sources */,
+				1CDE415F264B48FA0077A163 /* Step4PazienteController.swift in Sources */,
 				95CF84AD26499ED6006D6517 /* Sintomo.swift in Sources */,
 				DF29760C2626410300933712 /* SceneDelegate.swift in Sources */,
 				95CF849626499E00006D6517 /* Utente.swift in Sources */,
@@ -476,6 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2V5JK75RUT;
 				INFOPLIST_FILE = AppEsame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -495,6 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2V5JK75RUT;
 				INFOPLIST_FILE = AppEsame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

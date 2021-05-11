@@ -9,7 +9,7 @@ import Foundation
 
 class Utente{
     //Dichiarazione variabili
-    var id: String
+    var id: String = ""
     var nome: String
     var cognome: String
     var dataNascita: String
@@ -17,10 +17,11 @@ class Utente{
     var telefono: String
     var email: String
     var tipo: String
+    var password: String
     
     //Costruttore
-    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String){
-        self.id = id
+    init(nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String){
+//        self.id = id
         self.nome = nome
         self.cognome = cognome
         self.dataNascita = dataNascita
@@ -28,6 +29,7 @@ class Utente{
         self.telefono = telefono
         self.email = email
         self.tipo = tipo
+        self.password = password
     }
     
     //Funzioni set
@@ -39,6 +41,7 @@ class Utente{
     func setTelefono(telefono: String){self.telefono = telefono}
     func setEmail(email: String){self.email = email}
     func setTipo(tipo: String){self.tipo = tipo}
+    func setPassword(tipo: String){self.tipo = password}
     
     //Funzione get
     func getId()->String{return self.id}
@@ -49,6 +52,7 @@ class Utente{
     func getTelefono()->String{return self.telefono}
     func getEmail()->String{return self.email}
     func getTipo()->String{return self.tipo}
+    func getPassword()->String{return self.getPassword()}
     
     
 }

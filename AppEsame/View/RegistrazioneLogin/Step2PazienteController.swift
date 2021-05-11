@@ -11,7 +11,8 @@ import DLRadioButton
 
 class Step2PazienteController: UIViewController, UITableViewDelegate, UITableViewDataSource{
    
-    
+    //In questa variabile riceverò i dati dalla view precedente
+    var pazienteStep1 = Utente(nome: "", cognome: "", dataNascita: "", codiceFiscale: "", telefono: "", email: "", tipo: "", password: "")
     
     @IBOutlet weak var AllergieTableView: UITableView!
     let allergieVet = ["glutine", "polline"]
@@ -38,6 +39,12 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(pazienteStep1.getNome())
+        
     }
     
     @objc func checkPressed(sender: DLRadioButton)

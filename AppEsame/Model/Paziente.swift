@@ -13,10 +13,10 @@ class Paziente: Utente{
     var patologie: [Patologia]!
     
     //Costruttore
-    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, allergia: String, patologie: [Patologia]) {
+    init(nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, allergia: String, patologie: [Patologia]) {
         self.allergia = allergia
         self.patologie = patologie
-        super.init(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo)
+        super.init(nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password)
     }
     
     //Funzioni set
