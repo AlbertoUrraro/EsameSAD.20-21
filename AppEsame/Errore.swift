@@ -28,4 +28,18 @@ class Errore{
     //Funzioni get
     func getErrore()->Bool{return self.errore}
     func getDescrizione()->String{return self.descrizione}
+    
+    
+    //Funzione per calcolare l'errore e non ripetere sempre
+    func calcolaErrore(errore: Errore, nome: String, valore:String)->Bool{
+      
+        if (valore == ""){
+            self.errore = true
+            self.descrizione = self.descrizione + "Campo "+nome+" vuoto "
+        }
+        errore.setErrore(errore: self.errore)
+        errore.setDescrizione(descrizione: self.descrizione)
+        return self.errore
+    }
 }
+

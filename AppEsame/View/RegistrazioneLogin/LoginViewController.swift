@@ -8,86 +8,59 @@
 import UIKit
 //import FirebaseDatabase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //    private let database = Database.database().reference()
     
+    @IBOutlet weak var email: UITextField!
+
+    @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        //        database.child("Ciamm fatt").observeSingleEvent(of: .value, with: {snapshot in guard let value = snapshot.value as? [String: Any] else {
-        //
-        //            return}
-        //
-        //            print("Valori contenuti nella chiave del databse sono:\(value)")
-        //        })
-        //
-        //
-        //        let bottone = UIButton(frame: CGRect(x: 20, y: 200, width: view.frame.size.width-40, height: 50))
-        //        bottone.setTitle("aggiungi sul database", for: .normal)
-        //        bottone.setTitleColor(.white, for: .normal )
-        //        bottone.backgroundColor = .link
-        //        view.addSubview(bottone)
-        //        bottone.addTarget(self, action: #selector(addNewEntry), for: .touchUpInside)
+        email.delegate = self
+        email.tag = 0
+        password.delegate = self
+        password.tag = 1
         
     }
-    
-    //    @objc private func addNewEntry(){
-    //        let oggetto:[String: Any] = [
-    //            "nome": "prova upload" as NSObject,
-    //            "cognome": "prova"
-    //
-    //        ]
-    //        database.child("fanculo firebase_\(Int.random(in: 0..<100))").setValue(oggetto)
-    //
-    //        let strunz:[String: Any] = [
-    //            "nome": "alberto" as NSObject,
-    //            "cognome" : "urraro" ,
-    //            "altezza" : "183 cm" ,
-    //            "Peso" : "90kg"
-    //
-    //
-    //        ]
-    //        database.child("Ciamm fatt").setValue(strunz)
-    //
-    //
-    //    }
-    
-   
-//    SEGUE VIEW PAZIENTE FULL SCREEN
-//        let pazienteStoryboard = UIStoryboard(name: "Paziente", bundle: nil)
-//        let pazienteViewController = pazienteStoryboard.instantiateViewController(withIdentifier: "PazienteViewController") as! PazienteViewController
-//        pazienteViewController.modalPresentationStyle = .fullScreen
-//
-//        self.present(pazienteViewController, animated: true, completion: nil)
-   
-//    SEGUE VIEW MEDICO FULL SCREEN
-//
-//        let medicoStoryboard = UIStoryboard(name: "Medico", bundle: nil)
-//        let medicoViewController = medicoStoryboard.instantiateViewController(withIdentifier: "MedicoViewController") as! MedicoViewController
-//        medicoViewController.modalPresentationStyle = .fullScreen
-//
-//        self.present(medicoViewController, animated: true, completion: nil)
 
+    
+    
+    @IBAction func accedi(_ sender: Any) {
+        let errore = LoginViewModel.validaLogin(email: self.email.text!, password: self.password.text!)
+        
+        if(errore.getErrore()){
+            //Popup di errore
+            let alertLogin = UIAlertController(title: "Errore", message: errore.getDescrizione(), preferredStyle: UIAlertController.Style.alert)
+            alertLogin.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (act) in
+                //Eventuale azione
+            }))
+            self.present(alertLogin,animated: true, completion: nil)
+        } else {
+            print("Accedo all'app")
+        }
+    }
     
     @IBAction func segueRegistrazione(_ sender: Any) {
+        
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let registrazioneViewController = mainStoryboard.instantiateViewController(withIdentifier: "RegistrazioneViewController") as! RegistrazioneViewController
-        registrazioneViewController.modalPresentationStyle = .fullScreen
-       
-        self.present(registrazioneViewController, animated: true, completion: nil)
+        //Per la navigation bisogna usare show, con present viene eliminata
+        self.show(registrazioneViewController, sender: nil)
     }
     
-
-    
-    
-    
-    
-    
-    
-    
-    
+    override func viewWillAppear(_ animated: Bool) {
+        //Fa sparire la barra del navigation ogni volta che viene caricato
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+ 
+    override func viewWillDisappear(_ animated: Bool) {
+        //Fa apparire la barra del navigation quando si esce dal controller
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        //Fa abbassare la view verso il basso se pongo uguale a false, mentre uguale a true è come se nn lo mettessi
+        //self.navigationController?.navigationBar.isTranslucent = false
+    }
     
 }
 

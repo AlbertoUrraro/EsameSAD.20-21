@@ -13,5 +13,6 @@ pod 'Firebase/Firestore'
 
 # add pods for any other desired Firebase products
 # https://firebase.google.com/docs/ios/setup#available-pods
+pod 'DLRadioButton', '~> 1.4'
 
 end
