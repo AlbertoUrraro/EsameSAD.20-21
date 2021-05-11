@@ -17,7 +17,7 @@ class Utente{
     var telefono: String
     var email: String
     var tipo: String
-    
+    var ciao:String
     //Costruttore
     init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String){
         self.id = id
