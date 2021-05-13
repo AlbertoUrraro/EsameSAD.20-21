@@ -43,7 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        paziente.ottieniPazienteDaId(idDaCercare: "uxYo4eUQiDRnZ1bSJxij"){(pazienti) in
+        paziente.ottieniPazienteDaId(idDaCercare: "l9U0QqZc3OWfFuc6EDsY"){(pazienti) in
             
             guard let pazientiRes = pazienti else {
                 print("error")
