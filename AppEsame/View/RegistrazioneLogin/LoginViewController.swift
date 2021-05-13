@@ -23,8 +23,41 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         password.delegate = self
         password.tag = 1
         
+        //Apro connessione al db
+        DBManager.shared.openConnection()
+        
+        //        test da togliere
+        let paziente = Paziente(nome: "alberto", cognome: "urraro", dataNascita: "01/01/1997", codiceFiscale: "ALBURR000000000", telefono: "3333333333", email: "email@email.it", tipo: "paziente", password: "psw567", allergie: ["polvere","poline"], patologie: ["patologia1","patologia2"])
+        
+        paziente.creaPaziente()
+        
+        paziente.ottieniPazienteDaEmail(emailDaCercare: "alberto@email.com"){(pazienti) in
+            
+            guard let pazientiRes = pazienti else {
+                print("error")
+                return
+            }
+            for paziente in pazientiRes{
+                print(paziente.nome)
+            }
+            
+        }
+        
+        paziente.ottieniPazienteDaId(idDaCercare: "uxYo4eUQiDRnZ1bSJxij"){(pazienti) in
+            
+            guard let pazientiRes = pazienti else {
+                print("error")
+                return
+            }
+            
+            print(pazientiRes.patologie[0])
+            
+            
+        }
+        //        fine test da togliere
+        
     }
-
+    
     
     
     @IBAction func accedi(_ sender: Any) {
@@ -54,7 +87,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //Fa sparire la barra del navigation ogni volta che viene caricato
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
- 
+    
     override func viewWillDisappear(_ animated: Bool) {
         //Fa apparire la barra del navigation quando si esce dal controller
         self.navigationController?.setNavigationBarHidden(false, animated: animated)

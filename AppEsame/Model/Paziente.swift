@@ -9,22 +9,90 @@ import Foundation
 
 class Paziente: Utente{
     //Dichiarazione variabili
-    var allergia: String
-    var patologie: [Patologia]!
+    var allergie: [String]!
+    var patologie: [String]!
+    
+    //variabile entità DB
+    var pazienteDB = PazienteDB()
     
     //Costruttore
-    init(nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, allergia: String, patologie: [Patologia]) {
-        self.allergia = allergia
+    init(nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, allergie: [String], patologie: [String]) {
+        self.allergie = allergie
         self.patologie = patologie
         super.init(nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password)
     }
     
     //Funzioni set
-    func setAllergia(allergia: String){self.allergia = allergia}
-    func setPatologie(patologie: [Patologia]){self.patologie = patologie}
+    func setAllergia(allergie: [String]){self.allergie = allergie}
+    func setPatologie(patologie: [String]){self.patologie = patologie}
     
     //Funzioni get
-    func getAllergia()->String{return self.allergia}
-    func getPatologie()->[Patologia]{return self.patologie}
+    func getAllergie()->[String]{return self.allergie}
+    func getPatologie()->[String]{return self.patologie}
+    
+    func creaPaziente(){
+        pazienteDB.creaPaziente(paziente: self)
+    }
+    
+    func ottieniPazienteDaEmail(emailDaCercare: String, finished: @escaping([Paziente]?) -> Void) {
+        
+        pazienteDB.ottieniPazienteDaEmail(emailDaCercare: emailDaCercare){(pazienti) in
+            
+            guard let pazientiRes = pazienti else {
+                print("error")
+                return
+            }
+            let pazientiArr = pazientiRes.map{(res) ->Paziente in
+                
+                let nome = res.nome
+                let cognome = res.cognome
+                let dataNascita = res.dataNascita
+                let codiceFiscale = res.codiceFiscale
+                let telefono = res.telefono
+                let email = res.email
+                let tipo = res.tipo
+                let password = res.password
+                let allergie = res.allergie ?? []
+                let patologie = res.patologie ?? []
+                
+                
+                let paziente = Paziente(nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie)
+                
+                return paziente
+                
+            }
+            finished(pazientiArr)
+        }
+    }
+    
+    func ottieniPazienteDaId(idDaCercare: String, finished: @escaping(Paziente?) -> Void) {
+        
+        pazienteDB.ottieniPazienteDaId(idDaCercare: idDaCercare){(pazienti) in
+            
+            guard let pazientiRes = pazienti else {
+                print("error")
+                return
+            }
+                let  res = pazientiRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
+                let nome = res.nome
+                let cognome = res.cognome 
+                let dataNascita = res.dataNascita 
+                let codiceFiscale = res.codiceFiscale 
+                let telefono = res.telefono 
+                let email = res.email 
+                let tipo = res.tipo 
+                let password = res.password 
+                let allergie = res.allergie ?? []
+                let patologie = res.patologie ?? []
+
+                
+                
+                let paziente = Paziente(nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie)
+                
+                
+//            }
+            finished(paziente)
+        }
+    }
     
 }
