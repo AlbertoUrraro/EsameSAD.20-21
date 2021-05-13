@@ -1,5 +1,5 @@
 //
-//  Step2MedicoController.swift
+//  Step3Paziente.swift
 //  AppEsame
 //
 //  Created by Carlo D'Avino on 11/05/21.
@@ -9,25 +9,22 @@ import Foundation
 import UIKit
 import DLRadioButton
 
-class Step2PazienteController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-   
-    //In questa variabile riceverò i dati dalla view precedente
-    var pazienteStep1 = Utente(nome: "", cognome: "", dataNascita: "", codiceFiscale: "", telefono: "", email: "", tipo: "", password: "")
+class Step3PazienteController: UIViewController, UITableViewDelegate,UITableViewDataSource{
     
-    @IBOutlet weak var AllergieTableView: UITableView!
+    @IBOutlet weak var patologieTableView: UITableView!
     
-    let allergieVet = ["glutine", "polline"]
-    var allergieSelezionate: [String] = []
+    let patologieVet = ["tachicardia", "diabete"]
+    var patologieSelezionate: [String] = []
     var tag : [Int] = []
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = AllergieTableView.dequeueReusableCell(withIdentifier: "allergiacell", for: indexPath) as! AllergiaTableViewCell
+        let cell = patologieTableView.dequeueReusableCell(withIdentifier: "patologiacell", for: indexPath) as! PatologiaTableViewCell
         
-        cell.initCell(nomeAllergia: allergieVet[indexPath.row])
+        cell.initCell(nomePatologia: patologieVet[indexPath.row])
         cell.checkButton.tag = indexPath.row
         cell.checkButton.addTarget(self, action: #selector(checkPressed(sender:)), for: .touchUpInside)
        
@@ -38,17 +35,9 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
         return 1
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        AllergieTableView.estimatedRowHeight = 50
-        AllergieTableView.rowHeight = UITableView.automaticDimension
-        
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print(pazienteStep1.getNome())
-        
     }
     
     @objc func checkPressed(sender: DLRadioButton)
@@ -56,42 +45,40 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
        var i = 0
        var presente = false
        print("Button tag \(sender.tag)")
-        print(allergieVet[sender.tag])
+        print(patologieVet[sender.tag])
         if (tag.isEmpty)
         {
-        allergieSelezionate.append(allergieVet[sender.tag])
-        print(allergieSelezionate)
+        patologieSelezionate.append(patologieVet[sender.tag])
+        print(patologieSelezionate)
         tag.append(sender.tag)
         }
         else{
         for _ in tag{
             if (tag[i] == sender.tag){
-                allergieSelezionate.remove(at: i)
+                patologieSelezionate.remove(at: i)
                 print("trovato")
                 presente = true
                 tag.remove(at: i)
-                print(allergieSelezionate)
+                print(patologieSelezionate)
             } else {
                 i=i+1
             }
          }
         print (tag)
         if (presente == false){
-        allergieSelezionate.append(allergieVet[sender.tag])
-        print(allergieSelezionate)
+        patologieSelezionate.append(patologieVet[sender.tag])
+        print(patologieSelezionate)
         tag.append(sender.tag)
         }
         }
     }
- 
     
     @IBAction func avantiButton(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let step3PazienteController = mainStoryboard.instantiateViewController(withIdentifier: "Step3PazienteController") as! Step3PazienteController
+        let step4PazienteController = mainStoryboard.instantiateViewController(withIdentifier: "Step4PazienteController") as! Step4PazienteController
         //Per la navigation bisogna usare show, con present viene eliminata
-        self.show(step3PazienteController, sender: nil)
+        self.show(step4PazienteController, sender: nil)
     }
     
-   
     
 }
