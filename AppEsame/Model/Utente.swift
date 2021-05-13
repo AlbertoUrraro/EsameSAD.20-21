@@ -10,17 +10,17 @@ import Foundation
 class Utente{
     //Dichiarazione variabili
     var id: String = ""
-    var nome: String
-    var cognome: String
-    var dataNascita: String
-    var codiceFiscale: String
-    var telefono: String
-    var email: String
-    var tipo: String
-    var password: String
+    var nome: String = ""
+    var cognome: String  = ""
+    var dataNascita: String  = ""
+    var codiceFiscale: String  = ""
+    var telefono: String  = ""
+    var email: String  = ""
+    var tipo: String  = ""
+    var password: String  = ""
     
     //Costruttore
-    init(nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String){
+    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String){
 //        self.id = id
         self.nome = nome
         self.cognome = cognome
@@ -31,6 +31,9 @@ class Utente{
         self.tipo = tipo
         self.password = password
     }
+    
+    //Costruttore vuoto
+    init(){}
     
     //Funzioni set
     func setId(id: String){self.id = id}

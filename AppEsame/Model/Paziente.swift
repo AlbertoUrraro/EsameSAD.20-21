@@ -16,10 +16,15 @@ class Paziente: Utente{
     var pazienteDB = PazienteDB()
     
     //Costruttore
-    init(nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, allergie: [String], patologie: [String]) {
+    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, allergie: [String], patologie: [String]) {
         self.allergie = allergie
         self.patologie = patologie
-        super.init(nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password)
+        super.init(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password)
+    }
+    
+    //Costruttore vuoto
+    override init(){
+        super.init()
     }
     
     //Funzioni set
@@ -30,8 +35,8 @@ class Paziente: Utente{
     func getAllergie()->[String]{return self.allergie}
     func getPatologie()->[String]{return self.patologie}
     
-    func creaPaziente(){
-        pazienteDB.creaPaziente(paziente: self)
+    func creaPaziente(paziente: Paziente){
+        pazienteDB.creaPaziente(paziente: paziente)
     }
     
     func ottieniPazienteDaEmail(emailDaCercare: String, finished: @escaping([Paziente]?) -> Void) {
@@ -56,7 +61,7 @@ class Paziente: Utente{
                 let patologie = res.patologie ?? []
                 
                 
-                let paziente = Paziente(nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie)
+                let paziente = Paziente(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie)
                 
                 return paziente
                 
@@ -87,7 +92,7 @@ class Paziente: Utente{
 
                 
                 
-                let paziente = Paziente(nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie)
+            let paziente = Paziente(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie)
                 
                 
 //            }

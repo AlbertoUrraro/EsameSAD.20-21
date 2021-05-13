@@ -27,11 +27,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         DBManager.shared.openConnection()
         
         //        test da togliere
-        let paziente = Paziente(nome: "alberto", cognome: "urraro", dataNascita: "01/01/1997", codiceFiscale: "ALBURR000000000", telefono: "3333333333", email: "email@email.it", tipo: "paziente", password: "psw567", allergie: ["polvere","poline"], patologie: ["patologia1","patologia2"])
+        let paziente = Paziente(id: "", nome: "carlo", cognome: "dav", dataNascita: "01/01/01", codiceFiscale: "00100010010010", telefono: "3333333333", email: "email@email.it", tipo: "paziente", password: "psw567", allergie: ["polvere","poline"], patologie: ["patologia1","patologia2"])
         
-        paziente.creaPaziente()
+        let medico = Medico(id: "", nome: "dottor", cognome: "boccia", dataNascita: "01/01/01", codiceFiscale: "00100010010010", telefono: "3333333333", email: "email@email.it", tipo: "medico", password: "psw567", specializzazione: "gurobi")
         
-        paziente.ottieniPazienteDaEmail(emailDaCercare: "alberto@email.com"){(pazienti) in
+        
+        
+        let p = Paziente()
+        
+//        p.creaPaziente(paziente: paziente)
+        
+        p.ottieniPazienteDaEmail(emailDaCercare: "kVZgAfgvN0YhuOH3a3rQ"){(pazienti) in
             
             guard let pazientiRes = pazienti else {
                 print("error")
@@ -42,15 +48,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
             
         }
+    
+        let m = Medico()
         
-        paziente.ottieniPazienteDaId(idDaCercare: "l9U0QqZc3OWfFuc6EDsY"){(pazienti) in
+//        m.creaMedico(medico: medico)
+        
+        m.ottieniMedicoDaId(idDaCercare: "z9MAfR3569easaCImstB"){(medici) in
             
-            guard let pazientiRes = pazienti else {
+            guard let mediciRes = medici else {
                 print("error")
                 return
             }
             
-            print(pazientiRes.patologie[0])
+            print(mediciRes.nome," ",mediciRes.cognome)
             
             
         }
@@ -77,10 +87,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func segueRegistrazione(_ sender: Any) {
         
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let registrazioneViewController = mainStoryboard.instantiateViewController(withIdentifier: "RegistrazioneViewController") as! RegistrazioneViewController
-        //Per la navigation bisogna usare show, con present viene eliminata
-        self.show(registrazioneViewController, sender: nil)
+        performSegue(withIdentifier: "SegueStep1Registrazione", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C28ABF4264DD7DE00F86CFD /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C28ABF3264DD7DE00F86CFD /* DBManager.swift */; };
 		1C28ABF6264DD7E400F86CFD /* PazienteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C28ABF5264DD7E400F86CFD /* PazienteDB.swift */; };
+		1C28ABF8264DE12900F86CFD /* MedicoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C28ABF7264DE12900F86CFD /* MedicoDB.swift */; };
 		1CC63C962649C653001AEDEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CC63C952649C653001AEDEA /* GoogleService-Info.plist */; };
 		1CC63C992649CBE5001AEDEA /* Paziente.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CC63C982649CBE5001AEDEA /* Paziente.storyboard */; };
 		1CC63C9B2649CBF8001AEDEA /* Medico.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CC63C9A2649CBF8001AEDEA /* Medico.storyboard */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		1C28ABF3264DD7DE00F86CFD /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		1C28ABF5264DD7E400F86CFD /* PazienteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PazienteDB.swift; sourceTree = "<group>"; };
+		1C28ABF7264DE12900F86CFD /* MedicoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicoDB.swift; sourceTree = "<group>"; };
 		1CC63C952649C653001AEDEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1CC63C982649CBE5001AEDEA /* Paziente.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Paziente.storyboard; sourceTree = "<group>"; };
 		1CC63C9A2649CBF8001AEDEA /* Medico.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medico.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				1C28ABF3264DD7DE00F86CFD /* DBManager.swift */,
 				1C28ABF5264DD7E400F86CFD /* PazienteDB.swift */,
+				1C28ABF7264DE12900F86CFD /* MedicoDB.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				DF2976142626410300933712 /* AppEsame.xcdatamodeld in Sources */,
 				DF29760A2626410300933712 /* AppDelegate.swift in Sources */,
 				1CC63CAD2649F4B7001AEDEA /* Errore.swift in Sources */,
+				1C28ABF8264DE12900F86CFD /* MedicoDB.swift in Sources */,
 				1CC63CA22649E7B1001AEDEA /* RegistrazioneViewController.swift in Sources */,
 				95CF84A726499EB0006D6517 /* Farmaco.swift in Sources */,
 				1C28ABF6264DD7E400F86CFD /* PazienteDB.swift in Sources */,

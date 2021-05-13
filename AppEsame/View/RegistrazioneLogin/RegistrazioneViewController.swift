@@ -67,7 +67,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let pazientePerSegue = Utente( nome: self.nome.text!, cognome: self.cognome.text!, dataNascita: self.dataNascita.date.description, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, tipo: self.tipoUtenteSelezionato, password: self.password.text!)
+        let pazientePerSegue = Utente(id: "",  nome: self.nome.text!, cognome: self.cognome.text!, dataNascita: self.dataNascita.date.description, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, tipo: self.tipoUtenteSelezionato, password: self.password.text!)
         
         //Con queste istruzioni controllo in quale view sto andando per passare i dati con il prepare for segue
         if segue.identifier == "SegueStep2Paziente"
