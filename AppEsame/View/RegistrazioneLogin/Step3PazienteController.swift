@@ -13,12 +13,13 @@ class Step3PazienteController: UIViewController, UITableViewDelegate,UITableView
     
     @IBOutlet weak var patologieTableView: UITableView!
     
-    let patologieVet = ["tachicardia", "diabete"]
+    var patologieVet : [String] = []
     var patologieSelezionate: [String] = []
     var tag : [Int] = []
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return patologieVet.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -27,7 +28,7 @@ class Step3PazienteController: UIViewController, UITableViewDelegate,UITableView
         cell.initCell(nomePatologia: patologieVet[indexPath.row])
         cell.checkButton.tag = indexPath.row
         cell.checkButton.addTarget(self, action: #selector(checkPressed(sender:)), for: .touchUpInside)
-       
+        
         return cell
     }
     
@@ -51,38 +52,54 @@ class Step3PazienteController: UIViewController, UITableViewDelegate,UITableView
         super.viewDidLoad()
         patologieTableView.estimatedRowHeight = 250
         patologieTableView.rowHeight = UITableView.automaticDimension
+        
+        let pa = Patologia()
+        
+        pa.ottieniTuttePatologie{(patologie) in
+            
+            guard let patologieRes = patologie else {
+                print("error")
+                return
+            }
+            for patologia in patologieRes{
+                print(patologia.id,patologia.titolo,patologia.codiceEsenzione)
+                self.patologieVet.append(patologia.titolo)
+            }
+            self.patologieTableView.reloadData()
+            
+        }
     }
     
     @objc func checkPressed(sender: DLRadioButton)
     {
-       var i = 0
-       var presente = false
-       print("Button tag \(sender.tag)")
+        var i = 0
+        var presente = false
+        print("Button tag \(sender.tag)")
         print(patologieVet[sender.tag])
         if (tag.isEmpty)
         {
-        patologieSelezionate.append(patologieVet[sender.tag])
-        print(patologieSelezionate)
-        tag.append(sender.tag)
+            patologieSelezionate.append(patologieVet[sender.tag])
+            print(patologieSelezionate)
+            tag.append(sender.tag)
         }
         else{
-        for _ in tag{
-            if (tag[i] == sender.tag){
-                patologieSelezionate.remove(at: i)
-                print("trovato")
-                presente = true
-                tag.remove(at: i)
-                print(patologieSelezionate)
-            } else {
-                i=i+1
+            for _ in tag{
+                if (tag[i] == sender.tag){
+                    patologieSelezionate.remove(at: i)
+                    print("trovato")
+                    presente = true
+                    tag.remove(at: i)
+                    print(patologieSelezionate)
+                } else {
+                    i=i+1
+                }
             }
-         }
-        print (tag)
-        if (presente == false){
-        patologieSelezionate.append(patologieVet[sender.tag])
-        print(patologieSelezionate)
-        tag.append(sender.tag)
-        }
+            print (tag)
+            if (presente == false){
+                patologieSelezionate.append(patologieVet[sender.tag])
+                print(patologieSelezionate)
+                tag.append(sender.tag)
+            }
         }
     }
     

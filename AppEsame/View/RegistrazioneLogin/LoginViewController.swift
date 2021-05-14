@@ -107,17 +107,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 //
 //        }
         
-        s.ottieniTuttiSintomi{(sintomi) in
-            
-            guard let sintomiRes = sintomi else {
-                print("error")
-                return
-            }
-            for sintomo in sintomiRes{
-                print(sintomo.id,sintomo.tipo,sintomo.descrizione)
-            }
-            
-        }
+//        s.ottieniTuttiSintomi{(sintomi) in
+//            
+//            guard let sintomiRes = sintomi else {
+//                print("error")
+//                return
+//            }
+//            for sintomo in sintomiRes{
+//                print(sintomo.id,sintomo.tipo,sintomo.descrizione)
+//            }
+//            
+//        }
         
         
         //        fine test da togliere
