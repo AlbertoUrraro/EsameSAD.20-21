@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import DLRadioButton
+import QuartzCore
 
 class Step2PazienteController: UIViewController, UITableViewDelegate, UITableViewDataSource{
    
@@ -21,12 +22,12 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
     var tag : [Int] = []
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return allergieVet.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = AllergieTableView.dequeueReusableCell(withIdentifier: "allergiacell", for: indexPath) as! AllergiaTableViewCell
-        
+        cell.layoutIfNeeded()
         cell.initCell(nomeAllergia: allergieVet[indexPath.row])
         cell.checkButton.tag = indexPath.row
         cell.checkButton.addTarget(self, action: #selector(checkPressed(sender:)), for: .touchUpInside)
@@ -38,13 +39,25 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
         return 1
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "SELEZIONA LE TUE ALLERGIE"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        AllergieTableView.estimatedRowHeight = 50
+        AllergieTableView.estimatedRowHeight = 250
         AllergieTableView.rowHeight = UITableView.automaticDimension
-        
-        
+//        AllergieTableView.layer.masksToBounds = true
+//        AllergieTableView.layer.cornerRadius = 10
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print(pazienteStep1.getNome())

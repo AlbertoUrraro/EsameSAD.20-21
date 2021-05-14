@@ -15,17 +15,26 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     //Collegamenti elemnti interfaccia
     @IBOutlet weak var nome: UITextField!
     @IBOutlet weak var cognome: UITextField!
-    @IBOutlet weak var dataNascita: UIDatePicker!
+
     @IBOutlet weak var codiceFiscale: UITextField!
     @IBOutlet weak var telefono: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var ripetiPassword: UITextField!
-    @IBOutlet weak var tipoUtente: UIPickerView!
+
+    
+   
+    @IBOutlet weak var dataNascita: UITextField!
+    let dataPicker = UIDatePicker()
+    
+
+    @IBOutlet weak var tipoUtente: UITextField!
+    let tipoPicker = UIPickerView()
     
     let arrayTipiUtenti = ["Paziente", "Medico"] // Array da passare al picker view
     var tipoUtenteSelezionato = ""; //Tipo utente selezionato nel picker view
     
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +48,68 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
         self.email.delegate = self
         self.password.delegate = self
         self.ripetiPassword.delegate = self
-        self.tipoUtente.delegate = self
-        self.tipoUtente.dataSource = self
+        self.tipoPicker.delegate = self
+        self.tipoPicker.dataSource = self
+        createDataPicker()
+        createTipoPicker()
         
+    }
+    
+//    DataPicker
+    func createDataPicker(){
+        dataNascita.textAlignment = .center
+        dataPicker.preferredDatePickerStyle = .wheels
+        dataPicker.datePickerMode = UIDatePicker.Mode.date
+       
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneButton], animated: true)
+        dataNascita.inputAccessoryView = toolbar
+        dataNascita.inputView = dataPicker
+        
+    }
+// DataPicker
+    @objc func donePressed(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        dataNascita.text = formatter.string(from: dataPicker.date)
+        self.view.endEditing(true)
+    }
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView( _ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrayTipiUtenti.count
+    }
+
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+     return arrayTipiUtenti[row]
+    }
+
+    func createTipoPicker(){
+        //Nasconde il cursore
+        self.tipoUtente.tintColor = .clear
+      
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneTipoButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneTipoPressed))
+        toolbar.setItems([doneTipoButton], animated: true)
+        tipoUtente.inputAccessoryView = toolbar
+        
+        tipoUtente.inputView = tipoPicker
+    }
+    @objc func doneTipoPressed(){
+        let numero = tipoPicker.selectedRow(inComponent: 0)
+        tipoUtente.text = arrayTipiUtenti[numero]
+        self.view.endEditing(true)
+        tipoUtenteSelezionato = tipoUtente.text!
     }
     
     @IBAction func segueStep2(_ sender: Any) {
@@ -67,7 +135,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let pazientePerSegue = Utente(id: "",  nome: self.nome.text!, cognome: self.cognome.text!, dataNascita: self.dataNascita.date.description, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, tipo: self.tipoUtenteSelezionato, password: self.password.text!)
+        let pazientePerSegue = Utente(id: "",  nome: self.nome.text!, cognome: self.cognome.text!, dataNascita: self.dataNascita.text!, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, tipo: self.tipoUtenteSelezionato, password: self.password.text!)
         
         //Con queste istruzioni controllo in quale view sto andando per passare i dati con il prepare for segue
         if segue.identifier == "SegueStep2Paziente"
@@ -100,21 +168,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    //Override dei metodi necessari a configurare il picker view
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return arrayTipiUtenti.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        self.tipoUtenteSelezionato = arrayTipiUtenti[row]
-        return arrayTipiUtenti[row]
-    }
-    
-    
-    
+     
 }
+
+
