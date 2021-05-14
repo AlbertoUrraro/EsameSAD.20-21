@@ -13,7 +13,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //    private let database = Database.database().reference()
     
     @IBOutlet weak var email: UITextField!
-
+    
     @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,35 +35,91 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         let p = Paziente()
         
-//        p.creaPaziente(paziente: paziente)
+        //        p.creaPaziente(paziente: paziente)
         
-        p.ottieniPazienteDaEmail(emailDaCercare: "kVZgAfgvN0YhuOH3a3rQ"){(pazienti) in
-            
-            guard let pazientiRes = pazienti else {
-                print("error")
-                return
-            }
-            for paziente in pazientiRes{
-                print(paziente.nome)
-            }
-            
-        }
-    
+//        p.ottieniPazienteDaEmail(emailDaCercare: "kVZgAfgvN0YhuOH3a3rQ"){(pazienti) in
+//
+//            guard let pazientiRes = pazienti else {
+//                print("error")
+//                return
+//            }
+//            for paziente in pazientiRes{
+//                print(paziente.nome)
+//            }
+//
+//        }
+        
         let m = Medico()
         
-//        m.creaMedico(medico: medico)
+        //        m.creaMedico(medico: medico)
         
-        m.ottieniMedicoDaId(idDaCercare: "z9MAfR3569easaCImstB"){(medici) in
+//        m.ottieniMedicoDaId(idDaCercare: "z9MAfR3569easaCImstB"){(medici) in
+//
+//            guard let mediciRes = medici else {
+//                print("error")
+//                return
+//            }
+//
+//            print(mediciRes.nome," ",mediciRes.cognome)
+//
+//
+//        }
+        
+        let pa = Patologia()
+        
+        //        pa.ottieniPatologiaDaId(idDaCercare: "HPKmmyFqINSPl3MaPurk"){(patologie) in
+        //
+        //            guard let patologieRes = patologie else {
+        //                print("error")
+        //                return
+        //            }
+        //
+        //            print(patologieRes.titolo," ",patologieRes.codiceEsenzione)
+        //
+        //
+        //        }
+        
+//        pa.ottieniTuttePatologie{(patologie) in
+//
+//            guard let patologieRes = patologie else {
+//                print("error")
+//                return
+//            }
+//            for patologia in patologieRes{
+//                print(patologia.id,patologia.titolo,patologia.codiceEsenzione)
+//            }
+//
+//        }
+        
+        let s = Sintomo()
+        let sintomo = Sintomo(id: "", tipo: "mal di testa", descrizione: "mal di testa")
+//        s.creaSintomo(sintomo: sintomo)
+        
+//        s.ottieniSintomoDaId(idDaCercare: "31SUBRjaeefJ6Zi2pFbs"){(sintomi) in
+//
+//            guard let sintomiRes = sintomi else {
+//                print("error")
+//                return
+//            }
+//
+//            print(sintomiRes.tipo," ",sintomiRes.descrizione)
+//
+//
+//        }
+        
+        s.ottieniTuttiSintomi{(sintomi) in
             
-            guard let mediciRes = medici else {
+            guard let sintomiRes = sintomi else {
                 print("error")
                 return
             }
-            
-            print(mediciRes.nome," ",mediciRes.cognome)
-            
+            for sintomo in sintomiRes{
+                print(sintomo.id,sintomo.tipo,sintomo.descrizione)
+            }
             
         }
+        
+        
         //        fine test da togliere
         
     }
