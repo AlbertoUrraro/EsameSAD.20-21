@@ -57,10 +57,10 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     
 //    DataPicker
     func createDataPicker(){
-        dataNascita.textAlignment = .center
         dataPicker.preferredDatePickerStyle = .wheels
         dataPicker.datePickerMode = UIDatePicker.Mode.date
        
+        self.dataNascita.tintColor = .clear
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         

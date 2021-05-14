@@ -35,9 +35,22 @@ class Step3PazienteController: UIViewController, UITableViewDelegate,UITableView
         return 1
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "SELEZIONA LE TUE PATOLOGIE"
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        patologieTableView.estimatedRowHeight = 250
+        patologieTableView.rowHeight = UITableView.automaticDimension
     }
     
     @objc func checkPressed(sender: DLRadioButton)
