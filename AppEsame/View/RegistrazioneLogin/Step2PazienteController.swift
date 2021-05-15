@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import DLRadioButton
-import QuartzCore
+
 
 class Step2PazienteController: UIViewController, UITableViewDelegate, UITableViewDataSource{
    

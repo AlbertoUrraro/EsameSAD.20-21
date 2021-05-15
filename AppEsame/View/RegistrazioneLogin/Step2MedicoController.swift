@@ -7,11 +7,51 @@
 
 import Foundation
 import UIKit
+import DLRadioButton
 
-class Step2MedicoController: UIViewController{
+class Step2MedicoController: UIViewController,UITableViewDelegate, UITableViewDataSource{
     
     //In questa variabile riceverò i dati dalla view precedente
     var pazienteStep1 = Utente(id: "", nome: "", cognome: "", dataNascita: "", codiceFiscale: "", telefono: "", email: "", tipo: "", password: "")
+
+    @IBOutlet weak var SpecializzazioneTableView: UITableView!
+    var specializzazioniVet = ["cardiologo", "diabetologo"]
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return specializzazioniVet.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = SpecializzazioneTableView.dequeueReusableCell(withIdentifier: "specializzazionecell", for: indexPath) as! SpecializzazioneTableViewCell
+        cell.layoutIfNeeded()
+        cell.initCell(nomeSpecializzazione: specializzazioniVet[indexPath.row])
+        cell.checkButton.tag = indexPath.row
+        cell.checkButton.addTarget(self, action: #selector(checkPressed(sender:)), for: .touchUpInside)
+       
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "SELEZIONA LA TUA SPECIALIZZAZIONE"
+    }
+    
+    @objc func checkPressed(sender: DLRadioButton)
+    {
+        print(sender.tag)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

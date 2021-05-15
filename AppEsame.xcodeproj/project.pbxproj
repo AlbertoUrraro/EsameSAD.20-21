@@ -37,6 +37,7 @@
 		95CF84AD26499ED6006D6517 /* Sintomo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF84AC26499ED6006D6517 /* Sintomo.swift */; };
 		95CFE0D2264D791400EFE631 /* PatologiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFE0D1264D791400EFE631 /* PatologiaTableViewCell.swift */; };
 		95CFE0D6264D7F0300EFE631 /* DottoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFE0D5264D7F0300EFE631 /* DottoreTableViewCell.swift */; };
+		95F25195265009B8008CDB3C /* SpecializzazioneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F25194265009B8008CDB3C /* SpecializzazioneTableViewCell.swift */; };
 		DF29760A2626410300933712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2976092626410300933712 /* AppDelegate.swift */; };
 		DF29760C2626410300933712 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF29760B2626410300933712 /* SceneDelegate.swift */; };
 		DF29760E2626410300933712 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF29760D2626410300933712 /* LoginViewController.swift */; };
@@ -78,6 +79,7 @@
 		95CF84AC26499ED6006D6517 /* Sintomo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sintomo.swift; sourceTree = "<group>"; };
 		95CFE0D1264D791400EFE631 /* PatologiaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatologiaTableViewCell.swift; sourceTree = "<group>"; };
 		95CFE0D5264D7F0300EFE631 /* DottoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottoreTableViewCell.swift; sourceTree = "<group>"; };
+		95F25194265009B8008CDB3C /* SpecializzazioneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecializzazioneTableViewCell.swift; sourceTree = "<group>"; };
 		DF2976062626410300933712 /* AppEsame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppEsame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2976092626410300933712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF29760B2626410300933712 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				951FC7D4264ADF01001E8C8A /* AllergiaTableViewCell.swift */,
 				95CFE0D1264D791400EFE631 /* PatologiaTableViewCell.swift */,
 				95CFE0D5264D7F0300EFE631 /* DottoreTableViewCell.swift */,
+				95F25194265009B8008CDB3C /* SpecializzazioneTableViewCell.swift */,
 			);
 			path = RegistrazioneLogin;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				1CC63CAD2649F4B7001AEDEA /* Errore.swift in Sources */,
 				1C28ABF8264DE12900F86CFD /* MedicoDB.swift in Sources */,
 				1CC63CA22649E7B1001AEDEA /* RegistrazioneViewController.swift in Sources */,
+				95F25195265009B8008CDB3C /* SpecializzazioneTableViewCell.swift in Sources */,
 				95CF84A726499EB0006D6517 /* Farmaco.swift in Sources */,
 				1C28ABF6264DD7E400F86CFD /* PazienteDB.swift in Sources */,
 				95CF84A426499E92006D6517 /* Ricetta.swift in Sources */,
