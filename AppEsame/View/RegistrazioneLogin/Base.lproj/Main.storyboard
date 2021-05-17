@@ -1006,6 +1006,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="compleaRegistrazionePaziente:" destination="Vf3-3n-muQ" eventType="touchUpInside" id="5FS-Lj-tha"/>
                                     <segue destination="LlC-Nr-hfl" kind="show" id="53o-qW-ilq"/>
                                 </connections>
                             </button>

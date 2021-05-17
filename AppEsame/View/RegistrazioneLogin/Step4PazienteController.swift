@@ -13,6 +13,9 @@ class Step4PazienteController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var dottoriTableView: UITableView!
     
+    //In questa variabile riceverò i dati dalla view precedente
+    var pazienteStep3 = Paziente()
+    
     var mediciVet : [Medico] = []
     var mediciSelezionati: [String] = []
     var tag : [Int] = []
@@ -61,4 +64,11 @@ class Step4PazienteController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    
+    @IBAction func compleaRegistrazionePaziente(_ sender: Any) {
+         let p = Paziente()
+        p.creaPaziente(paziente: pazienteStep3)
+    }
+    
 }

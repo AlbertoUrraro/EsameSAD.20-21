@@ -35,6 +35,20 @@ class Paziente: Utente{
     func getAllergie()->[String]{return self.allergie}
     func getPatologie()->[String]{return self.patologie}
     
+    
+    func pazienteEqUtente(utente:Utente){
+        self.setId(id: utente.id)
+        self.setNome(nome: utente.nome)
+        self.setCognome(cognome: utente.cognome)
+        self.setDataNascita(dataNascita: utente.dataNascita)
+        self.setCodiceFiscale(codiceFiscale: utente.codiceFiscale)
+        self.setTelefono(telefono: utente.telefono)
+        self.setEmail(email: utente.email)
+        self.setTipo(tipo: utente.tipo)
+        self.setPassword(tipo: utente.password)
+    }
+    
+    
     func creaPaziente(paziente: Paziente){
         pazienteDB.creaPaziente(paziente: paziente)
     }

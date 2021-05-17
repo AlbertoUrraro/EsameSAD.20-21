@@ -13,7 +13,9 @@ import DLRadioButton
 class Step2PazienteController: UIViewController, UITableViewDelegate, UITableViewDataSource{
    
     //In questa variabile riceverò i dati dalla view precedente
-    var pazienteStep1 = Utente(id: "", nome: "", cognome: "", dataNascita: "", codiceFiscale: "", telefono: "", email: "", tipo: "", password: "")
+    var pazienteStep1 = Utente()
+    
+    var pazientePerSegue = Paziente()
     
     @IBOutlet weak var allergieTableView: UITableView!
     
@@ -76,7 +78,10 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(pazienteStep1.getNome())
+        
+        self.pazientePerSegue.pazienteEqUtente(utente: self.pazienteStep1) // assegno le info della view precedente all'obj paziente da passare alla prossima view
+        
+        
         
     }
     
@@ -115,10 +120,21 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
  
     
     @IBAction func avantiButton(_ sender: Any) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let step3PazienteController = mainStoryboard.instantiateViewController(withIdentifier: "Step3PazienteController") as! Step3PazienteController
-        //Per la navigation bisogna usare show, con present viene eliminata
-        self.show(step3PazienteController, sender: nil)
+        performSegue(withIdentifier: "SegueStep3Paziente", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        self.pazientePerSegue.setAllergia(allergie: self.allergieSelezionate)
+        //Con queste istruzioni controllo in quale view sto andando per passare i dati con il prepare for segue
+        if segue.identifier == "SegueStep3Paziente"
+        {
+            if let destinazione = segue.destination as? Step3PazienteController {
+               
+
+                destinazione.pazienteStep2 = self.pazientePerSegue
+            }
+        }
     }
     
    

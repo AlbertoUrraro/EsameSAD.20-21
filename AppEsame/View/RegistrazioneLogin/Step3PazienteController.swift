@@ -13,10 +13,15 @@ class Step3PazienteController: UIViewController, UITableViewDelegate,UITableView
     
     @IBOutlet weak var patologieTableView: UITableView!
     
+    //In questa variabile riceverò i dati dalla view precedente
+    var pazienteStep2 = Paziente()
+    
+    var pazientePerSegue = Paziente()
+    
     var patologieVet : [String] = []
     var patologieSelezionate: [String] = []
     var tag : [Int] = []
-
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return patologieVet.count
@@ -70,6 +75,15 @@ class Step3PazienteController: UIViewController, UITableViewDelegate,UITableView
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.pazientePerSegue = self.pazienteStep2
+        
+        
+        
+    }
+    
     @objc func checkPressed(sender: DLRadioButton)
     {
         var i = 0
@@ -104,10 +118,21 @@ class Step3PazienteController: UIViewController, UITableViewDelegate,UITableView
     }
     
     @IBAction func avantiButton(_ sender: Any) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let step4PazienteController = mainStoryboard.instantiateViewController(withIdentifier: "Step4PazienteController") as! Step4PazienteController
-        //Per la navigation bisogna usare show, con present viene eliminata
-        self.show(step4PazienteController, sender: nil)
+        performSegue(withIdentifier: "SegueStep4Paziente", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        self.pazientePerSegue.setPatologie(patologie: patologieSelezionate)
+        //Con queste istruzioni controllo in quale view sto andando per passare i dati con il prepare for segue
+        if segue.identifier == "SegueStep4Paziente"
+        {
+            if let destinazione = segue.destination as? Step4PazienteController {
+                
+                
+                destinazione.pazienteStep3 = self.pazientePerSegue
+            }
+        }
     }
     
     
