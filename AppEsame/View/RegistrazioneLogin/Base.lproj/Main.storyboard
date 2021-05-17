@@ -1002,6 +1002,9 @@
                                 <state key="normal" title="Registrati">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="LlC-Nr-hfl" kind="show" id="53o-qW-ilq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xdk-A6-CIL"/>
@@ -1028,10 +1031,10 @@
             </objects>
             <point key="canvasLocation" x="3207.6923076923076" y="-215.40284360189571"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--pazientecontroller-->
         <scene sceneID="AAG-iR-KqV">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PazienteViewController" id="LlC-Nr-hfl" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="PazienteViewController" storyboardName="Paziente" referencedIdentifier="pazientecontroller" id="LlC-Nr-hfl" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="eUX-wF-B0a"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ih7-mt-992" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
