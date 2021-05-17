@@ -29,7 +29,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //        test da togliere
         let paziente = Paziente(id: "", nome: "carlo", cognome: "dav", dataNascita: "01/01/01", codiceFiscale: "00100010010010", telefono: "3333333333", email: "email@email.it", tipo: "paziente", password: "psw567", allergie: ["polvere","poline"], patologie: ["patologia1","patologia2"])
         
-        let medico = Medico(id: "", nome: "dottor", cognome: "boccia", dataNascita: "01/01/01", codiceFiscale: "00100010010010", telefono: "3333333333", email: "email@email.it", tipo: "medico", password: "psw567", specializzazione: "gurobi")
+        let medico = Medico(id: "", nome: "paolino", cognome: "paperino", dataNascita: "01/01/01", codiceFiscale: "00100010010010", telefono: "3333333333", email: "email@email.it", tipo: "medico", password: "psw567", specializzazione: "dentista")
         
         
         
@@ -51,7 +51,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         let m = Medico()
         
-        //        m.creaMedico(medico: medico)
+//               m.creaMedico(medico: medico)
         
 //        m.ottieniMedicoDaId(idDaCercare: "z9MAfR3569easaCImstB"){(medici) in
 //
@@ -63,6 +63,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 //            print(mediciRes.nome," ",mediciRes.cognome)
 //
 //
+//        }
+        
+//        m.ottieniTuttiMedici{(medici) in
+//            
+//            guard let mediciRes = medici else {
+//                print("error")
+//                return
+//            }
+//            for medico in mediciRes{
+//                
+//                print (medico.id, medico.nome)
+//            }
+//            
 //        }
         
         let pa = Patologia()

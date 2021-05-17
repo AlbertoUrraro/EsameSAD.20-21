@@ -47,6 +47,7 @@ class MedicoDB{
             let medici = result.map{ (queryResult) -> Medico in
                 let data = queryResult.data()
                 
+                let id = queryResult.documentID
                 let nome = data["nome"] as? String ?? ""
                 let cognome = data["cognome"] as? String ?? ""
                 let dataNascita = data["dataNascita"] as? String ?? ""
@@ -57,7 +58,7 @@ class MedicoDB{
                 let password = data["password"] as? String ?? ""
                 let specializzazione = data["specializzazione"] as? String ?? ""
                 
-                let medico = Medico(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
                 
                 return medico
                 
@@ -76,6 +77,7 @@ class MedicoDB{
             let medici = result.map{ (queryResult) -> Medico in
                 let data = result
                 
+                let id = idDaCercare
                 let nome = data["nome"] as? String ?? ""
                 let cognome = data["cognome"] as? String ?? ""
                 let dataNascita = data["dataNascita"] as? String ?? ""
@@ -86,7 +88,38 @@ class MedicoDB{
                 let password = data["password"] as? String ?? ""
                 let specializzazione = data["specializzazione"] as? String ?? ""
                 
-                let medico = Medico(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
+                
+                return medico
+                
+            }
+            finished(medici)
+        }
+    }
+    
+    
+    func ottieniTuttiMedici(finished: @escaping([Medico]?) -> Void) {
+        db!.collection("medico").getDocuments() { (queryResult, err) in
+            guard let result = queryResult?.documents else {
+                print("No documents")
+                return
+            }
+            
+            let medici = result.map{ (queryResult) -> Medico in
+                let data = queryResult.data()
+                
+                let id = queryResult.documentID
+                let nome = data["nome"] as? String ?? ""
+                let cognome = data["cognome"] as? String ?? ""
+                let dataNascita = data["dataNascita"] as? String ?? ""
+                let codiceFiscale = data["codiceFiscale"] as? String ?? ""
+                let telefono = data["telefono"] as? String ?? ""
+                let email = data["email"] as? String ?? ""
+                let tipo = data["tipo"] as? String ?? ""
+                let password = data["password"] as? String ?? ""
+                let specializzazione = data["specializzazione"] as? String ?? ""
+                
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
                 
                 return medico
                 

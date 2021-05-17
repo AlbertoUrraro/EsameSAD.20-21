@@ -15,9 +15,9 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
     //In questa variabile riceverò i dati dalla view precedente
     var pazienteStep1 = Utente(id: "", nome: "", cognome: "", dataNascita: "", codiceFiscale: "", telefono: "", email: "", tipo: "", password: "")
     
-    @IBOutlet weak var AllergieTableView: UITableView!
+    @IBOutlet weak var allergieTableView: UITableView!
     
-    let allergieVet = ["glutine", "polline"]
+    var allergieVet : [String] = []
     var allergieSelezionate: [String] = []
     var tag : [Int] = []
 
@@ -26,7 +26,7 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = AllergieTableView.dequeueReusableCell(withIdentifier: "allergiacell", for: indexPath) as! AllergiaTableViewCell
+        let cell = allergieTableView.dequeueReusableCell(withIdentifier: "allergiacell", for: indexPath) as! AllergiaTableViewCell
         cell.layoutIfNeeded()
         cell.initCell(nomeAllergia: allergieVet[indexPath.row])
         cell.checkButton.tag = indexPath.row
@@ -52,10 +52,26 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AllergieTableView.estimatedRowHeight = 250
-        AllergieTableView.rowHeight = UITableView.automaticDimension
-//        AllergieTableView.layer.masksToBounds = true
-//        AllergieTableView.layer.cornerRadius = 10
+        allergieTableView.estimatedRowHeight = 250
+        allergieTableView.rowHeight = UITableView.automaticDimension
+//        allergieTableView.layer.masksToBounds = true
+//        allergieTableViewllergieTableView.layer.cornerRadius = 10
+        
+        let al = Allergia()
+        
+        al.ottieniTutteAllergie{(allergie) in
+            
+            guard let allergieRes = allergie else {
+                print("error")
+                return
+            }
+            for allergia in allergieRes{
+                print(allergia.id,allergia.titolo)
+                self.allergieVet.append(allergia.titolo)
+            }
+            self.allergieTableView.reloadData()
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

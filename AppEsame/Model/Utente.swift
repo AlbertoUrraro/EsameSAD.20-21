@@ -21,7 +21,7 @@ class Utente{
     
     //Costruttore
     init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String){
-//        self.id = id
+        self.id = id
         self.nome = nome
         self.cognome = cognome
         self.dataNascita = dataNascita

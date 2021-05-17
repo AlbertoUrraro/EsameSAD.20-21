@@ -17,7 +17,12 @@ class DottoreTableViewCell: UITableViewCell {
     @IBOutlet weak var specializzazione: UILabel!
     @IBOutlet weak var aggiungiButton: DLRadioButton!
     
-    func initCell(){
+    func initCell(medico: Medico){
+        self.nome.text = medico.getNome() 
+        self.cognome.text = medico.getCognome() 
+        self.indirizzo.text = "indirizzo"
+        self.specializzazione.text = medico.specializzazione 
+        
         aggiungiButton.isMultipleSelectionEnabled = true
     }
 }

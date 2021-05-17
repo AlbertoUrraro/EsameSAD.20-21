@@ -16,7 +16,7 @@ class Medico: Utente{
     
     //Costruttore
     init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String,password: String, specializzazione: String) {
-    self.specializzazione = specializzazione
+        self.specializzazione = specializzazione
         super.init(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password)
     }
     
@@ -54,8 +54,8 @@ class Medico: Utente{
                 let email = res.email
                 let tipo = res.tipo
                 let password = res.password
-                let specializzazione = res.specializzazione ?? ""
-               
+                let specializzazione = res.specializzazione 
+                
                 
                 
                 let medico = Medico(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
@@ -75,25 +75,58 @@ class Medico: Utente{
                 print("error")
                 return
             }
-                let  res = mediciRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
-                let nome = res.nome
-                let cognome = res.cognome
-                let dataNascita = res.dataNascita
-                let codiceFiscale = res.codiceFiscale
-                let telefono = res.telefono
-                let email = res.email
-                let tipo = res.tipo
-                let password = res.password
-                let specializzazione = res.specializzazione ?? ""
-               
-
-                
-                
-            let medico = Medico(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
-                
-                
-//            }
+            
+            let  res = mediciRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
+            let id = res.id
+            let nome = res.nome
+            let cognome = res.cognome
+            let dataNascita = res.dataNascita
+            let codiceFiscale = res.codiceFiscale
+            let telefono = res.telefono
+            let email = res.email
+            let tipo = res.tipo
+            let password = res.password
+            let specializzazione = res.specializzazione
+            
+            
+            
+            
+            let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
+            
+            
             finished(medico)
+        }
+    }
+    
+    func ottieniTuttiMedici(finished: @escaping([Medico]?) -> Void) {
+        
+        
+        medicoDB.ottieniTuttiMedici{(medici) in
+            
+            guard let mediciRes = medici else {
+                print("error")
+                return
+            }
+            let mediciArr = mediciRes.map{(result) ->Medico in
+                
+                let id = result.id
+                let nome = result.nome
+                let cognome = result.cognome
+                let dataNascita = result.dataNascita
+                let codiceFiscale = result.codiceFiscale
+                let telefono = result.telefono
+                let email = result.email
+                let tipo = result.tipo
+                let password = result.password
+                let specializzazione = result.specializzazione
+                
+                
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
+                
+                return medico
+                
+            }
+            finished(mediciArr)
         }
     }
     
