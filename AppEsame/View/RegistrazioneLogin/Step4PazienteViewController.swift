@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 import DLRadioButton
 
-class Step4PazienteController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class Step4PazienteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet weak var dottoriTableView: UITableView!
-    
+
+    @IBOutlet weak var mediciTableView: UITableView!
     //In questa variabile riceverò i dati dalla view precedente
     var pazienteStep3 = Paziente()
     
@@ -28,7 +28,7 @@ class Step4PazienteController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dottoriTableView.dequeueReusableCell(withIdentifier: "dottorecell", for: indexPath) as! DottoreTableViewCell
+        let cell = mediciTableView.dequeueReusableCell(withIdentifier: "medicocell", for: indexPath) as! MediciTableViewCell
         cell.initCell(medico: mediciVet[indexPath.row])
         cell.layoutIfNeeded()
         return cell
@@ -39,8 +39,8 @@ class Step4PazienteController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dottoriTableView.estimatedRowHeight = 250
-        dottoriTableView.rowHeight = UITableView.automaticDimension
+        mediciTableView.estimatedRowHeight = 250
+        mediciTableView.rowHeight = UITableView.automaticDimension
         
         let me = Medico()
         
@@ -54,7 +54,7 @@ class Step4PazienteController: UIViewController, UITableViewDelegate, UITableVie
                 
                 self.mediciVet.append(medico)
             }
-            self.dottoriTableView.reloadData()
+            self.mediciTableView.reloadData()
             
         }
         

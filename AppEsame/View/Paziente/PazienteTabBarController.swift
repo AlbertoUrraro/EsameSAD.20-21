@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+class PazienteTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

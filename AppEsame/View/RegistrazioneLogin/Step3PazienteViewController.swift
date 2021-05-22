@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import DLRadioButton
 
-class Step3PazienteController: UIViewController, UITableViewDelegate,UITableViewDataSource{
+class Step3PazienteViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var patologieTableView: UITableView!
     
@@ -28,11 +28,11 @@ class Step3PazienteController: UIViewController, UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = patologieTableView.dequeueReusableCell(withIdentifier: "patologiacell", for: indexPath) as! PatologiaTableViewCell
+        let cell = patologieTableView.dequeueReusableCell(withIdentifier: "patologiacell", for: indexPath) as! PatologieTableViewCell
         
         cell.initCell(nomePatologia: patologieVet[indexPath.row])
-        cell.checkButton.tag = indexPath.row
-        cell.checkButton.addTarget(self, action: #selector(checkPressed(sender:)), for: .touchUpInside)
+        cell.seleziona.tag = indexPath.row
+        cell.seleziona.addTarget(self, action: #selector(checkPressed(sender:)), for: .touchUpInside)
         
         return cell
     }
@@ -117,9 +117,10 @@ class Step3PazienteController: UIViewController, UITableViewDelegate,UITableView
         }
     }
     
-    @IBAction func avantiButton(_ sender: Any) {
+    @IBAction func segueStep4(_ sender: Any) {
         performSegue(withIdentifier: "SegueStep4Paziente", sender: self)
     }
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -127,7 +128,7 @@ class Step3PazienteController: UIViewController, UITableViewDelegate,UITableView
         //Con queste istruzioni controllo in quale view sto andando per passare i dati con il prepare for segue
         if segue.identifier == "SegueStep4Paziente"
         {
-            if let destinazione = segue.destination as? Step4PazienteController {
+            if let destinazione = segue.destination as? Step4PazienteViewController {
                 
                 
                 destinazione.pazienteStep3 = self.pazientePerSegue

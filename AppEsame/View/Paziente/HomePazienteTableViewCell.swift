@@ -7,10 +7,11 @@
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+class HomePazienteTableViewCell: UITableViewCell {
 
   
-    @IBOutlet weak var titolo: UILabel!
+
+    @IBOutlet weak var nome: UILabel!
     @IBOutlet weak var stato: UIImageView!
     
     func initCell(){

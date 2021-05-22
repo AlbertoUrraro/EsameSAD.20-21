@@ -7,26 +7,30 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class HomePazienteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    var indexRow = 0
+
+    @IBOutlet weak var homePazienteTableView: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "homecell",for: indexPath ) as! HomeTableViewCell
+        let cell = homePazienteTableView.dequeueReusableCell(withIdentifier: "homecell",for: indexPath ) as! HomePazienteTableViewCell
         if (indexPath.row == 0){
 
-        cell.titolo.text = "Stato salute"
+        cell.nome.text = "Stato salute"
             let image = UIImage(named: "GreenButton.png")
             cell.stato.image = image
         }
         else {
-            cell.titolo.text = "Terapia"+String(indexPath.row)
+            cell.nome.text = "Terapia"+String(indexPath.row)
             let image = UIImage(named: "RedButton.png")
             cell.stato.image = image
-       
         }
-        
+
         return cell
     }
     
@@ -37,15 +41,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return UITableView.automaticDimension
     }
     
-    @IBOutlet weak var TableView: UITableView!
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 0){
+            performSegue(withIdentifier: "SintomiController", sender: self)
+        }
+        else{
+            indexRow = indexPath.row
+            performSegue(withIdentifier: "TerapiaController", sender: self)
+        }
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+    }
+  
+    
+ 
     
     override func viewDidLoad() {
-              super.viewDidLoad()
-        addLeftBarIcon()
-        addRightButton()
-        
-    
+            super.viewDidLoad()
+            addLeftBarIcon()
+            addRightButton()
           }
 
       
@@ -69,8 +85,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 21))
             label.textAlignment = .right
             label.text = "Nome Paziente"
-            
-            
+        
             let widthConstraintlabel = view.widthAnchor.constraint(equalToConstant: 60)
             let heightConstraintlabel = view.heightAnchor.constraint(equalToConstant: 25)
             heightConstraintlabel.isActive = true

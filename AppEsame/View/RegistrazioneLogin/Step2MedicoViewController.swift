@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import DLRadioButton
 
-class Step2MedicoController: UIViewController,UITableViewDelegate, UITableViewDataSource{
+class Step2MedicoViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
     
     //In questa variabile riceverò i dati dalla view precedente
     var pazienteStep1 = Utente(id: "", nome: "", cognome: "", dataNascita: "", codiceFiscale: "", telefono: "", email: "", tipo: "", password: "")
@@ -26,8 +26,8 @@ class Step2MedicoController: UIViewController,UITableViewDelegate, UITableViewDa
         let cell = SpecializzazioneTableView.dequeueReusableCell(withIdentifier: "specializzazionecell", for: indexPath) as! SpecializzazioneTableViewCell
         cell.layoutIfNeeded()
         cell.initCell(nomeSpecializzazione: specializzazioniVet[indexPath.row])
-        cell.checkButton.tag = indexPath.row
-        cell.checkButton.addTarget(self, action: #selector(checkPressed(sender:)), for: .touchUpInside)
+        cell.seleziona.tag = indexPath.row
+        cell.seleziona.addTarget(self, action: #selector(checkPressed(sender:)), for: .touchUpInside)
        
         return cell
     }

@@ -13,11 +13,11 @@ class SpecializzazioneTableViewCell: UITableViewCell {
 
    
     @IBOutlet weak var nomeSpecializzazione: UILabel!
-    @IBOutlet weak var checkButton: DLRadioButton!
+    @IBOutlet weak var seleziona: DLRadioButton!
     
     func initCell(nomeSpecializzazione: String){
         self.nomeSpecializzazione.text = nomeSpecializzazione
-        checkButton.isMultipleSelectionEnabled = true
+        seleziona.isMultipleSelectionEnabled = true
     }
 }
 

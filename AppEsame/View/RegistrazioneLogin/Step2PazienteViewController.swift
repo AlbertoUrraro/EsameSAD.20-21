@@ -10,7 +10,7 @@ import UIKit
 import DLRadioButton
 
 
-class Step2PazienteController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class Step2PazienteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
    
     //In questa variabile riceverò i dati dalla view precedente
     var pazienteStep1 = Utente()
@@ -28,11 +28,11 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = allergieTableView.dequeueReusableCell(withIdentifier: "allergiacell", for: indexPath) as! AllergiaTableViewCell
+        let cell = allergieTableView.dequeueReusableCell(withIdentifier: "allergiacell", for: indexPath) as! AllergieTableViewCell
         cell.layoutIfNeeded()
         cell.initCell(nomeAllergia: allergieVet[indexPath.row])
-        cell.checkButton.tag = indexPath.row
-        cell.checkButton.addTarget(self, action: #selector(checkPressed(sender:)), for: .touchUpInside)
+        cell.seleziona.tag = indexPath.row
+        cell.seleziona.addTarget(self, action: #selector(checkPressed(sender:)), for: .touchUpInside)
        
         return cell
     }
@@ -118,8 +118,7 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
  
-    
-    @IBAction func avantiButton(_ sender: Any) {
+    @IBAction func segueStep3(_ sender: Any) {
         performSegue(withIdentifier: "SegueStep3Paziente", sender: self)
     }
     
@@ -129,7 +128,7 @@ class Step2PazienteController: UIViewController, UITableViewDelegate, UITableVie
         //Con queste istruzioni controllo in quale view sto andando per passare i dati con il prepare for segue
         if segue.identifier == "SegueStep3Paziente"
         {
-            if let destinazione = segue.destination as? Step3PazienteController {
+            if let destinazione = segue.destination as? Step3PazienteViewController {
                
 
                 destinazione.pazienteStep2 = self.pazientePerSegue

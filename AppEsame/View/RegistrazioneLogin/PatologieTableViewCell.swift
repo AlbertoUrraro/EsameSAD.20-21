@@ -8,15 +8,16 @@
 import UIKit
 import DLRadioButton
 
-class PatologiaTableViewCell: UITableViewCell {
+class PatologieTableViewCell: UITableViewCell {
 
    
     @IBOutlet weak var nomePatologia: UILabel!
-    @IBOutlet weak var checkButton: DLRadioButton!
+   
+    @IBOutlet weak var seleziona: DLRadioButton!
     
     func initCell(nomePatologia: String){
         self.nomePatologia.text = nomePatologia
-        checkButton.isMultipleSelectionEnabled = true
+        seleziona.isMultipleSelectionEnabled = true
     }
     
 }

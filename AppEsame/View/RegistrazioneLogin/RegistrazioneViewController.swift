@@ -15,7 +15,6 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     //Collegamenti elemnti interfaccia
     @IBOutlet weak var nome: UITextField!
     @IBOutlet weak var cognome: UITextField!
-
     @IBOutlet weak var codiceFiscale: UITextField!
     @IBOutlet weak var telefono: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -140,7 +139,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
         //Con queste istruzioni controllo in quale view sto andando per passare i dati con il prepare for segue
         if segue.identifier == "SegueStep2Paziente"
         {
-            if let destinazione = segue.destination as? Step2PazienteController {
+            if let destinazione = segue.destination as? Step2PazienteViewController {
                
 
                 destinazione.pazienteStep1 = pazientePerSegue
@@ -149,7 +148,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
         
         if segue.identifier == "SegueStep2Medico"
         {
-            if let destinazione = segue.destination as? Step2MedicoController {
+            if let destinazione = segue.destination as? Step2MedicoViewController {
                
 
                 destinazione.pazienteStep1 = pazientePerSegue

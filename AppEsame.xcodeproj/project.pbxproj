@@ -17,21 +17,25 @@
 		1CC63C9D2649CDFD001AEDEA /* PazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63C9C2649CDFD001AEDEA /* PazienteViewController.swift */; };
 		1CC63C9F2649CE0B001AEDEA /* MedicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63C9E2649CE0B001AEDEA /* MedicoViewController.swift */; };
 		1CC63CA22649E7B1001AEDEA /* RegistrazioneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CA12649E7B1001AEDEA /* RegistrazioneViewController.swift */; };
-		1CC63CA42649EF76001AEDEA /* Step2MedicoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CA32649EF76001AEDEA /* Step2MedicoController.swift */; };
-		1CC63CA62649EF9C001AEDEA /* Step2PazienteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CA52649EF9C001AEDEA /* Step2PazienteController.swift */; };
-		1CC63CA82649F2BD001AEDEA /* Step3PazienteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CA72649F2BD001AEDEA /* Step3PazienteController.swift */; };
+		1CC63CA42649EF76001AEDEA /* Step2MedicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CA32649EF76001AEDEA /* Step2MedicoViewController.swift */; };
+		1CC63CA62649EF9C001AEDEA /* Step2PazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CA52649EF9C001AEDEA /* Step2PazienteViewController.swift */; };
+		1CC63CA82649F2BD001AEDEA /* Step3PazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CA72649F2BD001AEDEA /* Step3PazienteViewController.swift */; };
 		1CC63CAB2649F38B001AEDEA /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CAA2649F38B001AEDEA /* RegistrationController.swift */; };
 		1CC63CAD2649F4B7001AEDEA /* Errore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CAC2649F4B7001AEDEA /* Errore.swift */; };
-		1CDE415F264B48FA0077A163 /* Step4PazienteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE415E264B48FA0077A163 /* Step4PazienteController.swift */; };
+		1CDE415F264B48FA0077A163 /* Step4PazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE415E264B48FA0077A163 /* Step4PazienteViewController.swift */; };
 		1CE128FB2652EDEE00B9EE45 /* AllergiaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE128FA2652EDEE00B9EE45 /* AllergiaDB.swift */; };
 		1CE128FD2652EE1000B9EE45 /* Allergia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE128FC2652EE1000B9EE45 /* Allergia.swift */; };
 		8849864F3CE6C47255D155E2 /* Pods_AppEsame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E15E5C5A7A0AD9E9597180 /* Pods_AppEsame.framework */; };
 		951FC7AA264ABCA5001E8C8A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC7A9264ABCA5001E8C8A /* LoginViewModel.swift */; };
-		951FC7D5264ADF01001E8C8A /* AllergiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC7D4264ADF01001E8C8A /* AllergiaTableViewCell.swift */; };
+		951FC7D5264ADF01001E8C8A /* AllergieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC7D4264ADF01001E8C8A /* AllergieTableViewCell.swift */; };
+		953BC32D2655589D003F09E3 /* SintomiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953BC32C2655589D003F09E3 /* SintomiViewController.swift */; };
+		953BC330265558F1003F09E3 /* SintomiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953BC32F265558F1003F09E3 /* SintomiTableViewCell.swift */; };
+		953BC33326555F50003F09E3 /* ParametriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953BC33226555F50003F09E3 /* ParametriViewController.swift */; };
+		953BC3362655601F003F09E3 /* ParametriTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953BC3352655601F003F09E3 /* ParametriTableViewCell.swift */; };
 		955D5E6C2652CC9A00996BC2 /* Paziente.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955D5E6B2652CC9A00996BC2 /* Paziente.storyboard */; };
-		955D5E6F2652D21100996BC2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D5E6E2652D21100996BC2 /* TabBarController.swift */; };
-		955D5E722652D26800996BC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D5E712652D26800996BC2 /* HomeViewController.swift */; };
-		955D5E822652E3F000996BC2 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D5E812652E3F000996BC2 /* HomeTableViewCell.swift */; };
+		955D5E6F2652D21100996BC2 /* PazienteTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D5E6E2652D21100996BC2 /* PazienteTabBarController.swift */; };
+		955D5E722652D26800996BC2 /* HomePazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D5E712652D26800996BC2 /* HomePazienteViewController.swift */; };
+		955D5E822652E3F000996BC2 /* HomePazienteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D5E812652E3F000996BC2 /* HomePazienteTableViewCell.swift */; };
 		95CF849626499E00006D6517 /* Utente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF849526499E00006D6517 /* Utente.swift */; };
 		95CF849A26499E15006D6517 /* Paziente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF849926499E14006D6517 /* Paziente.swift */; };
 		95CF849D26499E39006D6517 /* Medico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF849C26499E39006D6517 /* Medico.swift */; };
@@ -40,8 +44,8 @@
 		95CF84A726499EB0006D6517 /* Farmaco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF84A626499EB0006D6517 /* Farmaco.swift */; };
 		95CF84AA26499EC7006D6517 /* Richiesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF84A926499EC7006D6517 /* Richiesta.swift */; };
 		95CF84AD26499ED6006D6517 /* Sintomo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF84AC26499ED6006D6517 /* Sintomo.swift */; };
-		95CFE0D2264D791400EFE631 /* PatologiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFE0D1264D791400EFE631 /* PatologiaTableViewCell.swift */; };
-		95CFE0D6264D7F0300EFE631 /* DottoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFE0D5264D7F0300EFE631 /* DottoreTableViewCell.swift */; };
+		95CFE0D2264D791400EFE631 /* PatologieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFE0D1264D791400EFE631 /* PatologieTableViewCell.swift */; };
+		95CFE0D6264D7F0300EFE631 /* MediciTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFE0D5264D7F0300EFE631 /* MediciTableViewCell.swift */; };
 		95F25195265009B8008CDB3C /* SpecializzazioneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F25194265009B8008CDB3C /* SpecializzazioneTableViewCell.swift */; };
 		DF29760A2626410300933712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2976092626410300933712 /* AppDelegate.swift */; };
 		DF29760C2626410300933712 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF29760B2626410300933712 /* SceneDelegate.swift */; };
@@ -63,22 +67,26 @@
 		1CC63C9C2649CDFD001AEDEA /* PazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazienteViewController.swift; sourceTree = "<group>"; };
 		1CC63C9E2649CE0B001AEDEA /* MedicoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicoViewController.swift; sourceTree = "<group>"; };
 		1CC63CA12649E7B1001AEDEA /* RegistrazioneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrazioneViewController.swift; sourceTree = "<group>"; };
-		1CC63CA32649EF76001AEDEA /* Step2MedicoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2MedicoController.swift; sourceTree = "<group>"; };
-		1CC63CA52649EF9C001AEDEA /* Step2PazienteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2PazienteController.swift; sourceTree = "<group>"; };
-		1CC63CA72649F2BD001AEDEA /* Step3PazienteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step3PazienteController.swift; sourceTree = "<group>"; };
+		1CC63CA32649EF76001AEDEA /* Step2MedicoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2MedicoViewController.swift; sourceTree = "<group>"; };
+		1CC63CA52649EF9C001AEDEA /* Step2PazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2PazienteViewController.swift; sourceTree = "<group>"; };
+		1CC63CA72649F2BD001AEDEA /* Step3PazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step3PazienteViewController.swift; sourceTree = "<group>"; };
 		1CC63CAA2649F38B001AEDEA /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		1CC63CAC2649F4B7001AEDEA /* Errore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errore.swift; sourceTree = "<group>"; };
-		1CDE415E264B48FA0077A163 /* Step4PazienteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4PazienteController.swift; sourceTree = "<group>"; };
+		1CDE415E264B48FA0077A163 /* Step4PazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4PazienteViewController.swift; sourceTree = "<group>"; };
 		1CE128FA2652EDEE00B9EE45 /* AllergiaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergiaDB.swift; sourceTree = "<group>"; };
 		1CE128FC2652EE1000B9EE45 /* Allergia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergia.swift; sourceTree = "<group>"; };
 		2CBC011D93070918A69A866E /* Pods-AppEsame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppEsame.release.xcconfig"; path = "Target Support Files/Pods-AppEsame/Pods-AppEsame.release.xcconfig"; sourceTree = "<group>"; };
 		88E15E5C5A7A0AD9E9597180 /* Pods_AppEsame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppEsame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		951FC7A9264ABCA5001E8C8A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		951FC7D4264ADF01001E8C8A /* AllergiaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergiaTableViewCell.swift; sourceTree = "<group>"; };
+		951FC7D4264ADF01001E8C8A /* AllergieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergieTableViewCell.swift; sourceTree = "<group>"; };
+		953BC32C2655589D003F09E3 /* SintomiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SintomiViewController.swift; sourceTree = "<group>"; };
+		953BC32F265558F1003F09E3 /* SintomiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SintomiTableViewCell.swift; sourceTree = "<group>"; };
+		953BC33226555F50003F09E3 /* ParametriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametriViewController.swift; sourceTree = "<group>"; };
+		953BC3352655601F003F09E3 /* ParametriTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametriTableViewCell.swift; sourceTree = "<group>"; };
 		955D5E6B2652CC9A00996BC2 /* Paziente.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Paziente.storyboard; sourceTree = "<group>"; };
-		955D5E6E2652D21100996BC2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		955D5E712652D26800996BC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		955D5E812652E3F000996BC2 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		955D5E6E2652D21100996BC2 /* PazienteTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazienteTabBarController.swift; sourceTree = "<group>"; };
+		955D5E712652D26800996BC2 /* HomePazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePazienteViewController.swift; sourceTree = "<group>"; };
+		955D5E812652E3F000996BC2 /* HomePazienteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePazienteTableViewCell.swift; sourceTree = "<group>"; };
 		95CF849526499E00006D6517 /* Utente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utente.swift; sourceTree = "<group>"; };
 		95CF849926499E14006D6517 /* Paziente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paziente.swift; sourceTree = "<group>"; };
 		95CF849C26499E39006D6517 /* Medico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medico.swift; sourceTree = "<group>"; };
@@ -87,8 +95,8 @@
 		95CF84A626499EB0006D6517 /* Farmaco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farmaco.swift; sourceTree = "<group>"; };
 		95CF84A926499EC7006D6517 /* Richiesta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Richiesta.swift; sourceTree = "<group>"; };
 		95CF84AC26499ED6006D6517 /* Sintomo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sintomo.swift; sourceTree = "<group>"; };
-		95CFE0D1264D791400EFE631 /* PatologiaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatologiaTableViewCell.swift; sourceTree = "<group>"; };
-		95CFE0D5264D7F0300EFE631 /* DottoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottoreTableViewCell.swift; sourceTree = "<group>"; };
+		95CFE0D1264D791400EFE631 /* PatologieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatologieTableViewCell.swift; sourceTree = "<group>"; };
+		95CFE0D5264D7F0300EFE631 /* MediciTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediciTableViewCell.swift; sourceTree = "<group>"; };
 		95F25194265009B8008CDB3C /* SpecializzazioneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecializzazioneTableViewCell.swift; sourceTree = "<group>"; };
 		DF2976062626410300933712 /* AppEsame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppEsame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2976092626410300933712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,13 +154,13 @@
 				DF29760F2626410300933712 /* Main.storyboard */,
 				DF29760D2626410300933712 /* LoginViewController.swift */,
 				1CC63CA12649E7B1001AEDEA /* RegistrazioneViewController.swift */,
-				1CC63CA32649EF76001AEDEA /* Step2MedicoController.swift */,
-				1CC63CA52649EF9C001AEDEA /* Step2PazienteController.swift */,
-				1CC63CA72649F2BD001AEDEA /* Step3PazienteController.swift */,
-				1CDE415E264B48FA0077A163 /* Step4PazienteController.swift */,
-				951FC7D4264ADF01001E8C8A /* AllergiaTableViewCell.swift */,
-				95CFE0D1264D791400EFE631 /* PatologiaTableViewCell.swift */,
-				95CFE0D5264D7F0300EFE631 /* DottoreTableViewCell.swift */,
+				1CC63CA32649EF76001AEDEA /* Step2MedicoViewController.swift */,
+				1CC63CA52649EF9C001AEDEA /* Step2PazienteViewController.swift */,
+				1CC63CA72649F2BD001AEDEA /* Step3PazienteViewController.swift */,
+				1CDE415E264B48FA0077A163 /* Step4PazienteViewController.swift */,
+				951FC7D4264ADF01001E8C8A /* AllergieTableViewCell.swift */,
+				95CFE0D1264D791400EFE631 /* PatologieTableViewCell.swift */,
+				95CFE0D5264D7F0300EFE631 /* MediciTableViewCell.swift */,
 				95F25194265009B8008CDB3C /* SpecializzazioneTableViewCell.swift */,
 			);
 			path = RegistrazioneLogin;
@@ -180,9 +188,13 @@
 			isa = PBXGroup;
 			children = (
 				955D5E6B2652CC9A00996BC2 /* Paziente.storyboard */,
-				955D5E812652E3F000996BC2 /* HomeTableViewCell.swift */,
-				955D5E6E2652D21100996BC2 /* TabBarController.swift */,
-				955D5E712652D26800996BC2 /* HomeViewController.swift */,
+				955D5E812652E3F000996BC2 /* HomePazienteTableViewCell.swift */,
+				955D5E6E2652D21100996BC2 /* PazienteTabBarController.swift */,
+				955D5E712652D26800996BC2 /* HomePazienteViewController.swift */,
+				953BC32C2655589D003F09E3 /* SintomiViewController.swift */,
+				953BC32F265558F1003F09E3 /* SintomiTableViewCell.swift */,
+				953BC33226555F50003F09E3 /* ParametriViewController.swift */,
+				953BC3352655601F003F09E3 /* ParametriTableViewCell.swift */,
 			);
 			path = Paziente;
 			sourceTree = "<group>";
@@ -365,9 +377,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF29760E2626410300933712 /* LoginViewController.swift in Sources */,
-				955D5E6F2652D21100996BC2 /* TabBarController.swift in Sources */,
-				1CC63CA82649F2BD001AEDEA /* Step3PazienteController.swift in Sources */,
-				95CFE0D2264D791400EFE631 /* PatologiaTableViewCell.swift in Sources */,
+				955D5E6F2652D21100996BC2 /* PazienteTabBarController.swift in Sources */,
+				1CC63CA82649F2BD001AEDEA /* Step3PazienteViewController.swift in Sources */,
+				953BC330265558F1003F09E3 /* SintomiTableViewCell.swift in Sources */,
+				95CFE0D2264D791400EFE631 /* PatologieTableViewCell.swift in Sources */,
 				1C43DCCA264F08FB001998F9 /* PatologiaDB.swift in Sources */,
 				1C28ABF4264DD7DE00F86CFD /* DBManager.swift in Sources */,
 				1CE128FD2652EE1000B9EE45 /* Allergia.swift in Sources */,
@@ -378,27 +391,30 @@
 				1CC63CAD2649F4B7001AEDEA /* Errore.swift in Sources */,
 				1C28ABF8264DE12900F86CFD /* MedicoDB.swift in Sources */,
 				1CC63CA22649E7B1001AEDEA /* RegistrazioneViewController.swift in Sources */,
+				953BC3362655601F003F09E3 /* ParametriTableViewCell.swift in Sources */,
 				95F25195265009B8008CDB3C /* SpecializzazioneTableViewCell.swift in Sources */,
 				95CF84A726499EB0006D6517 /* Farmaco.swift in Sources */,
 				1C28ABF6264DD7E400F86CFD /* PazienteDB.swift in Sources */,
 				95CF84A426499E92006D6517 /* Ricetta.swift in Sources */,
 				95CF849A26499E15006D6517 /* Paziente.swift in Sources */,
+				953BC33326555F50003F09E3 /* ParametriViewController.swift in Sources */,
 				1CC63CAB2649F38B001AEDEA /* RegistrationController.swift in Sources */,
 				1C43DCCC264F1515001998F9 /* SintomoDB.swift in Sources */,
-				1CC63CA42649EF76001AEDEA /* Step2MedicoController.swift in Sources */,
-				1CC63CA62649EF9C001AEDEA /* Step2PazienteController.swift in Sources */,
+				1CC63CA42649EF76001AEDEA /* Step2MedicoViewController.swift in Sources */,
+				1CC63CA62649EF9C001AEDEA /* Step2PazienteViewController.swift in Sources */,
 				1CC63C9D2649CDFD001AEDEA /* PazienteViewController.swift in Sources */,
 				1CE128FB2652EDEE00B9EE45 /* AllergiaDB.swift in Sources */,
 				95CF84AA26499EC7006D6517 /* Richiesta.swift in Sources */,
-				951FC7D5264ADF01001E8C8A /* AllergiaTableViewCell.swift in Sources */,
-				1CDE415F264B48FA0077A163 /* Step4PazienteController.swift in Sources */,
+				951FC7D5264ADF01001E8C8A /* AllergieTableViewCell.swift in Sources */,
+				1CDE415F264B48FA0077A163 /* Step4PazienteViewController.swift in Sources */,
 				95CF84AD26499ED6006D6517 /* Sintomo.swift in Sources */,
 				DF29760C2626410300933712 /* SceneDelegate.swift in Sources */,
 				95CF849626499E00006D6517 /* Utente.swift in Sources */,
-				955D5E722652D26800996BC2 /* HomeViewController.swift in Sources */,
-				95CFE0D6264D7F0300EFE631 /* DottoreTableViewCell.swift in Sources */,
+				955D5E722652D26800996BC2 /* HomePazienteViewController.swift in Sources */,
+				95CFE0D6264D7F0300EFE631 /* MediciTableViewCell.swift in Sources */,
+				953BC32D2655589D003F09E3 /* SintomiViewController.swift in Sources */,
 				1CC63C9F2649CE0B001AEDEA /* MedicoViewController.swift in Sources */,
-				955D5E822652E3F000996BC2 /* HomeTableViewCell.swift in Sources */,
+				955D5E822652E3F000996BC2 /* HomePazienteTableViewCell.swift in Sources */,
 				951FC7AA264ABCA5001E8C8A /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

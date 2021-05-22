@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fBK-Pz-fRe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fBK-Pz-fRe">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -531,7 +531,7 @@
         <!--Specializzazione-->
         <scene sceneID="jsc-cz-ezb">
             <objects>
-                <viewController storyboardIdentifier="Step2MedicoController" id="rzB-W6-URF" customClass="Step2MedicoController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Step2MedicoController" id="rzB-W6-URF" customClass="Step2MedicoViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zHR-Pd-eCD">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -551,7 +551,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="specializzazionecell" rowHeight="73" id="QW2-NS-a47" customClass="SpecializzazioneTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49" width="350" height="73"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QW2-NS-a47" id="s77-as-yKc">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="73"/>
@@ -596,8 +596,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.94914311169999999" green="0.94871383909999996" blue="0.96864765880000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <outlet property="checkButton" destination="kK6-9T-FXN" id="rLM-En-VSz"/>
                                             <outlet property="nomeSpecializzazione" destination="wCn-b5-MsB" id="bqr-Co-m2a"/>
+                                            <outlet property="seleziona" destination="kK6-9T-FXN" id="KXE-0N-VhA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -630,7 +630,7 @@
         <!--Allergie-->
         <scene sceneID="tqd-S1-0sQ">
             <objects>
-                <viewController storyboardIdentifier="Step2PazienteController" id="6Jp-Q4-NBE" customClass="Step2PazienteController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Step2PazienteController" id="6Jp-Q4-NBE" customClass="Step2PazienteViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UMn-nA-LQZ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -643,8 +643,8 @@
                                     <constraint firstAttribute="height" constant="566" id="YNL-nV-srk"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="allergiacell" rowHeight="73" id="7LA-Mv-y8L" customClass="AllergiaTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49" width="350" height="73"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="allergiacell" rowHeight="73" id="7LA-Mv-y8L" customClass="AllergieTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7LA-Mv-y8L" id="VP7-7v-eH0">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="73"/>
@@ -680,9 +680,6 @@
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="checkAction:" destination="7LA-Mv-y8L" eventType="touchUpInside" id="J7T-LU-JQA"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.94914311169999999" green="0.94871383909999996" blue="0.96864765880000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -697,8 +694,8 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="checkButton" destination="Ef8-0s-swH" id="GtQ-Tb-xMZ"/>
                                             <outlet property="nomeAllergia" destination="sFa-iP-jhB" id="SWz-Sc-LJs"/>
+                                            <outlet property="seleziona" destination="Ef8-0s-swH" id="55h-SN-bnc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -718,7 +715,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="avantiButton:" destination="6Jp-Q4-NBE" eventType="touchUpInside" id="aGr-v4-1QO"/>
+                                    <action selector="segueStep3:" destination="6Jp-Q4-NBE" eventType="touchUpInside" id="AEB-JG-LUX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -749,7 +746,7 @@
         <!--Patologie-->
         <scene sceneID="qUc-ui-yLu">
             <objects>
-                <viewController storyboardIdentifier="Step3PazienteController" id="jQn-8z-eqb" customClass="Step3PazienteController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Step3PazienteController" id="jQn-8z-eqb" customClass="Step3PazienteViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="klo-de-mSI">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -761,8 +758,8 @@
                                     <constraint firstAttribute="height" constant="566" id="5oV-OS-Acb"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="patologiacell" rowHeight="73" id="ZvV-Zf-DEX" customClass="PatologiaTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49" width="350" height="73"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="patologiacell" rowHeight="73" id="ZvV-Zf-DEX" customClass="PatologieTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZvV-Zf-DEX" id="SkJ-of-JEO">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="73"/>
@@ -812,8 +809,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.94914311169999999" green="0.94871383909999996" blue="0.96864765880000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <outlet property="checkButton" destination="rG0-3P-q5J" id="mrP-nP-MPO"/>
                                             <outlet property="nomePatologia" destination="v6Q-8f-ANI" id="l9I-4o-VSY"/>
+                                            <outlet property="seleziona" destination="rG0-3P-q5J" id="yZq-Bt-uQr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -829,7 +826,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="avantiButton:" destination="jQn-8z-eqb" eventType="touchUpInside" id="Pbf-Tx-wXd"/>
+                                    <action selector="segueStep4:" destination="jQn-8z-eqb" eventType="touchUpInside" id="V5O-uq-dbt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -856,10 +853,10 @@
             </objects>
             <point key="canvasLocation" x="2427.6923076923076" y="-215.40284360189571"/>
         </scene>
-        <!--Dottori-->
+        <!--Medici-->
         <scene sceneID="rNh-Ks-Neg">
             <objects>
-                <viewController storyboardIdentifier="Step4PazienteController" id="Vf3-3n-muQ" customClass="Step4PazienteController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Step4PazienteController" id="Vf3-3n-muQ" customClass="Step4PazienteViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kny-Ow-nLi">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -877,8 +874,8 @@
                                 <rect key="frame" x="0.0" y="29" width="390" height="560"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="dottorecell" rowHeight="100" id="pKc-tU-tPe" customClass="DottoreTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49" width="350" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="medicocell" rowHeight="100" id="pKc-tU-tPe" customClass="MediciTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pKc-tU-tPe" id="iU3-aX-MwG">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="100"/>
@@ -986,10 +983,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="aggiungiButton" destination="wSC-ga-ZUH" id="1Ny-38-QSf"/>
                                             <outlet property="cognome" destination="fOk-LZ-IDE" id="hvn-JF-G5p"/>
                                             <outlet property="indirizzo" destination="8ZT-mq-ivB" id="eCH-sb-6tj"/>
                                             <outlet property="nome" destination="nwk-Tk-QZ3" id="gau-c8-fvY"/>
+                                            <outlet property="seleziona" destination="wSC-ga-ZUH" id="EGl-5t-zzR"/>
                                             <outlet property="specializzazione" destination="cln-ce-XMt" id="MWH-VT-9vJ"/>
                                         </connections>
                                     </tableViewCell>
@@ -1026,9 +1023,9 @@
                             <constraint firstItem="J6l-vT-hky" firstAttribute="top" secondItem="kny-Ow-nLi" secondAttribute="top" constant="314" id="yLf-TD-FAK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Dottori" id="VQv-Vq-BxP"/>
+                    <navigationItem key="navigationItem" title="Medici" id="VQv-Vq-BxP"/>
                     <connections>
-                        <outlet property="dottoriTableView" destination="LWl-WV-CbK" id="sw6-fe-lxY"/>
+                        <outlet property="mediciTableView" destination="LWl-WV-CbK" id="vXF-Xa-b8d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0f-Kp-ssb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
