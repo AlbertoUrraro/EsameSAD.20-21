@@ -29,6 +29,9 @@ class PazienteDB{
             "password": paziente.password,
             "allergia": paziente.allergie,
             "patologie": paziente.patologie,
+            "indirizzo": paziente.indirizzo,
+            "citta": paziente.citta,
+            "cap": paziente.cap,
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -58,8 +61,11 @@ class PazienteDB{
                 let password = data["password"] as? String ?? ""
                 let allergie = data["allergia"] as? [String] ?? []
                 let patologie = data["patologie"] as? [String] ?? []
+                let indirizzo = data["indirizzo"] as? String ?? ""
+                let citta = data["citta"] as? String ?? ""
+                let cap = data["cap"] as? String ?? ""
                 
-                let paziente = Paziente(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie)
+                let paziente = Paziente(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return paziente
                 
@@ -88,8 +94,11 @@ class PazienteDB{
                 let password = data["password"] as? String ?? ""
                 let allergie = data["allergie"] as? [String] ?? []
                 let patologie = data["patologie"] as? [String] ?? []
+                let indirizzo = data["indirizzo"] as? String ?? ""
+                let citta = data["citta"] as? String ?? ""
+                let cap = data["cap"] as? String ?? ""
                 
-                let paziente = Paziente(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie)
+                let paziente = Paziente(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return paziente
                 

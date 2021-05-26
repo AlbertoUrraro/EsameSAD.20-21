@@ -15,9 +15,9 @@ class Medico: Utente{
     var medicoDB = MedicoDB()
     
     //Costruttore
-    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String,password: String, specializzazione: String) {
+    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String,password: String, specializzazione: String, indirizzo: String, citta: String, cap: String) {
         self.specializzazione = specializzazione
-        super.init(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password)
+        super.init(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
     }
     
     //Costruttore vuoto
@@ -54,11 +54,14 @@ class Medico: Utente{
                 let email = res.email
                 let tipo = res.tipo
                 let password = res.password
-                let specializzazione = res.specializzazione 
+                let specializzazione = res.specializzazione
+                let indirizzo = res.indirizzo
+                let citta = res.citta
+                let cap = res.cap
                 
                 
                 
-                let medico = Medico(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
+                let medico = Medico(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return medico
                 
@@ -87,11 +90,14 @@ class Medico: Utente{
             let tipo = res.tipo
             let password = res.password
             let specializzazione = res.specializzazione
+            let indirizzo = res.indirizzo
+            let citta = res.citta
+            let cap = res.cap
             
             
             
             
-            let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
+            let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
             
             
             finished(medico)
@@ -119,9 +125,12 @@ class Medico: Utente{
                 let tipo = result.tipo
                 let password = result.password
                 let specializzazione = result.specializzazione
+                let indirizzo = result.indirizzo
+                let citta = result.citta
+                let cap = result.cap
                 
                 
-                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return medico
                 

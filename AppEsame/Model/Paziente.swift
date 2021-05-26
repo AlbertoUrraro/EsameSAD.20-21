@@ -16,10 +16,10 @@ class Paziente: Utente{
     var pazienteDB = PazienteDB()
     
     //Costruttore
-    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, allergie: [String], patologie: [String]) {
+    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, allergie: [String], patologie: [String], indirizzo: String, citta: String, cap: String) {
         self.allergie = allergie
         self.patologie = patologie
-        super.init(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password)
+        super.init(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
     }
     
     //Costruttore vuoto
@@ -45,7 +45,10 @@ class Paziente: Utente{
         self.setTelefono(telefono: utente.telefono)
         self.setEmail(email: utente.email)
         self.setTipo(tipo: utente.tipo)
-        self.setPassword(tipo: utente.password)
+        self.setPassword(password: utente.password)
+        self.setIndirizzo(indirizzo: indirizzo)
+        self.setCitta(citta: citta)
+        self.setCap(cap: cap)
     }
     
     
@@ -73,9 +76,12 @@ class Paziente: Utente{
                 let password = res.password
                 let allergie = res.allergie ?? []
                 let patologie = res.patologie ?? []
+                let indirizzo = res.indirizzo
+                let citta = res.citta
+                let cap = res.cap
                 
                 
-                let paziente = Paziente(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie)
+                let paziente = Paziente(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta,cap: cap)
                 
                 return paziente
                 
@@ -103,10 +109,13 @@ class Paziente: Utente{
                 let password = res.password 
                 let allergie = res.allergie ?? []
                 let patologie = res.patologie ?? []
+                let indirizzo = res.indirizzo
+                let citta = res.citta
+                let cap = res.cap
 
                 
                 
-            let paziente = Paziente(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie)
+            let paziente = Paziente(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 
 //            }
