@@ -582,13 +582,13 @@
                         <barButtonItem key="backBarButtonItem" title="  " id="bOs-S6-NF2"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="cap" destination="Xgq-hG-Wha" id="Miw-AK-Wkm"/>
-                        <outlet property="citta" destination="cuh-zM-jii" id="8oU-dU-GAj"/>
+                        <outlet property="cap" destination="Xgq-hG-Wha" id="obc-e2-2OD"/>
+                        <outlet property="citta" destination="cuh-zM-jii" id="fAI-ay-zru"/>
                         <outlet property="codiceFiscale" destination="pa0-vr-zjA" id="qav-VY-Iho"/>
                         <outlet property="cognome" destination="Kjo-yW-qLk" id="0DA-Zd-0Ea"/>
                         <outlet property="dataNascita" destination="gzJ-sf-fvF" id="Fdm-eW-NBa"/>
                         <outlet property="email" destination="Gdx-sO-plQ" id="jPP-6Q-CnI"/>
-                        <outlet property="inditizzo" destination="4qr-UR-GKd" id="rNG-bO-AGx"/>
+                        <outlet property="indirizzo" destination="4qr-UR-GKd" id="ES2-ZV-tnr"/>
                         <outlet property="nome" destination="aW7-XM-rsC" id="l6Y-aX-bHF"/>
                         <outlet property="password" destination="RSD-wQ-mIC" id="l9O-73-o7K"/>
                         <outlet property="ripetiPassword" destination="wrM-x9-qXs" id="BwM-v9-p45"/>
