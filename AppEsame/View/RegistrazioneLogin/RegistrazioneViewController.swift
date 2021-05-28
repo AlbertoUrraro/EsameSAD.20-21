@@ -20,7 +20,9 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var ripetiPassword: UITextField!
-
+    @IBOutlet weak var inditizzo: UITextField!
+    @IBOutlet weak var citta: UITextField!
+    @IBOutlet weak var cap: UITextField!
     
    
     @IBOutlet weak var dataNascita: UITextField!

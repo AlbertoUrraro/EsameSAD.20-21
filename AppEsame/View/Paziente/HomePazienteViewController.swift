@@ -14,7 +14,7 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var homePazienteTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -25,10 +25,15 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
             let image = UIImage(named: "GreenButton.png")
             cell.stato.image = image
         }
-        else {
-            cell.nome.text = "Terapia"+String(indexPath.row)
+        else  if (indexPath.row == 1){
+//            cell.nome.text = "Terapia"+String(indexPath.row)
+            cell.nome.text = "Terapia"
             let image = UIImage(named: "RedButton.png")
             cell.stato.image = image
+        }
+        else{
+            cell.nome.text = "Storico terapie"
+            cell.stato.isHidden = true
         }
 
         return cell
@@ -45,10 +50,14 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
         if (indexPath.row == 0){
             performSegue(withIdentifier: "SintomiController", sender: self)
         }
-        else{
+        else if (indexPath.row == 1){
             indexRow = indexPath.row
             performSegue(withIdentifier: "TerapiaController", sender: self)
         }
+        else{
+            
+        }
+      
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

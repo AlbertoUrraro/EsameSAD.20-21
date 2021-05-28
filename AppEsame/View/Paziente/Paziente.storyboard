@@ -46,16 +46,280 @@
         <!--CartellaClinica-->
         <scene sceneID="R3J-sl-h49">
             <objects>
-                <navigationController id="GJR-qc-JfP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CartellaClinicaViewController" id="GJR-qc-JfP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="CartellaClinica" image="cartellaclinica" id="uzG-CU-7DR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JCA-B6-NFH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.55863171820000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
+                    <connections>
+                        <segue destination="Ht6-4R-pfK" kind="relationship" relationship="rootViewController" id="52N-kf-D2R"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0f3-rs-sMo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-494" y="207"/>
+        </scene>
+        <!--Cartella Clinica View Controller-->
+        <scene sceneID="xVE-1S-TrP">
+            <objects>
+                <viewController id="Ht6-4R-pfK" customClass="CartellaClinicaViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="goq-md-lCc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SfondoTable" translatesAutoresizingMaskIntoConstraints="NO" id="3XT-md-WE2">
+                                <rect key="frame" x="15" y="146" width="384" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="343" id="3Mk-r1-5zv"/>
+                                    <constraint firstAttribute="width" constant="384" id="Ewj-Xt-G4r"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1T4-3F-J04">
+                                <rect key="frame" x="20" y="146" width="374" height="332"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="332" id="27T-QA-2Nv"/>
+                                    <constraint firstAttribute="width" constant="374" id="rfD-dh-aBK"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartellaclinicacell" rowHeight="58" id="jh1-cx-ii4" customClass="CartellaClinicaTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="58"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jh1-cx-ii4" id="ObW-yQ-bqd">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL2-aW-c40">
+                                                    <rect key="frame" x="20" y="11" width="164" height="35.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="164" id="GlQ-xM-8nZ"/>
+                                                        <constraint firstAttribute="height" constant="21" id="qw7-m1-YK6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAz-gg-U2n">
+                                                    <rect key="frame" x="259" y="6" width="69" height="38"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.55863171820000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <state key="normal" title="Visualizza">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jAz-gg-U2n" firstAttribute="top" secondItem="ObW-yQ-bqd" secondAttribute="topMargin" constant="-5" id="JlF-hT-3Tw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="jAz-gg-U2n" secondAttribute="bottom" constant="3" id="XFe-b8-3wz"/>
+                                                <constraint firstItem="mL2-aW-c40" firstAttribute="leading" secondItem="ObW-yQ-bqd" secondAttribute="leadingMargin" id="aT3-jR-Efr"/>
+                                                <constraint firstItem="jAz-gg-U2n" firstAttribute="leading" secondItem="mL2-aW-c40" secondAttribute="trailing" constant="75" id="exH-Mf-ctB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="mL2-aW-c40" secondAttribute="bottom" constant="0.5" id="qXD-np-1Zg"/>
+                                                <constraint firstItem="mL2-aW-c40" firstAttribute="top" secondItem="ObW-yQ-bqd" secondAttribute="topMargin" id="tGX-ac-WHL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titolo" destination="mL2-aW-c40" id="yeL-1X-jEs"/>
+                                            <outlet property="visualizza" destination="jAz-gg-U2n" id="JgA-1B-Lsi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ht6-4R-pfK" id="qQy-65-NWq"/>
+                                    <outlet property="delegate" destination="Ht6-4R-pfK" id="gmJ-6T-gv1"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xBz-Pw-wjC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xBz-Pw-wjC" firstAttribute="bottom" secondItem="1T4-3F-J04" secondAttribute="bottom" constant="335" id="Eah-il-rJ2"/>
+                            <constraint firstItem="xBz-Pw-wjC" firstAttribute="bottom" secondItem="3XT-md-WE2" secondAttribute="bottom" constant="324" id="FL4-vO-ITR"/>
+                            <constraint firstItem="xBz-Pw-wjC" firstAttribute="trailing" secondItem="3XT-md-WE2" secondAttribute="trailing" constant="15" id="Yey-ga-5bH"/>
+                            <constraint firstItem="3XT-md-WE2" firstAttribute="top" secondItem="xBz-Pw-wjC" secondAttribute="top" constant="58" id="YiY-9Z-V7A"/>
+                            <constraint firstItem="1T4-3F-J04" firstAttribute="leading" secondItem="xBz-Pw-wjC" secondAttribute="leading" constant="20" id="aca-V4-yZ2"/>
+                            <constraint firstItem="1T4-3F-J04" firstAttribute="top" secondItem="xBz-Pw-wjC" secondAttribute="top" constant="58" id="f0K-4u-Xwg"/>
+                            <constraint firstItem="xBz-Pw-wjC" firstAttribute="trailing" secondItem="1T4-3F-J04" secondAttribute="trailing" constant="20" id="gog-jK-0oL"/>
+                            <constraint firstItem="3XT-md-WE2" firstAttribute="leading" secondItem="xBz-Pw-wjC" secondAttribute="leading" constant="15" id="tI1-Vy-K6V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TUc-wU-JKa">
+                        <barButtonItem key="backBarButtonItem" title="  " id="hbS-gN-N1i"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cartellaClinicaTableView" destination="1T4-3F-J04" id="Mut-ac-FPd"/>
+                        <segue destination="RLr-D0-04j" kind="show" identifier="PatologieController" id="CbM-96-AFP"/>
+                        <segue destination="oSc-RB-d9m" kind="show" identifier="OperazioniController" id="SRb-xR-AxP"/>
+                        <segue destination="Nch-fZ-nLi" kind="show" identifier="AllergieController" id="5hI-r3-b1q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TUI-eG-p0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="218.84057971014494" y="206.91964285714286"/>
+        </scene>
+        <!--Patologie-->
+        <scene sceneID="m6m-7d-9Qq">
+            <objects>
+                <viewController storyboardIdentifier="PatologieController" id="RLr-D0-04j" customClass="PatologiePazienteViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sqe-Di-aEd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3pL-ws-xap">
+                                <rect key="frame" x="20" y="142" width="374" height="576"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="patologiecell" id="4Fl-8A-77m" customClass="PatologiePazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Fl-8A-77m" id="VF8-uS-MVa">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKY-Va-8qD">
+                                                    <rect key="frame" x="20" y="11" width="334" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nomePatologia" destination="bKY-Va-8qD" id="ahO-7O-7rH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="RLr-D0-04j" id="DHV-K8-8hn"/>
+                                    <outlet property="delegate" destination="RLr-D0-04j" id="UB2-X3-8bY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JRS-GP-Bbd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Patologie" id="6Cg-1y-0ec">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LSH-HX-Wjd"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="patologieTableView" destination="3pL-ws-xap" id="leB-2E-S9l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="haQ-pm-eyl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2086.9565217391305" y="565.17857142857144"/>
+        </scene>
+        <!--Operazioni-->
+        <scene sceneID="fR8-r8-VMW">
+            <objects>
+                <viewController storyboardIdentifier="OperazioniController" id="oSc-RB-d9m" customClass="OperazioniPazienteViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KrB-yG-RyT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rFA-LH-1Iz">
+                                <rect key="frame" x="20" y="136" width="374" height="576"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="operazionicell" id="FHG-Lr-WA8" customClass="OperazioniPazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FHG-Lr-WA8" id="vSi-a8-vyT">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mi0-FF-r1R">
+                                                    <rect key="frame" x="20" y="11" width="334" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nomeOperazione" destination="mi0-FF-r1R" id="1Vu-Cs-pTM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="oSc-RB-d9m" id="c4j-2h-ljA"/>
+                                    <outlet property="delegate" destination="oSc-RB-d9m" id="mSR-Pn-rsG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8tA-bf-LSU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Operazioni" id="D4e-j9-t7J">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TPQ-uv-yzg"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="operazioniTableView" destination="rFA-LH-1Iz" id="N0B-na-3hZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OIc-Hm-cP0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2086.9565217391305" y="1280.3571428571429"/>
+        </scene>
+        <!--Allergie-->
+        <scene sceneID="fw4-Pb-xRF">
+            <objects>
+                <viewController storyboardIdentifier="AllergieController" id="Nch-fZ-nLi" customClass="AllergiePazienteViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Or9-Mb-ekI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aYH-av-cRs">
+                                <rect key="frame" x="20" y="141" width="374" height="576"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="allergiecell" id="Wll-cv-XG4" customClass="AllergiePazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wll-cv-XG4" id="DiF-GE-kBw">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09v-ze-LDS">
+                                                    <rect key="frame" x="20" y="11" width="334" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nomeAllergia" destination="09v-ze-LDS" id="9YF-YV-eIA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Nch-fZ-nLi" id="rTY-2c-6DZ"/>
+                                    <outlet property="delegate" destination="Nch-fZ-nLi" id="Qnm-gv-olg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2f7-MP-B8j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Allergie" id="GIP-xN-74l">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cKd-Qd-lFn"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="allergieTableView" destination="aYH-av-cRs" id="2fy-Sw-luC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sVF-yd-SEw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2086.9565217391305" y="-128.57142857142856"/>
         </scene>
         <!--Home-->
         <scene sceneID="jr6-rY-49Q">
@@ -169,27 +433,101 @@
         <!--Terapia-->
         <scene sceneID="vGj-gV-uB4">
             <objects>
-                <viewController storyboardIdentifier="TerapiaController" id="TV1-eB-xYP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TerapiaController" id="TV1-eB-xYP" customClass="TerapiaViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QT7-Ob-hfB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terapia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYH-gI-Ouf">
-                                <rect key="frame" x="186" y="350" width="56" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SfondoTable" translatesAutoresizingMaskIntoConstraints="NO" id="IMg-BT-e4z">
+                                <rect key="frame" x="20" y="100" width="374" height="562"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="562" id="36J-k0-hOq"/>
+                                    <constraint firstAttribute="width" constant="374" id="aWg-9T-06o"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XlZ-mK-7Oy">
+                                <rect key="frame" x="38" y="118" width="338" height="520"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="520" id="BL8-1j-Etf"/>
+                                    <constraint firstAttribute="width" constant="338" id="ENN-Vv-Jvd"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="terapiacell" rowHeight="71" id="pLs-Xe-5TH" customClass="TerapiaTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="338" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pLs-Xe-5TH" id="DKW-H5-nLi">
+                                            <rect key="frame" x="0.0" y="0.0" width="338" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfe-NB-4BS">
+                                                    <rect key="frame" x="20" y="25" width="173" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="AMi-nV-0RG"/>
+                                                        <constraint firstAttribute="width" constant="173" id="jOP-Vm-JF6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7B-Cc-TKC">
+                                                    <rect key="frame" x="263" y="17" width="46" height="33"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.55863171820000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="4kT-Re-Wu3"/>
+                                                        <constraint firstAttribute="width" constant="46" id="se4-Bu-IVF"/>
+                                                    </constraints>
+                                                    <state key="normal" title="PDF">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="X7B-Cc-TKC" firstAttribute="leading" secondItem="nfe-NB-4BS" secondAttribute="trailing" constant="70" id="3dC-Ex-b4X"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nfe-NB-4BS" secondAttribute="bottom" constant="14" id="4cM-RZ-JCd"/>
+                                                <constraint firstItem="X7B-Cc-TKC" firstAttribute="leading" secondItem="nfe-NB-4BS" secondAttribute="trailing" constant="70" id="CmC-ra-hJu"/>
+                                                <constraint firstItem="X7B-Cc-TKC" firstAttribute="top" secondItem="DKW-H5-nLi" secondAttribute="topMargin" constant="6" id="Vt7-Vt-qee"/>
+                                                <constraint firstItem="nfe-NB-4BS" firstAttribute="leading" secondItem="DKW-H5-nLi" secondAttribute="leadingMargin" id="gfn-jB-Kej"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="X7B-Cc-TKC" secondAttribute="bottom" constant="10" id="lEC-zd-SNz"/>
+                                                <constraint firstItem="nfe-NB-4BS" firstAttribute="top" secondItem="DKW-H5-nLi" secondAttribute="topMargin" constant="14" id="suj-Hx-yy9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="X7B-Cc-TKC" secondAttribute="trailing" constant="9" id="xzQ-Jf-2wv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nomeMedicinale" destination="nfe-NB-4BS" id="mfv-HA-ImS"/>
+                                            <outlet property="pdfButton" destination="X7B-Cc-TKC" id="T1r-PB-5Ly"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TV1-eB-xYP" id="cCm-Gt-PeM"/>
+                                    <outlet property="delegate" destination="TV1-eB-xYP" id="7DJ-EV-929"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="48A-1g-bB2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="48A-1g-bB2" firstAttribute="bottom" secondItem="XlZ-mK-7Oy" secondAttribute="bottom" constant="175" id="6ER-6j-8cz"/>
+                            <constraint firstItem="IMg-BT-e4z" firstAttribute="leading" secondItem="48A-1g-bB2" secondAttribute="leading" constant="20" id="8Z8-dy-PPN"/>
+                            <constraint firstItem="48A-1g-bB2" firstAttribute="trailing" secondItem="IMg-BT-e4z" secondAttribute="trailing" constant="20" id="HMs-Ro-02F"/>
+                            <constraint firstItem="XlZ-mK-7Oy" firstAttribute="top" secondItem="48A-1g-bB2" secondAttribute="top" constant="30" id="Im5-eT-o7d"/>
+                            <constraint firstItem="48A-1g-bB2" firstAttribute="bottom" secondItem="IMg-BT-e4z" secondAttribute="bottom" constant="151" id="Uno-Wy-HPh"/>
+                            <constraint firstItem="XlZ-mK-7Oy" firstAttribute="leading" secondItem="48A-1g-bB2" secondAttribute="leading" constant="38" id="You-PA-TAg"/>
+                            <constraint firstItem="IMg-BT-e4z" firstAttribute="top" secondItem="48A-1g-bB2" secondAttribute="top" constant="12" id="r3f-SX-tUn"/>
+                            <constraint firstItem="48A-1g-bB2" firstAttribute="trailing" secondItem="XlZ-mK-7Oy" secondAttribute="trailing" constant="38" id="sN8-Dz-Zgy"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Terapia" id="k3Z-iH-AeM"/>
+                    <navigationItem key="navigationItem" title="Terapia" id="k3Z-iH-AeM">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.arrow.down" catalog="system" id="O41-fG-zSW"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="terapiaTableView" destination="XlZ-mK-7Oy" id="G4e-hf-evb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUD-gu-GLT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="-234"/>
+            <point key="canvasLocation" x="1154" y="-461"/>
         </scene>
         <!--Sintomi-->
         <scene sceneID="NqC-ZH-lvl">
@@ -312,7 +650,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQY-PO-f03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140.5797101449277" y="-907.36607142857133"/>
+            <point key="canvasLocation" x="1155" y="-1097"/>
         </scene>
         <!--Parametri-->
         <scene sceneID="9er-b1-Cg0">
@@ -442,7 +780,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YL7-za-WVV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1898.5507246376812" y="-907.36607142857133"/>
+            <point key="canvasLocation" x="1919" y="-1097"/>
         </scene>
     </scenes>
     <resources>
@@ -453,6 +791,7 @@
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="circle.circle.fill" catalog="system" width="128" height="121"/>
         <image name="home" width="25" height="25"/>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <image name="telephone" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
