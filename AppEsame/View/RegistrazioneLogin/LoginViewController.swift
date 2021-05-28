@@ -27,9 +27,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         DBManager.shared.openConnection()
         
         //        test da togliere
-        let paziente = Paziente(id: "", nome: "carlo", cognome: "dav", dataNascita: "01/01/01", codiceFiscale: "00100010010010", telefono: "3333333333", email: "email@email.it", tipo: "paziente", password: "psw567", allergie: ["polvere","poline"], patologie: ["patologia1","patologia2"])
+        let paziente = Paziente(id: "", nome: "carlo", cognome: "dav", dataNascita: "01/01/01", codiceFiscale: "00100010010010", telefono: "3333333333", email: "email@email.it", tipo: "paziente", password: "psw567", allergie: ["polvere","poline"], patologie: ["patologia1","patologia2"], indirizzo: "indirizzo", citta: "citta", cap: "cap")
         
-        let medico = Medico(id: "", nome: "paolino", cognome: "paperino", dataNascita: "01/01/01", codiceFiscale: "00100010010010", telefono: "3333333333", email: "email@email.it", tipo: "medico", password: "psw567", specializzazione: "dentista")
+        let medico = Medico(id: "", nome: "paolino", cognome: "paperino", dataNascita: "01/01/01", codiceFiscale: "00100010010010", telefono: "3333333333", email: "email@email.it", tipo: "medico", password: "psw567", specializzazione: "dentista", indirizzo: "indirizzo", citta: "citta", cap: "cap")
         
         
         

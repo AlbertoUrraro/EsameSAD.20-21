@@ -18,9 +18,13 @@ class Utente{
     var email: String  = ""
     var tipo: String  = ""
     var password: String  = ""
+    var indirizzo: String = ""
+    var citta: String = ""
+    var cap: String = ""
+    
     
     //Costruttore
-    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String){
+    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, indirizzo: String, citta: String, cap: String){
         self.id = id
         self.nome = nome
         self.cognome = cognome
@@ -30,6 +34,9 @@ class Utente{
         self.email = email
         self.tipo = tipo
         self.password = password
+        self.indirizzo = indirizzo
+        self.citta = citta
+        self.cap = cap
     }
     
     //Costruttore vuoto
@@ -44,7 +51,10 @@ class Utente{
     func setTelefono(telefono: String){self.telefono = telefono}
     func setEmail(email: String){self.email = email}
     func setTipo(tipo: String){self.tipo = tipo}
-    func setPassword(tipo: String){self.tipo = password}
+    func setPassword(password: String){self.password = password}
+    func setIndirizzo(indirizzo: String){self.indirizzo = indirizzo}
+    func setCitta(citta: String){self.citta = citta}
+    func setCap(cap: String){self.cap = cap}
     
     //Funzione get
     func getId()->String{return self.id}
@@ -55,7 +65,10 @@ class Utente{
     func getTelefono()->String{return self.telefono}
     func getEmail()->String{return self.email}
     func getTipo()->String{return self.tipo}
-    func getPassword()->String{return self.getPassword()}
+    func getPassword()->String{return self.password}
+    func getIndirizzo()->String{return self.indirizzo}
+    func getCitta()->String{return self.citta}
+    func getCap()->String{return self.cap}
     
     
 }

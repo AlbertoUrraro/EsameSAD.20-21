@@ -28,6 +28,9 @@ class MedicoDB{
             "tipo": medico.tipo,
             "password": medico.password,
             "specializzazione": medico.specializzazione,
+            "indirizzo": medico.indirizzo,
+            "citta": medico.citta,
+            "cap": medico.cap,
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -57,8 +60,11 @@ class MedicoDB{
                 let tipo = data["tipo"] as? String ?? ""
                 let password = data["password"] as? String ?? ""
                 let specializzazione = data["specializzazione"] as? String ?? ""
+                let indirizzo = data["indirizzo"] as? String ?? ""
+                let citta = data["citta"] as? String ?? ""
+                let cap = data["cap"] as? String ?? ""
                 
-                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return medico
                 
@@ -87,8 +93,11 @@ class MedicoDB{
                 let tipo = data["tipo"] as? String ?? ""
                 let password = data["password"] as? String ?? ""
                 let specializzazione = data["specializzazione"] as? String ?? ""
+                let indirizzo = data["indirizzo"] as? String ?? ""
+                let citta = data["citta"] as? String ?? ""
+                let cap = data["cap"] as? String ?? ""
                 
-                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return medico
                 
@@ -118,8 +127,11 @@ class MedicoDB{
                 let tipo = data["tipo"] as? String ?? ""
                 let password = data["password"] as? String ?? ""
                 let specializzazione = data["specializzazione"] as? String ?? ""
+                let indirizzo = data["indirizzo"] as? String ?? ""
+                let citta = data["citta"] as? String ?? ""
+                let cap = data["cap"] as? String ?? ""
                 
-                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione)
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return medico
                 

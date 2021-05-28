@@ -20,9 +20,18 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var ripetiPassword: UITextField!
+<<<<<<< HEAD
     @IBOutlet weak var inditizzo: UITextField!
     @IBOutlet weak var citta: UITextField!
     @IBOutlet weak var cap: UITextField!
+=======
+    
+    //Questi tre andranno sostituiti con gli iboutlet una volta aggiunti i campi nella view
+    let indirizzo = "indirizzo"
+    let citta = "citta"
+    let cap = "80100"
+
+>>>>>>> main
     
    
     @IBOutlet weak var dataNascita: UITextField!
@@ -136,7 +145,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let pazientePerSegue = Utente(id: "",  nome: self.nome.text!, cognome: self.cognome.text!, dataNascita: self.dataNascita.text!, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, tipo: self.tipoUtenteSelezionato, password: self.password.text!)
+        let pazientePerSegue = Utente(id: "",  nome: self.nome.text!, cognome: self.cognome.text!, dataNascita: self.dataNascita.text!, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, tipo: self.tipoUtenteSelezionato, password: self.password.text!, indirizzo: self.indirizzo, citta: self.citta, cap: self.cap)
         
         //Con queste istruzioni controllo in quale view sto andando per passare i dati con il prepare for segue
         if segue.identifier == "SegueStep2Paziente"
