@@ -52,8 +52,9 @@ class Paziente: Utente{
     }
     
     
-    func creaPaziente(paziente: Paziente){
-        pazienteDB.creaPaziente(paziente: paziente)
+    func creaPaziente(paziente: Paziente)->String{
+        let  idPaziente = pazienteDB.creaPaziente(paziente: paziente)
+        return idPaziente
     }
     
     func ottieniPazienteDaEmail(emailDaCercare: String, finished: @escaping([Paziente]?) -> Void) {

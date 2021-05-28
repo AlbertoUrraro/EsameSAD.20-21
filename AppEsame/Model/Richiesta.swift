@@ -9,24 +9,45 @@ import Foundation
 
 class Richiesta{
     //Dichiarazione variabili
-    var id: String
-    var tipo: String
-    var note: String
+    var id: String = ""
+    var idPaziente: String = ""
+    var idMedico: String = ""
+    var stato: Bool = false
+    
+    //variabile entità DB
+    var richiestaeDB = RichiestaDB()
     
     //Costruttore
-    init(id:String, tipo:String, note:String){
+    init(id:String, idPaziente: String, idMedico: String, stato: Bool){
         self.id = id
-        self.tipo = tipo
-        self.note = note
+        self.idPaziente = idPaziente
+        self.idMedico = idMedico
+        self.stato = stato
     }
+    
+    //Costruttore vuoto
+    init(){}
     
     //Funzioni set
     func setId(id: String){self.id = id}
-    func setTipo(tipo: String){self.tipo = tipo}
-    func setNote(note: String){self.note = note}
+    func setIdPaziente(idPaziente: String){self.idPaziente = idPaziente}
+    func setIdMedico(idMedico: String){self.idMedico = idMedico}
+    func setIdStato(stato: Bool){self.stato = stato}
+
+    
     
     //Funzioni get
     func getId()->String{return self.id}
-    func getTipo()->String{return self.tipo}
-    func getNote()->String{return self.note}
+    func getIdPaziente()->String{return self.idPaziente}
+    func getIdMedico()->String{return self.idMedico}
+    func getStato()->Bool{return self.stato}
+    
+    
+    func creaRichiesta(richiesta: Richiesta){
+        richiestaeDB.creaRichiesta(richiesta: richiesta)
+    }
+
+
+
+    
 }

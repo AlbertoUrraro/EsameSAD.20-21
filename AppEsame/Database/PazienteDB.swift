@@ -15,7 +15,7 @@ class PazienteDB{
     
     init(){}
     
-    func creaPaziente(paziente: Paziente){
+    func creaPaziente(paziente: Paziente)->String{
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
         ref = db!.collection("paziente").addDocument(data: [
@@ -37,8 +37,11 @@ class PazienteDB{
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
+                
             }
+            
         }
+        return ref!.documentID
     }
     
     func ottieniPazienteDaEmail(emailDaCercare: String, finished: @escaping([Paziente]?) -> Void) {

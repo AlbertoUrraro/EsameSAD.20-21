@@ -12,6 +12,7 @@
 		1C28ABF8264DE12900F86CFD /* MedicoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C28ABF7264DE12900F86CFD /* MedicoDB.swift */; };
 		1C43DCCA264F08FB001998F9 /* PatologiaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43DCC9264F08FB001998F9 /* PatologiaDB.swift */; };
 		1C43DCCC264F1515001998F9 /* SintomoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43DCCB264F1515001998F9 /* SintomoDB.swift */; };
+		1C5922BC266137FB00F5A98F /* RichiestaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5922BB266137FB00F5A98F /* RichiestaDB.swift */; };
 		1CC63C962649C653001AEDEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CC63C952649C653001AEDEA /* GoogleService-Info.plist */; };
 		1CC63C9B2649CBF8001AEDEA /* Medico.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CC63C9A2649CBF8001AEDEA /* Medico.storyboard */; };
 		1CC63C9D2649CDFD001AEDEA /* PazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63C9C2649CDFD001AEDEA /* PazienteViewController.swift */; };
@@ -72,6 +73,7 @@
 		1C28ABF7264DE12900F86CFD /* MedicoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicoDB.swift; sourceTree = "<group>"; };
 		1C43DCC9264F08FB001998F9 /* PatologiaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatologiaDB.swift; sourceTree = "<group>"; };
 		1C43DCCB264F1515001998F9 /* SintomoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SintomoDB.swift; sourceTree = "<group>"; };
+		1C5922BB266137FB00F5A98F /* RichiestaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiestaDB.swift; sourceTree = "<group>"; };
 		1CC63C952649C653001AEDEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1CC63C9A2649CBF8001AEDEA /* Medico.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medico.storyboard; sourceTree = "<group>"; };
 		1CC63C9C2649CDFD001AEDEA /* PazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazienteViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				1C43DCC9264F08FB001998F9 /* PatologiaDB.swift */,
 				1C43DCCB264F1515001998F9 /* SintomoDB.swift */,
 				1CE128FA2652EDEE00B9EE45 /* AllergiaDB.swift */,
+				1C5922BB266137FB00F5A98F /* RichiestaDB.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				95CF849A26499E15006D6517 /* Paziente.swift in Sources */,
 				955FA98626612C8900BC3176 /* OperazioniPazienteTableViewCell.swift in Sources */,
 				953BC33326555F50003F09E3 /* ParametriViewController.swift in Sources */,
+				1C5922BC266137FB00F5A98F /* RichiestaDB.swift in Sources */,
 				1CC63CAB2649F38B001AEDEA /* RegistrationController.swift in Sources */,
 				1C43DCCC264F1515001998F9 /* SintomoDB.swift in Sources */,
 				1CC63CA42649EF76001AEDEA /* Step2MedicoViewController.swift in Sources */,
