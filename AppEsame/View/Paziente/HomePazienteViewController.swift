@@ -100,18 +100,33 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
             heightConstraintlabel.isActive = true
             widthConstraintlabel.isActive = true
             
-            let labelItem = UIBarButtonItem.init(customView: label)
-            let logoImage = UIImage.init(named: "user.png")
-            let logoImageView = UIImageView.init(image: logoImage)
-            logoImageView.frame = CGRect(x:0.0,y:0.0, width:60,height:25.0)
-            logoImageView.contentMode = .scaleAspectFit
-            let imageItem = UIBarButtonItem.init(customView: logoImageView)
-            let widthConstraint = logoImageView.widthAnchor.constraint(equalToConstant: 60)
-            let heightConstraint = logoImageView.heightAnchor.constraint(equalToConstant: 25)
+            
+            let profiloButton  = UIButton(type: .custom)
+            profiloButton.setImage(UIImage(named: "user.png"), for: .normal)
+            profiloButton.frame = CGRect(x:0.0,y:0.0, width:60,height:25.0)
+           let labelItem = UIBarButtonItem.init(customView: label)
+//            let logoImage = UIImage.init(named: "user.png")
+//            let logoImageView = UIImageView.init(image: logoImage)
+//            logoImageView.frame = CGRect(x:0.0,y:0.0, width:60,height:25.0)
+//            logoImageView.contentMode = .scaleAspectFit
+//            let imageItem = UIBarButtonItem.init(customView: logoImageView)
+            profiloButton.addTarget(self, action: #selector(visualizzaProfilo(sender:)), for: .touchUpInside)
+            let widthConstraint = profiloButton.widthAnchor.constraint(equalToConstant: 60)
+            let heightConstraint = profiloButton.heightAnchor.constraint(equalToConstant: 25)
             heightConstraint.isActive = true
             widthConstraint.isActive = true
+//            let widthConstraint = logoImageView.widthAnchor.constraint(equalToConstant: 60)
+//            let heightConstraint = logoImageView.heightAnchor.constraint(equalToConstant: 25)
+//            heightConstraint.isActive = true
+//            widthConstraint.isActive = true
+            let profiloItem = UIBarButtonItem.init(customView: profiloButton)
             
-            navigationItem.rightBarButtonItems =  [labelItem,imageItem]
+            navigationItem.rightBarButtonItems =  [labelItem,profiloItem]
+          
         }
+    
+    @objc func visualizzaProfilo(sender: UIButton){
+        performSegue(withIdentifier: "ProfiloController", sender: self)
+    }
 
 }

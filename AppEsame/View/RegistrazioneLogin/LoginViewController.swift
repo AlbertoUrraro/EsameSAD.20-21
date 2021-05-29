@@ -15,6 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    @IBOutlet weak var accedi: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +23,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         email.tag = 0
         password.delegate = self
         password.tag = 1
+        
+        //Curva bottone
+        accedi.layer.cornerRadius = 10
         
         //Apro connessione al db
         DBManager.shared.openConnection()
