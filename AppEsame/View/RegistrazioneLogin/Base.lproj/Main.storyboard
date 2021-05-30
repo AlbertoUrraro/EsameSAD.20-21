@@ -147,6 +147,14 @@
                                     <constraint firstAttribute="height" constant="20" id="wey-bz-f6Z"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hq-4B-0zf">
+                                <rect key="frame" x="170" y="604" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Face ID"/>
+                                <connections>
+                                    <action selector="loginFaceID:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zwd-k0-2vQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

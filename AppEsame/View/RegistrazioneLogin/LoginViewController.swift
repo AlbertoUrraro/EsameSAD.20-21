@@ -7,6 +7,8 @@
 
 import UIKit
 //import FirebaseDatabase
+import LocalAuthentication
+
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -14,8 +16,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    
     @IBOutlet weak var accedi: UIButton!
+    
+    
+    //per FaceId
+    var context = LAContext()
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -109,6 +117,45 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
+    
+    @IBAction func loginFaceID(_ sender: Any) {
+        // Get a fresh context for each login. If you use the same context on multiple attempts
+        //  (by commenting out the next line), then a previously successful authentication
+        //  causes the next policy evaluation to succeed without testing biometry again.
+        //  That's usually not what you want.
+        context = LAContext()
+
+        context.localizedCancelTitle = "Enter Username/Password"
+
+        // First check if we have the needed hardware support.
+        var error: NSError?
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
+
+            let reason = "Log in to your account"
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason ) { success, error in
+
+                if success {
+
+                    // Move to the main thread because a state update triggers UI changes.
+                    DispatchQueue.main.async { [unowned self] in
+                        self.performSegue(withIdentifier: "LoginPaziente", sender: self)
+                    }
+
+                } else {
+                    print(error?.localizedDescription ?? "Failed to authenticate")
+
+                    // Fall back to a asking for username and password.
+                    // ...
+                }
+            }
+        } else {
+            print(error?.localizedDescription ?? "Can't evaluate policy")
+
+            // Fall back to a asking for username and password.
+            // ...
+        }
+    }
+    
     
 }
 
