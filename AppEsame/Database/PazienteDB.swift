@@ -18,7 +18,7 @@ class PazienteDB{
     func creaPaziente(paziente: Paziente)->String{
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
-        ref = db!.collection("paziente").addDocument(data: [
+        ref = db!.collection("utente").addDocument(data: [
             "nome": paziente.nome,
             "cognome": paziente.cognome,
             "dataNascita": paziente.dataNascita,
@@ -45,7 +45,7 @@ class PazienteDB{
     }
     
     func ottieniPazienteDaEmail(emailDaCercare: String, finished: @escaping([Paziente]?) -> Void) {
-        db!.collection("paziente").whereField("email", isEqualTo: emailDaCercare).getDocuments() { (queryResult, err) in
+        db!.collection("utente").whereField("email", isEqualTo: emailDaCercare).getDocuments() { (queryResult, err) in
             guard let result = queryResult?.documents else {
                 print("No documents")
                 return
@@ -78,7 +78,7 @@ class PazienteDB{
     }
     
     func ottieniPazienteDaId(idDaCercare: String, finished: @escaping([Paziente]?) -> Void) {
-        db!.collection("paziente").document(idDaCercare).getDocument { (queryResult, err) in
+        db!.collection("utente").document(idDaCercare).getDocument { (queryResult, err) in
             guard let result = queryResult?.data() else {
                 print("No documents")
                 return

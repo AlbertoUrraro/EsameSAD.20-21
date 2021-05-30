@@ -37,18 +37,18 @@ class Paziente: Utente{
     
     
     func pazienteEqUtente(utente:Utente){
-        self.setId(id: utente.id)
-        self.setNome(nome: utente.nome)
-        self.setCognome(cognome: utente.cognome)
-        self.setDataNascita(dataNascita: utente.dataNascita)
-        self.setCodiceFiscale(codiceFiscale: utente.codiceFiscale)
-        self.setTelefono(telefono: utente.telefono)
-        self.setEmail(email: utente.email)
-        self.setTipo(tipo: utente.tipo)
-        self.setPassword(password: utente.password)
-        self.setIndirizzo(indirizzo: indirizzo)
-        self.setCitta(citta: citta)
-        self.setCap(cap: cap)
+        self.setId(id: utente.getId())
+        self.setNome(nome: utente.getNome())
+        self.setCognome(cognome: utente.getCognome())
+        self.setDataNascita(dataNascita: utente.getDataNascita())
+        self.setCodiceFiscale(codiceFiscale: utente.getCodiceFiscale())
+        self.setTelefono(telefono: utente.getTelefono())
+        self.setEmail(email: utente.getEmail())
+        self.setTipo(tipo: utente.getTipo())
+        self.setPassword(password: utente.getPassword())
+        self.setIndirizzo(indirizzo: getIndirizzo())
+        self.setCitta(citta: getCitta())
+        self.setCap(cap: getCap())
     }
     
     
@@ -67,19 +67,19 @@ class Paziente: Utente{
             }
             let pazientiArr = pazientiRes.map{(res) ->Paziente in
                 
-                let nome = res.nome
-                let cognome = res.cognome
-                let dataNascita = res.dataNascita
-                let codiceFiscale = res.codiceFiscale
-                let telefono = res.telefono
-                let email = res.email
-                let tipo = res.tipo
-                let password = res.password
-                let allergie = res.allergie ?? []
-                let patologie = res.patologie ?? []
-                let indirizzo = res.indirizzo
-                let citta = res.citta
-                let cap = res.cap
+                let nome = res.getNome()
+                let cognome = res.getCognome()
+                let dataNascita = res.getDataNascita()
+                let codiceFiscale = res.getCodiceFiscale()
+                let telefono = res.getTelefono()
+                let email = res.getEmail()
+                let tipo = res.getTipo()
+                let password = res.getPassword()
+                let allergie = res.getAllergie() ?? []
+                let patologie = res.getPatologie() ?? []
+                let indirizzo = res.getIndirizzo()
+                let citta = res.getCitta()
+                let cap = res.getCap()
                 
                 
                 let paziente = Paziente(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta,cap: cap)
@@ -100,19 +100,19 @@ class Paziente: Utente{
                 return
             }
                 let  res = pazientiRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
-                let nome = res.nome
-                let cognome = res.cognome 
-                let dataNascita = res.dataNascita 
-                let codiceFiscale = res.codiceFiscale 
-                let telefono = res.telefono 
-                let email = res.email 
-                let tipo = res.tipo 
-                let password = res.password 
-                let allergie = res.allergie ?? []
-                let patologie = res.patologie ?? []
-                let indirizzo = res.indirizzo
-                let citta = res.citta
-                let cap = res.cap
+                let nome = res.getNome()
+                let cognome = res.getCognome()
+                let dataNascita = res.getDataNascita()
+                let codiceFiscale = res.getCodiceFiscale()
+                let telefono = res.getTelefono()
+                let email = res.getEmail()
+                let tipo = res.getTipo()
+                let password = res.getPassword()
+                let allergie = res.getAllergie() ?? []
+                let patologie = res.getPatologie() ?? []
+                let indirizzo = res.getIndirizzo()
+                let citta = res.getCitta()
+                let cap = res.getCap()
 
                 
                 

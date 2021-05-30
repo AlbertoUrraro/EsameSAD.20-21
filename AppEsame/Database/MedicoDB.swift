@@ -18,7 +18,7 @@ class MedicoDB{
     func creaMedico(medico: Medico){
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
-        ref = db!.collection("medico").addDocument(data: [
+        ref = db!.collection("utente").addDocument(data: [
             "nome": medico.nome,
             "cognome": medico.cognome,
             "dataNascita": medico.dataNascita,
@@ -41,7 +41,7 @@ class MedicoDB{
     }
     
     func ottieniMedicoDaEmail(emailDaCercare: String, finished: @escaping([Medico]?) -> Void) {
-        db!.collection("paziente").whereField("email", isEqualTo: emailDaCercare).getDocuments() { (queryResult, err) in
+        db!.collection("utente").whereField("email", isEqualTo: emailDaCercare).getDocuments() { (queryResult, err) in
             guard let result = queryResult?.documents else {
                 print("No documents")
                 return
@@ -74,7 +74,7 @@ class MedicoDB{
     }
     
     func ottieniMedicoDaId(idDaCercare: String, finished: @escaping([Medico]?) -> Void) {
-        db!.collection("medico").document(idDaCercare).getDocument { (queryResult, err) in
+        db!.collection("utente").document(idDaCercare).getDocument { (queryResult, err) in
             guard let result = queryResult?.data() else {
                 print("No documents")
                 return
@@ -108,7 +108,7 @@ class MedicoDB{
     
     
     func ottieniTuttiMedici(finished: @escaping([Medico]?) -> Void) {
-        db!.collection("medico").getDocuments() { (queryResult, err) in
+        db!.collection("utente").whereField("tipo", isEqualTo: "Medico").getDocuments() { (queryResult, err) in
             guard let result = queryResult?.documents else {
                 print("No documents")
                 return

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1F25DA2663CB82001B2DEC /* UtenteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F25D92663CB82001B2DEC /* UtenteDB.swift */; };
 		1C28ABF4264DD7DE00F86CFD /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C28ABF3264DD7DE00F86CFD /* DBManager.swift */; };
 		1C28ABF6264DD7E400F86CFD /* PazienteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C28ABF5264DD7E400F86CFD /* PazienteDB.swift */; };
 		1C28ABF8264DE12900F86CFD /* MedicoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C28ABF7264DE12900F86CFD /* MedicoDB.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C1F25D92663CB82001B2DEC /* UtenteDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtenteDB.swift; sourceTree = "<group>"; };
 		1C28ABF3264DD7DE00F86CFD /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		1C28ABF5264DD7E400F86CFD /* PazienteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PazienteDB.swift; sourceTree = "<group>"; };
 		1C28ABF7264DE12900F86CFD /* MedicoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicoDB.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				1C43DCCB264F1515001998F9 /* SintomoDB.swift */,
 				1CE128FA2652EDEE00B9EE45 /* AllergiaDB.swift */,
 				1C5922BB266137FB00F5A98F /* RichiestaDB.swift */,
+				1C1F25D92663CB82001B2DEC /* UtenteDB.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				1CDE415F264B48FA0077A163 /* Step4PazienteViewController.swift in Sources */,
 				95CF84AD26499ED6006D6517 /* Sintomo.swift in Sources */,
 				DF29760C2626410300933712 /* SceneDelegate.swift in Sources */,
+				1C1F25DA2663CB82001B2DEC /* UtenteDB.swift in Sources */,
 				95CF849626499E00006D6517 /* Utente.swift in Sources */,
 				955D5E722652D26800996BC2 /* HomePazienteViewController.swift in Sources */,
 				95CFE0D6264D7F0300EFE631 /* MediciTableViewCell.swift in Sources */,

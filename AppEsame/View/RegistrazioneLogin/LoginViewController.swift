@@ -30,114 +30,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //Apro connessione al db
         DBManager.shared.openConnection()
         
-        //        test da togliere
-        let paziente = Paziente(id: "", nome: "carlo", cognome: "dav", dataNascita: "01/01/01", codiceFiscale: "00100010010010", telefono: "3333333333", email: "email@email.it", tipo: "paziente", password: "psw567", allergie: ["polvere","poline"], patologie: ["patologia1","patologia2"], indirizzo: "indirizzo", citta: "citta", cap: "cap")
-        
-        let medico = Medico(id: "", nome: "paolino", cognome: "paperino", dataNascita: "01/01/01", codiceFiscale: "00100010010010", telefono: "3333333333", email: "email@email.it", tipo: "medico", password: "psw567", specializzazione: "dentista", indirizzo: "indirizzo", citta: "citta", cap: "cap")
         
         
-        
-        let p = Paziente()
-        
-        //        p.creaPaziente(paziente: paziente)
-        
-//        p.ottieniPazienteDaEmail(emailDaCercare: "kVZgAfgvN0YhuOH3a3rQ"){(pazienti) in
-//
-//            guard let pazientiRes = pazienti else {
-//                print("error")
-//                return
-//            }
-//            for paziente in pazientiRes{
-//                print(paziente.nome)
-//            }
-//
-//        }
-        
-        let m = Medico()
-        
-//               m.creaMedico(medico: medico)
-        
-//        m.ottieniMedicoDaId(idDaCercare: "z9MAfR3569easaCImstB"){(medici) in
-//
-//            guard let mediciRes = medici else {
-//                print("error")
-//                return
-//            }
-//
-//            print(mediciRes.nome," ",mediciRes.cognome)
-//
-//
-//        }
-        
-//        m.ottieniTuttiMedici{(medici) in
-//            
-//            guard let mediciRes = medici else {
-//                print("error")
-//                return
-//            }
-//            for medico in mediciRes{
-//                
-//                print (medico.id, medico.nome)
-//            }
-//            
-//        }
-        
-        let pa = Patologia()
-        
-        //        pa.ottieniPatologiaDaId(idDaCercare: "HPKmmyFqINSPl3MaPurk"){(patologie) in
-        //
-        //            guard let patologieRes = patologie else {
-        //                print("error")
-        //                return
-        //            }
-        //
-        //            print(patologieRes.titolo," ",patologieRes.codiceEsenzione)
-        //
-        //
-        //        }
-        
-//        pa.ottieniTuttePatologie{(patologie) in
-//
-//            guard let patologieRes = patologie else {
-//                print("error")
-//                return
-//            }
-//            for patologia in patologieRes{
-//                print(patologia.id,patologia.titolo,patologia.codiceEsenzione)
-//            }
-//
-//        }
-        
-        let s = Sintomo()
-        let sintomo = Sintomo(id: "", tipo: "mal di testa", descrizione: "mal di testa")
-//        s.creaSintomo(sintomo: sintomo)
-        
-//        s.ottieniSintomoDaId(idDaCercare: "31SUBRjaeefJ6Zi2pFbs"){(sintomi) in
-//
-//            guard let sintomiRes = sintomi else {
-//                print("error")
-//                return
-//            }
-//
-//            print(sintomiRes.tipo," ",sintomiRes.descrizione)
-//
-//
-//        }
-        
-//        s.ottieniTuttiSintomi{(sintomi) in
-//            
-//            guard let sintomiRes = sintomi else {
-//                print("error")
-//                return
-//            }
-//            for sintomo in sintomiRes{
-//                print(sintomo.id,sintomo.tipo,sintomo.descrizione)
-//            }
-//            
-//        }
-        
-        
-        //        fine test da togliere
         
     }
     
@@ -155,6 +49,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.present(alertLogin,animated: true, completion: nil)
         } else {
             print("Accedo all'app")
+            //            performSegue(withIdentifier: "LoginPaziente", sender: self)
+            self.appLogin(email: self.email.text!, password: self.password.text!)
         }
     }
     
@@ -173,6 +69,45 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         //Fa abbassare la view verso il basso se pongo uguale a false, mentre uguale a true è come se nn lo mettessi
         //self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    func appLogin(email: String, password: String){
+        let u = Utente()
+        
+        u.ottieniUtenteDaEmail(emailDaCercare: email){(utenti) in
+            
+            guard let utentiRes = utenti else {
+                print("error")
+                return
+            }
+            if(utentiRes.count == 0){
+                //Popup di errore
+                let alertLogin = UIAlertController(title: "Errore", message: "Email non presente!", preferredStyle: UIAlertController.Style.alert)
+                alertLogin.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (act) in
+                    //Eventuale azione
+                }))
+                self.present(alertLogin,animated: true, completion: nil)
+            } else {
+                if (password == utentiRes[0].getPassword()){
+                    if(utentiRes[0].getTipo() == "Paziente"){
+                        self.performSegue(withIdentifier: "LoginPaziente", sender: self)
+                        
+                    } else {
+                        print("segue medico tab bar")
+                    }
+                } else {
+                    //Popup di errore
+                    let alertLogin = UIAlertController(title: "Errore", message: "Password errata!", preferredStyle: UIAlertController.Style.alert)
+                    alertLogin.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (act) in
+                        //Eventuale azione
+                    }))
+                    self.present(alertLogin,animated: true, completion: nil)
+                }
+                
+            }
+            
+            
+        }
     }
     
 }

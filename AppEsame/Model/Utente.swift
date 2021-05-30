@@ -22,6 +22,9 @@ class Utente{
     var citta: String = ""
     var cap: String = ""
     
+    //variabile entità DB
+    var utenteDB = UtenteDB()
+    
     
     //Costruttore
     init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, indirizzo: String, citta: String, cap: String){
@@ -69,6 +72,40 @@ class Utente{
     func getIndirizzo()->String{return self.indirizzo}
     func getCitta()->String{return self.citta}
     func getCap()->String{return self.cap}
+    
+    
+    func ottieniUtenteDaEmail(emailDaCercare: String, finished: @escaping([Utente]?) -> Void) {
+        
+        utenteDB.ottieniUtenteDaEmail(emailDaCercare: emailDaCercare){(utenti) in
+            
+            guard let utentiRes = utenti else {
+                print("error")
+                return
+            }
+            let utentiArr = utentiRes.map{(res) ->Utente in
+                
+                let nome = res.getNome()
+                let cognome = res.getCognome()
+                let dataNascita = res.getDataNascita()
+                let codiceFiscale = res.getCodiceFiscale()
+                let telefono = res.getTelefono()
+                let email = res.getEmail()
+                let tipo = res.getTipo()
+                let password = res.getPassword()
+                let indirizzo = res.getIndirizzo()
+                let citta = res.getCitta()
+                let cap = res.getCap()
+                
+                
+                
+                let utente = Utente(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
+                
+                return utente
+                
+            }
+            finished(utentiArr)
+        }
+    }
     
     
 }
