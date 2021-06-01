@@ -208,11 +208,22 @@
                         <outlet property="password" destination="b3o-LH-iVo" id="TPA-hA-9ln"/>
                         <segue destination="cfF-oG-uhO" kind="show" identifier="SegueStep1Registrazione" id="PDa-hO-4Ko"/>
                         <segue destination="6sn-P1-NcB" kind="show" identifier="LoginPaziente" id="srj-46-ej1"/>
+                        <segue destination="ExI-G4-RVo" kind="show" identifier="LoginMedico" id="7NM-gg-eWZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-108" y="95"/>
+        </scene>
+        <!--medicocontroller-->
+        <scene sceneID="AMA-vY-30f">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Medico" referencedIdentifier="medicocontroller" id="ExI-G4-RVo" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2Bb-W2-uMu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="04V-Iu-8Jm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="475" y="396"/>
         </scene>
         <!--Registrazione-->
         <scene sceneID="s36-YH-HPK">
@@ -358,7 +369,7 @@
                                     <constraint firstAttribute="width" constant="230" id="KNX-Rj-nUc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ripeti Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wrM-x9-qXs">
                                 <rect key="frame" x="100" y="536" width="230" height="34"/>
@@ -367,7 +378,7 @@
                                     <constraint firstAttribute="width" constant="230" id="urh-Yv-5AA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="e7r-h3-7tw">
                                 <rect key="frame" x="72" y="407" width="20" height="20"/>
@@ -645,7 +656,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uW3-2U-XyH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850.76923076923072" y="94.549763033175353"/>
+            <point key="canvasLocation" x="871" y="95"/>
         </scene>
         <!--Specializzazione-->
         <scene sceneID="jsc-cz-ezb">

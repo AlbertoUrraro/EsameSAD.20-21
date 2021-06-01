@@ -50,7 +50,7 @@ class LoginViewModel{
                         view.performSegue(withIdentifier: "LoginPaziente", sender: self)
                         
                     } else {
-                        print("segue medico tab bar")
+                        view.performSegue(withIdentifier: "LoginMedico", sender: self)
                     }
                 } else {
                     //Popup di errore
