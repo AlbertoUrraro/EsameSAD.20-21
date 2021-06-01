@@ -9,14 +9,14 @@ import Foundation
 
 class Medico: Utente{
     //Dichiarazione variabili
-    var specializzazione: String = ""
+    var specializzazioni: [String] = []
     
     //variabile entità DB
     var medicoDB = MedicoDB()
     
     //Costruttore
-    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String,password: String, specializzazione: String, indirizzo: String, citta: String, cap: String) {
-        self.specializzazione = specializzazione
+    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String,password: String, specializzazioni: [String], indirizzo: String, citta: String, cap: String) {
+        self.specializzazioni = specializzazioni
         super.init(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
     }
     
@@ -26,10 +26,26 @@ class Medico: Utente{
     }
     
     //Funzione set
-    func setSpecializzazione(specializzazione: String){self.specializzazione = specializzazione}
+    func setSpecializzazioni(specializzazioni: [String]){self.specializzazioni = specializzazioni}
     
     //Funzione get
-    func getSpecializzazione()->String{return self.specializzazione}
+    func getSpecializzazioni()->[String]{return self.specializzazioni}
+    
+    
+    func medicoEqUtente(utente:Utente){
+        self.setId(id: utente.getId())
+        self.setNome(nome: utente.getNome())
+        self.setCognome(cognome: utente.getCognome())
+        self.setDataNascita(dataNascita: utente.getDataNascita())
+        self.setCodiceFiscale(codiceFiscale: utente.getCodiceFiscale())
+        self.setTelefono(telefono: utente.getTelefono())
+        self.setEmail(email: utente.getEmail())
+        self.setTipo(tipo: utente.getTipo())
+        self.setPassword(password: utente.getPassword())
+        self.setIndirizzo(indirizzo: getIndirizzo())
+        self.setCitta(citta: getCitta())
+        self.setCap(cap: getCap())
+    }
     
     
     func creaMedico(medico: Medico){
@@ -54,14 +70,14 @@ class Medico: Utente{
                 let email = res.getEmail()
                 let tipo = res.getTipo()
                 let password = res.getPassword()
-                let specializzazione = res.getSpecializzazione()
+                let specializzazioni = res.getSpecializzazioni()
                 let indirizzo = res.getIndirizzo()
                 let citta = res.getCitta()
                 let cap = res.getCap()
                 
                 
                 
-                let medico = Medico(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
+                let medico = Medico(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazioni: specializzazioni, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return medico
                 
@@ -89,7 +105,7 @@ class Medico: Utente{
             let email = res.getEmail()
             let tipo = res.getTipo()
             let password = res.getPassword()
-            let specializzazione = res.getSpecializzazione()
+            let specializzazioni = res.getSpecializzazioni()
             let indirizzo = res.getIndirizzo()
             let citta = res.getCitta()
             let cap = res.getCap()
@@ -97,7 +113,7 @@ class Medico: Utente{
             
             
             
-            let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
+            let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazioni: specializzazioni, indirizzo: indirizzo, citta: citta, cap: cap)
             
             
             finished(medico)
@@ -124,13 +140,13 @@ class Medico: Utente{
                 let email = result.getEmail()
                 let tipo = result.getTipo()
                 let password = result.getPassword()
-                let specializzazione = result.getSpecializzazione()
+                let specializzazioni = result.getSpecializzazioni()
                 let indirizzo = result.getIndirizzo()
                 let citta = result.getCitta()
                 let cap = result.getCap()
                 
                 
-                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazioni: specializzazioni, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return medico
                 

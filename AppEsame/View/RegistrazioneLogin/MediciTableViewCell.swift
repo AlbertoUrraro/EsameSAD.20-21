@@ -20,8 +20,8 @@ class MediciTableViewCell: UITableViewCell {
     func initCell(medico: Medico){
         self.nome.text = medico.getNome() 
         self.cognome.text = medico.getCognome() 
-        self.indirizzo.text = "indirizzo"
-        self.specializzazione.text = medico.specializzazione 
+        self.indirizzo.text = medico.getIndirizzo()
+        self.specializzazione.text = medico.getSpecializzazioni().joined(separator: ",")
         
         seleziona.isMultipleSelectionEnabled = true
     }

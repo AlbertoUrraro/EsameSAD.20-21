@@ -27,7 +27,7 @@ class MedicoDB{
             "email": medico.getEmail(),
             "tipo": medico.getTipo(),
             "password": medico.getPassword(),
-            "specializzazione": medico.getSpecializzazione(),
+            "specializzazioni": medico.getSpecializzazioni(),
             "indirizzo": medico.getIndirizzo(),
             "citta": medico.getCitta(),
             "cap": medico.getCap(),
@@ -59,12 +59,12 @@ class MedicoDB{
                 let email = data["email"] as? String ?? ""
                 let tipo = data["tipo"] as? String ?? ""
                 let password = data["password"] as? String ?? ""
-                let specializzazione = data["specializzazione"] as? String ?? ""
+                let specializzazioni = data["specializzazioni"] as? [String] ?? []
                 let indirizzo = data["indirizzo"] as? String ?? ""
                 let citta = data["citta"] as? String ?? ""
                 let cap = data["cap"] as? String ?? ""
                 
-                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazioni: specializzazioni, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return medico
                 
@@ -92,12 +92,12 @@ class MedicoDB{
                 let email = data["email"] as? String ?? ""
                 let tipo = data["tipo"] as? String ?? ""
                 let password = data["password"] as? String ?? ""
-                let specializzazione = data["specializzazione"] as? String ?? ""
+                let specializzazioni = data["specializzazioni"] as? [String] ?? []
                 let indirizzo = data["indirizzo"] as? String ?? ""
                 let citta = data["citta"] as? String ?? ""
                 let cap = data["cap"] as? String ?? ""
                 
-                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazioni: specializzazioni, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return medico
                 
@@ -126,12 +126,12 @@ class MedicoDB{
                 let email = data["email"] as? String ?? ""
                 let tipo = data["tipo"] as? String ?? ""
                 let password = data["password"] as? String ?? ""
-                let specializzazione = data["specializzazione"] as? String ?? ""
+                let specializzazioni = data["specializzazioni"] as? [String] ?? []
                 let indirizzo = data["indirizzo"] as? String ?? ""
                 let citta = data["citta"] as? String ?? ""
                 let cap = data["cap"] as? String ?? ""
                 
-                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
+                let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazioni: specializzazioni, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return medico
                 

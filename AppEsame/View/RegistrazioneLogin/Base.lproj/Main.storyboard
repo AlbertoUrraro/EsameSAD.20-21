@@ -358,7 +358,7 @@
                                     <constraint firstAttribute="width" constant="230" id="KNX-Rj-nUc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ripeti Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wrM-x9-qXs">
                                 <rect key="frame" x="100" y="536" width="230" height="34"/>
@@ -367,7 +367,7 @@
                                     <constraint firstAttribute="width" constant="230" id="urh-Yv-5AA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="e7r-h3-7tw">
                                 <rect key="frame" x="72" y="407" width="20" height="20"/>
@@ -661,6 +661,10 @@
                                 <state key="normal" title="Registrati">
                                     <color key="titleColor" red="0.99608510729999999" green="0.99606639149999998" blue="0.99607914689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="completaRegistrazioneMedico:" destination="rzB-W6-URF" eventType="touchUpInside" id="rce-P3-QqT"/>
+                                    <segue destination="SbC-jv-PZw" kind="show" identifier="" id="4H0-xT-bqR"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="guz-JP-WDt">
                                 <rect key="frame" x="0.0" y="29" width="390" height="573"/>
@@ -1161,10 +1165,10 @@
             </objects>
             <point key="canvasLocation" x="3770" y="-195"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--medicocontroller-->
         <scene sceneID="RXv-ZX-OYt">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MedicoViewController" id="SbC-jv-PZw" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="MedicoViewController" storyboardName="Medico" referencedIdentifier="medicocontroller" id="SbC-jv-PZw" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="BeC-7l-xpz"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYG-up-cbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

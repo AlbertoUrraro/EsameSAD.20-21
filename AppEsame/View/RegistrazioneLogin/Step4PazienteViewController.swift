@@ -102,15 +102,9 @@ class Step4PazienteViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     @IBAction func compleaRegistrazionePaziente(_ sender: Any) {
-        let p = Paziente()
-        let r = Richiesta()
-        print(mediciSelezionati);
-        let idPaziente = p.creaPaziente(paziente: pazienteStep3)
-        for medico in mediciSelezionati{
-            let richiesta = Richiesta(id: "", idPaziente: idPaziente, idMedico: medico, stato: false)
-            r.creaRichiesta(richiesta: richiesta)
-        }
-       
+        
+        RegistrazioneViewModel.completaRegistrazionePaziente(pazienteStep3: pazienteStep3, mediciSelezionati: mediciSelezionati)
+        
     }
     
 }

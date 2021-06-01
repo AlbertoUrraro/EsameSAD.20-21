@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class LoginViewModel{
     
@@ -25,5 +26,44 @@ class LoginViewModel{
             return errore
         }
         return errore
+    }
+    
+    public static func appLogin(view: UIViewController, email: String,  password: String){
+        let u = Utente()
+        
+        u.ottieniUtenteDaEmail(emailDaCercare: email){(utenti) in
+            
+            guard let utentiRes = utenti else {
+                print("error")
+                return
+            }
+            if(utentiRes.count == 0){
+                //Popup di errore
+                let alertLogin = UIAlertController(title: "Errore", message: "Email non presente!", preferredStyle: UIAlertController.Style.alert)
+                alertLogin.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (act) in
+                    //Eventuale azione
+                }))
+                view.present(alertLogin,animated: true, completion: nil)
+            } else {
+                if (password == utentiRes[0].getPassword()){
+                    if(utentiRes[0].getTipo() == "Paziente"){
+                        view.performSegue(withIdentifier: "LoginPaziente", sender: self)
+                        
+                    } else {
+                        print("segue medico tab bar")
+                    }
+                } else {
+                    //Popup di errore
+                    let alertLogin = UIAlertController(title: "Errore", message: "Password errata!", preferredStyle: UIAlertController.Style.alert)
+                    alertLogin.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (act) in
+                        //Eventuale azione
+                    }))
+                    view.present(alertLogin,animated: true, completion: nil)
+                }
+                
+            }
+            
+            
+        }
     }
 }

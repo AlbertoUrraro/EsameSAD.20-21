@@ -21,8 +21,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //per FaceId
     var context = LAContext()
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +35,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         //Apro connessione al db
         DBManager.shared.openConnection()
-        
-        
-        
         
     }
     
@@ -80,77 +75,37 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func appLogin(email: String, password: String){
-        let u = Utente()
         
-        u.ottieniUtenteDaEmail(emailDaCercare: email){(utenti) in
-            
-            guard let utentiRes = utenti else {
-                print("error")
-                return
-            }
-            if(utentiRes.count == 0){
-                //Popup di errore
-                let alertLogin = UIAlertController(title: "Errore", message: "Email non presente!", preferredStyle: UIAlertController.Style.alert)
-                alertLogin.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (act) in
-                    //Eventuale azione
-                }))
-                self.present(alertLogin,animated: true, completion: nil)
-            } else {
-                if (password == utentiRes[0].getPassword()){
-                    if(utentiRes[0].getTipo() == "Paziente"){
-                        self.performSegue(withIdentifier: "LoginPaziente", sender: self)
-                        
-                    } else {
-                        print("segue medico tab bar")
-                    }
-                } else {
-                    //Popup di errore
-                    let alertLogin = UIAlertController(title: "Errore", message: "Password errata!", preferredStyle: UIAlertController.Style.alert)
-                    alertLogin.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (act) in
-                        //Eventuale azione
-                    }))
-                    self.present(alertLogin,animated: true, completion: nil)
-                }
-                
-            }
-            
-            
-        }
+        LoginViewModel.appLogin(view: self, email: email, password: password)
     }
     
     @IBAction func loginFaceID(_ sender: Any) {
-        // Get a fresh context for each login. If you use the same context on multiple attempts
-        //  (by commenting out the next line), then a previously successful authentication
-        //  causes the next policy evaluation to succeed without testing biometry again.
-        //  That's usually not what you want.
+        
         context = LAContext()
-
+        
         context.localizedCancelTitle = "Enter Username/Password"
-
+        
         // First check if we have the needed hardware support.
         var error: NSError?
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
-
+            
             let reason = "Log in to your account"
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason ) { success, error in
-
+                
                 if success {
-
+                    
                     // Move to the main thread because a state update triggers UI changes.
                     DispatchQueue.main.async { [unowned self] in
                         self.performSegue(withIdentifier: "LoginPaziente", sender: self)
                     }
-
                 } else {
-                    print(error?.localizedDescription ?? "Failed to authenticate")
-
-                    // Fall back to a asking for username and password.
-                    // ...
+                    print(error?.localizedDescription ?? "Autenticazione fallita")
+                    
                 }
             }
         } else {
             print(error?.localizedDescription ?? "Can't evaluate policy")
-
+            
             // Fall back to a asking for username and password.
             // ...
         }

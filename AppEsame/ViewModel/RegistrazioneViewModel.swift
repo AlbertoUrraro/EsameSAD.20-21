@@ -1,5 +1,5 @@
 //
-//  RegistrationController.swift
+//  RegistrazioneViewModel.swift
 //  AppEsame
 //
 //  Created by Carlo D'Avino on 11/05/21.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class RegistrazioneController{
+class RegistrazioneViewModel{
     
     init(){
         
@@ -60,6 +60,25 @@ class RegistrazioneController{
         errore.setDescrizione(descrizione: descrizioneErrore)
         
         return errore
+    }
+    
+    public static func completaRegistrazionePaziente(pazienteStep3: Paziente,mediciSelezionati: [String]){
+        let p = Paziente()
+        let r = Richiesta()
+        let idPaziente = p.creaPaziente(paziente: pazienteStep3)
+        for medico in mediciSelezionati{
+            let richiesta = Richiesta(id: "", idPaziente: idPaziente, idMedico: medico, stato: false)
+            r.creaRichiesta(richiesta: richiesta)
+        }
+    }
+    
+    public static func completaRegistrazione(medicoStep1: Utente, specializzazioniSelezionate: [String]){
+        let m = Medico()
+        var medico = Medico()
+        medico.medicoEqUtente(utente: medicoStep1)
+        medico.setSpecializzazioni(specializzazioni: specializzazioniSelezionate)
+    
+        m.creaMedico(medico: medico)
     }
     
 }

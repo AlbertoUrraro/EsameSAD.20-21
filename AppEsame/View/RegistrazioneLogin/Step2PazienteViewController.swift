@@ -68,8 +68,7 @@ class Step2PazienteViewController: UIViewController, UITableViewDelegate, UITabl
                 return
             }
             for allergia in allergieRes{
-                print(allergia.id,allergia.titolo)
-                self.allergieVet.append(allergia.titolo)
+                self.allergieVet.append(allergia.getTitolo())
             }
             self.allergieTableView.reloadData()
             

@@ -127,7 +127,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     }
     
     @IBAction func segueStep2(_ sender: Any) {
-        let errore = RegistrazioneController.validaStep1Registrazione(nome: self.nome.text!, cognome: self.cognome.text!, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, password: self.password.text!, ripetiPasword: self.ripetiPassword.text!)
+        let errore = RegistrazioneViewModel.validaStep1Registrazione(nome: self.nome.text!, cognome: self.cognome.text!, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, password: self.password.text!, ripetiPasword: self.ripetiPassword.text!)
         
         if(errore.getErrore()){
             //Popup di errore
@@ -149,7 +149,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let pazientePerSegue = Utente(id: "",  nome: self.nome.text!, cognome: self.cognome.text!, dataNascita: self.dataNascita.text!, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, tipo: self.tipoUtenteSelezionato, password: self.password.text!, indirizzo: self.indirizzo.text!, citta: self.citta.text!, cap: self.cap.text!)
+        let utentePerSegue = Utente(id: "",  nome: self.nome.text!, cognome: self.cognome.text!, dataNascita: self.dataNascita.text!, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, tipo: self.tipoUtenteSelezionato, password: self.password.text!, indirizzo: self.indirizzo.text!, citta: self.citta.text!, cap: self.cap.text!)
         
         //Con queste istruzioni controllo in quale view sto andando per passare i dati con il prepare for segue
         if segue.identifier == "SegueStep2Paziente"
@@ -157,7 +157,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
             if let destinazione = segue.destination as? Step2PazienteViewController {
                
 
-                destinazione.pazienteStep1 = pazientePerSegue
+                destinazione.pazienteStep1 = utentePerSegue
             }
         }
         
@@ -166,7 +166,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
             if let destinazione = segue.destination as? Step2MedicoViewController {
                
 
-                destinazione.pazienteStep1 = pazientePerSegue
+                destinazione.medicoStep1 = utentePerSegue
             }
         }
     }
