@@ -19,19 +19,19 @@ class PazienteDB{
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
         ref = db!.collection("utente").addDocument(data: [
-            "nome": paziente.nome,
-            "cognome": paziente.cognome,
-            "dataNascita": paziente.dataNascita,
-            "codiceFiscale": paziente.codiceFiscale,
-            "telefono": paziente.telefono,
-            "email": paziente.email,
-            "tipo": paziente.tipo,
-            "password": paziente.password,
-            "allergia": paziente.allergie,
-            "patologie": paziente.patologie,
-            "indirizzo": paziente.indirizzo,
-            "citta": paziente.citta,
-            "cap": paziente.cap,
+            "nome": paziente.getNome(),
+            "cognome": paziente.getCognome(),
+            "dataNascita": paziente.getDataNascita(),
+            "codiceFiscale": paziente.getCodiceFiscale(),
+            "telefono": paziente.getTelefono(),
+            "email": paziente.getEmail(),
+            "tipo": paziente.getTipo(),
+            "password": paziente.getPassword(),
+            "allergia": paziente.getAllergie(),
+            "patologie": paziente.getPatologie(),
+            "indirizzo": paziente.getIndirizzo(),
+            "citta": paziente.getCitta(),
+            "cap": paziente.getCap(),
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

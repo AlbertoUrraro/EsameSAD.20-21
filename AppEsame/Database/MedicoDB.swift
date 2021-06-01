@@ -19,18 +19,18 @@ class MedicoDB{
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
         ref = db!.collection("utente").addDocument(data: [
-            "nome": medico.nome,
-            "cognome": medico.cognome,
-            "dataNascita": medico.dataNascita,
-            "codiceFiscale": medico.codiceFiscale,
-            "telefono": medico.telefono,
-            "email": medico.email,
-            "tipo": medico.tipo,
-            "password": medico.password,
-            "specializzazione": medico.specializzazione,
-            "indirizzo": medico.indirizzo,
-            "citta": medico.citta,
-            "cap": medico.cap,
+            "nome": medico.getNome(),
+            "cognome": medico.getCognome(),
+            "dataNascita": medico.getDataNascita(),
+            "codiceFiscale": medico.getCodiceFiscale(),
+            "telefono": medico.getTelefono(),
+            "email": medico.getEmail(),
+            "tipo": medico.getTipo(),
+            "password": medico.getPassword(),
+            "specializzazione": medico.getSpecializzazione(),
+            "indirizzo": medico.getIndirizzo(),
+            "citta": medico.getCitta(),
+            "cap": medico.getCap(),
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

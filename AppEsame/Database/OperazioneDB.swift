@@ -1,15 +1,15 @@
 //
-//  SintomoDB.swift
+//  OperazioneDB.swift
 //  AppEsame
 //
-//  Created by Carlo D'Avino on 14/05/21.
+//  Created by Carlo D'Avino on 01/06/21.
 //
 
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
 
-class SintomoDB{
+class OperazioneDB{
     
     let db = DBManager.shared.db
     
@@ -17,12 +17,11 @@ class SintomoDB{
     
     
     
-    func creaSintomo(sintomo: Sintomo){
+    func creaOperazione(operazione: Operazione){
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
-        ref = db!.collection("sintomo").addDocument(data: [
-            "tipo": sintomo.getTipo(),
-            "descrizione": sintomo.descrizione,
+        ref = db!.collection("operazione").addDocument(data: [
+            "descrizione": operazione.getDescrizione(),
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -33,52 +32,53 @@ class SintomoDB{
     }
     
     
-    func ottieniSintomoDaId(idDaCercare: String, finished: @escaping([Sintomo]?) -> Void) {
-        db!.collection("sintomo").document(idDaCercare).getDocument { (queryResult, err) in
+    func ottieniOperazioneDaId(idDaCercare: String, finished: @escaping([Operazione]?) -> Void) {
+        db!.collection("operazione").document(idDaCercare).getDocument { (queryResult, err) in
             guard let result = queryResult?.data() else {
                 print("No documents")
                 return
             }
             
-            let sintomi = result.map{ (queryResult) -> Sintomo in
+            let operazioni = result.map{ (queryResult) -> Operazione in
                 let data = result
                 
                 let id = idDaCercare
-                let tipo = data["tipo"] as? String ?? ""
                 let descrizione = data["descrizione"] as? String ?? ""
+                let idPaziente = data["idPaziente"] as? String ?? ""
                 
                 
-                let sintomo = Sintomo(id: id, tipo: tipo, descrizione: descrizione)
+                let operazione = Operazione(id: id, descrizione: descrizione, idPaziente: idPaziente)
                 
-                return sintomo
+                return operazione
                 
             }
-            finished(sintomi)
+            finished(operazioni)
         }
     }
     
-    func ottieniTuttiSintomi(finished: @escaping([Sintomo]?) -> Void) {
-        db!.collection("sintomo").getDocuments() { (queryResult, err) in
+    func ottieniTutteOperazioni(finished: @escaping([Operazione]?) -> Void) {
+        db!.collection("operazione").getDocuments() { (queryResult, err) in
             guard let result = queryResult?.documents else {
                 print("No documents")
                 return
             }
             
-            let sintomi = result.map{ (queryResult) -> Sintomo in
+            let operazioni = result.map{ (queryResult) -> Operazione in
                 let data = queryResult.data()
                 
                 let id = queryResult.documentID
-                let tipo = data["tipo"] as? String ?? ""
                 let descrizione = data["descrizione"] as? String ?? ""
+                let idPaziente = data["idPaziente"] as? String ?? ""
                 
-                let sintomo = Sintomo(id: id, tipo: tipo,descrizione: descrizione)
+                let operazione = Operazione(id: id, descrizione: descrizione, idPaziente: idPaziente)
                 
-                return sintomo
+                return operazione
                 
             }
-            finished(sintomi)
+            finished(operazioni)
         }
     }
     
 }
+
 

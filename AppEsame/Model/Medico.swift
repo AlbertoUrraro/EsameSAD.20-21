@@ -46,18 +46,18 @@ class Medico: Utente{
             }
             let mediciArr = mediciRes.map{(res) ->Medico in
                 
-                let nome = res.nome
-                let cognome = res.cognome
-                let dataNascita = res.dataNascita
-                let codiceFiscale = res.codiceFiscale
-                let telefono = res.telefono
-                let email = res.email
-                let tipo = res.tipo
-                let password = res.password
-                let specializzazione = res.specializzazione
-                let indirizzo = res.indirizzo
-                let citta = res.citta
-                let cap = res.cap
+                let nome = res.getNome()
+                let cognome = res.getCognome()
+                let dataNascita = res.getDataNascita()
+                let codiceFiscale = res.getCodiceFiscale()
+                let telefono = res.getTelefono()
+                let email = res.getEmail()
+                let tipo = res.getTipo()
+                let password = res.getPassword()
+                let specializzazione = res.getSpecializzazione()
+                let indirizzo = res.getIndirizzo()
+                let citta = res.getCitta()
+                let cap = res.getCap()
                 
                 
                 
@@ -81,18 +81,18 @@ class Medico: Utente{
             
             let  res = mediciRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
             let id = res.id
-            let nome = res.nome
-            let cognome = res.cognome
-            let dataNascita = res.dataNascita
-            let codiceFiscale = res.codiceFiscale
-            let telefono = res.telefono
-            let email = res.email
-            let tipo = res.tipo
-            let password = res.password
-            let specializzazione = res.specializzazione
-            let indirizzo = res.indirizzo
-            let citta = res.citta
-            let cap = res.cap
+            let nome = res.getNome()
+            let cognome = res.getCognome()
+            let dataNascita = res.getDataNascita()
+            let codiceFiscale = res.getCodiceFiscale()
+            let telefono = res.getTelefono()
+            let email = res.getEmail()
+            let tipo = res.getTipo()
+            let password = res.getPassword()
+            let specializzazione = res.getSpecializzazione()
+            let indirizzo = res.getIndirizzo()
+            let citta = res.getCitta()
+            let cap = res.getCap()
             
             
             
@@ -115,19 +115,19 @@ class Medico: Utente{
             }
             let mediciArr = mediciRes.map{(result) ->Medico in
                 
-                let id = result.id
-                let nome = result.nome
-                let cognome = result.cognome
-                let dataNascita = result.dataNascita
-                let codiceFiscale = result.codiceFiscale
-                let telefono = result.telefono
-                let email = result.email
-                let tipo = result.tipo
-                let password = result.password
-                let specializzazione = result.specializzazione
-                let indirizzo = result.indirizzo
-                let citta = result.citta
-                let cap = result.cap
+                let id = result.getId()
+                let nome = result.getNome()
+                let cognome = result.getCognome()
+                let dataNascita = result.getDataNascita()
+                let codiceFiscale = result.getCodiceFiscale()
+                let telefono = result.getTelefono()
+                let email = result.getEmail()
+                let tipo = result.getTipo()
+                let password = result.getPassword()
+                let specializzazione = result.getSpecializzazione()
+                let indirizzo = result.getIndirizzo()
+                let citta = result.getCitta()
+                let cap = result.getCap()
                 
                 
                 let medico = Medico(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazione: specializzazione, indirizzo: indirizzo, citta: citta, cap: cap)
