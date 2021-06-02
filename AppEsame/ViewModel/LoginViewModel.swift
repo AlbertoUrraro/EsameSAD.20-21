@@ -12,7 +12,7 @@ class LoginViewModel{
     
     init(){
     }
-    
+        
     //Valida il login in un if controlla un campo per volta
     public static func validaLogin(email:String, password:String)->Errore{
         
@@ -48,10 +48,10 @@ class LoginViewModel{
                 if (password == utentiRes[0].getPassword()){
                     if(utentiRes[0].getTipo() == "Paziente"){
                         view.performSegue(withIdentifier: "LoginPaziente", sender: self)
-                        
                     } else {
                         view.performSegue(withIdentifier: "LoginMedico", sender: self)
                     }
+                    DBManager.shared.setUserDefaultUtenteLoggato(utente: utentiRes[0])
                 } else {
                     //Popup di errore
                     let alertLogin = UIAlertController(title: "Errore", message: "Password errata!", preferredStyle: UIAlertController.Style.alert)

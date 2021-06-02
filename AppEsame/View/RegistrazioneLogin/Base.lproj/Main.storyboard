@@ -205,6 +205,7 @@
                     <connections>
                         <outlet property="accedi" destination="8si-Ew-HLu" id="KqS-YA-as6"/>
                         <outlet property="email" destination="pdO-ma-MDo" id="BJo-IL-Gi4"/>
+                        <outlet property="loginFaceId" destination="3hq-4B-0zf" id="lLs-ZE-hls"/>
                         <outlet property="password" destination="b3o-LH-iVo" id="TPA-hA-9ln"/>
                         <segue destination="cfF-oG-uhO" kind="show" identifier="SegueStep1Registrazione" id="PDa-hO-4Ko"/>
                         <segue destination="6sn-P1-NcB" kind="show" identifier="LoginPaziente" id="srj-46-ej1"/>

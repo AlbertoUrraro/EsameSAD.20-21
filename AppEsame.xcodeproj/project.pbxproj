@@ -307,11 +307,11 @@
 				1CC63CA92649F33F001AEDEA /* ViewModel */,
 				DF2976092626410300933712 /* AppDelegate.swift */,
 				DF29760B2626410300933712 /* SceneDelegate.swift */,
+				1CC63CAC2649F4B7001AEDEA /* Errore.swift */,
 				DF2976152626410400933712 /* Assets.xcassets */,
 				DF29761A2626410400933712 /* Info.plist */,
 				1CC63C952649C653001AEDEA /* GoogleService-Info.plist */,
 				DF2976122626410300933712 /* AppEsame.xcdatamodeld */,
-				1CC63CAC2649F4B7001AEDEA /* Errore.swift */,
 			);
 			path = AppEsame;
 			sourceTree = "<group>";

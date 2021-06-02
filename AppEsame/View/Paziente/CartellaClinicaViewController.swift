@@ -67,7 +67,7 @@ class CartellaClinicaViewController: UIViewController, UITableViewDelegate, UITa
     func addRightButton() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 21))
         label.textAlignment = .right
-        label.text = "Nome Paziente"
+        label.text = DBManager.shared.nome + " " + DBManager.shared.cognome
     
         let widthConstraintlabel = view.widthAnchor.constraint(equalToConstant: 60)
         let heightConstraintlabel = view.heightAnchor.constraint(equalToConstant: 25)

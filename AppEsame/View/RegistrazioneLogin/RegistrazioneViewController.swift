@@ -23,19 +23,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     @IBOutlet weak var indirizzo: UITextField!
     @IBOutlet weak var citta: UITextField!
     @IBOutlet weak var cap: UITextField!
-    //<<<<<<< HEAD
-//    @IBOutlet weak var inditizzo: UITextField!
-//    @IBOutlet weak var citta: UITextField!
-//    @IBOutlet weak var cap: UITextField!
-//=======
-//
-//    //Questi tre andranno sostituiti con gli iboutlet una volta aggiunti i campi nella view
-//    let indirizzo = "indirizzo"
-//    let citta = "citta"
-//    let cap = "80100"
-//
-//>>>>>>> main
-//
+
    
     @IBOutlet weak var dataNascita: UITextField!
     let dataPicker = UIDatePicker()

@@ -84,6 +84,7 @@ class Utente{
             }
             let utentiArr = utentiRes.map{(res) ->Utente in
                 
+                let id = res.getId()
                 let nome = res.getNome()
                 let cognome = res.getCognome()
                 let dataNascita = res.getDataNascita()
@@ -98,7 +99,7 @@ class Utente{
                 
                 
                 
-                let utente = Utente(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
+                let utente = Utente(id: id,nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return utente
                 

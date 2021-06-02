@@ -11,12 +11,11 @@ import LocalAuthentication
 
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-    
-    //    private let database = Database.database().reference()
-    
+        
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var accedi: UIButton!
+    @IBOutlet weak var loginFaceId: UIButton!
     
     
     //per FaceId
@@ -24,6 +23,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.email.delegate = self
+        self.password.delegate = self
         
         email.delegate = self
         email.tag = 0
@@ -35,6 +37,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         //Apro connessione al db
         DBManager.shared.openConnection()
+        
+        loginFaceId.isHidden = true
+        DBManager.shared.getUserDefaultUtenteLoggato()
+        if(DBManager.shared.id != ""){
+            loginFaceId.isHidden = false
+        }
         
     }
     
@@ -109,6 +117,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             // Fall back to a asking for username and password.
             // ...
         }
+    }
+    
+    //Queste due funzioni servono a fare il dismis keyboard quando si tocca fuori dal text field in uso o se si clicca invio
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     
