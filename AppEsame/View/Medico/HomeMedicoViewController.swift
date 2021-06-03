@@ -44,7 +44,9 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
     
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+              performSegue(withIdentifier: "DettaglioController", sender: self)
+    }
 
     @IBOutlet weak var homeMedicoTableView: UITableView!
     var nome = ["Marco", "Luca"]
@@ -147,5 +149,9 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     @objc func visualizzaProfilo(sender: UIButton){
 //        performSegue(withIdentifier: "ProfiloController", sender: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.resultSearchController?.dismiss(animated: false, completion: nil)
     }
 }
