@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fBK-Pz-fRe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fBK-Pz-fRe">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -675,7 +675,7 @@
                                 </state>
                                 <connections>
                                     <action selector="completaRegistrazioneMedico:" destination="rzB-W6-URF" eventType="touchUpInside" id="rce-P3-QqT"/>
-                                    <segue destination="SbC-jv-PZw" kind="show" identifier="" id="4H0-xT-bqR"/>
+                                    <segue destination="bx1-7K-BG4" kind="show" id="gWr-lN-e7L"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="guz-JP-WDt">
@@ -686,7 +686,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="specializzazionecell" rowHeight="73" id="QW2-NS-a47" customClass="SpecializzazioneTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49" width="350" height="73"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QW2-NS-a47" id="s77-as-yKc">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="73"/>
@@ -762,6 +762,16 @@
             </objects>
             <point key="canvasLocation" x="1653.8461538461538" y="486.96682464454972"/>
         </scene>
+        <!--medicocontroller-->
+        <scene sceneID="8Hv-sa-GrJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Medico" referencedIdentifier="medicocontroller" id="bx1-7K-BG4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qbm-wq-pfd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ViG-h9-JIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2553" y="487"/>
+        </scene>
         <!--Allergie-->
         <scene sceneID="tqd-S1-0sQ">
             <objects>
@@ -779,7 +789,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="allergiacell" rowHeight="73" id="7LA-Mv-y8L" customClass="AllergieTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49" width="350" height="73"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7LA-Mv-y8L" id="VP7-7v-eH0">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="73"/>
@@ -894,7 +904,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="patologiacell" rowHeight="73" id="ZvV-Zf-DEX" customClass="PatologieTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49" width="350" height="73"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZvV-Zf-DEX" id="SkJ-of-JEO">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="73"/>
@@ -1010,7 +1020,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="medicocell" rowHeight="100" id="pKc-tU-tPe" customClass="MediciTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49" width="350" height="100"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pKc-tU-tPe" id="iU3-aX-MwG">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="100"/>
@@ -1176,16 +1186,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ih7-mt-992" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3770" y="-195"/>
-        </scene>
-        <!--medicocontroller-->
-        <scene sceneID="RXv-ZX-OYt">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MedicoViewController" storyboardName="Medico" referencedIdentifier="medicocontroller" id="SbC-jv-PZw" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="BeC-7l-xpz"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yYG-up-cbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2290" y="487"/>
         </scene>
     </scenes>
     <resources>
