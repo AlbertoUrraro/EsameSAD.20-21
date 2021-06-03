@@ -154,4 +154,6 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewWillDisappear(_ animated: Bool) {
         self.resultSearchController?.dismiss(animated: false, completion: nil)
     }
+    
+    
 }

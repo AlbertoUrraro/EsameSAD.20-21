@@ -24,6 +24,9 @@ class DettaglioPazienteViewController: UIViewController, UITableViewDelegate, UI
         } else{
             cell.button.setTitle("Vedi", for: .normal)
         }
+        cell.button.tag = indexPath.row
+        cell.button.addTarget(self, action: #selector(visualizzaAction(sender:)), for: .touchUpInside)
+        
         return cell
     }
     
@@ -34,5 +37,18 @@ class DettaglioPazienteViewController: UIViewController, UITableViewDelegate, UI
 
     }
     
+    
+    @objc func visualizzaAction(sender: UIButton){
+     if (sender.tag == 0){
+             performSegue(withIdentifier: "PrescriviController", sender: self)
+     } else if(sender.tag == 1){
+             performSegue(withIdentifier: "StatoController", sender: self)
+         } else if(sender.tag == 2){
+             performSegue(withIdentifier: "CartellaController", sender: self)
+         }
+         else {
+             performSegue(withIdentifier: "StoricoController", sender: self)
+         }
+     }
 
 }
