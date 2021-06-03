@@ -8,7 +8,7 @@
 import UIKit
 
 class AllergiePazienteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    var allergie = ["polline", "polvere"]
+    var allergie: [String] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allergie.count
     }
@@ -19,14 +19,27 @@ class AllergiePazienteViewController: UIViewController, UITableViewDelegate, UIT
         return cell
     }
     
-
+    
     @IBOutlet weak var allergieTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let p = Paziente()
+        
+        p.ottieniPazienteDaId(idDaCercare: DBManager.shared.id){(pazienti) in
+            
+            guard let pazientiRes = pazienti else {
+                print("error")
+                return
+            }
+            
+            self.allergie = pazientiRes.getAllergie()
+            
+            self.allergieTableView.reloadData()
+        }
+        
+        
     }
     
-
-
-
 }

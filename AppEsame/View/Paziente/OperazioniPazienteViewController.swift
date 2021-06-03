@@ -9,7 +9,7 @@ import UIKit
 
 class OperazioniPazienteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var operazioni = ["operazione1", "operazione2"]
+    var operazioni: [String] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return operazioni.count
     }
@@ -25,6 +25,22 @@ class OperazioniPazienteViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var operazioniTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let op = Operazione()
+        var i = 0;
+        op.ottieniOperazioniDaIdUtente(idUtenteDaCercare: DBManager.shared.id){(operazioni) in
+            
+            guard let operazioniRes = operazioni else {
+                print("error")
+                return
+            }
+            
+            for operazione in operazioniRes{
+                self.operazioni.append(operazione.getDescrizione())
+            }
+            
+            self.operazioniTableView.reloadData()
+        }
 
     }
     

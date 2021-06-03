@@ -9,6 +9,8 @@ import UIKit
 
 class PatologiePazienteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var patologie: [String] = []
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return patologie.count
     }
@@ -19,14 +21,25 @@ class PatologiePazienteViewController: UIViewController, UITableViewDelegate, UI
         return cell
     }
     
-var patologie = ["Tachicardia"]
     
     @IBOutlet weak var patologieTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        let p = Paziente()
+        
+        p.ottieniPazienteDaId(idDaCercare: DBManager.shared.id){(pazienti) in
+            
+            guard let pazientiRes = pazienti else {
+                print("error")
+                return
+            }
+            
+            self.patologie = pazientiRes.getPatologie()
+            
+            self.patologieTableView.reloadData()
+        }
+            }
 
 
 }
