@@ -2,28 +2,90 @@
 //  ProfiloViewController.swift
 //  AppEsame
 //
-//  Created by Anna on 29/05/2021.
+//  Created by alberto urraro on 03/06/21.
 //
 
 import UIKit
 
-class ProfiloViewController: UIViewController {
+class ProfiloViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return info[section].count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = profiloTableView.dequeueReusableCell(withIdentifier: "profilocell" , for: indexPath) as! ProfiloTableViewCell
+        cell.InfoProfilo?.text = info[indexPath.section][indexPath.row]
+        //cell.target(forAction: Selector("cellaAction:"), withSender: self)
+        
+         return cell
     }
-    */
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 6 ){
+            print("ciao")
+         
+        }
+                      
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let Header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 20))
+        Header.backgroundColor = .systemBlue
+        
+        //let imageView = UIImageView(image: UIImage (systemName: "house"))
+        //imageView.tintColor = .black
+        //imageView.contentMode = .scaleAspectFit
+        //Header.addSubview(imageView)
+        //imageView.frame = CGRect(x: 3, y: 3, width: Header.frame.size.height+5, height: Header.frame.size.height+5)
+        
+        let testotitolo = UILabel(frame: CGRect(x: 5 , y: 5, width: Header.frame.size.width - 10 , height: Header.frame.size.height))
+        
+        Header.addSubview(testotitolo)
+        testotitolo.backgroundColor = .systemBlue
+        testotitolo.text = titoli[section]
+        
+        testotitolo.font = .systemFont(ofSize: 15)
+        
+        
+        
+        return Header
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+       
+        return 3
+    }
+   
+    //func cellaAction (sender : UILabel){
+       // print("strunz")
+        
+        
+    //}
 
+    @IBOutlet weak var profiloTableView: UITableView!
+   
+    var info = [
+        [DBManager.shared.nome, DBManager.shared.cognome,DBManager.shared.email],
+        ["Città", "Lingua"],
+        ["Informazioni", "Disconnetti"]
+    
+    ]
+    
+    var titoli = ["Utente","Posizione","Applicazione"]
+    
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            title="Profilo"
+        profiloTableView.delegate = self
+        profiloTableView.dataSource = self
+            
+            
+        }
+    
+    
 }

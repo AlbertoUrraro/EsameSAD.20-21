@@ -103,7 +103,7 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
             
             let profiloButton  = UIButton(type: .custom)
             profiloButton.setImage(UIImage(named: "user.png"), for: .normal)
-            profiloButton.frame = CGRect(x:0.0,y:0.0, width:60,height:25.0)
+            profiloButton.frame = CGRect(x:0.0,y:0.0, width:20,height:10.0)
            let labelItem = UIBarButtonItem.init(customView: label)
 //            let logoImage = UIImage.init(named: "user.png")
 //            let logoImageView = UIImageView.init(image: logoImage)
@@ -127,6 +127,11 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
     
     @objc func visualizzaProfilo(sender: UIButton){
         performSegue(withIdentifier: "ProfiloController", sender: self)
-    }
+       
+            
+        
+        }
+        
+    
 
 }

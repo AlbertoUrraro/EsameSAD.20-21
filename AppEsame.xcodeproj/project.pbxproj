@@ -73,6 +73,7 @@
 		DF2976142626410300933712 /* AppEsame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF2976122626410300933712 /* AppEsame.xcdatamodeld */; };
 		DF2976162626410400933712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF2976152626410400933712 /* Assets.xcassets */; };
 		DF2976192626410400933712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF2976172626410400933712 /* LaunchScreen.storyboard */; };
+		DFE3CC802669275D0015D1C4 /* ProfiloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3CC7F2669275D0015D1C4 /* ProfiloTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +146,7 @@
 		DF2976152626410400933712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF2976182626410400933712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF29761A2626410400933712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFE3CC7F2669275D0015D1C4 /* ProfiloTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfiloTableViewCell.swift; sourceTree = "<group>"; };
 		E0D3F42E0BDC39E2683B51D5 /* Pods-AppEsame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppEsame.debug.xcconfig"; path = "Target Support Files/Pods-AppEsame/Pods-AppEsame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,6 +252,7 @@
 				9562500D26627C6F0092B054 /* SOSViewController.swift */,
 				9562501026627C8D0092B054 /* SOSTableViewCell.swift */,
 				956250132662854F0092B054 /* ProfiloViewController.swift */,
+				DFE3CC7F2669275D0015D1C4 /* ProfiloTableViewCell.swift */,
 			);
 			path = Paziente;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				95CF84A726499EB0006D6517 /* Farmaco.swift in Sources */,
 				955FA98226612A7300BC3176 /* PatologiePazienteTableViewCell.swift in Sources */,
 				1C28ABF6264DD7E400F86CFD /* PazienteDB.swift in Sources */,
+				DFE3CC802669275D0015D1C4 /* ProfiloTableViewCell.swift in Sources */,
 				955FA97F26612A2400BC3176 /* AllergiePazienteTableViewCell.swift in Sources */,
 				95CF84A426499E92006D6517 /* Ricetta.swift in Sources */,
 				95CF849A26499E15006D6517 /* Paziente.swift in Sources */,
