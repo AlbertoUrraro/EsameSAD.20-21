@@ -90,5 +90,29 @@ class Operazione{
         }
     }
     
+    func ottieniOperazioniDaIdUtente(idUtenteDaCercare: String, finished: @escaping([Operazione]?) -> Void) {
+        
+        operazioneDB.ottieniOperazioniDaIdUtente(idUtenteDaCercare: idUtenteDaCercare){(operazioni) in
+            
+            guard let operazioniRes = operazioni else {
+                print("error")
+                return
+            }
+            let operazioniArr = operazioniRes.map{(result) ->Operazione in
+                
+                let id = result.getId()
+                let descrizione = result.getDescrizione()
+                let idPaziente = result.getIdPaziente()
+                
+                
+                let operazione = Operazione(id: id, descrizione: descrizione, idPaziente: idPaziente)
+
+                return operazione
+                
+            }
+            finished(operazioniArr)
+        }
+    }
+    
 }
 

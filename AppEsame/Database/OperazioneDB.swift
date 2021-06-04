@@ -79,6 +79,30 @@ class OperazioneDB{
         }
     }
     
+    func ottieniOperazioniDaIdUtente(idUtenteDaCercare: String, finished: @escaping([Operazione]?) -> Void) {
+        db!.collection("operazione").whereField("idPaziente", isEqualTo: idUtenteDaCercare).getDocuments() { (queryResult, err) in
+            guard let result = queryResult?.documents else {
+                print("No documents")
+                return
+            }
+            
+            let operazioni = result.map{ (queryResult) -> Operazione in
+                let data = queryResult.data()
+                
+                
+                let id = queryResult.documentID
+                let descrizione = data["descrizione"] as? String ?? ""
+                let idPaziente = data["idPaziente"] as? String ?? ""
+                
+                let operazione = Operazione(id: id, descrizione: descrizione, idPaziente: idPaziente)
+                
+                return operazione
+                
+            }
+            finished(operazioni)
+        }
+    }
+    
 }
 
 
