@@ -48,6 +48,4 @@ class StatoSaluteViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view.
     }
     
-
-
 }
