@@ -38,8 +38,8 @@
 		9520E717266A64B500D0B702 /* StatoSaluteParametriTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E716266A64B500D0B702 /* StatoSaluteParametriTableViewCell.swift */; };
 		9520E71B266A6E1C00D0B702 /* RichiesteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E71A266A6E1C00D0B702 /* RichiesteTableViewCell.swift */; };
 		9520E71E266A6E3A00D0B702 /* RichiesteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E71D266A6E3A00D0B702 /* RichiesteViewController.swift */; };
-		9520E721266A727100D0B702 /* SOSMedicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E720266A727100D0B702 /* SOSMedicoViewController.swift */; };
 		9520E724266A728400D0B702 /* SOSMedicoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E723266A728400D0B702 /* SOSMedicoTableViewCell.swift */; };
+		9520E727266A754700D0B702 /* SOSMedicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E726266A754700D0B702 /* SOSMedicoViewController.swift */; };
 		952E2346265C3AF7006FAC1E /* TerapiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E2345265C3AF7006FAC1E /* TerapiaViewController.swift */; };
 		952E2349265C3BE2006FAC1E /* TerapiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E2348265C3BE2006FAC1E /* TerapiaTableViewCell.swift */; };
 		952E234C265C405C006FAC1E /* CartellaClinicaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E234B265C405C006FAC1E /* CartellaClinicaViewController.swift */; };
@@ -126,8 +126,8 @@
 		9520E716266A64B500D0B702 /* StatoSaluteParametriTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatoSaluteParametriTableViewCell.swift; sourceTree = "<group>"; };
 		9520E71A266A6E1C00D0B702 /* RichiesteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiesteTableViewCell.swift; sourceTree = "<group>"; };
 		9520E71D266A6E3A00D0B702 /* RichiesteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiesteViewController.swift; sourceTree = "<group>"; };
-		9520E720266A727100D0B702 /* SOSMedicoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSMedicoViewController.swift; sourceTree = "<group>"; };
 		9520E723266A728400D0B702 /* SOSMedicoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSMedicoTableViewCell.swift; sourceTree = "<group>"; };
+		9520E726266A754700D0B702 /* SOSMedicoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSMedicoViewController.swift; sourceTree = "<group>"; };
 		952E2345265C3AF7006FAC1E /* TerapiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerapiaViewController.swift; sourceTree = "<group>"; };
 		952E2348265C3BE2006FAC1E /* TerapiaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerapiaTableViewCell.swift; sourceTree = "<group>"; };
 		952E234B265C405C006FAC1E /* CartellaClinicaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartellaClinicaViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				95C55B342668E10A00BF503C /* Medico.storyboard */,
+				9520E726266A754700D0B702 /* SOSMedicoViewController.swift */,
 				95C55B3D266912CE00BF503C /* MedicoTabBarController.swift */,
 				95C55B372668E3F400BF503C /* HomeMedicoViewController.swift */,
 				95C55B3A2668E67300BF503C /* HomeMedicoTableViewCell.swift */,
@@ -310,7 +311,6 @@
 				9520E716266A64B500D0B702 /* StatoSaluteParametriTableViewCell.swift */,
 				9520E71A266A6E1C00D0B702 /* RichiesteTableViewCell.swift */,
 				9520E71D266A6E3A00D0B702 /* RichiesteViewController.swift */,
-				9520E720266A727100D0B702 /* SOSMedicoViewController.swift */,
 				9520E723266A728400D0B702 /* SOSMedicoTableViewCell.swift */,
 			);
 			path = Medico;
@@ -496,11 +496,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF29760E2626410300933712 /* LoginViewController.swift in Sources */,
+				9520E727266A754700D0B702 /* SOSMedicoViewController.swift in Sources */,
 				955D5E6F2652D21100996BC2 /* PazienteTabBarController.swift in Sources */,
 				1CC63CA82649F2BD001AEDEA /* Step3PazienteViewController.swift in Sources */,
 				952E234F265C41EA006FAC1E /* CartellaClinicaTableViewCell.swift in Sources */,
 				1C3815522666C1EF00A8CBFB /* SpecializzazioneDB.swift in Sources */,
-				9520E721266A727100D0B702 /* SOSMedicoViewController.swift in Sources */,
 				95C55B4A26696DCB00BF503C /* PrescriviTableViewCell.swift in Sources */,
 				953BC330265558F1003F09E3 /* SintomiTableViewCell.swift in Sources */,
 				953BD72F265EE3B7006104D1 /* PatologiePazienteViewController.swift in Sources */,

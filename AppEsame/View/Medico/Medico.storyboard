@@ -1033,7 +1033,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aWL-Em-EjW"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="sosTableView" destination="NNw-Q6-Vel" id="T0O-My-wIg"/>
+                        <outlet property="sosTableView" destination="NNw-Q6-Vel" id="9kY-xP-lpt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFN-lL-Dv7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
