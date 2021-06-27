@@ -62,6 +62,7 @@ class Medico: Utente{
             }
             let mediciArr = mediciRes.map{(res) ->Medico in
                 
+                let id = res.getId()
                 let nome = res.getNome()
                 let cognome = res.getCognome()
                 let dataNascita = res.getDataNascita()
@@ -77,7 +78,7 @@ class Medico: Utente{
                 
                 
                 
-                let medico = Medico(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazioni: specializzazioni, indirizzo: indirizzo, citta: citta, cap: cap)
+                let medico = Medico(id: id,nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, specializzazioni: specializzazioni, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return medico
                 

@@ -53,8 +53,8 @@ class Sintomo{
             }
             let  res = sintomiRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
             let id = idDaCercare
-            let tipo = res.tipo
-            let descrizione = res.descrizione
+            let tipo = res.getTipo()
+            let descrizione = res.getDescrizione()
             
             
             
@@ -77,9 +77,9 @@ class Sintomo{
             }
             let sintomiArr = sintomiRes.map{(result) ->Sintomo in
                 
-                let id = result.id
-                let tipo = result.tipo
-                let descrizione = result.descrizione
+                let id = result.getId()
+                let tipo = result.getTipo()
+                let descrizione = result.getDescrizione()
                 
                 
                 let sintomo = Sintomo(id: id, tipo: tipo, descrizione: descrizione)

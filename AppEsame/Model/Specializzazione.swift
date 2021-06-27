@@ -42,7 +42,7 @@ class Specializzazione{
             }
             let  res = specializzazioneRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
             let id = idDaCercare
-            let titolo = res.titolo
+            let titolo = res.getTitolo()
             
             
             
@@ -65,8 +65,8 @@ class Specializzazione{
             }
             let specializzazioniArr = specializzazioniRes.map{(result) ->Specializzazione in
                 
-                let id = result.id
-                let titolo = result.titolo
+                let id = result.getId()
+                let titolo = result.getTitolo()
                 
                 
                 let specializzazione = Specializzazione(id: id, titolo: titolo)

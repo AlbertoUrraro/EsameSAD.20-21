@@ -42,7 +42,7 @@ class Allergia{
             }
             let  res = allergieRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
             let id = idDaCercare
-            let titolo = res.titolo
+            let titolo = res.getTitolo()
             
             
             
@@ -65,8 +65,8 @@ class Allergia{
             }
             let allergieArr = allergieRes.map{(result) ->Allergia in
                 
-                let id = result.id
-                let titolo = result.titolo
+                let id = result.getId()
+                let titolo = result.getTitolo()
                 
                 
                 let allergia = Allergia(id: id, titolo: titolo)

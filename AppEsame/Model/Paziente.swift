@@ -75,8 +75,8 @@ class Paziente: Utente{
                 let email = res.getEmail()
                 let tipo = res.getTipo()
                 let password = res.getPassword()
-                let allergie = res.getAllergie() ?? []
-                let patologie = res.getPatologie() ?? []
+                let allergie = res.getAllergie()
+                let patologie = res.getPatologie()
                 let indirizzo = res.getIndirizzo()
                 let citta = res.getCitta()
                 let cap = res.getCap()
@@ -99,27 +99,27 @@ class Paziente: Utente{
                 print("error")
                 return
             }
-                let  res = pazientiRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
-                let nome = res.getNome()
-                let cognome = res.getCognome()
-                let dataNascita = res.getDataNascita()
-                let codiceFiscale = res.getCodiceFiscale()
-                let telefono = res.getTelefono()
-                let email = res.getEmail()
-                let tipo = res.getTipo()
-                let password = res.getPassword()
-                let allergie = res.getAllergie() ?? []
-                let patologie = res.getPatologie() ?? []
-                let indirizzo = res.getIndirizzo()
-                let citta = res.getCitta()
-                let cap = res.getCap()
-
-                
-                
+            let  res = pazientiRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
+            let nome = res.getNome()
+            let cognome = res.getCognome()
+            let dataNascita = res.getDataNascita()
+            let codiceFiscale = res.getCodiceFiscale()
+            let telefono = res.getTelefono()
+            let email = res.getEmail()
+            let tipo = res.getTipo()
+            let password = res.getPassword()
+            let allergie = res.getAllergie()
+            let patologie = res.getPatologie()
+            let indirizzo = res.getIndirizzo()
+            let citta = res.getCitta()
+            let cap = res.getCap()
+            
+            
+            
             let paziente = Paziente(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
-                
-                
-//            }
+            
+            
+            //            }
             finished(paziente)
         }
     }

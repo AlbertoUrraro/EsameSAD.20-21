@@ -46,8 +46,8 @@ class Patologia{
             }
             let  res = patologieRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
             let id = idDaCercare
-            let titolo = res.titolo
-            let codiceEsenzione = res.codiceEsenzione
+            let titolo = res.getTitolo()
+            let codiceEsenzione = res.getCodiceEsenzione()
             
             
             
@@ -70,9 +70,9 @@ class Patologia{
             }
             let patologieArr = patologieRes.map{(result) ->Patologia in
                 
-                let id = result.id 
-                let titolo = result.titolo 
-                let codiceEsenzione = result.codiceEsenzione 
+                let id = result.getId()
+                let titolo = result.getTitolo()
+                let codiceEsenzione = result.getCodiceEsenzione()
                 
                 
                 let patologia = Patologia(id: id, titolo: titolo, codiceEsenzione: codiceEsenzione)
