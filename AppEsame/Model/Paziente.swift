@@ -67,6 +67,7 @@ class Paziente: Utente{
             }
             let pazientiArr = pazientiRes.map{(res) ->Paziente in
                 
+                let id = res.getId()
                 let nome = res.getNome()
                 let cognome = res.getCognome()
                 let dataNascita = res.getDataNascita()
@@ -82,7 +83,7 @@ class Paziente: Utente{
                 let cap = res.getCap()
                 
                 
-                let paziente = Paziente(id: "",nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta,cap: cap)
+                let paziente = Paziente(id: id,nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta,cap: cap)
                 
                 return paziente
                 
@@ -100,6 +101,7 @@ class Paziente: Utente{
                 return
             }
             let  res = pazientiRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
+            let id = res.getId()
             let nome = res.getNome()
             let cognome = res.getCognome()
             let dataNascita = res.getDataNascita()
@@ -116,7 +118,7 @@ class Paziente: Utente{
             
             
             
-            let paziente = Paziente(id: "", nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
+            let paziente = Paziente(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
             
             
             //            }
