@@ -69,6 +69,19 @@
                                 <rect key="frame" x="151" y="113" width="113" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PX5-GB-VIy">
+                                <rect key="frame" x="121" y="680" width="173" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.01224201724" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="0.01224201724" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Disconnetti">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOut:" destination="Fxk-LC-nqs" eventType="touchUpInside" id="shH-Uy-xzG"/>
+                                    <segue destination="MMf-Z1-40J" kind="show" identifier="" id="j8I-SK-UYO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q9U-wI-EkK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -431,6 +444,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVF-yd-SEw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2086.9565217391305" y="-128.57142857142856"/>
+        </scene>
+        <!--navigationController-->
+        <scene sceneID="Iuw-w5-H9z">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="navigationController" id="MMf-Z1-40J" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="99Z-eN-fFH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4n-Fh-kKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4409" y="182"/>
         </scene>
         <!--Home-->
         <scene sceneID="jr6-rY-49Q">

@@ -6,8 +6,30 @@
 //
 
 import UIKit
-
+import Firebase
 class ProfiloViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    
+    @IBOutlet weak var profiloTableView: UITableView!
+   
+    var info = [
+        [DBManager.shared.nome, DBManager.shared.cognome,DBManager.shared.email],
+        ["Città", "Lingua"],
+        ["Informazioni"]
+    
+    ]
+    
+    var titoli = ["Utente","Posizione","Applicazione"]
+    
+   
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            title="Profilo"
+        profiloTableView.delegate = self
+        profiloTableView.dataSource = self
+            
+            
+        }
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,11 +70,8 @@ class ProfiloViewController : UIViewController, UITableViewDelegate, UITableView
         Header.addSubview(testotitolo)
         testotitolo.backgroundColor = .systemBlue
         testotitolo.text = titoli[section]
-        
         testotitolo.font = .systemFont(ofSize: 15)
-        
-        
-        
+     
         return Header
     }
     
@@ -66,26 +85,16 @@ class ProfiloViewController : UIViewController, UITableViewDelegate, UITableView
         
         
     //}
-
-    @IBOutlet weak var profiloTableView: UITableView!
-   
-    var info = [
-        [DBManager.shared.nome, DBManager.shared.cognome,DBManager.shared.email],
-        ["Città", "Lingua"],
-        ["Informazioni", "Disconnetti"]
     
-    ]
-    
-    var titoli = ["Utente","Posizione","Applicazione"]
-    
-    override func viewDidLoad() {
-            super.viewDidLoad()
-            title="Profilo"
-        profiloTableView.delegate = self
-        profiloTableView.dataSource = self
-            
-            
+    @IBAction func logOut(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print ("Logout non avvenuto correttamente: %@", signOutError)
         }
+    }
+    
     
     
 }

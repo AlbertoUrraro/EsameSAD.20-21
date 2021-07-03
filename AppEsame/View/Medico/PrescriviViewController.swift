@@ -31,6 +31,11 @@ class PrescriviViewController: UIViewController, UITableViewDelegate, UITableVie
         prescrivi.layer.cornerRadius = 10
 
     }
+    @IBAction func azionePrescrivi(_ sender: UIButton) {
+        
+        
+        
+    }
     
 
 
