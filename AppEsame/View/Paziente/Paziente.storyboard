@@ -32,6 +32,7 @@
         <!--Profilo-->
         <scene sceneID="Trn-30-tAW">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G10-TE-SOO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ProfiloController" id="Fxk-LC-nqs" customClass="ProfiloViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n9N-4o-HVx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -79,7 +80,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logOut:" destination="Fxk-LC-nqs" eventType="touchUpInside" id="shH-Uy-xzG"/>
-                                    <segue destination="MMf-Z1-40J" kind="show" identifier="" id="j8I-SK-UYO"/>
+                                    <segue destination="MMf-Z1-40J" kind="show" id="H7y-mf-zbK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -93,7 +94,6 @@
                         <outlet property="profiloTableView" destination="jaR-KS-f38" id="iAT-GM-dpj"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G10-TE-SOO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3779.7101449275365" y="206.91964285714286"/>
         </scene>
@@ -445,10 +445,10 @@
             </objects>
             <point key="canvasLocation" x="2086.9565217391305" y="-128.57142857142856"/>
         </scene>
-        <!--navigationController-->
+        <!--LoginViewController-->
         <scene sceneID="Iuw-w5-H9z">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="navigationController" id="MMf-Z1-40J" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="LoginViewController" id="MMf-Z1-40J" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="99Z-eN-fFH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4n-Fh-kKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -941,7 +941,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wgo-Gv-qd1"/>
+        <segue reference="eE8-96-C7H"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="GreenButton" width="300" height="300"/>
