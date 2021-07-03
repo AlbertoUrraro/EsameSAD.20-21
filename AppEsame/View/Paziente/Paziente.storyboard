@@ -649,7 +649,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Terapia" id="k3Z-iH-AeM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="O41-fG-zSW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="O41-fG-zSW">
+                            <connections>
+                                <action selector="condividiPDF:" destination="TV1-eB-xYP" id="cSt-Lb-YAc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="terapiaTableView" destination="XlZ-mK-7Oy" id="G4e-hf-evb"/>
