@@ -8,9 +8,10 @@
 import UIKit
 //import FirebaseDatabase
 import LocalAuthentication
+import FirebaseUI
 
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegate {
         
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -62,7 +63,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             print("Accedo all'app")
             //            performSegue(withIdentifier: "LoginPaziente", sender: self)
             self.appLogin(email: self.email.text!, password: self.password.text!)
+
+        
         }
+    }
+    
+    
+
+    
+    
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+            if let user = authDataResult?.user{
+                print("Loggato uid \(user.uid) email \(user.email ?? "")")
+            }
     }
     
     @IBAction func segueRegistrazione(_ sender: Any) {
@@ -84,7 +97,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func appLogin(email: String, password: String){
         
-        LoginViewModel.appLogin(view: self, email: email, password: password)
+        LoginViewModel.appLogin(view: self, email: email, password: password, this: self)
     }
     
     @IBAction func loginFaceID(_ sender: Any) {

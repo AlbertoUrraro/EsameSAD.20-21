@@ -19,6 +19,7 @@ class PazienteDB{
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
         ref = db!.collection("utente").addDocument(data: [
+            "uid": paziente.getUid(),
             "nome": paziente.getNome(),
             "cognome": paziente.getCognome(),
             "dataNascita": paziente.getDataNascita(),
@@ -55,6 +56,7 @@ class PazienteDB{
                 let data = queryResult.data()
                 
                 let id = queryResult.documentID
+                let uid = data["uid"] as? String ?? ""
                 let nome = data["nome"] as? String ?? ""
                 let cognome = data["cognome"] as? String ?? ""
                 let dataNascita = data["dataNascita"] as? String ?? ""
@@ -69,7 +71,7 @@ class PazienteDB{
                 let citta = data["citta"] as? String ?? ""
                 let cap = data["cap"] as? String ?? ""
                 
-                let paziente = Paziente(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
+                let paziente = Paziente(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return paziente
                 
@@ -89,6 +91,7 @@ class PazienteDB{
                 let data = result
                 
                 let id = idDaCercare
+                let uid = data["uid"] as? String ?? ""
                 let nome = data["nome"] as? String ?? ""
                 let cognome = data["cognome"] as? String ?? ""
                 let dataNascita = data["dataNascita"] as? String ?? ""
@@ -103,7 +106,42 @@ class PazienteDB{
                 let citta = data["citta"] as? String ?? ""
                 let cap = data["cap"] as? String ?? ""
                 
-                let paziente = Paziente(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
+                let paziente = Paziente(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
+                
+                return paziente
+                
+            }
+            finished(pazienti)
+        }
+    }
+    
+    func ottieniPazienteDaUid(uidDaCercare: String, finished: @escaping([Paziente]?) -> Void) {
+        db!.collection("utente").whereField("uid", isEqualTo: uidDaCercare).getDocuments() { (queryResult, err) in
+            guard let result = queryResult?.documents else {
+                print("No documents")
+                return
+            }
+            
+            let pazienti = result.map{ (queryResult) -> Paziente in
+                let data = queryResult.data()
+                
+                let id = queryResult.documentID
+                let uid = data["uid"] as? String ?? ""
+                let nome = data["nome"] as? String ?? ""
+                let cognome = data["cognome"] as? String ?? ""
+                let dataNascita = data["dataNascita"] as? String ?? ""
+                let codiceFiscale = data["codiceFiscale"] as? String ?? ""
+                let telefono = data["telefono"] as? String ?? ""
+                let email = data["email"] as? String ?? ""
+                let tipo = data["tipo"] as? String ?? ""
+                let password = data["password"] as? String ?? ""
+                let allergie = data["allergie"] as? [String] ?? []
+                let patologie = data["patologie"] as? [String] ?? []
+                let indirizzo = data["indirizzo"] as? String ?? ""
+                let citta = data["citta"] as? String ?? ""
+                let cap = data["cap"] as? String ?? ""
+                
+                let paziente = Paziente(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return paziente
                 

@@ -417,6 +417,7 @@
 				DF2976032626410300933712 /* Frameworks */,
 				DF2976042626410300933712 /* Resources */,
 				914A86F8414C8FFF989826A3 /* [CP] Embed Pods Frameworks */,
+				08C96D205B325602F933A30D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -476,6 +477,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		08C96D205B325602F933A30D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppEsame/Pods-AppEsame-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppEsame/Pods-AppEsame-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppEsame/Pods-AppEsame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		11B5F018B5BD19E1F4C40AA0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

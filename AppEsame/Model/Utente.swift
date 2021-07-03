@@ -10,6 +10,7 @@ import Foundation
 class Utente{
     //Dichiarazione variabili
     var id: String = ""
+    var uid: String = ""
     var nome: String = ""
     var cognome: String  = ""
     var dataNascita: String  = ""
@@ -27,8 +28,9 @@ class Utente{
     
     
     //Costruttore
-    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, indirizzo: String, citta: String, cap: String){
+    init(id: String, uid: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, indirizzo: String, citta: String, cap: String){
         self.id = id
+        self.uid = uid
         self.nome = nome
         self.cognome = cognome
         self.dataNascita = dataNascita
@@ -47,6 +49,7 @@ class Utente{
     
     //Funzioni set
     func setId(id: String){self.id = id}
+    func setUid(id: String){self.uid = id}
     func setNome(nome: String){self.nome = nome}
     func setCognome(cognome: String){self.cognome = cognome}
     func setDataNascita(dataNascita: String){self.dataNascita = dataNascita}
@@ -61,6 +64,7 @@ class Utente{
     
     //Funzione get
     func getId()->String{return self.id}
+    func getUid()->String{return self.uid}
     func getNome()->String{return self.nome}
     func getCognome()->String{return self.cognome}
     func getDataNascita()->String{return self.dataNascita}
@@ -85,6 +89,7 @@ class Utente{
             let utentiArr = utentiRes.map{(res) ->Utente in
                 
                 let id = res.getId()
+                let uid = res.getUid()
                 let nome = res.getNome()
                 let cognome = res.getCognome()
                 let dataNascita = res.getDataNascita()
@@ -99,7 +104,7 @@ class Utente{
                 
                 
                 
-                let utente = Utente(id: id,nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
+                let utente = Utente(id: id,uid: uid,nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return utente
                 
@@ -107,6 +112,42 @@ class Utente{
             finished(utentiArr)
         }
     }
+    
+    func ottieniUtenteDaUid(uidDaCercare: String, finished: @escaping([Utente]?) -> Void) {
+        
+        utenteDB.ottieniUtenteDaUid(uidDaCercare: uidDaCercare){(utenti) in
+            
+            guard let utentiRes = utenti else {
+                print("error")
+                return
+            }
+            let utentiArr = utentiRes.map{(res) ->Utente in
+                
+                let id = res.getId()
+                let uid = res.getUid()
+                let nome = res.getNome()
+                let cognome = res.getCognome()
+                let dataNascita = res.getDataNascita()
+                let codiceFiscale = res.getCodiceFiscale()
+                let telefono = res.getTelefono()
+                let email = res.getEmail()
+                let tipo = res.getTipo()
+                let password = res.getPassword()
+                let indirizzo = res.getIndirizzo()
+                let citta = res.getCitta()
+                let cap = res.getCap()
+                
+                
+                
+                let utente = Utente(id: id,uid: uid,nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
+                
+                return utente
+                
+            }
+            finished(utentiArr)
+        }
+    }
+    
     
     
 }

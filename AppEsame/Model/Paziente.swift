@@ -16,10 +16,10 @@ class Paziente: Utente{
     var pazienteDB = PazienteDB()
     
     //Costruttore
-    init(id: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, allergie: [String], patologie: [String], indirizzo: String, citta: String, cap: String) {
+    init(id: String,uid: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, allergie: [String], patologie: [String], indirizzo: String, citta: String, cap: String) {
         self.allergie = allergie
         self.patologie = patologie
-        super.init(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
+        super.init(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
     }
     
     //Costruttore vuoto
@@ -38,6 +38,7 @@ class Paziente: Utente{
     
     func pazienteEqUtente(utente:Utente){
         self.setId(id: utente.getId())
+        self.setUid(id: utente.getUid())
         self.setNome(nome: utente.getNome())
         self.setCognome(cognome: utente.getCognome())
         self.setDataNascita(dataNascita: utente.getDataNascita())
@@ -68,6 +69,7 @@ class Paziente: Utente{
             let pazientiArr = pazientiRes.map{(res) ->Paziente in
                 
                 let id = res.getId()
+                let uid = res.getUid()
                 let nome = res.getNome()
                 let cognome = res.getCognome()
                 let dataNascita = res.getDataNascita()
@@ -83,7 +85,7 @@ class Paziente: Utente{
                 let cap = res.getCap()
                 
                 
-                let paziente = Paziente(id: id,nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta,cap: cap)
+                let paziente = Paziente(id: id,uid: uid,nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta,cap: cap)
                 
                 return paziente
                 
@@ -102,6 +104,7 @@ class Paziente: Utente{
             }
             let  res = pazientiRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
             let id = res.getId()
+            let uid = res.getUid()
             let nome = res.getNome()
             let cognome = res.getCognome()
             let dataNascita = res.getDataNascita()
@@ -118,11 +121,48 @@ class Paziente: Utente{
             
             
             
-            let paziente = Paziente(id: id, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
+            let paziente = Paziente(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
             
             
             //            }
             finished(paziente)
+        }
+    }
+    
+    
+    func ottieniPazienteDaUid(uidDaCercare: String, finished: @escaping([Paziente]?) -> Void) {
+        
+        pazienteDB.ottieniPazienteDaUid(uidDaCercare: uidDaCercare){(pazienti) in
+            
+            guard let pazientiRes = pazienti else {
+                print("error")
+                return
+            }
+            let pazientiArr = pazientiRes.map{(res) ->Paziente in
+                
+                let id = res.getId()
+                let uid = res.getUid()
+                let nome = res.getNome()
+                let cognome = res.getCognome()
+                let dataNascita = res.getDataNascita()
+                let codiceFiscale = res.getCodiceFiscale()
+                let telefono = res.getTelefono()
+                let email = res.getEmail()
+                let tipo = res.getTipo()
+                let password = res.getPassword()
+                let allergie = res.getAllergie()
+                let patologie = res.getPatologie()
+                let indirizzo = res.getIndirizzo()
+                let citta = res.getCitta()
+                let cap = res.getCap()
+                
+                
+                let paziente = Paziente(id: id,uid: uid,nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta,cap: cap)
+                
+                return paziente
+                
+            }
+            finished(pazientiArr)
         }
     }
     

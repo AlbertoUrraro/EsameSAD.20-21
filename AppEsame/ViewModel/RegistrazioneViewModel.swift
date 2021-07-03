@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 
 class RegistrazioneViewModel{
@@ -63,22 +64,32 @@ class RegistrazioneViewModel{
     }
     
     public static func completaRegistrazionePaziente(pazienteStep3: Paziente,mediciSelezionati: [String]){
-        let p = Paziente()
-        let r = Richiesta()
-        let idPaziente = p.creaPaziente(paziente: pazienteStep3)
-        for medico in mediciSelezionati{
-            let richiesta = Richiesta(id: "", idPaziente: idPaziente, idMedico: medico, stato: false)
-            r.creaRichiesta(richiesta: richiesta)
+        
+        Auth.auth().createUser(withEmail: pazienteStep3.getEmail(), password: pazienteStep3.getPassword()) { authResult, error in
+            let p = Paziente()
+            let r = Richiesta()
+            pazienteStep3.setUid(id: authResult?.user.uid ?? "")
+            let idPaziente = p.creaPaziente(paziente: pazienteStep3)
+            for medico in mediciSelezionati{
+                let richiesta = Richiesta(id: "", idPaziente: idPaziente, idMedico: medico, stato: false)
+                r.creaRichiesta(richiesta: richiesta)
+            }
         }
+        
     }
     
     public static func completaRegistrazione(medicoStep1: Utente, specializzazioniSelezionate: [String]){
-        let m = Medico()
-        var medico = Medico()
-        medico.medicoEqUtente(utente: medicoStep1)
-        medico.setSpecializzazioni(specializzazioni: specializzazioniSelezionate)
-    
-        m.creaMedico(medico: medico)
+        
+        
+        Auth.auth().createUser(withEmail: medicoStep1.getEmail(), password: medicoStep1.getPassword()) { authResult, error in
+            let m = Medico()
+            var medico = Medico()
+            medico.medicoEqUtente(utente: medicoStep1)
+            medico.setUid(id: authResult?.user.uid ?? "")
+            medico.setSpecializzazioni(specializzazioni: specializzazioniSelezionate)
+            
+            m.creaMedico(medico: medico)
+        }
     }
     
 }
