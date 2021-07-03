@@ -70,6 +70,7 @@
 		9562500E26627C6F0092B054 /* SOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562500D26627C6F0092B054 /* SOSViewController.swift */; };
 		9562501126627C8D0092B054 /* SOSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562501026627C8D0092B054 /* SOSTableViewCell.swift */; };
 		956250142662854F0092B054 /* ProfiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956250132662854F0092B054 /* ProfiloViewController.swift */; };
+		95A966662690B603001C8708 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A966652690B603001C8708 /* PDFCreator.swift */; };
 		95C55B352668E10A00BF503C /* Medico.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C55B342668E10A00BF503C /* Medico.storyboard */; };
 		95C55B382668E3F400BF503C /* HomeMedicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C55B372668E3F400BF503C /* HomeMedicoViewController.swift */; };
 		95C55B3B2668E67300BF503C /* HomeMedicoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C55B3A2668E67300BF503C /* HomeMedicoTableViewCell.swift */; };
@@ -168,6 +169,7 @@
 		9562500D26627C6F0092B054 /* SOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSViewController.swift; sourceTree = "<group>"; };
 		9562501026627C8D0092B054 /* SOSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSTableViewCell.swift; sourceTree = "<group>"; };
 		956250132662854F0092B054 /* ProfiloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfiloViewController.swift; sourceTree = "<group>"; };
+		95A966652690B603001C8708 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 		95C55B342668E10A00BF503C /* Medico.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medico.storyboard; sourceTree = "<group>"; };
 		95C55B372668E3F400BF503C /* HomeMedicoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMedicoViewController.swift; sourceTree = "<group>"; };
 		95C55B3A2668E67300BF503C /* HomeMedicoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMedicoTableViewCell.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				9562501026627C8D0092B054 /* SOSTableViewCell.swift */,
 				956250132662854F0092B054 /* ProfiloViewController.swift */,
 				DFE3CC7F2669275D0015D1C4 /* ProfiloTableViewCell.swift */,
+				95A966652690B603001C8708 /* PDFCreator.swift */,
 			);
 			path = Paziente;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				1C97511E268CE0230064DABA /* TerapiaFarmacologicaDB.swift in Sources */,
 				1C975112268884850064DABA /* RubricaDB.swift in Sources */,
 				95CF849626499E00006D6517 /* Utente.swift in Sources */,
+				95A966662690B603001C8708 /* PDFCreator.swift in Sources */,
 				955D5E722652D26800996BC2 /* HomePazienteViewController.swift in Sources */,
 				95CFE0D6264D7F0300EFE631 /* MediciTableViewCell.swift in Sources */,
 				953BC32D2655589D003F09E3 /* SintomiViewController.swift in Sources */,
