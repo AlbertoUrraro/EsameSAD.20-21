@@ -93,8 +93,10 @@ class ProfiloViewController : UIViewController, UITableViewDelegate, UITableView
         } catch let signOutError as NSError {
           print ("Logout non avvenuto correttamente: %@", signOutError)
         }
+     
+
+        
     }
-    
     
     
 }

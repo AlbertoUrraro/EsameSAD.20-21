@@ -26,6 +26,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
     var context = LAContext()
     
     override func viewDidLoad() {
+        self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
         
         self.email.delegate = self

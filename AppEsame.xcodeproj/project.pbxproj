@@ -100,7 +100,6 @@
 		DF2976142626410300933712 /* AppEsame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF2976122626410300933712 /* AppEsame.xcdatamodeld */; };
 		DF2976162626410400933712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF2976152626410400933712 /* Assets.xcassets */; };
 		DF2976192626410400933712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF2976172626410400933712 /* LaunchScreen.storyboard */; };
-		DF952836269086240005C117 /* LoginNavControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF952835269086230005C117 /* LoginNavControllerViewController.swift */; };
 		DFE3CC802669275D0015D1C4 /* ProfiloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3CC7F2669275D0015D1C4 /* ProfiloTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -201,7 +200,6 @@
 		DF2976152626410400933712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF2976182626410400933712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF29761A2626410400933712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF952835269086230005C117 /* LoginNavControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavControllerViewController.swift; sourceTree = "<group>"; };
 		DFE3CC7F2669275D0015D1C4 /* ProfiloTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfiloTableViewCell.swift; sourceTree = "<group>"; };
 		E0D3F42E0BDC39E2683B51D5 /* Pods-AppEsame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppEsame.debug.xcconfig"; path = "Target Support Files/Pods-AppEsame/Pods-AppEsame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -267,7 +265,6 @@
 				95CFE0D1264D791400EFE631 /* PatologieTableViewCell.swift */,
 				95CFE0D5264D7F0300EFE631 /* MediciTableViewCell.swift */,
 				95F25194265009B8008CDB3C /* SpecializzazioneTableViewCell.swift */,
-				DF952835269086230005C117 /* LoginNavControllerViewController.swift */,
 			);
 			path = RegistrazioneLogin;
 			sourceTree = "<group>";
@@ -573,7 +570,6 @@
 				95C55B3B2668E67300BF503C /* HomeMedicoTableViewCell.swift in Sources */,
 				95C55B3E266912CE00BF503C /* MedicoTabBarController.swift in Sources */,
 				DF2976142626410300933712 /* AppEsame.xcdatamodeld in Sources */,
-				DF952836269086240005C117 /* LoginNavControllerViewController.swift in Sources */,
 				DF29760A2626410300933712 /* AppDelegate.swift in Sources */,
 				1C38154C2666A8CC00A8CBFB /* Operazione.swift in Sources */,
 				952E2349265C3BE2006FAC1E /* TerapiaTableViewCell.swift in Sources */,
