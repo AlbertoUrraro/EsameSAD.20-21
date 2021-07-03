@@ -19,6 +19,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
     @IBOutlet weak var loginFaceId: UIButton!
     
     
+    
+    
+    
     //per FaceId
     var context = LAContext()
     
@@ -143,6 +146,46 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
     }
     
     
-}
+    @IBAction func PassDimenticata_click(_ sender: UIButton) {
+          
+            //Creo un UIAlertController che mi chiede l'email dell'account dell'user che ha dimenticato la password
+                    let forgotPasswordAlert = UIAlertController(title: "Hai dimenticato la password?", message: "Inserisci la tua email", preferredStyle: .alert)
+                    forgotPasswordAlert.addTextField { (textField) in
+                        textField.placeholder = "Inserire l'email"
+                    }
+                    //Aggiungo dei bottoni e quindi delle azione all'UIAlertController
+                    forgotPasswordAlert.addAction(UIAlertAction(title: "Annulla", style: .cancel, handler: nil))
+                    forgotPasswordAlert.addAction(UIAlertAction(title: "Ripristina password", style: .default, handler: { (action) in
+                        /* Potrei usare l'email nel text field senza inserirla nel UIAlertController, quindi eliminando forgotPasswordAlert.addTextField e utilizzando
+                         let resetEmail = self.emailTextField.text al posto del codice della riga successiva, cioè prendo l'email dal textfield dove inserisco l'email per registrarmi e per accedere e non quella che inserisco nel UIAlertController */
+                        let resetEmail = forgotPasswordAlert.textFields?.first?.text
+                        Auth.auth().sendPasswordReset(withEmail: resetEmail!, completion: { (error) in
+                            DispatchQueue.main.async {
+                                if let error = error {
+                                    let resetFailedAlert = UIAlertController(title: "Ripristino fallito", message: error.localizedDescription, preferredStyle: .alert)
+                                    resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                    self.present(resetFailedAlert, animated: true, completion: nil)
+                                } else {
+                                    let resetEmailSentAlert = UIAlertController(title: "Ripristino avvenuto con successo", message: "Cerca tra le tue email", preferredStyle: .alert)
+                                    resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                    self.present(resetEmailSentAlert, animated: true, completion: nil)
+                                }
+                            }
+                        })
+                    }))
+                    //Avviso presente
+                    self.present(forgotPasswordAlert, animated: true, completion: nil)
+                    
+        }
+        
+        
+    }
+
+    
+    
+    
+    
+    
+
 
 

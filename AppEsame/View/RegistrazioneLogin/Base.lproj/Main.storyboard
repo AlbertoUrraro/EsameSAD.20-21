@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fBK-Pz-fRe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fBK-Pz-fRe">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -91,6 +91,9 @@
                                 <state key="normal" title="Password dimenticata?">
                                     <color key="titleColor" systemColor="secondaryLabelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="PassDimenticata_click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4lr-IV-nrC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8si-Ew-HLu">
                                 <rect key="frame" x="60" y="484" width="270" height="34"/>
@@ -686,7 +689,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="specializzazionecell" rowHeight="73" id="QW2-NS-a47" customClass="SpecializzazioneTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="73"/>
+                                        <rect key="frame" x="20" y="49" width="350" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QW2-NS-a47" id="s77-as-yKc">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="73"/>
@@ -789,7 +792,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="allergiacell" rowHeight="73" id="7LA-Mv-y8L" customClass="AllergieTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="73"/>
+                                        <rect key="frame" x="20" y="49" width="350" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7LA-Mv-y8L" id="VP7-7v-eH0">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="73"/>
@@ -904,7 +907,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="patologiacell" rowHeight="73" id="ZvV-Zf-DEX" customClass="PatologieTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="73"/>
+                                        <rect key="frame" x="20" y="49" width="350" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZvV-Zf-DEX" id="SkJ-of-JEO">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="73"/>
@@ -1020,7 +1023,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="medicocell" rowHeight="100" id="pKc-tU-tPe" customClass="MediciTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="350" height="100"/>
+                                        <rect key="frame" x="20" y="49" width="350" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pKc-tU-tPe" id="iU3-aX-MwG">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="100"/>
