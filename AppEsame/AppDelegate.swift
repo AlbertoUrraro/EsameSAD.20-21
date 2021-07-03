@@ -11,15 +11,32 @@ import FirebaseCore
 import FirebaseFirestore
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
+    
+    //    This step will allow your app to show Push Notification even when your app is in foreground
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+     
+        
+        
+        let userInfo = notification.request.content.userInfo
+        
+//        Customize notification
+        completionHandler([.alert,.sound])
+    }
+    
 
     // MARK: UISceneSession Lifecycle
 
