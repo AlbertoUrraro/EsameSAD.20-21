@@ -667,6 +667,7 @@
                     <navigationItem key="navigationItem" title="Storico terapie" id="9zK-xU-hcX"/>
                     <connections>
                         <outlet property="storicoTableView" destination="Ryr-kc-1H2" id="li5-mC-AIW"/>
+                        <segue destination="Gnz-rb-Ln4" kind="show" identifier="ProfiloControllerMedico" id="xHX-vf-udo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfE-Ls-1S3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -935,6 +936,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="richiestaTableView" destination="Yj2-m6-88V" id="ffD-TQ-Mju"/>
+                        <segue destination="Gnz-rb-Ln4" kind="show" identifier="ProfiloControllerMedico" id="azw-vi-0IH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztB-2c-d9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1037,13 +1039,95 @@
                     </navigationItem>
                     <connections>
                         <outlet property="sosTableView" destination="NNw-Q6-Vel" id="9kY-xP-lpt"/>
+                        <segue destination="Gnz-rb-Ln4" kind="show" identifier="ProfiloControllerMedico" id="lG9-J5-Nor"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFN-lL-Dv7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1256.521739130435" y="1011.8303571428571"/>
         </scene>
+        <!--Profilo-->
+        <scene sceneID="KQY-y2-mj7">
+            <objects>
+                <viewController storyboardIdentifier="ProfiloControllerMedico" id="Gnz-rb-Ln4" customClass="ProfiloMedicoViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="678-Yr-6V8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7cu-fs-4Yx">
+                                <rect key="frame" x="20" y="247" width="374" height="425"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profilocellMedico" id="ir2-E8-vjn" customClass="ProfiloMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ir2-E8-vjn" id="Y1I-Dx-yeM">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGM-mt-pWl">
+                                                    <rect key="frame" x="20" y="11" width="347" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="infoprofiloMedico" destination="HGM-mt-pWl" id="yA7-Ha-KCk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="xOu-fD-b7D">
+                                <rect key="frame" x="151" y="113" width="113" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yO6-Hk-ZP9">
+                                <rect key="frame" x="121" y="680" width="173" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.01224201724" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="0.01224201724" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Disconnetti">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOut:" destination="Gnz-rb-Ln4" eventType="touchUpInside" id="GDW-cu-lgh"/>
+                                    <segue destination="hJI-if-yJ7" kind="show" id="pRl-RV-nL5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gPd-cY-mtj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profilo" id="CY2-YV-aDx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="wdK-1a-Ufg"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="profiloMedico" destination="7cu-fs-4Yx" id="IZJ-6B-ELt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PVF-ff-BdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3993" y="-103"/>
+        </scene>
+        <!--LoginViewController-->
+        <scene sceneID="5ht-Iv-qoj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="LoginViewController" id="hJI-if-yJ7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vhI-YV-sfq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BQz-Ql-CfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4621" y="-129"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xHX-vf-udo"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="SfondoTable" width="256" height="521.33331298828125"/>
         <image name="add-friend" width="25" height="25"/>
