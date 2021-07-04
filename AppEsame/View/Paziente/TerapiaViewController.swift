@@ -9,7 +9,9 @@ import UIKit
 
 class TerapiaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var medicinali = ["Tachipirina", "Cardiospirina", "Brufen"]
+    var descrizione = ["1 bustina", "1 pillola", "Mezza bustina"]
     var ore = [1,2,1]
+    var giorni = [1,1,1]
   
     @IBOutlet weak var terapiaTableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -18,8 +20,10 @@ class TerapiaViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = terapiaTableView.dequeueReusableCell(withIdentifier: "terapiacell", for: indexPath) as! TerapiaTableViewCell
-        cell.initcell(numeroNotifica: indexPath.row, nomeMedicina: medicinali[indexPath.row], ore: ore[indexPath.row] )
+        cell.initcell(ore: ore[indexPath.row], giorni:giorni[indexPath.row] )
         cell.nomeMedicinale.text = medicinali[indexPath.row]
+        cell.descrizioneMedicinale.text = descrizione[indexPath.row]
+        
         return cell
     }
     
@@ -35,7 +39,7 @@ class TerapiaViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
      
 //        DA TOGLIERE IL COMMENTO QUANDO SI VOGLIONO ELIMINARE LE NOTIFICHE
-//        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         // Do any additional setup after loading the view.
     }
     
