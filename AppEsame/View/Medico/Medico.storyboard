@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cIl-BO-9dU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cIl-BO-9dU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,8 +15,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E07-MC-hlB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.55863171820000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="selectedImageTintColor" red="0.99608510729999999" green="0.99606639149999998" blue="0.99607914689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="THs-RT-t8k" kind="relationship" relationship="viewControllers" id="Mmo-a6-Hem"/>
@@ -62,7 +60,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicocell" rowHeight="66" id="bJl-b2-f5T" customClass="HomeMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="414" height="66"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bJl-b2-f5T" id="i1O-dM-ArT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
@@ -214,6 +212,7 @@
                     <connections>
                         <outlet property="homeMedicoTableView" destination="4qF-ky-EUy" id="sCb-nr-qmk"/>
                         <segue destination="GlW-gS-msu" kind="show" identifier="DettaglioController" id="XHG-Lf-dLV"/>
+                        <segue destination="Gnz-rb-Ln4" kind="show" identifier="ProfiloControllerMedico" id="NCD-jq-BKl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPc-hs-npo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -271,7 +270,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dettagliocell" id="Wkf-xh-HOW" customClass="DettaglioPazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="340" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="340" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wkf-xh-HOW" id="A9u-fX-lLg">
                                             <rect key="frame" x="0.0" y="0.0" width="340" height="44"/>
@@ -383,7 +382,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sintomicell" id="ScV-Ig-i7d" customClass="StatoSaluteSintomiTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ScV-Ig-i7d" id="1Hm-mZ-Lx7">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
@@ -423,7 +422,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="parametricell" id="ROi-As-FO1" customClass="StatoSaluteParametriTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ROi-As-FO1" id="d9J-8g-ta4">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
@@ -515,7 +514,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartellacell" id="wwm-0X-22B" customClass="CartellaClinicaMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="340" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="340" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwm-0X-22B" id="GGb-9w-hpM">
                                             <rect key="frame" x="0.0" y="0.0" width="340" height="44"/>
@@ -606,7 +605,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="storicocell" id="7GD-6d-Nc3" customClass="StoricoTerapieTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="340" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="340" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7GD-6d-Nc3" id="xha-7I-Wgv">
                                             <rect key="frame" x="0.0" y="0.0" width="340" height="44"/>
@@ -667,7 +666,6 @@
                     <navigationItem key="navigationItem" title="Storico terapie" id="9zK-xU-hcX"/>
                     <connections>
                         <outlet property="storicoTableView" destination="Ryr-kc-1H2" id="li5-mC-AIW"/>
-                        <segue destination="Gnz-rb-Ln4" kind="show" identifier="ProfiloControllerMedico" id="xHX-vf-udo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfE-Ls-1S3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -691,7 +689,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="prescrivicell" rowHeight="55" id="vgY-Qj-ad3" customClass="PrescriviTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="414" height="55"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vgY-Qj-ad3" id="SsO-7K-4yx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
@@ -845,7 +843,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="richiestecell" rowHeight="84" id="V6z-br-oRx" customClass="RichiesteTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="374" height="84"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="374" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V6z-br-oRx" id="DTm-tb-351">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="84"/>
@@ -936,7 +934,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="richiestaTableView" destination="Yj2-m6-88V" id="ffD-TQ-Mju"/>
-                        <segue destination="Gnz-rb-Ln4" kind="show" identifier="ProfiloControllerMedico" id="azw-vi-0IH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztB-2c-d9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -984,7 +981,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="soscell" id="q0a-BK-vU3" customClass="SOSMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q0a-BK-vU3" id="pqz-CK-Yoe">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
@@ -1039,7 +1036,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="sosTableView" destination="NNw-Q6-Vel" id="9kY-xP-lpt"/>
-                        <segue destination="Gnz-rb-Ln4" kind="show" identifier="ProfiloControllerMedico" id="lG9-J5-Nor"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFN-lL-Dv7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1060,7 +1056,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profilocellMedico" id="ir2-E8-vjn" customClass="ProfiloMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ir2-E8-vjn" id="Y1I-Dx-yeM">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -1112,7 +1108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVF-ff-BdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3993" y="-103"/>
+            <point key="canvasLocation" x="4200" y="475"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="5ht-Iv-qoj">
@@ -1125,9 +1121,6 @@
             <point key="canvasLocation" x="4621" y="-129"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="xHX-vf-udo"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="SfondoTable" width="256" height="521.33331298828125"/>
         <image name="add-friend" width="25" height="25"/>

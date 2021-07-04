@@ -120,21 +120,21 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
       
     //Funzione per settare il logo a sinistra
     func addRightButton() {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 21))
-        label.textAlignment = .right
-        label.text = DBManager.shared.nome + " " + DBManager.shared.cognome
-    
-        let widthConstraintlabel = label.widthAnchor.constraint(equalToConstant: 50)
-        let heightConstraintlabel = label.heightAnchor.constraint(equalToConstant: 21)
-        heightConstraintlabel.isActive = true
-        widthConstraintlabel.isActive = true
+//        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 21))
+//        label.textAlignment = .right
+//        label.text = DBManager.shared.nome + " " + DBManager.shared.cognome
+//
+//        let widthConstraintlabel = label.widthAnchor.constraint(equalToConstant: 50)
+//        let heightConstraintlabel = label.heightAnchor.constraint(equalToConstant: 21)
+//        heightConstraintlabel.isActive = true
+//        widthConstraintlabel.isActive = true
         
         
         let profiloButton  = UIButton(type: .custom)
         profiloButton.setImage(UIImage(named: "user.png"), for: .normal)
         profiloButton.frame = CGRect(x:0.0,y:0.0, width:25.0,height:25.0)
         profiloButton.contentMode = .scaleAspectFit
-       let labelItem = UIBarButtonItem.init(customView: label)
+//        let labelItem = UIBarButtonItem.init(customView: label)
 
         profiloButton.addTarget(self, action: #selector(visualizzaProfilo(sender:)), for: .touchUpInside)
         let widthConstraint = profiloButton.widthAnchor.constraint(equalToConstant: 25)
@@ -144,7 +144,7 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
 
         let profiloItem = UIBarButtonItem.init(customView: profiloButton)
         
-        navigationItem.rightBarButtonItems =  [labelItem,profiloItem]
+        navigationItem.rightBarButtonItem = profiloItem
       
     }
     @objc func visualizzaProfilo(sender: UIButton){
