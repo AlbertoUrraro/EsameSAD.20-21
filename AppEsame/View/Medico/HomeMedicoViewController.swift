@@ -148,7 +148,7 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
       
     }
     @objc func visualizzaProfilo(sender: UIButton){
-//        performSegue(withIdentifier: "ProfiloController", sender: self)
+        performSegue(withIdentifier: "ProfiloControllerMedico", sender: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
