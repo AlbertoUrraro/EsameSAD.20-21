@@ -39,16 +39,16 @@ class ParametriViewController: UIViewController, UITableViewDelegate, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let inviaButton = UIBarButtonItem(title: "Invia", style: .bordered, target: self, action: #selector(avanti(sender:)))
+        let inviaButton = UIBarButtonItem(title: "Invia", style: .bordered, target: self, action: #selector(invia(sender:)))
            self.navigationItem.rightBarButtonItem  = inviaButton
     }
     
-    @objc func avanti(sender: Any){
+    @objc func invia(sender: Any){
         let storyboard = UIStoryboard(name: "Paziente", bundle: nil)
                 let secondVC = storyboard.instantiateViewController(identifier: "HomeViewController")
 
                 show(secondVC, sender: self)
-    }
+           }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "SELEZIONA I TUOI PARAMETRI:"

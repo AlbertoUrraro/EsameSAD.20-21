@@ -12,7 +12,6 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
     
     var indexRow = 0
 
-
     @IBOutlet weak var homePazienteTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,21 +20,19 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = homePazienteTableView.dequeueReusableCell(withIdentifier: "homecell",for: indexPath ) as! HomePazienteTableViewCell
-        if (indexPath.row == 0){
-
-        cell.nome.text = "Stato salute"
-            let image = UIImage(named: "GreenButton.png")
-//            cell.stato.image = image
-        }
-        else  if (indexPath.row == 1){
-//            cell.nome.text = "Terapia"+String(indexPath.row)
-            cell.nome.text = "Terapia"
-            let image = UIImage(named: "RedButton.png")
-//            cell.stato.image = image
-        }
-        else{
+     
+        
+           if (indexPath.row == 0){
+            cell.nome.text = "Stato salute"
+           }
+        else
+           if (indexPath.row == 1){
+            cell.nome.text = "Terapia in corso"
+           }
+        else if (indexPath.row == 2){
             cell.nome.text = "Storico terapie"
-//            cell.stato.isHidden = true
+            cell.progressBar.isHidden = true
+
         }
 
         return cell
@@ -66,15 +63,19 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
        
     }
   
-    
- 
+
     
     override func viewDidLoad() {
             super.viewDidLoad()
             addLeftBarIcon()
             addRightButton()
-  
+            homePazienteTableView.reloadData()
           }
+    
+    override func viewWillAppear(_ animated: Bool) {
+
+        homePazienteTableView.reloadData()
+    }
 
       
         
@@ -94,22 +95,12 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
           
         //Funzione per settare il logo a sinistra
         func addRightButton() {
-//            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 21))
-//            label.textAlignment = .right
-//            label.text = DBManager.shared.nome + " " + DBManager.shared.cognome
-//
-//            let widthConstraintlabel = view.widthAnchor.constraint(equalToConstant: 60)
-//            let heightConstraintlabel = view.heightAnchor.constraint(equalToConstant: 25)
-//            heightConstraintlabel.isActive = true
-//            widthConstraintlabel.isActive = true
-            
-            
-            
+
             let profiloButton  = UIButton(type: .custom)
             profiloButton.setImage(UIImage(named: "user.png"), for: .normal)
             profiloButton.frame = CGRect(x:0.0,y:0.0, width:25.0,height:25.0)
             profiloButton.contentMode = .scaleAspectFit
-    //        let labelItem = UIBarButtonItem.init(customView: label)
+ 
 
             profiloButton.addTarget(self, action: #selector(visualizzaProfilo(sender:)), for: .touchUpInside)
             let widthConstraint = profiloButton.widthAnchor.constraint(equalToConstant: 25)

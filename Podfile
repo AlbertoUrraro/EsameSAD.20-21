@@ -17,6 +17,7 @@ pod 'Firebase/Auth'
 # https://firebase.google.com/docs/ios/setup#available-pods
 pod 'DLRadioButton', '~> 1.4'
 
+pod "LinearProgressBar"
 
 
 end

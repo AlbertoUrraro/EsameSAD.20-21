@@ -10,6 +10,8 @@ import UIKit
 class SintomiViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var sintomiTableView: UITableView!
+
+    
     var sintomi = ["mal di gola", "mal di testa", "febbre", "tosse"]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sintomi.count
@@ -31,6 +33,7 @@ class SintomiViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @objc func avanti(sender: Any){
         performSegue(withIdentifier: "ParametriController", sender: self)
+      
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

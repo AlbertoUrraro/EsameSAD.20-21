@@ -6,15 +6,14 @@
 //
 
 import UIKit
+import LinearProgressBar
 
 class HomePazienteTableViewCell: UITableViewCell {
 
-  
+    @IBOutlet weak var progressBar: LinearProgressBar!
+    
 
     @IBOutlet weak var nome: UILabel!
-    @IBOutlet weak var stato: UIImageView!
     
-    func initCell(){
-       
-    }
+  
 }

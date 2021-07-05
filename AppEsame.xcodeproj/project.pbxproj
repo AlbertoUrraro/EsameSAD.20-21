@@ -80,6 +80,7 @@
 		9573DA9626921A230044E0AF /* DSFStepperView+localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA8D26921A220044E0AF /* DSFStepperView+localization.swift */; };
 		9573DA9726921A230044E0AF /* DSFStepperView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA8E26921A220044E0AF /* DSFStepperView+Delegate.swift */; };
 		95A966662690B603001C8708 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A966652690B603001C8708 /* PDFCreator.swift */; };
+		95BA944026939ED2008336D7 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA943F26939ED2008336D7 /* ProgressBar.swift */; };
 		95C55B352668E10A00BF503C /* Medico.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C55B342668E10A00BF503C /* Medico.storyboard */; };
 		95C55B382668E3F400BF503C /* HomeMedicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C55B372668E3F400BF503C /* HomeMedicoViewController.swift */; };
 		95C55B3B2668E67300BF503C /* HomeMedicoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C55B3A2668E67300BF503C /* HomeMedicoTableViewCell.swift */; };
@@ -207,6 +208,7 @@
 		9573DA8D26921A220044E0AF /* DSFStepperView+localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+localization.swift"; sourceTree = "<group>"; };
 		9573DA8E26921A220044E0AF /* DSFStepperView+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+Delegate.swift"; sourceTree = "<group>"; };
 		95A966652690B603001C8708 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+		95BA943F26939ED2008336D7 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		95C55B342668E10A00BF503C /* Medico.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medico.storyboard; sourceTree = "<group>"; };
 		95C55B372668E3F400BF503C /* HomeMedicoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMedicoViewController.swift; sourceTree = "<group>"; };
 		95C55B3A2668E67300BF503C /* HomeMedicoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMedicoTableViewCell.swift; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 				1CC63C972649C826001AEDEA /* View */,
 				1CC63CA92649F33F001AEDEA /* ViewModel */,
 				DF2976092626410300933712 /* AppDelegate.swift */,
+				95BA943F26939ED2008336D7 /* ProgressBar.swift */,
 				DF29760B2626410300933712 /* SceneDelegate.swift */,
 				1CC63CAC2649F4B7001AEDEA /* Errore.swift */,
 				DF2976152626410400933712 /* Assets.xcassets */,
@@ -729,6 +732,7 @@
 				9573DA9626921A230044E0AF /* DSFStepperView+localization.swift in Sources */,
 				1C43DCCC264F1515001998F9 /* SintomoDB.swift in Sources */,
 				1CC63CA42649EF76001AEDEA /* Step2MedicoViewController.swift in Sources */,
+				95BA944026939ED2008336D7 /* ProgressBar.swift in Sources */,
 				1CC63CA62649EF9C001AEDEA /* Step2PazienteViewController.swift in Sources */,
 				1CC63C9D2649CDFD001AEDEA /* PazienteViewController.swift in Sources */,
 				1CE128FB2652EDEE00B9EE45 /* AllergiaDB.swift in Sources */,
