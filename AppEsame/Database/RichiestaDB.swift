@@ -33,4 +33,29 @@ class RichiestaDB{
         }
     }
     
+    
+    func ottieniRichiesteDaIdMedico(idDaCercare: String, finished: @escaping([Richiesta]?) -> Void) {
+        db!.collection("richiesta").whereField("idMedico", isEqualTo: idDaCercare).whereField("stato", isEqualTo: false).getDocuments() { (queryResult, err) in
+            guard let result = queryResult?.documents else {
+                print("No documents")
+                return
+            }            
+            let richieste = result.map{ (queryResult) -> Richiesta in
+                let data = queryResult.data()
+                
+                let id = queryResult.documentID
+                let idPaziente = data["idPaziente"] as? String ?? ""
+                let idMedico = data["idMedico"] as? String ?? ""
+                let stato = data["stato"] as? Bool ?? false
+                
+                
+                let richiesta = Richiesta(id: id, idPaziente: idPaziente, idMedico: idMedico, stato: stato)
+                
+                return richiesta
+                
+            }
+            finished(richieste)
+        }
+    }
+    
 }
