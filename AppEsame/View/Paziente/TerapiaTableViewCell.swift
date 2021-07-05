@@ -42,7 +42,7 @@ class TerapiaTableViewCell: UITableViewCell {
             
             let settings = UIApplication.shared.currentUserNotificationSettings
 //********************************RICORDATI DI AGGIUNGERE UN *60 PERCHè COSI SONO I SECONDI*******************************
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval:Double(60*1*ore*i), repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval:Double(60*1*ore*i*60), repeats: false)
             let content = UNMutableNotificationContent()
             content.title = "Ricordati di prendere " + nomeMedicinale.text!
             content.body = descrizioneMedicinale.text!
