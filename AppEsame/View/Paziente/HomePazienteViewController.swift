@@ -7,9 +7,11 @@
 
 import UIKit
 
+
 class HomePazienteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var indexRow = 0
+
 
     @IBOutlet weak var homePazienteTableView: UITableView!
     
@@ -23,17 +25,17 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
 
         cell.nome.text = "Stato salute"
             let image = UIImage(named: "GreenButton.png")
-            cell.stato.image = image
+//            cell.stato.image = image
         }
         else  if (indexPath.row == 1){
 //            cell.nome.text = "Terapia"+String(indexPath.row)
             cell.nome.text = "Terapia"
             let image = UIImage(named: "RedButton.png")
-            cell.stato.image = image
+//            cell.stato.image = image
         }
         else{
             cell.nome.text = "Storico terapie"
-            cell.stato.isHidden = true
+//            cell.stato.isHidden = true
         }
 
         return cell
@@ -71,6 +73,7 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
             super.viewDidLoad()
             addLeftBarIcon()
             addRightButton()
+  
           }
 
       
