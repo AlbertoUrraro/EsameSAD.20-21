@@ -48,9 +48,9 @@ class Richiesta{
     }
 
     
-    func ottieniRichiesteDaIdMedico(idDaCercare: String, finished: @escaping([Richiesta]?) -> Void) {
+    func ottieniRichiesteDaIdMedico(idDaCercare: String,condizione: Bool, finished: @escaping([Richiesta]?) -> Void) {
         
-        richiestaeDB.ottieniRichiesteDaIdMedico(idDaCercare: idDaCercare){(richieste) in
+        richiestaeDB.ottieniRichiesteDaIdMedico(idDaCercare: idDaCercare, condizione: condizione){(richieste) in
             
             guard let richiesteRes = richieste else {
                 print("error")
@@ -72,6 +72,10 @@ class Richiesta{
             }
             finished(richiesteArr)
         }
+    }
+    
+    func aggiornaStatoRichiesta(idRichiesta: String, stato: Bool){
+        richiestaeDB.aggiornaStatoRichiesta(idRichiesta: idRichiesta, stato: stato)
     }
 
 

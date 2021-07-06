@@ -29,16 +29,19 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = homeMedicoTableView.dequeueReusableCell(withIdentifier: "medicocell", for: indexPath) as! HomeMedicoTableViewCell
         
         var nome = String()
+        var cognome = String()
         // se viene la Search Bar è attiva allora utilizza l'elemento con indice visualizzato a partire dalla listra Filtrata
                 if self.resultSearchController!.isActive {
                     nome = nomeFiltrato[indexPath.row]
                 } else {
                     //ricavo un elemento della lista in posizione row (il num di riga) e lo conservo
                     nome = self.nome[indexPath.row]
+                    cognome = self.cognome[indexPath.row]
                 }
                 
                 //riempio la cella assegnando ad una label testuale il nome dell'alimento
                 cell.nome?.text = nome
+                cell.cognome?.text = cognome
   
                 
     
@@ -49,7 +52,8 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     @IBOutlet weak var homeMedicoTableView: UITableView!
-    var nome = ["Marco", "Luca"]
+    var nome:[String] = []
+    var cognome:[String] = []
     var nomeFiltrato = [String]()
     
     
@@ -77,6 +81,8 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
         })()
         addRightButton()
         addLeftBarIcon()
+        
+        
     }
     
 
@@ -153,6 +159,42 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewWillDisappear(_ animated: Bool) {
         self.resultSearchController?.dismiss(animated: false, completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // ottengo i pazienti associati
+        self.nome = []
+        self.cognome = []
+        self.nomeFiltrato = []
+        
+        let r = Richiesta()
+        DBManager.shared.getUserDefaultUtenteLoggato()
+        
+        r.ottieniRichiesteDaIdMedico(idDaCercare: DBManager.shared.id, condizione: true){(richieste) in
+            
+            guard let richiesteRes = richieste else {
+                print("error")
+                return
+            }
+            for richiesta in richiesteRes{
+                let p = Paziente()
+                
+                p.ottieniPazienteDaId(idDaCercare: richiesta.getIdPaziente()){(pazienti) in
+                    
+                    guard let pazientiRes = pazienti else {
+                        print("error")
+                        return
+                    }
+                    
+                    self.nome.append(pazientiRes.getNome())
+                    self.cognome.append(pazientiRes.getCognome())
+                    self.homeMedicoTableView.reloadData()
+                }
+            }
+            
+            self.homeMedicoTableView.reloadData()
+            
+        }
     }
     
     

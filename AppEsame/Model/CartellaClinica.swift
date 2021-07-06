@@ -78,9 +78,9 @@ class CartellaClinica{
         }
     }
     
-    func ottieniPazienteDaIdUtente(idDaCercare: String, finished: @escaping([CartellaClinica]?) -> Void) {
+    func ottieniCartellaClinicaDaIdUtente(idDaCercare: String, finished: @escaping([CartellaClinica]?) -> Void) {
         
-        cartellaClinicaDB.ottieniPazienteDaIdUtente(idDaCercare: idDaCercare){(cartelleCliniche) in
+        cartellaClinicaDB.ottieniCartellaClinicaDaIdUtente(idDaCercare: idDaCercare){(cartelleCliniche) in
             
             guard let cartelleClinicheRes = cartelleCliniche else {
                 print("error")

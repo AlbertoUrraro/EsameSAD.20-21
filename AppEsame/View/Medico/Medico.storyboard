@@ -886,7 +886,17 @@
                                                     <state key="normal" title="Accetta">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="accettaAction:" destination="V6z-br-oRx" eventType="touchUpInside" id="Tde-Jw-gwo"/>
+                                                    </connections>
                                                 </button>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOQ-uG-ByT">
+                                                    <rect key="frame" x="108" y="63" width="14" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="J7c-4G-jFB" firstAttribute="top" secondItem="DTm-tb-351" secondAttribute="topMargin" id="5AM-Cl-zfm"/>
@@ -905,6 +915,7 @@
                                         <connections>
                                             <outlet property="accetta" destination="4eQ-Hc-bOu" id="Y45-Rb-mph"/>
                                             <outlet property="cognome" destination="tHv-I6-0YW" id="CKM-oM-h9F"/>
+                                            <outlet property="id" destination="UOQ-uG-ByT" id="fbw-cS-Hik"/>
                                             <outlet property="immagineProfilo" destination="J7c-4G-jFB" id="HCk-uX-jSR"/>
                                             <outlet property="nome" destination="6n8-BF-C8z" id="Fkj-Da-B1y"/>
                                         </connections>
