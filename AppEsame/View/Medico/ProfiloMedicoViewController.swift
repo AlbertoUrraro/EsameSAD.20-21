@@ -14,7 +14,7 @@ class ProfiloMedicoViewController:  UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var profiloMedico: UITableView!
     var info = [
         [DBManager.shared.nome, DBManager.shared.cognome,DBManager.shared.email],
-        ["Città", "Lingua"],
+        [DBManager.shared.citta, "Italiano"],
         ["Informazioni"]
     
     ]
@@ -57,20 +57,12 @@ class ProfiloMedicoViewController:  UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let Header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 20))
-        Header.backgroundColor = .systemBlue
-        
-        //let imageView = UIImageView(image: UIImage (systemName: "house"))
-        //imageView.tintColor = .black
-        //imageView.contentMode = .scaleAspectFit
-        //Header.addSubview(imageView)
-        //imageView.frame = CGRect(x: 3, y: 3, width: Header.frame.size.height+5, height: Header.frame.size.height+5)
-        
         let testotitolo = UILabel(frame: CGRect(x: 5 , y: 5, width: Header.frame.size.width - 10 , height: Header.frame.size.height))
         
         Header.addSubview(testotitolo)
-        testotitolo.backgroundColor = .systemBlue
+        //testotitolo.backgroundColor = .systemBlue
         testotitolo.text = titoli[section]
-        testotitolo.font = .systemFont(ofSize: 15)
+        testotitolo.font = .systemFont(ofSize: 17)
      
         return Header
     }

@@ -21,7 +21,7 @@ class DBManager{
     var nome = ""
     var cognome = ""
     var email = ""
-    
+    var citta = ""
     private init(){}
     
     public func openConnection(){
@@ -41,6 +41,7 @@ class DBManager{
         userDefault.setValue(self.nome, forKey: "nome")
         userDefault.setValue(self.cognome, forKey: "cognome")
         userDefault.setValue(self.email, forKey: "email")
+        userDefault.setValue(self.citta, forKey: "città")
     }
     
     public func getUserDefaultUtenteLoggato(){
@@ -49,6 +50,7 @@ class DBManager{
         self.nome = userDefault.object(forKey: "nome") as? String ?? ""
         self.cognome = userDefault.object(forKey: "cognome") as? String ?? ""
         self.email = userDefault.object(forKey: "email") as? String ?? ""
+        self.citta = userDefault.object(forKey: "citta") as? String ?? ""
         
     }
     
