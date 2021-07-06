@@ -47,6 +47,32 @@ class Richiesta{
         richiestaeDB.creaRichiesta(richiesta: richiesta)
     }
 
+    
+    func ottieniRichiesteDaIdMedico(idDaCercare: String, finished: @escaping([Richiesta]?) -> Void) {
+        
+        richiestaeDB.ottieniRichiesteDaIdMedico(idDaCercare: idDaCercare){(richieste) in
+            
+            guard let richiesteRes = richieste else {
+                print("error")
+                return
+            }
+            let richiesteArr = richiesteRes.map{(result) ->Richiesta in
+                
+                let id = result.getId()
+                let idPaziente = result.getIdPaziente()
+                let idMedico  = result.getIdMedico()
+                let stato = result.getStato()
+                
+                
+                
+                let richiesta = Richiesta(id: id, idPaziente: idPaziente, idMedico: idMedico, stato: stato)
+                
+                return richiesta
+                
+            }
+            finished(richiesteArr)
+        }
+    }
 
 
     

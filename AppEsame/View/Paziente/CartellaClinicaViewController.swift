@@ -19,9 +19,18 @@ class CartellaClinicaViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cartellaClinicaTableView.dequeueReusableCell(withIdentifier: "cartellaclinicacell", for: indexPath) as! CartellaClinicaTableViewCell
         cell.titolo.text = titoli[indexPath.row]
-        cell.visualizza.tag = indexPath.row
-        cell.visualizza.addTarget(self, action: #selector(visualizzaAction(sender:)), for: .touchUpInside)
+    
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 0){
+                performSegue(withIdentifier: "AllergieController", sender: self)
+        } else if(indexPath.row == 1){
+                performSegue(withIdentifier: "PatologieController", sender: self)
+            } else{
+                performSegue(withIdentifier: "OperazioniController", sender: self)
+            }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
