@@ -70,15 +70,15 @@
 		9562500E26627C6F0092B054 /* SOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562500D26627C6F0092B054 /* SOSViewController.swift */; };
 		9562501126627C8D0092B054 /* SOSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562501026627C8D0092B054 /* SOSTableViewCell.swift */; };
 		956250142662854F0092B054 /* ProfiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956250132662854F0092B054 /* ProfiloViewController.swift */; };
-		9573DA8F26921A230044E0AF /* DSFStepperView+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA8526921A220044E0AF /* DSFStepperView+macOS.swift */; };
-		9573DA9026921A230044E0AF /* DSFStepperView+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA8626921A220044E0AF /* DSFStepperView+SwiftUI.swift */; };
-		9573DA9126921A230044E0AF /* DSFStepperView+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA8726921A220044E0AF /* DSFStepperView+iOS.swift */; };
-		9573DA9226921A230044E0AF /* DSFDelayedRepeatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA8926921A220044E0AF /* DSFDelayedRepeatingButton.swift */; };
-		9573DA9326921A230044E0AF /* ClampedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA8A26921A220044E0AF /* ClampedValue.swift */; };
-		9573DA9426921A230044E0AF /* DSFStepperView+textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA8B26921A220044E0AF /* DSFStepperView+textfield.swift */; };
-		9573DA9526921A230044E0AF /* DSFStepperView+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA8C26921A220044E0AF /* DSFStepperView+utils.swift */; };
-		9573DA9626921A230044E0AF /* DSFStepperView+localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA8D26921A220044E0AF /* DSFStepperView+localization.swift */; };
-		9573DA9726921A230044E0AF /* DSFStepperView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA8E26921A220044E0AF /* DSFStepperView+Delegate.swift */; };
+		95A633EE2694416E004CDA38 /* DSFStepperView+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633E42694416D004CDA38 /* DSFStepperView+macOS.swift */; };
+		95A633EF2694416E004CDA38 /* DSFStepperView+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633E52694416D004CDA38 /* DSFStepperView+SwiftUI.swift */; };
+		95A633F02694416E004CDA38 /* DSFStepperView+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633E62694416D004CDA38 /* DSFStepperView+iOS.swift */; };
+		95A633F12694416E004CDA38 /* DSFDelayedRepeatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633E82694416D004CDA38 /* DSFDelayedRepeatingButton.swift */; };
+		95A633F22694416E004CDA38 /* ClampedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633E92694416D004CDA38 /* ClampedValue.swift */; };
+		95A633F32694416E004CDA38 /* DSFStepperView+textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633EA2694416D004CDA38 /* DSFStepperView+textfield.swift */; };
+		95A633F42694416E004CDA38 /* DSFStepperView+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633EB2694416D004CDA38 /* DSFStepperView+utils.swift */; };
+		95A633F52694416E004CDA38 /* DSFStepperView+localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633EC2694416D004CDA38 /* DSFStepperView+localization.swift */; };
+		95A633F62694416E004CDA38 /* DSFStepperView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633ED2694416D004CDA38 /* DSFStepperView+Delegate.swift */; };
 		95A966662690B603001C8708 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A966652690B603001C8708 /* PDFCreator.swift */; };
 		95BA944026939ED2008336D7 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA943F26939ED2008336D7 /* ProgressBar.swift */; };
 		95C55B352668E10A00BF503C /* Medico.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C55B342668E10A00BF503C /* Medico.storyboard */; };
@@ -198,15 +198,15 @@
 		9573DA80269219D60044E0AF /* DSFStepperView+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+utils.swift"; sourceTree = "<group>"; };
 		9573DA81269219D60044E0AF /* DSFStepperView+localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+localization.swift"; sourceTree = "<group>"; };
 		9573DA82269219D60044E0AF /* DSFStepperView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+Delegate.swift"; sourceTree = "<group>"; };
-		9573DA8526921A220044E0AF /* DSFStepperView+macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+macOS.swift"; sourceTree = "<group>"; };
-		9573DA8626921A220044E0AF /* DSFStepperView+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+SwiftUI.swift"; sourceTree = "<group>"; };
-		9573DA8726921A220044E0AF /* DSFStepperView+iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+iOS.swift"; sourceTree = "<group>"; };
-		9573DA8926921A220044E0AF /* DSFDelayedRepeatingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSFDelayedRepeatingButton.swift; sourceTree = "<group>"; };
-		9573DA8A26921A220044E0AF /* ClampedValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClampedValue.swift; sourceTree = "<group>"; };
-		9573DA8B26921A220044E0AF /* DSFStepperView+textfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+textfield.swift"; sourceTree = "<group>"; };
-		9573DA8C26921A220044E0AF /* DSFStepperView+utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+utils.swift"; sourceTree = "<group>"; };
-		9573DA8D26921A220044E0AF /* DSFStepperView+localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+localization.swift"; sourceTree = "<group>"; };
-		9573DA8E26921A220044E0AF /* DSFStepperView+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+Delegate.swift"; sourceTree = "<group>"; };
+		95A633E42694416D004CDA38 /* DSFStepperView+macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+macOS.swift"; sourceTree = "<group>"; };
+		95A633E52694416D004CDA38 /* DSFStepperView+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+SwiftUI.swift"; sourceTree = "<group>"; };
+		95A633E62694416D004CDA38 /* DSFStepperView+iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+iOS.swift"; sourceTree = "<group>"; };
+		95A633E82694416D004CDA38 /* DSFDelayedRepeatingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSFDelayedRepeatingButton.swift; sourceTree = "<group>"; };
+		95A633E92694416D004CDA38 /* ClampedValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClampedValue.swift; sourceTree = "<group>"; };
+		95A633EA2694416D004CDA38 /* DSFStepperView+textfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+textfield.swift"; sourceTree = "<group>"; };
+		95A633EB2694416D004CDA38 /* DSFStepperView+utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+utils.swift"; sourceTree = "<group>"; };
+		95A633EC2694416D004CDA38 /* DSFStepperView+localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+localization.swift"; sourceTree = "<group>"; };
+		95A633ED2694416D004CDA38 /* DSFStepperView+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+Delegate.swift"; sourceTree = "<group>"; };
 		95A966652690B603001C8708 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 		95BA943F26939ED2008336D7 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		95C55B342668E10A00BF503C /* Medico.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medico.storyboard; sourceTree = "<group>"; };
@@ -410,27 +410,27 @@
 			path = private;
 			sourceTree = "<group>";
 		};
-		9573DA8426921A220044E0AF /* DSFStepperView */ = {
+		95A633E32694416D004CDA38 /* DSFStepperView */ = {
 			isa = PBXGroup;
 			children = (
-				9573DA8526921A220044E0AF /* DSFStepperView+macOS.swift */,
-				9573DA8626921A220044E0AF /* DSFStepperView+SwiftUI.swift */,
-				9573DA8726921A220044E0AF /* DSFStepperView+iOS.swift */,
-				9573DA8826921A220044E0AF /* private */,
-				9573DA8E26921A220044E0AF /* DSFStepperView+Delegate.swift */,
+				95A633E42694416D004CDA38 /* DSFStepperView+macOS.swift */,
+				95A633E52694416D004CDA38 /* DSFStepperView+SwiftUI.swift */,
+				95A633E62694416D004CDA38 /* DSFStepperView+iOS.swift */,
+				95A633E72694416D004CDA38 /* private */,
+				95A633ED2694416D004CDA38 /* DSFStepperView+Delegate.swift */,
 			);
 			name = DSFStepperView;
-			path = "../../../Downloads/DSFStepperView-main-3/Sources/DSFStepperView";
-			sourceTree = "<group>";
+			path = AppEsame/DSFStepperView;
+			sourceTree = SOURCE_ROOT;
 		};
-		9573DA8826921A220044E0AF /* private */ = {
+		95A633E72694416D004CDA38 /* private */ = {
 			isa = PBXGroup;
 			children = (
-				9573DA8926921A220044E0AF /* DSFDelayedRepeatingButton.swift */,
-				9573DA8A26921A220044E0AF /* ClampedValue.swift */,
-				9573DA8B26921A220044E0AF /* DSFStepperView+textfield.swift */,
-				9573DA8C26921A220044E0AF /* DSFStepperView+utils.swift */,
-				9573DA8D26921A220044E0AF /* DSFStepperView+localization.swift */,
+				95A633E82694416D004CDA38 /* DSFDelayedRepeatingButton.swift */,
+				95A633E92694416D004CDA38 /* ClampedValue.swift */,
+				95A633EA2694416D004CDA38 /* DSFStepperView+textfield.swift */,
+				95A633EB2694416D004CDA38 /* DSFStepperView+utils.swift */,
+				95A633EC2694416D004CDA38 /* DSFStepperView+localization.swift */,
 			);
 			path = private;
 			sourceTree = "<group>";
@@ -513,7 +513,7 @@
 		DF2976082626410300933712 /* AppEsame */ = {
 			isa = PBXGroup;
 			children = (
-				9573DA8426921A220044E0AF /* DSFStepperView */,
+				95A633E32694416D004CDA38 /* DSFStepperView */,
 				1C28ABF2264DD7CC00F86CFD /* Database */,
 				95CF849426499DE2006D6517 /* Model */,
 				1CC63C972649C826001AEDEA /* View */,
@@ -668,26 +668,24 @@
 				DF29760E2626410300933712 /* LoginViewController.swift in Sources */,
 				9520E727266A754700D0B702 /* SOSMedicoViewController.swift in Sources */,
 				955D5E6F2652D21100996BC2 /* PazienteTabBarController.swift in Sources */,
-				9573DA9726921A230044E0AF /* DSFStepperView+Delegate.swift in Sources */,
 				1CC63CA82649F2BD001AEDEA /* Step3PazienteViewController.swift in Sources */,
 				952E234F265C41EA006FAC1E /* CartellaClinicaTableViewCell.swift in Sources */,
+				95A633EE2694416E004CDA38 /* DSFStepperView+macOS.swift in Sources */,
 				1C3815522666C1EF00A8CBFB /* SpecializzazioneDB.swift in Sources */,
 				95C55B4A26696DCB00BF503C /* PrescriviTableViewCell.swift in Sources */,
 				953BC330265558F1003F09E3 /* SintomiTableViewCell.swift in Sources */,
-				9573DA8F26921A230044E0AF /* DSFStepperView+macOS.swift in Sources */,
 				953BD72F265EE3B7006104D1 /* PatologiePazienteViewController.swift in Sources */,
 				95CFE0D2264D791400EFE631 /* PatologieTableViewCell.swift in Sources */,
 				1C43DCCA264F08FB001998F9 /* PatologiaDB.swift in Sources */,
 				95C55B532669755600BF503C /* CartellaClinicaMedicoViewController.swift in Sources */,
 				952E234C265C405C006FAC1E /* CartellaClinicaViewController.swift in Sources */,
 				1C975110268883140064DABA /* Rubrica.swift in Sources */,
-				9573DA9026921A230044E0AF /* DSFStepperView+SwiftUI.swift in Sources */,
 				1C28ABF4264DD7DE00F86CFD /* DBManager.swift in Sources */,
 				1CE128FD2652EE1000B9EE45 /* Allergia.swift in Sources */,
-				9573DA9426921A230044E0AF /* DSFStepperView+textfield.swift in Sources */,
 				1C3815502666BC1300A8CBFB /* Specializzazione.swift in Sources */,
 				95C55B412669362200BF503C /* DettaglioPazienteViewController.swift in Sources */,
 				9520E71E266A6E3A00D0B702 /* RichiesteViewController.swift in Sources */,
+				95A633F12694416E004CDA38 /* DSFDelayedRepeatingButton.swift in Sources */,
 				95CF849D26499E39006D6517 /* Medico.swift in Sources */,
 				DF314CD52691BC3800D8298B /* ProfiloMedicoTableViewCell.swift in Sources */,
 				95C55B562669756200BF503C /* StoricoTerapieViewController.swift in Sources */,
@@ -701,7 +699,6 @@
 				1C38154C2666A8CC00A8CBFB /* Operazione.swift in Sources */,
 				952E2349265C3BE2006FAC1E /* TerapiaTableViewCell.swift in Sources */,
 				95C55B4D2669753300BF503C /* CartellaClinicaMedicoTableViewCell.swift in Sources */,
-				9573DA9226921A230044E0AF /* DSFDelayedRepeatingButton.swift in Sources */,
 				1CC63CAD2649F4B7001AEDEA /* Errore.swift in Sources */,
 				1C28ABF8264DE12900F86CFD /* MedicoDB.swift in Sources */,
 				956250142662854F0092B054 /* ProfiloViewController.swift in Sources */,
@@ -715,7 +712,6 @@
 				95CF84A726499EB0006D6517 /* Farmaco.swift in Sources */,
 				1C9751142688EA680064DABA /* Contatto.swift in Sources */,
 				95C55B4726696DB700BF503C /* PrescriviViewController.swift in Sources */,
-				9573DA9326921A230044E0AF /* ClampedValue.swift in Sources */,
 				955FA98226612A7300BC3176 /* PatologiePazienteTableViewCell.swift in Sources */,
 				1C28ABF6264DD7E400F86CFD /* PazienteDB.swift in Sources */,
 				DFE3CC802669275D0015D1C4 /* ProfiloTableViewCell.swift in Sources */,
@@ -725,11 +721,12 @@
 				9520E711266A63D900D0B702 /* StatoSaluteViewController.swift in Sources */,
 				955FA98626612C8900BC3176 /* OperazioniPazienteTableViewCell.swift in Sources */,
 				953BC33326555F50003F09E3 /* ParametriViewController.swift in Sources */,
+				95A633F62694416E004CDA38 /* DSFStepperView+Delegate.swift in Sources */,
 				1C5922BC266137FB00F5A98F /* RichiestaDB.swift in Sources */,
+				95A633EF2694416E004CDA38 /* DSFStepperView+SwiftUI.swift in Sources */,
 				1CC63CAB2649F38B001AEDEA /* RegistrazioneViewModel.swift in Sources */,
 				9562501126627C8D0092B054 /* SOSTableViewCell.swift in Sources */,
 				9520E724266A728400D0B702 /* SOSMedicoTableViewCell.swift in Sources */,
-				9573DA9626921A230044E0AF /* DSFStepperView+localization.swift in Sources */,
 				1C43DCCC264F1515001998F9 /* SintomoDB.swift in Sources */,
 				1CC63CA42649EF76001AEDEA /* Step2MedicoViewController.swift in Sources */,
 				95BA944026939ED2008336D7 /* ProgressBar.swift in Sources */,
@@ -738,13 +735,16 @@
 				1CE128FB2652EDEE00B9EE45 /* AllergiaDB.swift in Sources */,
 				1C97511C268CDD970064DABA /* TerapiaFarmacologica.swift in Sources */,
 				1C9751162688EC990064DABA /* ContattoDB.swift in Sources */,
+				95A633F22694416E004CDA38 /* ClampedValue.swift in Sources */,
 				95C55B502669754300BF503C /* StoricoTerapieTableViewCell.swift in Sources */,
 				95CF84AA26499EC7006D6517 /* Richiesta.swift in Sources */,
+				95A633F32694416E004CDA38 /* DSFStepperView+textfield.swift in Sources */,
 				1C975122268E629A0064DABA /* CartellaClinicaDB.swift in Sources */,
 				953BD72C265EE3AA006104D1 /* AllergiePazienteViewController.swift in Sources */,
+				95A633F02694416E004CDA38 /* DSFStepperView+iOS.swift in Sources */,
+				95A633F42694416E004CDA38 /* DSFStepperView+utils.swift in Sources */,
 				9520E714266A64A500D0B702 /* StatoSaluteSintomiTableViewCell.swift in Sources */,
 				9520E717266A64B500D0B702 /* StatoSaluteParametriTableViewCell.swift in Sources */,
-				9573DA9526921A230044E0AF /* DSFStepperView+utils.swift in Sources */,
 				951FC7D5264ADF01001E8C8A /* AllergieTableViewCell.swift in Sources */,
 				1CDE415F264B48FA0077A163 /* Step4PazienteViewController.swift in Sources */,
 				95CF84AD26499ED6006D6517 /* Sintomo.swift in Sources */,
@@ -752,8 +752,8 @@
 				1C975118268CD4210064DABA /* FarmacoDB.swift in Sources */,
 				1C38154E2666A96E00A8CBFB /* OperazioneDB.swift in Sources */,
 				1C1F25DA2663CB82001B2DEC /* UtenteDB.swift in Sources */,
-				9573DA9126921A230044E0AF /* DSFStepperView+iOS.swift in Sources */,
 				9520E71B266A6E1C00D0B702 /* RichiesteTableViewCell.swift in Sources */,
+				95A633F52694416E004CDA38 /* DSFStepperView+localization.swift in Sources */,
 				1C97511E268CE0230064DABA /* TerapiaFarmacologicaDB.swift in Sources */,
 				1C975112268884850064DABA /* RubricaDB.swift in Sources */,
 				95CF849626499E00006D6517 /* Utente.swift in Sources */,
