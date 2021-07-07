@@ -55,8 +55,12 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
         createDataPicker()
         createTipoPicker()
         
-    }
     
+    let avantiButton = UIBarButtonItem(title: "Avanti", style: .bordered, target: self, action: #selector(avanti(sender:)))
+       self.navigationItem.rightBarButtonItem  = avantiButton
+    }
+
+
 //    DataPicker
     func createDataPicker(){
         dataPicker.preferredDatePickerStyle = .wheels
@@ -114,7 +118,8 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
         tipoUtenteSelezionato = tipoUtente.text!
     }
     
-    @IBAction func segueStep2(_ sender: Any) {
+    @objc func avanti(sender:Any){
+       
         let errore = RegistrazioneViewModel.validaStep1Registrazione(nome: self.nome.text!, cognome: self.cognome.text!, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, password: self.password.text!, ripetiPasword: self.ripetiPassword.text!)
         
         if(errore.getErrore()){
@@ -136,6 +141,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
         }
     
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let utentePerSegue = Utente(id: "", uid: "",  nome: self.nome.text!, cognome: self.cognome.text!, dataNascita: self.dataNascita.text!, codiceFiscale: self.codiceFiscale.text!, telefono: self.telefono.text!, email: self.email.text!, tipo: self.tipoUtenteSelezionato, password: self.password.text!, indirizzo: self.indirizzo.text!, citta: self.citta.text!, cap: self.cap.text!)
         

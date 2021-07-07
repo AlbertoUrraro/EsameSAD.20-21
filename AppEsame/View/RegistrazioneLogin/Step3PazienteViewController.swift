@@ -73,7 +73,13 @@ class Step3PazienteViewController: UIViewController, UITableViewDelegate,UITable
             self.patologieTableView.reloadData()
             
         }
+        let avantiButton = UIBarButtonItem(title: "Avanti", style: .bordered, target: self, action: #selector(avanti(sender:)))
+           self.navigationItem.rightBarButtonItem  = avantiButton
     }
+    
+    @objc func avanti(sender:Any){
+        performSegue(withIdentifier: "SegueStep4Paziente", sender: self)
+        }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -115,10 +121,6 @@ class Step3PazienteViewController: UIViewController, UITableViewDelegate,UITable
                 tag.append(sender.tag)
             }
         }
-    }
-    
-    @IBAction func segueStep4(_ sender: Any) {
-        performSegue(withIdentifier: "SegueStep4Paziente", sender: self)
     }
    
     

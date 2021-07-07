@@ -10,9 +10,9 @@ import UIKit
 class StoricoTerapieTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nomeTerapia: UILabel!
-    @IBOutlet weak var visualizza: UIButton!
+
     
     func initcell(){
-        visualizza.layer.cornerRadius = 10
+       
     }
 }

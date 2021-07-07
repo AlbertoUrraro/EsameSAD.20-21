@@ -28,7 +28,6 @@ class ProfiloViewController : UIViewController, UITableViewDelegate, UITableView
         profiloTableView.delegate = self
         profiloTableView.dataSource = self
             
-            
         }
 
     
@@ -52,31 +51,21 @@ class ProfiloViewController : UIViewController, UITableViewDelegate, UITableView
                       
     }
     
-    
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let Header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 20))
-        let testotitolo = UILabel(frame: CGRect(x: 5 , y: 5, width: Header.frame.size.width - 10 , height: Header.frame.size.height))
-        Header.addSubview(testotitolo)
-        //testotitolo.backgroundColor = .systemGray
-        testotitolo.text = titoli[section]
-        testotitolo.font = .systemFont(ofSize: 17)
-        
-     
-        return Header
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (section == 0){
+            return titoli[0]
+        } else if(section == 1){
+            return titoli[1]
+        }
+        else {return titoli[2]}
     }
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
        
         return 3
     }
-   
-    //func cellaAction (sender : UILabel){
-       // print("strunz")
-        
-        
-    //}
+  
     
     @IBAction func logOut(_ sender: UIButton) {
         let firebaseAuth = Auth.auth()

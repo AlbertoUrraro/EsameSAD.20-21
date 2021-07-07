@@ -52,7 +52,7 @@ class Step2MedicoViewController: UIViewController,UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         let s = Specializzazione()
         
         s.ottieniTutteSpecializzazioni{(specializzazioni) in
@@ -65,9 +65,13 @@ class Step2MedicoViewController: UIViewController,UITableViewDelegate, UITableVi
                 self.specializzazioniVet.append(specializzazione.getTitolo())
             }
             self.SpecializzazioneTableView.reloadData()
-            
         }
+        let avantiButton = UIBarButtonItem(title: "Registrati", style: .bordered, target: self, action: #selector(registrati(sender:)))
+           self.navigationItem.rightBarButtonItem  = avantiButton
     }
+    
+  
+
     
     @objc func checkPressed(sender: DLRadioButton)
     {
@@ -101,10 +105,10 @@ class Step2MedicoViewController: UIViewController,UITableViewDelegate, UITableVi
             }
         }
     }
-    
-    
-    @IBAction func completaRegistrazioneMedico(_ sender: Any) {
+
+    @objc func registrati(sender:Any){
         RegistrazioneViewModel.completaRegistrazione(medicoStep1: medicoStep1, specializzazioniSelezionate: [])
-    }
+        performSegue(withIdentifier: "medicocontroller", sender: self)
+        }
     
 }

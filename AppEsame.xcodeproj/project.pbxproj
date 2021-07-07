@@ -180,24 +180,6 @@
 		9562500D26627C6F0092B054 /* SOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSViewController.swift; sourceTree = "<group>"; };
 		9562501026627C8D0092B054 /* SOSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSTableViewCell.swift; sourceTree = "<group>"; };
 		956250132662854F0092B054 /* ProfiloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfiloViewController.swift; sourceTree = "<group>"; };
-		9573DA6E269219D30044E0AF /* DSFStepperView+macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+macOS.swift"; sourceTree = "<group>"; };
-		9573DA6F269219D30044E0AF /* DSFStepperView+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+SwiftUI.swift"; sourceTree = "<group>"; };
-		9573DA70269219D30044E0AF /* DSFStepperView+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+iOS.swift"; sourceTree = "<group>"; };
-		9573DA72269219D30044E0AF /* DSFDelayedRepeatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSFDelayedRepeatingButton.swift; sourceTree = "<group>"; };
-		9573DA73269219D30044E0AF /* ClampedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClampedValue.swift; sourceTree = "<group>"; };
-		9573DA74269219D30044E0AF /* DSFStepperView+textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+textfield.swift"; sourceTree = "<group>"; };
-		9573DA75269219D30044E0AF /* DSFStepperView+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+utils.swift"; sourceTree = "<group>"; };
-		9573DA76269219D30044E0AF /* DSFStepperView+localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+localization.swift"; sourceTree = "<group>"; };
-		9573DA77269219D30044E0AF /* DSFStepperView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+Delegate.swift"; sourceTree = "<group>"; };
-		9573DA79269219D60044E0AF /* DSFStepperView+macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+macOS.swift"; sourceTree = "<group>"; };
-		9573DA7A269219D60044E0AF /* DSFStepperView+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+SwiftUI.swift"; sourceTree = "<group>"; };
-		9573DA7B269219D60044E0AF /* DSFStepperView+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+iOS.swift"; sourceTree = "<group>"; };
-		9573DA7D269219D60044E0AF /* DSFDelayedRepeatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSFDelayedRepeatingButton.swift; sourceTree = "<group>"; };
-		9573DA7E269219D60044E0AF /* ClampedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClampedValue.swift; sourceTree = "<group>"; };
-		9573DA7F269219D60044E0AF /* DSFStepperView+textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+textfield.swift"; sourceTree = "<group>"; };
-		9573DA80269219D60044E0AF /* DSFStepperView+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+utils.swift"; sourceTree = "<group>"; };
-		9573DA81269219D60044E0AF /* DSFStepperView+localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+localization.swift"; sourceTree = "<group>"; };
-		9573DA82269219D60044E0AF /* DSFStepperView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+Delegate.swift"; sourceTree = "<group>"; };
 		95A633E42694416D004CDA38 /* DSFStepperView+macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+macOS.swift"; sourceTree = "<group>"; };
 		95A633E52694416D004CDA38 /* DSFStepperView+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+SwiftUI.swift"; sourceTree = "<group>"; };
 		95A633E62694416D004CDA38 /* DSFStepperView+iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+iOS.swift"; sourceTree = "<group>"; };
@@ -314,8 +296,6 @@
 		1CC63CA92649F33F001AEDEA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				9573DA6D269219D30044E0AF /* DSFStepperView */,
-				9573DA78269219D60044E0AF /* DSFStepperView */,
 				1CC63CAA2649F38B001AEDEA /* RegistrazioneViewModel.swift */,
 				951FC7A9264ABCA5001E8C8A /* LoginViewModel.swift */,
 			);
@@ -359,55 +339,6 @@
 				95A966652690B603001C8708 /* PDFCreator.swift */,
 			);
 			path = Paziente;
-			sourceTree = "<group>";
-		};
-		9573DA6D269219D30044E0AF /* DSFStepperView */ = {
-			isa = PBXGroup;
-			children = (
-				9573DA6E269219D30044E0AF /* DSFStepperView+macOS.swift */,
-				9573DA6F269219D30044E0AF /* DSFStepperView+SwiftUI.swift */,
-				9573DA70269219D30044E0AF /* DSFStepperView+iOS.swift */,
-				9573DA71269219D30044E0AF /* private */,
-				9573DA77269219D30044E0AF /* DSFStepperView+Delegate.swift */,
-			);
-			path = DSFStepperView;
-			sourceTree = "<group>";
-		};
-		9573DA71269219D30044E0AF /* private */ = {
-			isa = PBXGroup;
-			children = (
-				9573DA72269219D30044E0AF /* DSFDelayedRepeatingButton.swift */,
-				9573DA73269219D30044E0AF /* ClampedValue.swift */,
-				9573DA74269219D30044E0AF /* DSFStepperView+textfield.swift */,
-				9573DA75269219D30044E0AF /* DSFStepperView+utils.swift */,
-				9573DA76269219D30044E0AF /* DSFStepperView+localization.swift */,
-			);
-			path = private;
-			sourceTree = "<group>";
-		};
-		9573DA78269219D60044E0AF /* DSFStepperView */ = {
-			isa = PBXGroup;
-			children = (
-				9573DA79269219D60044E0AF /* DSFStepperView+macOS.swift */,
-				9573DA7A269219D60044E0AF /* DSFStepperView+SwiftUI.swift */,
-				9573DA7B269219D60044E0AF /* DSFStepperView+iOS.swift */,
-				9573DA7C269219D60044E0AF /* private */,
-				9573DA82269219D60044E0AF /* DSFStepperView+Delegate.swift */,
-			);
-			name = DSFStepperView;
-			path = "../../../../Downloads/DSFStepperView-main/Sources/DSFStepperView";
-			sourceTree = "<group>";
-		};
-		9573DA7C269219D60044E0AF /* private */ = {
-			isa = PBXGroup;
-			children = (
-				9573DA7D269219D60044E0AF /* DSFDelayedRepeatingButton.swift */,
-				9573DA7E269219D60044E0AF /* ClampedValue.swift */,
-				9573DA7F269219D60044E0AF /* DSFStepperView+textfield.swift */,
-				9573DA80269219D60044E0AF /* DSFStepperView+utils.swift */,
-				9573DA81269219D60044E0AF /* DSFStepperView+localization.swift */,
-			);
-			path = private;
 			sourceTree = "<group>";
 		};
 		95A633E32694416D004CDA38 /* DSFStepperView */ = {

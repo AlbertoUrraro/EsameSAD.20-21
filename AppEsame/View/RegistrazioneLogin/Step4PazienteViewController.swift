@@ -59,7 +59,8 @@ class Step4PazienteViewController: UIViewController, UITableViewDelegate, UITabl
             self.mediciTableView.reloadData()
             
         }
-        
+        let avantiButton = UIBarButtonItem(title: "Registrati", style: .bordered, target: self, action: #selector(registrati(sender:)))
+           self.navigationItem.rightBarButtonItem  = avantiButton
     }
     
     
@@ -101,10 +102,11 @@ class Step4PazienteViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
-    @IBAction func compleaRegistrazionePaziente(_ sender: Any) {
-        
-        RegistrazioneViewModel.completaRegistrazionePaziente(pazienteStep3: pazienteStep3, mediciSelezionati: mediciSelezionati)
-        
-    }
+ 
     
-}
+    @objc func registrati(sender:Any){
+        RegistrazioneViewModel.completaRegistrazionePaziente(pazienteStep3: pazienteStep3, mediciSelezionati: mediciSelezionati)
+  performSegue(withIdentifier: "pazientecontroller", sender: self)
+        }
+    }
+

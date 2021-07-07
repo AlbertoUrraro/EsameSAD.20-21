@@ -8,34 +8,43 @@
 import UIKit
 
 class PrescriviViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    @IBOutlet weak var prescrivi: UIButton!
+    var array = ["1","2"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return array.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = prescriviTableView.dequeueReusableCell(withIdentifier: "prescrivicell", for: indexPath) as! PrescriviTableViewCell
+        print(indexPath)
         cell.initcell()
         return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Farmaco                       Dose                 Ora              Ricetta"
+        return "Farmaco                       Dose                 Ora             Ricetta"
     }
     
     
+    @IBAction func aggiungiFarmaco(_ sender: Any) {
+        print("Farmaco aggiunto")
+        array.append("3")
+        let myIndexPath = IndexPath(row: 1, section: 0)
+        prescriviTableView.beginUpdates()
+        prescriviTableView.insertRows(at: [myIndexPath], with: .automatic)
+        prescriviTableView.endUpdates()
+        
+    }
     @IBOutlet weak var prescriviTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        prescrivi.layer.cornerRadius = 10
-
+     
+     
     }
-    @IBAction func azionePrescrivi(_ sender: UIButton) {
-        
-        
-        
+    
+    @IBAction func inviaTerapia(_ sender: Any) {
+        print("Terapia inviata")
     }
+    
     
 
 

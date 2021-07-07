@@ -8,40 +8,50 @@
 import UIKit
 
 class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
+    
+//    func updateSearchResults(for searchController: UISearchController) {
+//        self.filtraContenuti(testoCercato: searchController.searchBar.text!, scope: "Tutti")
+//    }
     func updateSearchResults(for searchController: UISearchController) {
-        self.filtraContenuti(testoCercato: searchController.searchBar.text!, scope: "Tutti")
+        nomeFiltrato.removeAll(keepingCapacity: false)
+
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (nome as NSArray).filtered(using: searchPredicate)
+        nomeFiltrato = array as! [String]
+       
+
+        self.homeMedicoTableView.reloadData()
     }
     
-    
     var resultSearchController: UISearchController?
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let controller = self.resultSearchController else {
                    return 0
         }
+        var numero = 0
         if controller.isActive {
-                   return self.nomeFiltrato.count
+            return self.nomeFiltrato.count
+           
                } else {
                    return self.nome.count
                }
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = homeMedicoTableView.dequeueReusableCell(withIdentifier: "medicocell", for: indexPath) as! HomeMedicoTableViewCell
         
-        var nome = String()
         // se viene la Search Bar è attiva allora utilizza l'elemento con indice visualizzato a partire dalla listra Filtrata
-                if self.resultSearchController!.isActive {
-                    nome = nomeFiltrato[indexPath.row]
+                if self.resultSearchController!.isActive{
+                    cell.nome.text =  nomeFiltrato[indexPath.row]
+          
                 } else {
                     //ricavo un elemento della lista in posizione row (il num di riga) e lo conservo
-                    nome = self.nome[indexPath.row]
+                    cell.nome.text = self.nome[indexPath.row]
                 }
-                
-                //riempio la cella assegnando ad una label testuale il nome dell'alimento
-                cell.nome?.text = nome
+            
   
-                
-    
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -49,8 +59,10 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     @IBOutlet weak var homeMedicoTableView: UITableView!
-    var nome = ["Marco", "Luca"]
+//    Crea stringhe con nome e cognome
+    var nome = ["Marco Esposito", "Luca Rossi"]
     var nomeFiltrato = [String]()
+
     
     
     override func viewDidLoad() {
@@ -77,6 +89,7 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
         })()
         addRightButton()
         addLeftBarIcon()
+        homeMedicoTableView.reloadData()
     }
     
 

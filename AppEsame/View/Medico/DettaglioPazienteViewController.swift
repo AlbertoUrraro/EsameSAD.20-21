@@ -19,17 +19,23 @@ class DettaglioPazienteViewController: UIViewController, UITableViewDelegate, UI
         let cell = dettaglioTableView.dequeueReusableCell(withIdentifier: "dettagliocell", for : indexPath) as! DettaglioPazienteTableViewCell
         cell.initcell()
         cell.tipo.text = tipo[indexPath.row]
-        if (indexPath.row == 0){
-            cell.button.setTitle("Prescrivi", for: .normal)
-        } else{
-            cell.button.setTitle("Vedi", for: .normal)
-        }
-        cell.button.tag = indexPath.row
-        cell.button.addTarget(self, action: #selector(visualizzaAction(sender:)), for: .touchUpInside)
+        
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 0){
+                performSegue(withIdentifier: "PrescriviController", sender: self)
+        } else if(indexPath.row == 1){
+                performSegue(withIdentifier: "StatoController", sender: self)
+        } else if(indexPath.row == 2){
+                performSegue(withIdentifier: "CartellaController", sender: self)
+            }
+            else {
+                performSegue(withIdentifier: "StoricoController", sender: self)
+            }
+    }
     
 
     override func viewDidLoad() {
@@ -37,18 +43,12 @@ class DettaglioPazienteViewController: UIViewController, UITableViewDelegate, UI
 
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     
-    @objc func visualizzaAction(sender: UIButton){
-     if (sender.tag == 0){
-             performSegue(withIdentifier: "PrescriviController", sender: self)
-     } else if(sender.tag == 1){
-             performSegue(withIdentifier: "StatoController", sender: self)
-         } else if(sender.tag == 2){
-             performSegue(withIdentifier: "CartellaController", sender: self)
-         }
-         else {
-             performSegue(withIdentifier: "StoricoController", sender: self)
-         }
-     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 
 }
