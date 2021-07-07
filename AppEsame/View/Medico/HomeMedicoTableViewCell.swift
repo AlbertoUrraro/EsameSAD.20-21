@@ -10,7 +10,6 @@ import UIKit
 class HomeMedicoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nome: UILabel!
-    @IBOutlet weak var cognome: UILabel!
     @IBOutlet weak var immagineProfilo: UIImageView!
     @IBOutlet weak var parametro1: UILabel!
     @IBOutlet weak var parametro2: UILabel!

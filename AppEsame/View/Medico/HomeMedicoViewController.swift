@@ -8,15 +8,12 @@
 import UIKit
 
 class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
-    
-//    func updateSearchResults(for searchController: UISearchController) {
-//        self.filtraContenuti(testoCercato: searchController.searchBar.text!, scope: "Tutti")
-//    }
+
     func updateSearchResults(for searchController: UISearchController) {
         nomeFiltrato.removeAll(keepingCapacity: false)
 
         let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
-        let array = (nome as NSArray).filtered(using: searchPredicate)
+        let array = (nomeCognome as NSArray).filtered(using: searchPredicate)
         nomeFiltrato = array as! [String]
        
 
@@ -46,17 +43,16 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
         var cognome = String()
         // se viene la Search Bar è attiva allora utilizza l'elemento con indice visualizzato a partire dalla listra Filtrata
                 if self.resultSearchController!.isActive{
-                    cell.nome.text =  nomeFiltrato[indexPath.row]
+                    nome =  nomeFiltrato[indexPath.row]
           
                 } else {
                     //ricavo un elemento della lista in posizione row (il num di riga) e lo conservo
-                    nome = self.nome[indexPath.row]
-                    cognome = self.cognome[indexPath.row]
+                    nome = self.nomeCognome[indexPath.row]
+                    
                 }
                 
                 //riempio la cella assegnando ad una label testuale il nome dell'alimento
                 cell.nome?.text = nome
-                cell.cognome?.text = cognome
   
         return cell
     }
@@ -69,6 +65,7 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
     var cognome:[String] = []
     var nomeFiltrato = [String]()
     
+    var nomeCognome: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,21 +135,12 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
       
     //Funzione per settare il logo a sinistra
     func addRightButton() {
-//        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 21))
-//        label.textAlignment = .right
-//        label.text = DBManager.shared.nome + " " + DBManager.shared.cognome
-//
-//        let widthConstraintlabel = label.widthAnchor.constraint(equalToConstant: 50)
-//        let heightConstraintlabel = label.heightAnchor.constraint(equalToConstant: 21)
-//        heightConstraintlabel.isActive = true
-//        widthConstraintlabel.isActive = true
-        
-        
+
         let profiloButton  = UIButton(type: .custom)
         profiloButton.setImage(UIImage(named: "user.png"), for: .normal)
         profiloButton.frame = CGRect(x:0.0,y:0.0, width:25.0,height:25.0)
         profiloButton.contentMode = .scaleAspectFit
-//        let labelItem = UIBarButtonItem.init(customView: label)
+
 
         profiloButton.addTarget(self, action: #selector(visualizzaProfilo(sender:)), for: .touchUpInside)
         let widthConstraint = profiloButton.widthAnchor.constraint(equalToConstant: 25)
@@ -178,6 +166,7 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
         self.nome = []
         self.cognome = []
         self.nomeFiltrato = []
+        self.nomeCognome = []
         
         let r = Richiesta()
         DBManager.shared.getUserDefaultUtenteLoggato()
@@ -200,6 +189,7 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
                     
                     self.nome.append(pazientiRes.getNome())
                     self.cognome.append(pazientiRes.getCognome())
+                    self.nomeCognome.append(pazientiRes.getNome()+" "+pazientiRes.getCognome())
                     self.homeMedicoTableView.reloadData()
                 }
             }
