@@ -37,7 +37,8 @@ class SOSViewController: UIViewController,UITableViewDataSource, UITableViewDele
         sosTableView.deselectRow(at: indexPath, animated: true)
         let contact = models[indexPath.row].source
         let vc = CNContactViewController(for: contact)
-        present(UINavigationController(rootViewController: vc), animated: true)
+    
+        self.navigationController?.pushViewController(vc, animated: true)
         
         
     }
@@ -67,7 +68,7 @@ class SOSViewController: UIViewController,UITableViewDataSource, UITableViewDele
     @IBAction func aggiungiContatto(_ sender: Any) {
         let vc = CNContactPickerViewController()
         vc.delegate =  self
-        present(vc, animated: true)
+        self.present(vc, animated: true, completion: nil)
     }
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         let nome = contact.givenName + " " + contact.familyName
@@ -77,6 +78,8 @@ class SOSViewController: UIViewController,UITableViewDataSource, UITableViewDele
         sosTableView.reloadData()
         
     }
+    
+    
 
     @IBOutlet weak var sosTableView: UITableView!
     
