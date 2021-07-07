@@ -36,12 +36,13 @@ class DBManager{
         self.nome = utente.getNome()
         self.cognome = utente.getCognome()
         self.email = utente.getEmail()
+        self.citta = utente.getCitta()
         
         userDefault.setValue(self.id, forKey: "id")
         userDefault.setValue(self.nome, forKey: "nome")
         userDefault.setValue(self.cognome, forKey: "cognome")
         userDefault.setValue(self.email, forKey: "email")
-        userDefault.setValue(self.citta, forKey: "città")
+        userDefault.setValue(self.citta, forKey: "citta")
     }
     
     public func getUserDefaultUtenteLoggato(){
