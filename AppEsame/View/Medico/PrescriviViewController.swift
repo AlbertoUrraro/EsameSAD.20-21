@@ -8,7 +8,9 @@
 import UIKit
 
 class PrescriviViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var array = ["1","2"]
+//    Mi serve per aggiungere nuove righe
+    var array = ["Riga1","Riga2"]
+  
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
@@ -20,15 +22,14 @@ class PrescriviViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.initcell()
         return cell
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Farmaco                       Dose                 Ora             Ricetta"
-    }
+
+    
     
     
     @IBAction func aggiungiFarmaco(_ sender: Any) {
         print("Farmaco aggiunto")
-        array.append("3")
-        let myIndexPath = IndexPath(row: 1, section: 0)
+        array.append("Riga Aggiunta")
+        let myIndexPath = IndexPath(row: array.count-1, section: 0)
         prescriviTableView.beginUpdates()
         prescriviTableView.insertRows(at: [myIndexPath], with: .automatic)
         prescriviTableView.endUpdates()
@@ -45,7 +46,8 @@ class PrescriviViewController: UIViewController, UITableViewDelegate, UITableVie
         print("Terapia inviata")
     }
     
-    
+  
+ 
 
 
 }

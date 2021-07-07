@@ -8,38 +8,40 @@
 import UIKit
 
 class StatoSaluteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == sintomiTableView{
-            return 1
-        } else {
-            return 2
-        }
-    }
+    
+    //    Magari quando si preleva dal db fare una sola stringa parametro+valore
+    var info = [["febbre", "tosse"],["parametro1", "parametro2"]]
+    
+  
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
  
-        if tableView == sintomiTableView{
-            let cell = sintomiTableView.dequeueReusableCell(withIdentifier: "sintomicell")as! StatoSaluteSintomiTableViewCell
-          return cell
-        } else {
-            let cell = parametriTableView.dequeueReusableCell(withIdentifier: "parametricell") as! StatoSaluteParametriTableViewCell
+            let cell = sintomiTableView.dequeueReusableCell(withIdentifier: "statosalutecell")as! StatoSaluteTableViewCell
+        cell.nome.text = info[indexPath.section][indexPath.row]
             return cell
         }
     
-        
-    }
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if tableView == sintomiTableView{
-            return "Sintomi"
-        } else {
-            return "Parametri"
+        if (section == 0){
+            return "SINTOMI"
+        } else{
+            return "PARAMETRI"
         }
     }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return info[section].count
+}
+    
+ 
     
 
     @IBOutlet weak var sintomiTableView: UITableView!
-    @IBOutlet weak var parametriTableView: UITableView!
+   
     
     
     override func viewDidLoad() {

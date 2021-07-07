@@ -25,19 +25,20 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
         
         homeVM = HomePazienteViewModel(progress: progress)
         let data  = Date()
-        print(data)
-        homeVM.setProgressBar(date: data)
         
         let p = progress.getProgress()
         let c = progress.getProgressStartCura()
+        
            if (indexPath.row == 0){
             cell.nome.text = "Stato salute"
             cell.progressBar.progressValue = CGFloat(p)
+            homeVM.setProgressBarStato(date: data)
            }
         else
            if (indexPath.row == 1){
             cell.nome.text = "Terapia in corso"
             cell.progressBar.progressValue = CGFloat(c)
+            homeVM.setProgressBarTerapia(date: data)
            }
         else if (indexPath.row == 2){
             cell.nome.text = "Storico terapie"

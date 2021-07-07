@@ -42,6 +42,9 @@ class TerapiaTableViewCell: UITableViewCell {
         let progress = ProgressBar()
         let p = progress.getProgressStartCura()
         progress.setProgressStartCura(progress: p+Int(100/totMedicinali))
+        
+   
+        startCura.isEnabled = false
        }
     
     
