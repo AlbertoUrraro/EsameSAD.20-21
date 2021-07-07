@@ -405,11 +405,11 @@
                                     <constraint firstAttribute="width" constant="414" id="u8H-bH-WP4"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cartellacell" rowHeight="71" id="wwm-0X-22B" customClass="CartellaClinicaMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cartellacell" rowHeight="71" id="wwm-0X-22B" customClass="CartellaClinicaMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwm-0X-22B" id="GGb-9w-hpM">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxC-mT-oVy">
@@ -517,6 +517,7 @@
                     <navigationItem key="navigationItem" title="Storico terapie" id="9zK-xU-hcX"/>
                     <connections>
                         <outlet property="storicoTableView" destination="Ryr-kc-1H2" id="li5-mC-AIW"/>
+                        <segue destination="y2W-hJ-5ta" kind="show" identifier="terapiacontroller" id="42N-j8-Yu9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfE-Ls-1S3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -937,13 +938,13 @@
                                 <color key="backgroundColor" red="0.94914311169999999" green="0.94871383909999996" blue="0.96864765880000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7cu-fs-4Yx">
-                                <rect key="frame" x="0.0" y="247" width="414" height="566"/>
+                                <rect key="frame" x="0.0" y="247" width="415" height="566"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="566" id="KJh-vG-Chh"/>
                                 </constraints>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="yO6-Hk-ZP9">
-                                    <rect key="frame" x="0.0" y="117" width="414" height="36"/>
+                                    <rect key="frame" x="0.0" y="117" width="415" height="36"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" red="1" green="0.01224201724" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="     Disconnetti">
@@ -956,10 +957,10 @@
                                 </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profilocellMedico" id="ir2-E8-vjn" customClass="ProfiloMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="415" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ir2-E8-vjn" id="Y1I-Dx-yeM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="415" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGM-mt-pWl">
@@ -978,18 +979,26 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="xOu-fD-b7D">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="xOu-fD-b7D">
                                 <rect key="frame" x="151" y="113" width="113" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="Alm-6g-e1r"/>
+                                    <constraint firstAttribute="width" constant="113" id="DiU-Kf-gJd"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gPd-cY-mtj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7cu-fs-4Yx" firstAttribute="leading" secondItem="hSz-cs-QTP" secondAttribute="leading" id="1vN-UH-MsK"/>
+                            <constraint firstItem="xOu-fD-b7D" firstAttribute="leading" secondItem="gPd-cY-mtj" secondAttribute="leading" constant="151" id="8W7-Xk-Zn6"/>
+                            <constraint firstItem="gPd-cY-mtj" firstAttribute="trailing" secondItem="xOu-fD-b7D" secondAttribute="trailing" constant="150" id="9hA-yk-PNw"/>
+                            <constraint firstItem="7cu-fs-4Yx" firstAttribute="top" secondItem="xOu-fD-b7D" secondAttribute="bottom" constant="27" id="Ieo-b5-zQx"/>
+                            <constraint firstItem="7cu-fs-4Yx" firstAttribute="trailing" secondItem="hSz-cs-QTP" secondAttribute="trailing" id="J8G-3L-M5u"/>
                             <constraint firstItem="7cu-fs-4Yx" firstAttribute="top" secondItem="xOu-fD-b7D" secondAttribute="bottom" constant="27" id="Wh3-qd-0f1"/>
+                            <constraint firstItem="xOu-fD-b7D" firstAttribute="top" secondItem="gPd-cY-mtj" secondAttribute="top" constant="25" id="a9O-sg-baT"/>
+                            <constraint firstItem="7cu-fs-4Yx" firstAttribute="leading" secondItem="hSz-cs-QTP" secondAttribute="leading" id="eTT-tc-nm3"/>
                             <constraint firstItem="7cu-fs-4Yx" firstAttribute="centerX" secondItem="xOu-fD-b7D" secondAttribute="centerX" id="ekN-IF-QTt"/>
                             <constraint firstItem="7cu-fs-4Yx" firstAttribute="bottom" secondItem="gPd-cY-mtj" secondAttribute="bottom" id="mfz-vP-LNH"/>
-                            <constraint firstItem="7cu-fs-4Yx" firstAttribute="trailing" secondItem="hSz-cs-QTP" secondAttribute="trailing" id="ygj-b6-7LH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profilo" id="CY2-YV-aDx">
@@ -1001,7 +1010,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVF-ff-BdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4200" y="474.77678571428567"/>
+            <point key="canvasLocation" x="2765" y="854"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="5ht-Iv-qoj">
@@ -1011,7 +1020,107 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQz-Ql-CfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4621" y="-129"/>
+            <point key="canvasLocation" x="3640" y="854"/>
+        </scene>
+        <!--Terapia-->
+        <scene sceneID="kbB-jf-AAM">
+            <objects>
+                <viewController storyboardIdentifier="terapiacontroller" id="y2W-hJ-5ta" customClass="TerapiaMedicoViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bOS-lb-tmt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="QHB-Kn-4TK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="733"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="725" id="Ase-pq-95Y"/>
+                                    <constraint firstAttribute="height" constant="733" id="I7U-qf-UWk"/>
+                                    <constraint firstAttribute="width" constant="414" id="MGl-Lc-t3n"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="414" id="VSw-I9-ss9"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="terapiacell" rowHeight="104" id="ifi-cW-x7I" customClass="TerapiaMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="104"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ifi-cW-x7I" id="nGA-sb-xFz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhn-15-sEL">
+                                                    <rect key="frame" x="20" y="11" width="374" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="hfQ-HX-NLe"/>
+                                                        <constraint firstAttribute="width" constant="374" id="pkZ-T9-E7g"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrizione" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXE-Uw-3TW">
+                                                    <rect key="frame" x="20" y="54" width="374" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="BKA-Wt-8cC"/>
+                                                        <constraint firstAttribute="height" constant="35" id="Rs7-Xs-kaH"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="eET-Yw-qg3"/>
+                                                        <constraint firstAttribute="width" constant="374" id="mw4-1K-GPX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GXE-Uw-3TW" firstAttribute="top" secondItem="Zhn-15-sEL" secondAttribute="bottom" constant="8" id="6fz-Gk-UL3"/>
+                                                <constraint firstItem="GXE-Uw-3TW" firstAttribute="leading" secondItem="nGA-sb-xFz" secondAttribute="leadingMargin" id="Fjv-R8-EKy"/>
+                                                <constraint firstItem="Zhn-15-sEL" firstAttribute="leading" secondItem="nGA-sb-xFz" secondAttribute="leadingMargin" id="LIl-IB-gR3"/>
+                                                <constraint firstItem="GXE-Uw-3TW" firstAttribute="top" secondItem="Zhn-15-sEL" secondAttribute="bottom" constant="8" id="NvY-BU-bd9"/>
+                                                <constraint firstItem="Zhn-15-sEL" firstAttribute="top" secondItem="nGA-sb-xFz" secondAttribute="topMargin" id="dGD-Dd-Pkd"/>
+                                                <constraint firstItem="GXE-Uw-3TW" firstAttribute="leading" secondItem="nGA-sb-xFz" secondAttribute="leadingMargin" id="fck-Cc-CRw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GXE-Uw-3TW" secondAttribute="bottom" constant="4" id="jt3-96-EWV"/>
+                                                <constraint firstItem="GXE-Uw-3TW" firstAttribute="trailing" secondItem="nGA-sb-xFz" secondAttribute="trailingMargin" id="pL7-PQ-hCS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GXE-Uw-3TW" secondAttribute="bottom" constant="4" id="wLh-Rr-jkJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descrizione" destination="GXE-Uw-3TW" id="Ksh-mR-2mN"/>
+                                            <outlet property="nomeFarmaco" destination="Zhn-15-sEL" id="azL-gv-gCo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="y2W-hJ-5ta" id="2cN-2e-Omr"/>
+                                    <outlet property="delegate" destination="y2W-hJ-5ta" id="0Y4-96-hFd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="m61-x4-IVf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m61-x4-IVf" firstAttribute="trailing" secondItem="QHB-Kn-4TK" secondAttribute="trailing" id="4nL-mu-Eu3"/>
+                            <constraint firstItem="QHB-Kn-4TK" firstAttribute="leading" secondItem="m61-x4-IVf" secondAttribute="leading" id="APA-7Z-UMD"/>
+                            <constraint firstItem="QHB-Kn-4TK" firstAttribute="top" secondItem="m61-x4-IVf" secondAttribute="top" id="S4F-eS-RG4"/>
+                            <constraint firstItem="QHB-Kn-4TK" firstAttribute="top" secondItem="m61-x4-IVf" secondAttribute="top" id="VRN-UX-MNM"/>
+                            <constraint firstItem="QHB-Kn-4TK" firstAttribute="leading" secondItem="m61-x4-IVf" secondAttribute="leading" id="X5u-Di-2AN"/>
+                            <constraint firstItem="m61-x4-IVf" firstAttribute="bottom" secondItem="QHB-Kn-4TK" secondAttribute="bottom" constant="-8" id="Zhd-mW-6s2"/>
+                            <constraint firstItem="QHB-Kn-4TK" firstAttribute="bottom" secondItem="m61-x4-IVf" secondAttribute="bottom" constant="8" id="m1u-eV-nsJ"/>
+                            <constraint firstItem="QHB-Kn-4TK" firstAttribute="trailing" secondItem="m61-x4-IVf" secondAttribute="trailing" id="t95-Kz-Uwf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Terapia" id="lhy-JA-cyw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="F1g-RH-cfG">
+                            <connections>
+                                <action selector="condividiPDF:" destination="y2W-hJ-5ta" id="gzI-Wa-BLE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="terapiaMedicoTableView" destination="QHB-Kn-4TK" id="71V-op-Sm9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DeW-pg-y9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4021.739130434783" y="-34.151785714285715"/>
         </scene>
     </scenes>
     <resources>

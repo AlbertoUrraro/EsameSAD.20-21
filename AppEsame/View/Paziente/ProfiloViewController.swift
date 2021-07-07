@@ -43,13 +43,7 @@ class ProfiloViewController : UIViewController, UITableViewDelegate, UITableView
          return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row == 6 ){
-            print("ciao")
-         
-        }
-                      
-    }
+    
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (section == 0){
