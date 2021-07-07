@@ -609,6 +609,7 @@
                         <segue destination="Az6-gt-Hfh" kind="show" identifier="SintomiController" id="k3p-iu-fPS"/>
                         <segue destination="TV1-eB-xYP" kind="show" identifier="TerapiaController" id="9og-n6-YkF"/>
                         <segue destination="Fxk-LC-nqs" kind="show" identifier="ProfiloController" id="eE8-96-C7H"/>
+                        <segue destination="hf0-Ss-3YL" kind="show" identifier="storicocontroller" id="M2h-X5-CUz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ewy-Di-B64" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -932,6 +933,171 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YL7-za-WVV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1918.840579710145" y="-1097.5446428571429"/>
+        </scene>
+        <!--Storico terapie-->
+        <scene sceneID="YQm-Hd-Sdj">
+            <objects>
+                <viewController storyboardIdentifier="storicocontroller" id="hf0-Ss-3YL" customClass="StoricoTerapiePazienteViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bb0-Vl-CXe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="SeC-ae-NY8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="8sb-9h-4jh"/>
+                                    <constraint firstAttribute="height" constant="725" id="boM-cy-2BM"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="storicocell" rowHeight="71" id="lHF-MJ-X8x" customClass="StoricoTerapiePazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lHF-MJ-X8x" id="sNu-OT-r1F">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUu-bv-P6l">
+                                                    <rect key="frame" x="20" y="19" width="312" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="312" id="Cza-Mo-m7n"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZUu-bv-P6l" firstAttribute="leading" secondItem="sNu-OT-r1F" secondAttribute="leadingMargin" id="LCe-3V-19L"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZUu-bv-P6l" secondAttribute="bottom" constant="8" id="UgD-f2-Y6f"/>
+                                                <constraint firstItem="ZUu-bv-P6l" firstAttribute="top" secondItem="sNu-OT-r1F" secondAttribute="topMargin" constant="8" id="krO-se-z8I"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nome" destination="ZUu-bv-P6l" id="Y0u-Wh-LRr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hf0-Ss-3YL" id="tTF-5M-yg2"/>
+                                    <outlet property="delegate" destination="hf0-Ss-3YL" id="nGP-oy-eQj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sDH-KW-r1g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SeC-ae-NY8" firstAttribute="leading" secondItem="sDH-KW-r1g" secondAttribute="leading" id="1Cn-Le-9zM"/>
+                            <constraint firstItem="SeC-ae-NY8" firstAttribute="trailing" secondItem="sDH-KW-r1g" secondAttribute="trailing" id="2VU-du-saZ"/>
+                            <constraint firstItem="SeC-ae-NY8" firstAttribute="bottom" secondItem="sDH-KW-r1g" secondAttribute="bottom" id="AU5-W8-j4D"/>
+                            <constraint firstItem="SeC-ae-NY8" firstAttribute="top" secondItem="sDH-KW-r1g" secondAttribute="top" id="MBa-sK-Qn7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Storico terapie" id="ESm-hB-CG6">
+                        <barButtonItem key="backBarButtonItem" title="  " id="vbd-dU-ukv"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="storicoTerapieTableView" destination="SeC-ae-NY8" id="vd2-mO-kgk"/>
+                        <segue destination="W7h-3P-QRg" kind="show" identifier="terapiacontroller" id="Y26-a4-1cD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2pS-Fe-qKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-200.00000000000003" y="-1323.2142857142856"/>
+        </scene>
+        <!--Terapia-->
+        <scene sceneID="PQH-Qn-vlf">
+            <objects>
+                <viewController storyboardIdentifier="terapiacontroller" id="W7h-3P-QRg" customClass="TerapiaPazienteViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2VF-1d-7jw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="YJt-3o-1Ja">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="414" id="A2f-Qb-HxA"/>
+                                    <constraint firstAttribute="width" constant="414" id="PUm-jZ-dD8"/>
+                                    <constraint firstAttribute="height" constant="725" id="USW-h1-XBk"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="725" id="gfp-Rc-rjQ"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="terapiacell" rowHeight="104" id="Xug-vI-lSN" customClass="TerapiaPazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="104"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xug-vI-lSN" id="P0N-QD-DHB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctp-J2-imN">
+                                                    <rect key="frame" x="20" y="11" width="374" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="ATW-k3-ePU"/>
+                                                        <constraint firstAttribute="width" constant="374" id="bNU-ZD-2YS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrizione" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7s-q8-KiC">
+                                                    <rect key="frame" x="20" y="54" width="374" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="2oG-AU-d1V"/>
+                                                        <constraint firstAttribute="height" constant="35" id="3xi-uh-gpK"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="IeS-A1-YqZ"/>
+                                                        <constraint firstAttribute="width" constant="374" id="NjH-Sv-VeD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="B7s-q8-KiC" firstAttribute="top" secondItem="ctp-J2-imN" secondAttribute="bottom" constant="8" id="MkB-lz-C7T"/>
+                                                <constraint firstItem="B7s-q8-KiC" firstAttribute="top" secondItem="ctp-J2-imN" secondAttribute="bottom" constant="8" id="OYW-6e-0zl"/>
+                                                <constraint firstItem="ctp-J2-imN" firstAttribute="leading" secondItem="P0N-QD-DHB" secondAttribute="leadingMargin" id="OrT-Lm-mCv"/>
+                                                <constraint firstItem="ctp-J2-imN" firstAttribute="top" secondItem="P0N-QD-DHB" secondAttribute="topMargin" id="QS5-oB-R3O"/>
+                                                <constraint firstItem="B7s-q8-KiC" firstAttribute="trailing" secondItem="P0N-QD-DHB" secondAttribute="trailingMargin" id="TTi-Vq-CZf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="B7s-q8-KiC" secondAttribute="bottom" constant="4" id="V49-0i-skc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="B7s-q8-KiC" secondAttribute="bottom" constant="4" id="XJH-uv-wRA"/>
+                                                <constraint firstItem="B7s-q8-KiC" firstAttribute="leading" secondItem="P0N-QD-DHB" secondAttribute="leadingMargin" id="dGy-ke-qX3"/>
+                                                <constraint firstItem="B7s-q8-KiC" firstAttribute="leading" secondItem="P0N-QD-DHB" secondAttribute="leadingMargin" id="xIZ-8b-dcw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descrizione" destination="B7s-q8-KiC" id="IDq-lK-nlj"/>
+                                            <outlet property="nomeFarmaco" destination="ctp-J2-imN" id="PkQ-jw-1Qi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="W7h-3P-QRg" id="RiL-Mu-L41"/>
+                                    <outlet property="delegate" destination="W7h-3P-QRg" id="8t0-1m-arW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Av1-eh-GDY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YJt-3o-1Ja" firstAttribute="leading" secondItem="Av1-eh-GDY" secondAttribute="leading" id="Fzl-jN-Cby"/>
+                            <constraint firstItem="YJt-3o-1Ja" firstAttribute="top" secondItem="Av1-eh-GDY" secondAttribute="top" id="O9D-Zq-gO8"/>
+                            <constraint firstItem="YJt-3o-1Ja" firstAttribute="leading" secondItem="Av1-eh-GDY" secondAttribute="leading" id="P7f-kt-TOK"/>
+                            <constraint firstItem="YJt-3o-1Ja" firstAttribute="bottom" secondItem="Av1-eh-GDY" secondAttribute="bottom" id="Wlf-hv-bIY"/>
+                            <constraint firstItem="YJt-3o-1Ja" firstAttribute="top" secondItem="Av1-eh-GDY" secondAttribute="top" id="bpz-Mi-u01"/>
+                            <constraint firstItem="YJt-3o-1Ja" firstAttribute="trailing" secondItem="Av1-eh-GDY" secondAttribute="trailing" id="fvi-fg-RMK"/>
+                            <constraint firstItem="Av1-eh-GDY" firstAttribute="trailing" secondItem="YJt-3o-1Ja" secondAttribute="trailing" id="szb-3U-suu"/>
+                            <constraint firstItem="Av1-eh-GDY" firstAttribute="bottom" secondItem="YJt-3o-1Ja" secondAttribute="bottom" id="wd9-70-VYX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Terapia" id="LHa-rE-50B"/>
+                    <connections>
+                        <outlet property="terapiaPazienteTableView" destination="YJt-3o-1Ja" id="guI-Zb-BVc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CSU-Lo-4tO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1165.217391304348" y="-1323.2142857142856"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

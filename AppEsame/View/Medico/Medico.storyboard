@@ -514,7 +514,9 @@
                             <constraint firstItem="Ryr-kc-1H2" firstAttribute="trailing" secondItem="Tde-vj-SSr" secondAttribute="trailing" id="T3w-ac-qoV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Storico terapie" id="9zK-xU-hcX"/>
+                    <navigationItem key="navigationItem" title="Storico terapie" id="9zK-xU-hcX">
+                        <barButtonItem key="backBarButtonItem" title="  " id="L1K-bx-x0X"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="storicoTableView" destination="Ryr-kc-1H2" id="li5-mC-AIW"/>
                         <segue destination="y2W-hJ-5ta" kind="show" identifier="terapiacontroller" id="42N-j8-Yu9"/>
@@ -1107,13 +1109,7 @@
                             <constraint firstItem="QHB-Kn-4TK" firstAttribute="trailing" secondItem="m61-x4-IVf" secondAttribute="trailing" id="t95-Kz-Uwf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Terapia" id="lhy-JA-cyw">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="F1g-RH-cfG">
-                            <connections>
-                                <action selector="condividiPDF:" destination="y2W-hJ-5ta" id="gzI-Wa-BLE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Terapia" id="lhy-JA-cyw"/>
                     <connections>
                         <outlet property="terapiaMedicoTableView" destination="QHB-Kn-4TK" id="71V-op-Sm9"/>
                     </connections>
