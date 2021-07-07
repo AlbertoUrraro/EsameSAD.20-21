@@ -4,10 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AppEsame.xcscheme_^#shared#^_</key>
+		<key>DSFStepperView SwiftUI Demo (iOS).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>39</integer>
+			<integer>44</integer>
+		</dict>
+		<key>DSFStepperView SwiftUI Demo (macOS).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>43</integer>
 		</dict>
 	</dict>
 </dict>

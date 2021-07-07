@@ -25,7 +25,7 @@ class PatologiePazienteViewController: UIViewController, UITableViewDelegate, UI
     @IBOutlet weak var patologieTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let p = Paziente()
         
         p.ottieniPazienteDaId(idDaCercare: DBManager.shared.id){(pazienti) in
@@ -39,7 +39,7 @@ class PatologiePazienteViewController: UIViewController, UITableViewDelegate, UI
             
             self.patologieTableView.reloadData()
         }
-            }
-
-
+    }
+    
+    
 }

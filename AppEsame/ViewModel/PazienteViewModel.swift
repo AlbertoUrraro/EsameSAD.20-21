@@ -1,0 +1,14 @@
+//
+//  PazienteViewModel.swift
+//  AppEsame
+//
+//  Created by Carlo D'Avino on 05/07/21.
+//
+
+import Foundation
+
+
+class PazienteViewModel{
+    
+    init(){}
+}

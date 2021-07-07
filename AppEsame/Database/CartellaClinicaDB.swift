@@ -65,7 +65,7 @@ class CartellaClinicaDB{
         }
     }
     
-    func ottieniPazienteDaIdUtente(idDaCercare: String, finished: @escaping([CartellaClinica]?) -> Void) {
+    func ottieniCartellaClinicaDaIdUtente(idDaCercare: String, finished: @escaping([CartellaClinica]?) -> Void) {
         db!.collection("cartellaClinica").whereField("idUtente", isEqualTo: idDaCercare).getDocuments() { (queryResult, err) in
             guard let result = queryResult?.documents else {
                 print("No documents")

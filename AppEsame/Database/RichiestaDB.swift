@@ -34,8 +34,8 @@ class RichiestaDB{
     }
     
     
-    func ottieniRichiesteDaIdMedico(idDaCercare: String, finished: @escaping([Richiesta]?) -> Void) {
-        db!.collection("richiesta").whereField("idMedico", isEqualTo: idDaCercare).whereField("stato", isEqualTo: false).getDocuments() { (queryResult, err) in
+    func ottieniRichiesteDaIdMedico(idDaCercare: String,condizione: Bool,  finished: @escaping([Richiesta]?) -> Void) {
+        db!.collection("richiesta").whereField("idMedico", isEqualTo: idDaCercare).whereField("stato", isEqualTo: condizione).getDocuments() { (queryResult, err) in
             guard let result = queryResult?.documents else {
                 print("No documents")
                 return
@@ -55,6 +55,21 @@ class RichiestaDB{
                 
             }
             finished(richieste)
+        }
+    }
+    
+    func aggiornaStatoRichiesta(idRichiesta: String, stato: Bool){
+        let richiesta = db!.collection("richiesta").document(idRichiesta)
+
+        // Set the "capital" field of the city 'DC'
+        richiesta.updateData([
+            "stato": stato
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
         }
     }
     
