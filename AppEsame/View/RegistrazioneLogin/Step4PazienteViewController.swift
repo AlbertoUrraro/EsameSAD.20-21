@@ -10,8 +10,7 @@ import UIKit
 import DLRadioButton
 
 class Step4PazienteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
-    
+
     @IBOutlet weak var mediciTableView: UITableView!
     //In questa variabile riceverò i dati dalla view precedente
     var pazienteStep3 = Paziente()

@@ -42,4 +42,8 @@ class AllergiePazienteViewController: UIViewController, UITableViewDelegate, UIT
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        allergieTableView.reloadData()
+    }
+    
 }
