@@ -8,7 +8,7 @@
 import Foundation
 
 
-class MedicoViewModel{
+class RichiestaViewModel{
     
     init(){}
     

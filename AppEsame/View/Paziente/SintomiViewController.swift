@@ -33,7 +33,9 @@ class SintomiViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @objc func avanti(sender: Any){
         performSegue(withIdentifier: "ParametriController", sender: self)
-      
+        
+        let progress = ProgressBar()
+        progress.setProgress(progress: 50)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

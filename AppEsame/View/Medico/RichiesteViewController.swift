@@ -55,7 +55,7 @@ class RichiesteViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func accettaTapped(at index: IndexPath) {
         
-        MedicoViewModel.accettaRichiestaAssociazione(idRichiesta: id[index.row])
+        RichiestaViewModel.accettaRichiestaAssociazione(idRichiesta: id[index.row])
         self.caricaRichieste()
 
         

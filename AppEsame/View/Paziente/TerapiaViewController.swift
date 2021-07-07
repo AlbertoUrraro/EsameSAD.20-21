@@ -20,7 +20,7 @@ class TerapiaViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = terapiaTableView.dequeueReusableCell(withIdentifier: "terapiacell", for: indexPath) as! TerapiaTableViewCell
-        cell.initcell(ore: ore[indexPath.row], giorni:giorni[indexPath.row] )
+        cell.initcell(ore: ore[indexPath.row], giorni:giorni[indexPath.row],totMedicinali: medicinali.count)
         cell.nomeMedicinale.text = medicinali[indexPath.row]
         cell.descrizioneMedicinale.text = descrizione[indexPath.row]
         

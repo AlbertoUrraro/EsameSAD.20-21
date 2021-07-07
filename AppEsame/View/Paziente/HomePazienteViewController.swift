@@ -11,6 +11,8 @@ import UIKit
 class HomePazienteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var indexRow = 0
+    var homeVM: HomePazienteViewModel!
+    var progress = ProgressBar()
 
     @IBOutlet weak var homePazienteTableView: UITableView!
     
@@ -20,14 +22,22 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = homePazienteTableView.dequeueReusableCell(withIdentifier: "homecell",for: indexPath ) as! HomePazienteTableViewCell
-     
         
+        homeVM = HomePazienteViewModel(progress: progress)
+        let data  = Date()
+        print(data)
+        homeVM.setProgressBar(date: data)
+        
+        let p = progress.getProgress()
+        let c = progress.getProgressStartCura()
            if (indexPath.row == 0){
             cell.nome.text = "Stato salute"
+            cell.progressBar.progressValue = CGFloat(p)
            }
         else
            if (indexPath.row == 1){
             cell.nome.text = "Terapia in corso"
+            cell.progressBar.progressValue = CGFloat(c)
            }
         else if (indexPath.row == 2){
             cell.nome.text = "Storico terapie"
@@ -70,6 +80,7 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
             addLeftBarIcon()
             addRightButton()
             homePazienteTableView.reloadData()
+       
           }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,9 +127,6 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
     
     @objc func visualizzaProfilo(sender: UIButton){
         performSegue(withIdentifier: "ProfiloController", sender: self)
-       
-            
-        
         }
         
     

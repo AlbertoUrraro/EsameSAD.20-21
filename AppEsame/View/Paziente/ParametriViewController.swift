@@ -48,6 +48,9 @@ class ParametriViewController: UIViewController, UITableViewDelegate, UITableVie
                 let secondVC = storyboard.instantiateViewController(identifier: "HomeViewController")
 
                 show(secondVC, sender: self)
+        
+        let progress = ProgressBar()
+        progress.setProgress(progress: 100)
            }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

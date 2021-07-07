@@ -17,24 +17,33 @@ class TerapiaTableViewCell: UITableViewCell {
     @IBOutlet weak var descrizioneMedicinale: UILabel!
     @IBOutlet weak var startCura: UIButton!
 
+    
+    let terapiaVM = TerapiaViewModel()
+    
     var ore: Int!
     var giorni: Int!
-    
-    func initcell(ore: Int, giorni: Int){
+    var totMedicinali: Int!
+    func initcell(ore: Int, giorni: Int, totMedicinali:Int){
         pdfButton.layer.cornerRadius = 5
         self.ore = ore
         self.giorni = giorni
+        self.totMedicinali = totMedicinali
     }
+    
+    
     @IBAction func startCura(_ sender: Any) {
         print("Inizio cura")
 
         let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         UIApplication.shared.registerUserNotificationSettings(settings)
-//        Calcolo numero volte che quel medicinale deve essere preso
-        let numVolte = (24*giorni)/ore
-    
-        self.schedulaNotifica(numVolte: numVolte)
+
+        self.schedulaNotifica(numVolte: terapiaVM.calcolaNumeroNotifiche(giorni: giorni, ore:ore))
+        
+        let progress = ProgressBar()
+        let p = progress.getProgressStartCura()
+        progress.setProgressStartCura(progress: p+Int(100/totMedicinali))
        }
+    
     
     func schedulaNotifica(numVolte: Int) {
 

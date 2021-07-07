@@ -65,6 +65,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
     func createDataPicker(){
         dataPicker.preferredDatePickerStyle = .wheels
         dataPicker.datePickerMode = UIDatePicker.Mode.date
+        dataPicker.locale = Locale(identifier: "ita")
        
         self.dataNascita.tintColor = .clear
         let toolbar = UIToolbar()
@@ -81,6 +82,7 @@ class RegistrazioneViewController: UIViewController, UITextFieldDelegate, UIPick
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.medium
         formatter.timeStyle = DateFormatter.Style.none
+        formatter.locale = Locale(identifier: "ita")
         dataNascita.text = formatter.string(from: dataPicker.date)
         self.view.endEditing(true)
     }
