@@ -45,8 +45,6 @@
 		951FC7AA264ABCA5001E8C8A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC7A9264ABCA5001E8C8A /* LoginViewModel.swift */; };
 		951FC7D5264ADF01001E8C8A /* AllergieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC7D4264ADF01001E8C8A /* AllergieTableViewCell.swift */; };
 		9520E711266A63D900D0B702 /* StatoSaluteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E710266A63D900D0B702 /* StatoSaluteViewController.swift */; };
-		9520E714266A64A500D0B702 /* StatoSaluteSintomiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E713266A64A500D0B702 /* StatoSaluteSintomiTableViewCell.swift */; };
-		9520E717266A64B500D0B702 /* StatoSaluteParametriTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E716266A64B500D0B702 /* StatoSaluteParametriTableViewCell.swift */; };
 		9520E71B266A6E1C00D0B702 /* RichiesteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E71A266A6E1C00D0B702 /* RichiesteTableViewCell.swift */; };
 		9520E71E266A6E3A00D0B702 /* RichiesteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E71D266A6E3A00D0B702 /* RichiesteViewController.swift */; };
 		9520E724266A728400D0B702 /* SOSMedicoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520E723266A728400D0B702 /* SOSMedicoTableViewCell.swift */; };
@@ -86,7 +84,6 @@
 		9571BB64269604B10022B3F2 /* ProfiloMedicoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB63269604B10022B3F2 /* ProfiloMedicoViewModel.swift */; };
 		9571BB67269604D20022B3F2 /* AllergiePazienteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB66269604D20022B3F2 /* AllergiePazienteViewModel.swift */; };
 		9571BB6A269604E50022B3F2 /* CartellaClinicaPazienteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB69269604E50022B3F2 /* CartellaClinicaPazienteViewModel.swift */; };
-		9571BB6E269604FF0022B3F2 /* HomePaziente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB6D269604FF0022B3F2 /* HomePaziente.swift */; };
 		9571BB722696052C0022B3F2 /* ParametriViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB712696052C0022B3F2 /* ParametriViewModel.swift */; };
 		9571BB75269605610022B3F2 /* OperazioniViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB74269605610022B3F2 /* OperazioniViewModel.swift */; };
 		9571BB78269605740022B3F2 /* SOSPazienteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB77269605740022B3F2 /* SOSPazienteViewModel.swift */; };
@@ -99,6 +96,7 @@
 		9571BB8E269606C40022B3F2 /* PatologiwViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB8D269606C40022B3F2 /* PatologiwViewModel.swift */; };
 		9571BB91269606D10022B3F2 /* MediciViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB90269606D10022B3F2 /* MediciViewModel.swift */; };
 		9571BB94269606E10022B3F2 /* SpecializzazioniViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB93269606E10022B3F2 /* SpecializzazioniViewModel.swift */; };
+		9571BB9926961CC00022B3F2 /* StatoSaluteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB9826961CC00022B3F2 /* StatoSaluteTableViewCell.swift */; };
 		95A633EE2694416E004CDA38 /* DSFStepperView+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633E42694416D004CDA38 /* DSFStepperView+macOS.swift */; };
 		95A633EF2694416E004CDA38 /* DSFStepperView+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633E52694416D004CDA38 /* DSFStepperView+SwiftUI.swift */; };
 		95A633F02694416E004CDA38 /* DSFStepperView+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A633E62694416D004CDA38 /* DSFStepperView+iOS.swift */; };
@@ -183,8 +181,6 @@
 		951FC7A9264ABCA5001E8C8A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		951FC7D4264ADF01001E8C8A /* AllergieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergieTableViewCell.swift; sourceTree = "<group>"; };
 		9520E710266A63D900D0B702 /* StatoSaluteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatoSaluteViewController.swift; sourceTree = "<group>"; };
-		9520E713266A64A500D0B702 /* StatoSaluteSintomiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatoSaluteSintomiTableViewCell.swift; sourceTree = "<group>"; };
-		9520E716266A64B500D0B702 /* StatoSaluteParametriTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatoSaluteParametriTableViewCell.swift; sourceTree = "<group>"; };
 		9520E71A266A6E1C00D0B702 /* RichiesteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiesteTableViewCell.swift; sourceTree = "<group>"; };
 		9520E71D266A6E3A00D0B702 /* RichiesteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiesteViewController.swift; sourceTree = "<group>"; };
 		9520E723266A728400D0B702 /* SOSMedicoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSMedicoTableViewCell.swift; sourceTree = "<group>"; };
@@ -224,7 +220,6 @@
 		9571BB63269604B10022B3F2 /* ProfiloMedicoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfiloMedicoViewModel.swift; sourceTree = "<group>"; };
 		9571BB66269604D20022B3F2 /* AllergiePazienteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergiePazienteViewModel.swift; sourceTree = "<group>"; };
 		9571BB69269604E50022B3F2 /* CartellaClinicaPazienteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartellaClinicaPazienteViewModel.swift; sourceTree = "<group>"; };
-		9571BB6D269604FF0022B3F2 /* HomePaziente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePaziente.swift; sourceTree = "<group>"; };
 		9571BB712696052C0022B3F2 /* ParametriViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametriViewModel.swift; sourceTree = "<group>"; };
 		9571BB74269605610022B3F2 /* OperazioniViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperazioniViewModel.swift; sourceTree = "<group>"; };
 		9571BB77269605740022B3F2 /* SOSPazienteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSPazienteViewModel.swift; sourceTree = "<group>"; };
@@ -237,6 +232,7 @@
 		9571BB8D269606C40022B3F2 /* PatologiwViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatologiwViewModel.swift; sourceTree = "<group>"; };
 		9571BB90269606D10022B3F2 /* MediciViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediciViewModel.swift; sourceTree = "<group>"; };
 		9571BB93269606E10022B3F2 /* SpecializzazioniViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecializzazioniViewModel.swift; sourceTree = "<group>"; };
+		9571BB9826961CC00022B3F2 /* StatoSaluteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatoSaluteTableViewCell.swift; sourceTree = "<group>"; };
 		95A633E42694416D004CDA38 /* DSFStepperView+macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+macOS.swift"; sourceTree = "<group>"; };
 		95A633E52694416D004CDA38 /* DSFStepperView+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+SwiftUI.swift"; sourceTree = "<group>"; };
 		95A633E62694416D004CDA38 /* DSFStepperView+iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DSFStepperView+iOS.swift"; sourceTree = "<group>"; };
@@ -393,7 +389,6 @@
 				9562501026627C8D0092B054 /* SOSTableViewCell.swift */,
 				956250132662854F0092B054 /* ProfiloViewController.swift */,
 				DFE3CC7F2669275D0015D1C4 /* ProfiloTableViewCell.swift */,
-				95A966652690B603001C8708 /* PDFCreator.swift */,
 			);
 			path = Paziente;
 			sourceTree = "<group>";
@@ -407,7 +402,6 @@
 				9571BB472695E5CD0022B3F2 /* TerapiaViewModel.swift */,
 				9571BB66269604D20022B3F2 /* AllergiePazienteViewModel.swift */,
 				9571BB69269604E50022B3F2 /* CartellaClinicaPazienteViewModel.swift */,
-				9571BB6D269604FF0022B3F2 /* HomePaziente.swift */,
 				9571BB712696052C0022B3F2 /* ParametriViewModel.swift */,
 				9571BB74269605610022B3F2 /* OperazioniViewModel.swift */,
 				9571BB77269605740022B3F2 /* SOSPazienteViewModel.swift */,
@@ -478,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				95C55B342668E10A00BF503C /* Medico.storyboard */,
+				9571BB9826961CC00022B3F2 /* StatoSaluteTableViewCell.swift */,
 				9520E726266A754700D0B702 /* SOSMedicoViewController.swift */,
 				95C55B3D266912CE00BF503C /* MedicoTabBarController.swift */,
 				95C55B372668E3F400BF503C /* HomeMedicoViewController.swift */,
@@ -491,8 +486,6 @@
 				95C55B522669755600BF503C /* CartellaClinicaMedicoViewController.swift */,
 				95C55B552669756200BF503C /* StoricoTerapieViewController.swift */,
 				9520E710266A63D900D0B702 /* StatoSaluteViewController.swift */,
-				9520E713266A64A500D0B702 /* StatoSaluteSintomiTableViewCell.swift */,
-				9520E716266A64B500D0B702 /* StatoSaluteParametriTableViewCell.swift */,
 				9520E71A266A6E1C00D0B702 /* RichiesteTableViewCell.swift */,
 				9520E71D266A6E3A00D0B702 /* RichiesteViewController.swift */,
 				9520E723266A728400D0B702 /* SOSMedicoTableViewCell.swift */,
@@ -560,11 +553,12 @@
 				DF2976092626410300933712 /* AppDelegate.swift */,
 				DF29760B2626410300933712 /* SceneDelegate.swift */,
 				1CC63CAC2649F4B7001AEDEA /* Errore.swift */,
+				9571BB3D2695DC010022B3F2 /* ProgressBar.swift */,
+				95A966652690B603001C8708 /* PDFCreator.swift */,
 				DF2976152626410400933712 /* Assets.xcassets */,
 				DF29761A2626410400933712 /* Info.plist */,
 				1CC63C952649C653001AEDEA /* GoogleService-Info.plist */,
 				DF2976122626410300933712 /* AppEsame.xcdatamodeld */,
-				9571BB3D2695DC010022B3F2 /* ProgressBar.swift */,
 			);
 			path = AppEsame;
 			sourceTree = "<group>";
@@ -723,9 +717,9 @@
 				1C43DCCA264F08FB001998F9 /* PatologiaDB.swift in Sources */,
 				9571BB85269606870022B3F2 /* Step3PazienteViewModel.swift in Sources */,
 				95C55B532669755600BF503C /* CartellaClinicaMedicoViewController.swift in Sources */,
+				9571BB9926961CC00022B3F2 /* StatoSaluteTableViewCell.swift in Sources */,
 				9571BB722696052C0022B3F2 /* ParametriViewModel.swift in Sources */,
 				952E234C265C405C006FAC1E /* CartellaClinicaViewController.swift in Sources */,
-				9571BB6E269604FF0022B3F2 /* HomePaziente.swift in Sources */,
 				1C975110268883140064DABA /* Rubrica.swift in Sources */,
 				1C28ABF4264DD7DE00F86CFD /* DBManager.swift in Sources */,
 				1CE128FD2652EE1000B9EE45 /* Allergia.swift in Sources */,
@@ -803,8 +797,6 @@
 				95A633F02694416E004CDA38 /* DSFStepperView+iOS.swift in Sources */,
 				9571BB67269604D20022B3F2 /* AllergiePazienteViewModel.swift in Sources */,
 				95A633F42694416E004CDA38 /* DSFStepperView+utils.swift in Sources */,
-				9520E714266A64A500D0B702 /* StatoSaluteSintomiTableViewCell.swift in Sources */,
-				9520E717266A64B500D0B702 /* StatoSaluteParametriTableViewCell.swift in Sources */,
 				9571BB3E2695DC010022B3F2 /* ProgressBar.swift in Sources */,
 				951FC7D5264ADF01001E8C8A /* AllergieTableViewCell.swift in Sources */,
 				1CDE415F264B48FA0077A163 /* Step4PazienteViewController.swift in Sources */,
