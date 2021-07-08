@@ -26,7 +26,7 @@ class PatologiePazienteViewController: UIViewController, UITableViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let p = Paziente()
+        let p = PazienteViewModel()
         
         p.ottieniPazienteDaId(idDaCercare: DBManager.shared.id){(pazienti) in
             
