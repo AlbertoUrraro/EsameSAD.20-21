@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cIl-BO-9dU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cIl-BO-9dU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,7 +60,7 @@
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="medicocell" rowHeight="66" id="bJl-b2-f5T" customClass="HomeMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="66"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bJl-b2-f5T" id="i1O-dM-ArT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
@@ -253,10 +253,10 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="dettagliocell" rowHeight="71" id="Wkf-xh-HOW" customClass="DettaglioPazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="71"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wkf-xh-HOW" id="A9u-fX-lLg">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZE-8a-oB1">
@@ -337,7 +337,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statosalutecell" rowHeight="63" id="ScV-Ig-i7d" customClass="StatoSaluteTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="63"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ScV-Ig-i7d" id="1Hm-mZ-Lx7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
@@ -406,7 +406,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cartellacell" rowHeight="71" id="wwm-0X-22B" customClass="CartellaClinicaMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="71"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwm-0X-22B" id="GGb-9w-hpM">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
@@ -472,10 +472,10 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="storicocell" rowHeight="71" id="7GD-6d-Nc3" customClass="StoricoTerapieTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="71"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7GD-6d-Nc3" id="xha-7I-Wgv">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhR-nV-hfY">
@@ -543,7 +543,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="prescrivicell" rowHeight="246" id="vgY-Qj-ad3" customClass="PrescriviTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="246"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="246"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vgY-Qj-ad3" id="SsO-7K-4yx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="246"/>
@@ -704,7 +704,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="richiestecell" rowHeight="84" id="V6z-br-oRx" customClass="RichiesteTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="84"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V6z-br-oRx" id="DTm-tb-351">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
@@ -828,7 +828,7 @@
             </objects>
             <point key="canvasLocation" x="325" y="1024"/>
         </scene>
-        <!--SOS-->
+        <!--Contatti di emergenza-->
         <scene sceneID="43T-60-aeB">
             <objects>
                 <viewController id="r9F-xY-0oi" customClass="SOSMedicoViewController" customModule="AppEsame" customModuleProvider="target" sceneMemberID="viewController">
@@ -845,58 +845,12 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="soscell" rowHeight="68" id="q0a-BK-vU3" customClass="SOSMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="68"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q0a-BK-vU3" id="pqz-CK-Yoe">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgg-eT-GEM">
-                                                    <rect key="frame" x="20" y="23" width="119" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="119" id="8VY-We-vjb"/>
-                                                        <constraint firstAttribute="height" constant="21" id="mps-Ij-IIu"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU6-85-C5N">
-                                                    <rect key="frame" x="147" y="23" width="148" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="ULW-Qg-kAu"/>
-                                                        <constraint firstAttribute="width" constant="148" id="YNV-pJ-gdK"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FV7-dN-asH">
-                                                    <rect key="frame" x="320" y="17" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="3ML-Ac-xel"/>
-                                                        <constraint firstAttribute="width" constant="30" id="3zM-hG-aff"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button" image="telephoneempty"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="cgg-eT-GEM" secondAttribute="bottom" constant="13" id="0VV-pb-uba"/>
-                                                <constraint firstItem="lU6-85-C5N" firstAttribute="top" secondItem="pqz-CK-Yoe" secondAttribute="topMargin" constant="12" id="Gdu-2v-aph"/>
-                                                <constraint firstItem="FV7-dN-asH" firstAttribute="leading" secondItem="lU6-85-C5N" secondAttribute="trailing" constant="25" id="KG2-AF-Rfg"/>
-                                                <constraint firstItem="cgg-eT-GEM" firstAttribute="top" secondItem="pqz-CK-Yoe" secondAttribute="topMargin" constant="12" id="R0c-Bw-mre"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="lU6-85-C5N" secondAttribute="bottom" constant="13" id="Rdp-RU-5sb"/>
-                                                <constraint firstItem="FV7-dN-asH" firstAttribute="top" secondItem="pqz-CK-Yoe" secondAttribute="topMargin" constant="6" id="Szh-Qk-iBY"/>
-                                                <constraint firstItem="cgg-eT-GEM" firstAttribute="leading" secondItem="pqz-CK-Yoe" secondAttribute="leadingMargin" id="eL2-xJ-LfL"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="FV7-dN-asH" secondAttribute="bottom" constant="10" id="gTA-d0-smj"/>
-                                                <constraint firstItem="lU6-85-C5N" firstAttribute="leading" secondItem="cgg-eT-GEM" secondAttribute="trailing" constant="8" id="n91-xE-kM6"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="chiama" destination="FV7-dN-asH" id="Jr3-nX-073"/>
-                                            <outlet property="cognome" destination="lU6-85-C5N" id="AMv-AA-CCR"/>
-                                            <outlet property="nome" destination="cgg-eT-GEM" id="1MN-ZN-D2a"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -914,9 +868,13 @@
                             <constraint firstItem="NNw-Q6-Vel" firstAttribute="top" secondItem="dMK-bh-WYe" secondAttribute="top" id="P1N-hF-hN2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="SOS" id="04V-Km-YeE">
+                    <navigationItem key="navigationItem" title="Contatti di emergenza" id="04V-Km-YeE">
                         <barButtonItem key="backBarButtonItem" title="  " id="bmT-8a-n73"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aWL-Em-EjW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aWL-Em-EjW">
+                            <connections>
+                                <action selector="aggiungiContatto:" destination="r9F-xY-0oi" id="phh-m1-UWH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="sosTableView" destination="NNw-Q6-Vel" id="9kY-xP-lpt"/>
@@ -946,7 +904,7 @@
                                     <constraint firstAttribute="height" constant="566" id="KJh-vG-Chh"/>
                                 </constraints>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="yO6-Hk-ZP9">
-                                    <rect key="frame" x="0.0" y="117" width="415" height="36"/>
+                                    <rect key="frame" x="0.0" y="111" width="415" height="36"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" red="1" green="0.01224201724" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="     Disconnetti">
@@ -959,7 +917,7 @@
                                 </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profilocellMedico" id="ir2-E8-vjn" customClass="ProfiloMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="415" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="415" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ir2-E8-vjn" id="Y1I-Dx-yeM">
                                             <rect key="frame" x="0.0" y="0.0" width="415" height="43.5"/>
@@ -1043,7 +1001,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="terapiacell" rowHeight="104" id="ifi-cW-x7I" customClass="TerapiaMedicoTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="104"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ifi-cW-x7I" id="nGA-sb-xFz">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
@@ -1126,7 +1084,6 @@
         <image name="cuore" width="56" height="56"/>
         <image name="home" width="25" height="25"/>
         <image name="telephone" width="25" height="25"/>
-        <image name="telephoneempty" width="512" height="512"/>
         <image name="termometro" width="26" height="58"/>
         <image name="user" width="428" height="512"/>
         <image name="vento" width="60" height="54"/>
