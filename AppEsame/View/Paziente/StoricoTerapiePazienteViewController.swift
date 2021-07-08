@@ -1,27 +1,29 @@
 //
-//  StoricoTerapieViewController.swift
+//  TerapiaStoricoPazienteViewController.swift
 //  AppEsame
 //
-//  Created by Anna on 03/06/2021.
+//  Created by Anna on 07/07/2021.
 //
 
 import UIKit
 
-class StoricoTerapieViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StoricoTerapiePazienteViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+
+    @IBOutlet weak var storicoTerapieTableView: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return terapie.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = storicoTableView.dequeueReusableCell(withIdentifier: "storicocell", for: indexPath) as! StoricoTerapieTableViewCell
-        cell.initcell()
-        cell.nomeTerapia.text = terapie[indexPath.row]
+        let cell = storicoTerapieTableView.dequeueReusableCell(withIdentifier: "storicocell", for: indexPath) as! StoricoTerapiePazienteTableViewCell
+        cell.nome.text = terapie[indexPath.row]
         return cell
     }
     
 
     var terapie = ["Terapia1", "Terapia2"]
-    @IBOutlet weak var storicoTableView: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,5 +41,4 @@ class StoricoTerapieViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 performSegue(withIdentifier: "terapiacontroller", sender: self)
 }
-
 }

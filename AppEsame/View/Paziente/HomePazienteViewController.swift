@@ -65,7 +65,7 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
             performSegue(withIdentifier: "TerapiaController", sender: self)
         }
         else{
-            
+            performSegue(withIdentifier: "storicocontroller", sender: self)
         }
       
     }
