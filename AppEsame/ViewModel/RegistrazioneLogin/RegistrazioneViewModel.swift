@@ -12,8 +12,22 @@ import FirebaseAuth
 
 class RegistrazioneViewModel{
     
+    //variabili collegamento al model
+    var pazienteModel = Paziente()
+    var medicoModel = Medico()
+    
     init(){
         
+    }
+    
+    
+    public func creaPaziente(paziente: Paziente)->String{
+        let  idPaziente = pazienteModel.creaPaziente(paziente: paziente)
+        return idPaziente
+    }
+    
+    func creaMedico(medico: Medico){
+        medicoModel.creaMedico(medico: medico)
     }
     
     public static func validaStep1Registrazione(nome: String, cognome: String, codiceFiscale: String, telefono: String, email: String, password: String, ripetiPasword: String)->Errore{
@@ -66,10 +80,10 @@ class RegistrazioneViewModel{
     public static func completaRegistrazionePaziente(pazienteStep3: Paziente,mediciSelezionati: [String]){
         
         Auth.auth().createUser(withEmail: pazienteStep3.getEmail(), password: pazienteStep3.getPassword()) { authResult, error in
-            let p = PazienteViewModel()
+            let rvm = RegistrazioneViewModel()
             let r = Richiesta()
             pazienteStep3.setUid(id: authResult?.user.uid ?? "")
-            let idPaziente = p.creaPaziente(paziente: pazienteStep3)
+            let idPaziente = rvm.creaPaziente(paziente: pazienteStep3)
             for medico in mediciSelezionati{
                 let richiesta = Richiesta(id: "", idPaziente: idPaziente, idMedico: medico, stato: false)
                 r.creaRichiesta(richiesta: richiesta)
@@ -82,14 +96,15 @@ class RegistrazioneViewModel{
         
         
         Auth.auth().createUser(withEmail: medicoStep1.getEmail(), password: medicoStep1.getPassword()) { authResult, error in
-            let m = MedicoViewModel()
+            let rvm = RegistrazioneViewModel()
             var medico = Medico()
             medico.medicoEqUtente(utente: medicoStep1)
             medico.setUid(id: authResult?.user.uid ?? "")
             medico.setSpecializzazioni(specializzazioni: specializzazioniSelezionate)
             
-            m.creaMedico(medico: medico)
+            rvm.creaMedico(medico: medico)
         }
     }
+    
     
 }

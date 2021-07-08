@@ -50,9 +50,9 @@ class AggiungiPatologieViewController: UIViewController, UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let pa = PatologiaViewModel()
+        let ap = AggiungiPatologieViewModel()
         
-        pa.ottieniTuttePatologie{(patologie) in
+        ap.ottieniTuttePatologie{(patologie) in
             
             guard let patologieRes = patologie else {
                 print("error")

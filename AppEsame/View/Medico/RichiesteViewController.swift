@@ -86,9 +86,9 @@ class RichiesteViewController: UIViewController, UITableViewDelegate, UITableVie
                 return
             }
             for richiesta in richiesteRes{
-                let p = PazienteViewModel()
+                let r = RichiestaViewModel()
                 
-                p.ottieniPazienteDaId(idDaCercare: richiesta.getIdPaziente()){(pazienti) in
+                r.ottieniPazienteDaId(idDaCercare: richiesta.getIdPaziente()){(pazienti) in
                     
                     guard let pazientiRes = pazienti else {
                         print("error")
