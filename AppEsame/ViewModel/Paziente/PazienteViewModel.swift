@@ -16,6 +16,11 @@ class PazienteViewModel{
     init(){}
     
     
+    func creaPaziente(paziente: Paziente)->String{
+        let  idPaziente = pazienteModel.creaPaziente(paziente: paziente)
+        return idPaziente
+    }
+    
     func ottieniPazienteDaEmail(emailDaCercare: String, finished: @escaping([Paziente]?) -> Void) {
         
         pazienteModel.ottieniPazienteDaEmail(emailDaCercare: emailDaCercare){(pazienti) in
@@ -24,7 +29,7 @@ class PazienteViewModel{
                 print("error")
                 return
             }
-
+            
             let pazientiArr = pazientiRes
             
             finished(pazientiArr)
@@ -40,7 +45,7 @@ class PazienteViewModel{
                 print("error")
                 return
             }
-
+            
             let paziente = pazientiRes
             
             finished(paziente)
@@ -55,7 +60,7 @@ class PazienteViewModel{
                 print("error")
                 return
             }
-
+            
             let pazientiArr = pazientiRes
             
             finished(pazientiArr)

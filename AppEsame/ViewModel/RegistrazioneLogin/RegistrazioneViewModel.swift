@@ -66,7 +66,7 @@ class RegistrazioneViewModel{
     public static func completaRegistrazionePaziente(pazienteStep3: Paziente,mediciSelezionati: [String]){
         
         Auth.auth().createUser(withEmail: pazienteStep3.getEmail(), password: pazienteStep3.getPassword()) { authResult, error in
-            let p = Paziente()
+            let p = PazienteViewModel()
             let r = Richiesta()
             pazienteStep3.setUid(id: authResult?.user.uid ?? "")
             let idPaziente = p.creaPaziente(paziente: pazienteStep3)
@@ -82,7 +82,7 @@ class RegistrazioneViewModel{
         
         
         Auth.auth().createUser(withEmail: medicoStep1.getEmail(), password: medicoStep1.getPassword()) { authResult, error in
-            let m = Medico()
+            let m = MedicoViewModel()
             var medico = Medico()
             medico.medicoEqUtente(utente: medicoStep1)
             medico.setUid(id: authResult?.user.uid ?? "")

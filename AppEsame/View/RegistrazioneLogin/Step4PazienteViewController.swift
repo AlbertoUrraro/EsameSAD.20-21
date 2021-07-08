@@ -43,7 +43,7 @@ class Step4PazienteViewController: UIViewController, UITableViewDelegate, UITabl
         mediciTableView.estimatedRowHeight = 250
         mediciTableView.rowHeight = UITableView.automaticDimension
         
-        let me = Medico()
+        let me = MedicoViewModel()
         
         me.ottieniTuttiMedici{(medici) in
             

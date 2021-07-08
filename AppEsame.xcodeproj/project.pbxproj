@@ -94,7 +94,7 @@
 		9571BB88269606970022B3F2 /* Step4PazienteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB87269606970022B3F2 /* Step4PazienteViewModel.swift */; };
 		9571BB8B269606B30022B3F2 /* AllergieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB8A269606B30022B3F2 /* AllergieViewModel.swift */; };
 		9571BB8E269606C40022B3F2 /* PatologiwViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB8D269606C40022B3F2 /* PatologiwViewModel.swift */; };
-		9571BB91269606D10022B3F2 /* MediciViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB90269606D10022B3F2 /* MediciViewModel.swift */; };
+		9571BB91269606D10022B3F2 /* MedicoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB90269606D10022B3F2 /* MedicoViewModel.swift */; };
 		9571BB94269606E10022B3F2 /* SpecializzazioniViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB93269606E10022B3F2 /* SpecializzazioniViewModel.swift */; };
 		9571BB9926961CC00022B3F2 /* StatoSaluteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB9826961CC00022B3F2 /* StatoSaluteTableViewCell.swift */; };
 		9571BB9C269642220022B3F2 /* TerapiaMedicoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571BB9B269642220022B3F2 /* TerapiaMedicoTableViewCell.swift */; };
@@ -246,7 +246,7 @@
 		9571BB87269606970022B3F2 /* Step4PazienteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4PazienteViewModel.swift; sourceTree = "<group>"; };
 		9571BB8A269606B30022B3F2 /* AllergieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergieViewModel.swift; sourceTree = "<group>"; };
 		9571BB8D269606C40022B3F2 /* PatologiwViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatologiwViewModel.swift; sourceTree = "<group>"; };
-		9571BB90269606D10022B3F2 /* MediciViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediciViewModel.swift; sourceTree = "<group>"; };
+		9571BB90269606D10022B3F2 /* MedicoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicoViewModel.swift; sourceTree = "<group>"; };
 		9571BB93269606E10022B3F2 /* SpecializzazioniViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecializzazioniViewModel.swift; sourceTree = "<group>"; };
 		9571BB9826961CC00022B3F2 /* StatoSaluteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatoSaluteTableViewCell.swift; sourceTree = "<group>"; };
 		9571BB9B269642220022B3F2 /* TerapiaMedicoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerapiaMedicoTableViewCell.swift; sourceTree = "<group>"; };
@@ -466,7 +466,6 @@
 				9571BB87269606970022B3F2 /* Step4PazienteViewModel.swift */,
 				9571BB8A269606B30022B3F2 /* AllergieViewModel.swift */,
 				9571BB8D269606C40022B3F2 /* PatologiwViewModel.swift */,
-				9571BB90269606D10022B3F2 /* MediciViewModel.swift */,
 				9571BB93269606E10022B3F2 /* SpecializzazioniViewModel.swift */,
 			);
 			path = RegistrazioneLogin;
@@ -475,6 +474,7 @@
 		9571BB4B2695E6FA0022B3F2 /* Medico */ = {
 			isa = PBXGroup;
 			children = (
+				9571BB90269606D10022B3F2 /* MedicoViewModel.swift */,
 				1C97512526939EA90064DABA /* RichiestaViewModel.swift */,
 				9571BB4E269604050022B3F2 /* SOSMedicoViewModel.swift */,
 				9571BB51269604150022B3F2 /* HomeMedicoViewModel.swift */,
@@ -867,7 +867,7 @@
 				1C38154E2666A96E00A8CBFB /* OperazioneDB.swift in Sources */,
 				1C1F25DA2663CB82001B2DEC /* UtenteDB.swift in Sources */,
 				1C97512626939EA90064DABA /* RichiestaViewModel.swift in Sources */,
-				9571BB91269606D10022B3F2 /* MediciViewModel.swift in Sources */,
+				9571BB91269606D10022B3F2 /* MedicoViewModel.swift in Sources */,
 				9520E71B266A6E1C00D0B702 /* RichiesteTableViewCell.swift in Sources */,
 				95A633F52694416E004CDA38 /* DSFStepperView+localization.swift in Sources */,
 				1C97511E268CE0230064DABA /* TerapiaFarmacologicaDB.swift in Sources */,
