@@ -62,7 +62,7 @@ class HomePazienteViewController: UIViewController, UITableViewDelegate, UITable
         }
         else if (indexPath.row == 1){
             indexRow = indexPath.row
-            performSegue(withIdentifier: "TerapiaController", sender: self)
+            performSegue(withIdentifier: "terapia_controller", sender: self)
         }
         else{
             performSegue(withIdentifier: "storicocontroller", sender: self)

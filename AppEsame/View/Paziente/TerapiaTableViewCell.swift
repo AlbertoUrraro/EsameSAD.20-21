@@ -12,12 +12,14 @@ class TerapiaTableViewCell: UITableViewCell {
 // Salvataggio data corrente nelle user defaults
     let defaults = UserDefaults.standard
     
-    @IBOutlet weak var nomeMedicinale: UILabel!
-    @IBOutlet weak var pdfButton: UIButton!
-    @IBOutlet weak var descrizioneMedicinale: UILabel!
-    @IBOutlet weak var startCura: UIButton!
-
     
+
+    @IBOutlet weak var descrizioneMedicinale: UILabel!
+    @IBOutlet weak var nomeMedicinale: UILabel!
+    
+
+    @IBOutlet weak var pdfButton: UIButton!
+    @IBOutlet weak var startCura: UIButton!
     let terapiaVM = TerapiaViewModel()
     
     var ore: Int!
@@ -45,6 +47,7 @@ class TerapiaTableViewCell: UITableViewCell {
         
    
         startCura.isEnabled = false
+        
        }
     
     
