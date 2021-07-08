@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-class ProfiloViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ProfiloViewController : UIViewController, UITableViewDelegate, UICollectionViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     
     @IBOutlet weak var profiloTableView: UITableView!
@@ -20,13 +20,28 @@ class ProfiloViewController : UIViewController, UITableViewDelegate, UITableView
     ]
     
     var titoli = ["Utente","Posizione","Applicazione"]
-    
+    var imagePicker: UIImagePickerController!
    
     override func viewDidLoad() {
             super.viewDidLoad()
             title="Profilo"
         profiloTableView.delegate = self
         profiloTableView.dataSource = self
+        
+        immagineProfilo.image = UIImage(named: "user")
+        //immagineProfilo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        immagineProfilo.layer.cornerRadius = immagineProfilo.bounds.height/2
+        immagineProfilo.contentMode = .scaleToFill
+        immagineProfilo.layer.borderWidth = 3
+        immagineProfilo.layer.borderColor = UIColor.black.cgColor
+        let imageClick = UITapGestureRecognizer(target: self, action: #selector(apriImagePicker))
+        immagineProfilo.addGestureRecognizer(imageClick)
+        immagineProfilo.clipsToBounds = true
+        modificaFoto.addTarget(self, action: #selector(apriImagePicker), for: .touchUpInside)
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
             
         }
 
@@ -70,6 +85,30 @@ class ProfiloViewController : UIViewController, UITableViewDelegate, UITableView
         }
      
 
+        
+    }
+    
+    
+    @IBOutlet weak var immagineProfilo: UIImageView!
+    @IBOutlet weak var modificaFoto: UIButton!
+    
+     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @objc  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.editedImage.rawValue) ] as? UIImage{
+            self.immagineProfilo.image = pickedImage
+            
+        }
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
+    @objc func apriImagePicker(_sender:Any){
+        self.present(imagePicker, animated: true, completion: nil)
         
     }
     

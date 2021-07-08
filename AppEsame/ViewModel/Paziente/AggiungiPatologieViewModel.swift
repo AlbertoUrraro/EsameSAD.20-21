@@ -1,16 +1,18 @@
 //
-//  Step3PazienteViewModel.swift
+//  AggiungiPatologieViewModel.swift
 //  AppEsame
 //
-//  Created by Anna on 07/07/2021.
+//  Created by Carlo D'Avino on 08/07/21.
 //
+
 
 import Foundation
 
-class Step3PazienteViewModel{
+class AggiungiPatologieViewModel{
     
     //variabili collegamento al model
     var patologiaModel = Patologia()
+    
     
     init(){}
     
@@ -28,5 +30,6 @@ class Step3PazienteViewModel{
             
             finished(patologieArr)
         }
+        
     }
 }

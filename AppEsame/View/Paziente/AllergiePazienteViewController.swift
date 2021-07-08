@@ -25,9 +25,9 @@ class AllergiePazienteViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let p = Paziente()
+        let ap = AllergiePazienteViewModel()
         
-        p.ottieniPazienteDaId(idDaCercare: DBManager.shared.id){(pazienti) in
+        ap.ottieniPazienteDaId(idDaCercare: DBManager.shared.id){(pazienti) in
             
             guard let pazientiRes = pazienti else {
                 print("error")
