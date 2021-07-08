@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rei-EY-Sl6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rei-EY-Sl6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -51,7 +51,7 @@
                                     <constraint firstAttribute="height" constant="566" id="hGd-tj-ADI"/>
                                 </constraints>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="PX5-GB-VIy">
-                                    <rect key="frame" x="0.0" y="117" width="414" height="32"/>
+                                    <rect key="frame" x="0.0" y="111" width="414" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="tintColor" red="1" green="0.01224201724" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,7 +65,7 @@
                                 </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profilocell" id="NYS-Zs-2s8" customClass="ProfiloTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NYS-Zs-2s8" id="b0v-ok-SI5">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -87,37 +87,41 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Gkh-Bh-h7y">
-                                <rect key="frame" x="151" y="113" width="113" height="107"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="HVj-5i-4eD">
+                                <rect key="frame" x="150" y="113" width="110" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="107" id="hNH-Yi-Bhj"/>
-                                    <constraint firstAttribute="width" constant="113" id="iQs-Nz-L1B"/>
+                                    <constraint firstAttribute="height" constant="110" id="MBk-qa-8dD"/>
+                                    <constraint firstAttribute="width" constant="110" id="hTJ-tI-BvU"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vu8-Pa-Eml">
+                                <rect key="frame" x="178" y="217" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Modifica">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q9U-wI-EkK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jaR-KS-f38" firstAttribute="top" secondItem="Gkh-Bh-h7y" secondAttribute="bottom" constant="27" id="4En-YQ-AXz"/>
-                            <constraint firstItem="Gkh-Bh-h7y" firstAttribute="top" secondItem="q9U-wI-EkK" secondAttribute="top" constant="25" id="EJg-3R-zEb"/>
                             <constraint firstItem="jaR-KS-f38" firstAttribute="leading" secondItem="q9U-wI-EkK" secondAttribute="leading" id="Inw-rm-w97"/>
                             <constraint firstItem="jaR-KS-f38" firstAttribute="bottom" secondItem="q9U-wI-EkK" secondAttribute="bottom" id="K1n-gL-f73"/>
                             <constraint firstItem="jaR-KS-f38" firstAttribute="trailing" secondItem="q9U-wI-EkK" secondAttribute="trailing" id="TLc-ZR-g8b"/>
-                            <constraint firstItem="q9U-wI-EkK" firstAttribute="trailing" secondItem="Gkh-Bh-h7y" secondAttribute="trailing" constant="150" id="cVd-xK-axP"/>
-                            <constraint firstItem="jaR-KS-f38" firstAttribute="top" secondItem="Gkh-Bh-h7y" secondAttribute="bottom" constant="27" id="xY1-vv-8Xv"/>
-                            <constraint firstItem="Gkh-Bh-h7y" firstAttribute="leading" secondItem="q9U-wI-EkK" secondAttribute="leading" constant="151" id="yI6-xu-moI"/>
+                            <constraint firstItem="HVj-5i-4eD" firstAttribute="leading" secondItem="q9U-wI-EkK" secondAttribute="leading" constant="150" id="aUY-Ew-L8B"/>
+                            <constraint firstItem="HVj-5i-4eD" firstAttribute="top" secondItem="q9U-wI-EkK" secondAttribute="top" constant="25" id="qok-nQ-gYc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profilo" id="Xr6-Qk-4ox">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="OYn-xp-vpJ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Profilo" id="Xr6-Qk-4ox"/>
                     <connections>
+                        <outlet property="immagineProfilo" destination="HVj-5i-4eD" id="YFu-ZA-Ym7"/>
+                        <outlet property="modificaFoto" destination="Vu8-Pa-Eml" id="sTy-Ii-BCH"/>
                         <outlet property="profiloTableView" destination="jaR-KS-f38" id="iAT-GM-dpj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G10-TE-SOO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1662" y="2201"/>
+            <point key="canvasLocation" x="1660.8695652173915" y="2200.4464285714284"/>
         </scene>
         <!--SOS-->
         <scene sceneID="A2a-13-TQo">
@@ -153,7 +157,7 @@
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contatticell" rowHeight="68" id="naq-wg-G9V" customClass="SOSTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="68"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="naq-wg-G9V" id="FU3-AI-zP8">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
@@ -225,14 +229,14 @@
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="0.0" reuseIdentifier="cartellaclinicacell" rowHeight="70" id="jh1-cx-ii4" customClass="CartellaClinicaTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jh1-cx-ii4" id="ObW-yQ-bqd">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL2-aW-c40">
-                                                    <rect key="frame" x="20" y="26" width="325" height="18"/>
+                                                    <rect key="frame" x="20" y="26" width="326.5" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="285" id="Vsc-IQ-Gw4"/>
                                                         <constraint firstAttribute="height" constant="18" id="zJT-iC-qcL"/>
@@ -297,7 +301,7 @@
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="patologiecell" rowHeight="73" id="4Fl-8A-77m" customClass="PatologiePazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="73"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Fl-8A-77m" id="VF8-uS-MVa">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
@@ -366,7 +370,7 @@
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="operazionicell" rowHeight="62" id="FHG-Lr-WA8" customClass="OperazioniPazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="62"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FHG-Lr-WA8" id="vSi-a8-vyT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
@@ -439,7 +443,7 @@
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="allergiecell" id="Wll-cv-XG4" customClass="AllergiePazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wll-cv-XG4" id="DiF-GE-kBw">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -536,10 +540,10 @@
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="homecell" rowHeight="139" id="FRb-vO-8C1" customClass="HomePazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="139"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="139"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FRb-vO-8C1" id="fOY-Am-lMW">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="139"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-controllo-della-salute-100" translatesAutoresizingMaskIntoConstraints="NO" id="YWT-Uw-C0F">
@@ -549,7 +553,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2H-ev-Q28">
-                                                    <rect key="frame" x="101" y="47" width="218" height="21"/>
+                                                    <rect key="frame" x="101" y="47" width="219.5" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="FfS-Su-K4N"/>
                                                         <constraint firstAttribute="width" constant="218" id="XrO-6b-X4W"/>
@@ -559,7 +563,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsG-vQ-XHl" customClass="LinearProgressBar" customModule="LinearProgressBar">
-                                                    <rect key="frame" x="20" y="87" width="288" height="41"/>
+                                                    <rect key="frame" x="20" y="87" width="289.5" height="41"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="3Tx-2j-TjH"/>
@@ -651,7 +655,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="terapiacell" rowHeight="116" id="pLs-Xe-5TH" customClass="TerapiaTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="116"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pLs-Xe-5TH" id="DKW-H5-nLi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
@@ -772,7 +776,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="sintomocell" id="njG-kR-NCC" customClass="SintomiTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="44.5"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="njG-kR-NCC" id="soO-dS-8Ea">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
@@ -865,7 +869,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="parametrocell" rowHeight="79" id="4EE-9w-qUh" customClass="ParametriTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="79"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4EE-9w-qUh" id="M8m-fj-7Cj">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79"/>
@@ -967,10 +971,10 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="storicocell" rowHeight="71" id="lHF-MJ-X8x" customClass="StoricoTerapiePazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="71"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lHF-MJ-X8x" id="sNu-OT-r1F">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUu-bv-P6l">
@@ -1040,7 +1044,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="terapiacell" rowHeight="104" id="Xug-vI-lSN" customClass="TerapiaPazienteTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="104"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xug-vI-lSN" id="P0N-QD-DHB">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
@@ -1132,7 +1136,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="allergiacell" rowHeight="73" id="23u-R1-9E5" customClass="AggiungiAllergieTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="73"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="23u-R1-9E5" id="wEw-lc-jV0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
@@ -1229,7 +1233,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="patologiacell" rowHeight="73" id="kZo-54-FfQ" customClass="AggiungiPatologieTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="73"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kZo-54-FfQ" id="lOW-e3-f6u">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
@@ -1326,7 +1330,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="patologiacell" rowHeight="73" id="Srl-G6-vbb" customClass="AggiungiOperazioniTableViewCell" customModule="AppEsame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="73"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Srl-G6-vbb" id="3xP-Lr-fse">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
