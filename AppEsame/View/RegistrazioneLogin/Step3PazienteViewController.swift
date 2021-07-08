@@ -58,7 +58,7 @@ class Step3PazienteViewController: UIViewController, UITableViewDelegate,UITable
         patologieTableView.estimatedRowHeight = 250
         patologieTableView.rowHeight = UITableView.automaticDimension
         
-        let pa = Patologia()
+        let pa = PatologiaViewModel()
         
         pa.ottieniTuttePatologie{(patologie) in
             

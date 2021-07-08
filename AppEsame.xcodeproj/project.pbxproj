@@ -29,6 +29,8 @@
 		1C975122268E629A0064DABA /* CartellaClinicaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C975121268E629A0064DABA /* CartellaClinicaDB.swift */; };
 		1C97512426939E7D0064DABA /* PazienteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C97512326939E7D0064DABA /* PazienteViewModel.swift */; };
 		1C97512626939EA90064DABA /* RichiestaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C97512526939EA90064DABA /* RichiestaViewModel.swift */; };
+		1C975128269704720064DABA /* UtenteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C975127269704720064DABA /* UtenteViewModel.swift */; };
+		1C97512A2697070F0064DABA /* PatologiaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9751292697070F0064DABA /* PatologiaViewModel.swift */; };
 		1CC63C962649C653001AEDEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CC63C952649C653001AEDEA /* GoogleService-Info.plist */; };
 		1CC63C9D2649CDFD001AEDEA /* PazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63C9C2649CDFD001AEDEA /* PazienteViewController.swift */; };
 		1CC63C9F2649CE0B001AEDEA /* MedicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63C9E2649CE0B001AEDEA /* MedicoViewController.swift */; };
@@ -180,6 +182,8 @@
 		1C975121268E629A0064DABA /* CartellaClinicaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartellaClinicaDB.swift; sourceTree = "<group>"; };
 		1C97512326939E7D0064DABA /* PazienteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazienteViewModel.swift; sourceTree = "<group>"; };
 		1C97512526939EA90064DABA /* RichiestaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiestaViewModel.swift; sourceTree = "<group>"; };
+		1C975127269704720064DABA /* UtenteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtenteViewModel.swift; sourceTree = "<group>"; };
+		1C9751292697070F0064DABA /* PatologiaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatologiaViewModel.swift; sourceTree = "<group>"; };
 		1CC63C952649C653001AEDEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1CC63C9C2649CDFD001AEDEA /* PazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazienteViewController.swift; sourceTree = "<group>"; };
 		1CC63C9E2649CE0B001AEDEA /* MedicoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicoViewController.swift; sourceTree = "<group>"; };
@@ -383,6 +387,7 @@
 				9571BB4B2695E6FA0022B3F2 /* Medico */,
 				9571BB4A2695E6D60022B3F2 /* RegistrazioneLogin */,
 				9571BB462695E5690022B3F2 /* Paziente */,
+				1C975127269704720064DABA /* UtenteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -451,6 +456,7 @@
 				9571BBAA269649050022B3F2 /* StoricoTerapiaPazienteViewModel.swift */,
 				9571BBB626964C220022B3F2 /* TerapiaPazienteViewModel.swift */,
 				9571BBC1269654410022B3F2 /* AggiungiAllergieViewModel.swift */,
+				1C9751292697070F0064DABA /* PatologiaViewModel.swift */,
 			);
 			path = Paziente;
 			sourceTree = "<group>";
@@ -776,7 +782,9 @@
 				9571BBBE26964FDD0022B3F2 /* AggiungiAllergieTableViewCell.swift in Sources */,
 				1C28ABF4264DD7DE00F86CFD /* DBManager.swift in Sources */,
 				1CE128FD2652EE1000B9EE45 /* Allergia.swift in Sources */,
+				1C97512A2697070F0064DABA /* PatologiaViewModel.swift in Sources */,
 				9571BBA2269647D20022B3F2 /* TerapiaMedicoViewModel.swift in Sources */,
+				1C975128269704720064DABA /* UtenteViewModel.swift in Sources */,
 				1C3815502666BC1300A8CBFB /* Specializzazione.swift in Sources */,
 				95C55B412669362200BF503C /* DettaglioPazienteViewController.swift in Sources */,
 				9520E71E266A6E3A00D0B702 /* RichiesteViewController.swift in Sources */,

@@ -50,7 +50,7 @@ class AggiungiPatologieViewController: UIViewController, UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let pa = Patologia()
+        let pa = PatologiaViewModel()
         
         pa.ottieniTuttePatologie{(patologie) in
             
