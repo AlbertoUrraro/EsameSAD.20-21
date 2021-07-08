@@ -178,9 +178,9 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
                 return
             }
             for richiesta in richiesteRes{
-                let p = Paziente()
+                let h = HomeMedicoViewModel()
                 
-                p.ottieniPazienteDaId(idDaCercare: richiesta.getIdPaziente()){(pazienti) in
+                h.ottieniPazienteDaId(idDaCercare: richiesta.getIdPaziente()){(pazienti) in
                     
                     guard let pazientiRes = pazienti else {
                         print("error")

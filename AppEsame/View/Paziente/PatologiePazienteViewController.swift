@@ -26,9 +26,9 @@ class PatologiePazienteViewController: UIViewController, UITableViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let p = Paziente()
+        let pp = PatologiePazienteViewModel()
         
-        p.ottieniPazienteDaId(idDaCercare: DBManager.shared.id){(pazienti) in
+        pp.ottieniPazienteDaId(idDaCercare: DBManager.shared.id){(pazienti) in
             
             guard let pazientiRes = pazienti else {
                 print("error")

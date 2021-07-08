@@ -1,16 +1,17 @@
 //
-//  AllergiePazienteViewModel.swift
+//  PatologiaViewModel.swift
 //  AppEsame
 //
-//  Created by Anna on 07/07/2021.
+//  Created by Carlo D'Avino on 08/07/21.
 //
 
 import Foundation
 
-class AllergiePazienteViewModel{
+class PatologiePazienteViewModel{
     
     //variabili collegamento al model
     var pazienteModel = Paziente()
+    
     
     init(){}
     
@@ -28,7 +29,4 @@ class AllergiePazienteViewModel{
             finished(paziente)
         }
     }
-    
-    
-    
 }

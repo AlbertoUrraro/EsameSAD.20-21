@@ -10,6 +10,9 @@ import Foundation
 
 class RichiestaViewModel{
     
+    //variabili collegamento al model
+    var pazienteModel = Paziente()
+    
     init(){}
     
     
@@ -19,6 +22,21 @@ class RichiestaViewModel{
         let r = Richiesta()
         
         r.aggiornaStatoRichiesta(idRichiesta: idRichiesta, stato: true)
+    }
+    
+    func ottieniPazienteDaId(idDaCercare: String, finished: @escaping(Paziente?) -> Void) {
+        
+        pazienteModel.ottieniPazienteDaId(idDaCercare: idDaCercare){(pazienti) in
+            
+            guard let pazientiRes = pazienti else {
+                print("error")
+                return
+            }
+            
+            let paziente = pazientiRes
+            
+            finished(paziente)
+        }
     }
 }
 
