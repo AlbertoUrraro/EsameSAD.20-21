@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         
         UNUserNotificationCenter.current().delegate = self
-        
+       
         return true
     }
     
