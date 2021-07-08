@@ -43,6 +43,25 @@ class SOSViewController: UIViewController,UITableViewDataSource, UITableViewDele
         
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let cancella = deleteAction(at : indexPath)
+         return UISwipeActionsConfiguration(actions: [cancella])
+    }
+    
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction{
+        let action = UIContextualAction(style: .destructive, title: "cancella"){
+            (action , view, completion) in
+            
+            self.models.remove(at: indexPath.row)
+            self.sosTableView.deleteRows(at: [indexPath], with: .automatic)
+            completion(true)
+            
+        }
+        action.image = UIImage(systemName: "trash")
+        action.backgroundColor = .red
+        
+        return action
+    }
     
     
     
