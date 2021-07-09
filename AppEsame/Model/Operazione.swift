@@ -37,7 +37,10 @@ class Operazione{
     
     
     func creaOperazione(operazione: Operazione){
-        operazioneDB.creaOperazione(operazione: operazione)
+        
+        let operazioneDb = OperazioneDB(id: operazione.getId(), descrizione: operazione.getDescrizione(), idPaziente: operazione.getIdPaziente())
+        
+        operazioneDB.creaOperazione(operazioneDb: operazioneDb)
     }
     
     

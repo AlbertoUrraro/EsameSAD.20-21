@@ -9,6 +9,7 @@ import Foundation
 
 class Contatto{
     
+    //Dichiarazione variabili
     var id: String = ""
     var nome: String  = ""
     var numero: String = ""
@@ -32,7 +33,7 @@ class Contatto{
     func setNome(nome: String){self.nome = nome}
     func setNumero(numero: String){self.numero = numero}
     func setNumeroEmergenza(numeroEmergenza: Bool){self.numeroEmergenza = numeroEmergenza}
-
+    
     
     //Funzioni get
     func getId()->String{return self.id}
@@ -62,5 +63,5 @@ class Contatto{
             finished(contatto)
         }
     }
-
+    
 }
