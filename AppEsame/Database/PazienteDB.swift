@@ -9,30 +9,52 @@ import Foundation
 import FirebaseCore
 import FirebaseFirestore
 
-class PazienteDB{
+class PazienteDB: UtenteDB{
     
-    let db = DBManager.shared.db
     
-    init(){}
+    //Dichiarazione variabili
+    var allergie: [String]!
+    var patologie: [String]!
     
-    func creaPaziente(paziente: Paziente)->String{
+    
+    //Costruttore
+    init(id: String,uid: String, nome: String, cognome: String, dataNascita: String, codiceFiscale: String, telefono: String, email: String, tipo: String, password: String, allergie: [String], patologie: [String], indirizzo: String, citta: String, cap: String) {
+        self.allergie = allergie
+        self.patologie = patologie
+        super.init(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, indirizzo: indirizzo, citta: citta, cap: cap)
+    }
+    
+    //Costruttore vuoto
+    override init(){
+        super.init()
+    }
+    
+    //Funzioni set
+    func setAllergia(allergie: [String]){self.allergie = allergie}
+    func setPatologie(patologie: [String]){self.patologie = patologie}
+    
+    //Funzioni get
+    func getAllergie()->[String]{return self.allergie}
+    func getPatologie()->[String]{return self.patologie}
+    
+    func creaPaziente(pazienteDb: PazienteDB)->String{
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
         ref = db!.collection("utente").addDocument(data: [
-            "uid": paziente.getUid(),
-            "nome": paziente.getNome(),
-            "cognome": paziente.getCognome(),
-            "dataNascita": paziente.getDataNascita(),
-            "codiceFiscale": paziente.getCodiceFiscale(),
-            "telefono": paziente.getTelefono(),
-            "email": paziente.getEmail(),
-            "tipo": paziente.getTipo(),
-            "password": paziente.getPassword(),
-            "allergie": paziente.getAllergie(),
-            "patologie": paziente.getPatologie(),
-            "indirizzo": paziente.getIndirizzo(),
-            "citta": paziente.getCitta(),
-            "cap": paziente.getCap(),
+            "uid": pazienteDb.getUid(),
+            "nome": pazienteDb.getNome(),
+            "cognome": pazienteDb.getCognome(),
+            "dataNascita": pazienteDb.getDataNascita(),
+            "codiceFiscale": pazienteDb.getCodiceFiscale(),
+            "telefono": pazienteDb.getTelefono(),
+            "email": pazienteDb.getEmail(),
+            "tipo": pazienteDb.getTipo(),
+            "password": pazienteDb.getPassword(),
+            "allergie": pazienteDb.getAllergie(),
+            "patologie": pazienteDb.getPatologie(),
+            "indirizzo": pazienteDb.getIndirizzo(),
+            "citta": pazienteDb.getCitta(),
+            "cap": pazienteDb.getCap(),
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -45,14 +67,14 @@ class PazienteDB{
         return ref!.documentID
     }
     
-    func ottieniPazienteDaEmail(emailDaCercare: String, finished: @escaping([Paziente]?) -> Void) {
+    func ottieniPazienteDaEmail(emailDaCercare: String, finished: @escaping([PazienteDB]?) -> Void) {
         db!.collection("utente").whereField("email", isEqualTo: emailDaCercare).getDocuments() { (queryResult, err) in
             guard let result = queryResult?.documents else {
                 print("No documents")
                 return
             }
             
-            let pazienti = result.map{ (queryResult) -> Paziente in
+            let pazienti = result.map{ (queryResult) -> PazienteDB in
                 let data = queryResult.data()
                 
                 let id = queryResult.documentID
@@ -71,7 +93,7 @@ class PazienteDB{
                 let citta = data["citta"] as? String ?? ""
                 let cap = data["cap"] as? String ?? ""
                 
-                let paziente = Paziente(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
+                let paziente = PazienteDB(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return paziente
                 
@@ -80,14 +102,14 @@ class PazienteDB{
         }
     }
     
-    func ottieniPazienteDaId(idDaCercare: String, finished: @escaping([Paziente]?) -> Void) {
+    func ottieniPazienteDaId(idDaCercare: String, finished: @escaping([PazienteDB]?) -> Void) {
         db!.collection("utente").document(idDaCercare).getDocument { (queryResult, err) in
             guard let result = queryResult?.data() else {
                 print("No documents")
                 return
             }
             
-            let pazienti = result.map{ (queryResult) -> Paziente in
+            let pazienti = result.map{ (queryResult) -> PazienteDB in
                 let data = result
                 
                 let id = idDaCercare
@@ -106,7 +128,7 @@ class PazienteDB{
                 let citta = data["citta"] as? String ?? ""
                 let cap = data["cap"] as? String ?? ""
                 
-                let paziente = Paziente(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
+                let paziente = PazienteDB(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return paziente
                 
@@ -115,14 +137,14 @@ class PazienteDB{
         }
     }
     
-    func ottieniPazienteDaUid(uidDaCercare: String, finished: @escaping([Paziente]?) -> Void) {
+    func ottieniPazienteDaUid(uidDaCercare: String, finished: @escaping([PazienteDB]?) -> Void) {
         db!.collection("utente").whereField("uid", isEqualTo: uidDaCercare).getDocuments() { (queryResult, err) in
             guard let result = queryResult?.documents else {
                 print("No documents")
                 return
             }
             
-            let pazienti = result.map{ (queryResult) -> Paziente in
+            let pazienti = result.map{ (queryResult) -> PazienteDB in
                 let data = queryResult.data()
                 
                 let id = queryResult.documentID
@@ -141,7 +163,7 @@ class PazienteDB{
                 let citta = data["citta"] as? String ?? ""
                 let cap = data["cap"] as? String ?? ""
                 
-                let paziente = Paziente(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
+                let paziente = PazienteDB(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
                 
                 return paziente
                 

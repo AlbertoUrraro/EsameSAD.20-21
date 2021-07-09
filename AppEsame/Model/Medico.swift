@@ -50,7 +50,8 @@ class Medico: Utente{
     
     
     func creaMedico(medico: Medico){
-        medicoDB.creaMedico(medico: medico)
+        let medicoDb = MedicoDB(id: medico.getId(), uid: medico.getUid(), nome: medico.getNome(), cognome: medico.getCognome(), dataNascita: medico.getDataNascita(), codiceFiscale: medico.getCodiceFiscale(), telefono: medico.getTelefono(), email: medico.getEmail(), tipo: medico.getTipo(), password: medico.getPassword(), specializzazioni: medico.getSpecializzazioni(), indirizzo: medico.getIndirizzo(), citta: medico.getCitta(), cap: medico.getCap())
+        medicoDB.creaMedico(medicoDb: medicoDb)
     }
     
     func ottieniMedicoDaEmail(emailDaCercare: String, finished: @escaping([Medico]?) -> Void) {
