@@ -374,7 +374,13 @@
                         <viewLayoutGuide key="safeArea" id="1sE-el-VXE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Terapia" id="3dw-Qe-5Ws"/>
+                    <navigationItem key="navigationItem" title="Terapia" id="3dw-Qe-5Ws">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="akL-gx-158">
+                            <connections>
+                                <action selector="condividiPDF:" destination="Fv5-29-Snj" id="spZ-Tg-f6b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="terapiaTableView" destination="3cL-Zw-eHm" id="urP-a7-NE1"/>
                     </connections>
