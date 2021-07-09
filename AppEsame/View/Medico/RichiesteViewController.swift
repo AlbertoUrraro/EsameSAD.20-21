@@ -76,7 +76,7 @@ class RichiesteViewController: UIViewController, UITableViewDelegate, UITableVie
         // ottengo i pazienti che hanno richiesto di essere associati
 
         
-        let r = Richiesta()
+        let r = RichiestaViewModel()
         DBManager.shared.getUserDefaultUtenteLoggato()
         
         r.ottieniRichiesteDaIdMedico(idDaCercare: DBManager.shared.id, condizione: false){(richieste) in

@@ -12,6 +12,7 @@ class RichiestaViewModel{
     
     //variabili collegamento al model
     var pazienteModel = Paziente()
+    var richistaModel = Richiesta()
     
     init(){}
     
@@ -36,6 +37,21 @@ class RichiestaViewModel{
             let paziente = pazientiRes
             
             finished(paziente)
+        }
+    }
+    
+    func ottieniRichiesteDaIdMedico(idDaCercare: String,condizione: Bool, finished: @escaping([Richiesta]?) -> Void) {
+        
+        richistaModel.ottieniRichiesteDaIdMedico(idDaCercare: idDaCercare,condizione: condizione){(richieste) in
+            
+            guard let richiesteRes = richieste else {
+                print("error")
+                return
+            }
+            
+            let richiesteArr = richiesteRes
+            
+            finished(richiesteArr)
         }
     }
 }

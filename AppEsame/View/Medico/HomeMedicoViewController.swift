@@ -168,10 +168,10 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
         self.nomeFiltrato = []
         self.nomeCognome = []
         
-        let r = Richiesta()
+        let h = HomeMedicoViewModel()
         DBManager.shared.getUserDefaultUtenteLoggato()
         
-        r.ottieniRichiesteDaIdMedico(idDaCercare: DBManager.shared.id, condizione: true){(richieste) in
+        h.ottieniRichiesteDaIdMedico(idDaCercare: DBManager.shared.id, condizione: true){(richieste) in
             
             guard let richiesteRes = richieste else {
                 print("error")

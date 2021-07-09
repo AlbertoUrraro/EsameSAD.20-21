@@ -59,9 +59,9 @@ class Step2PazienteViewController: UIViewController, UITableViewDelegate, UITabl
 //        allergieTableView.layer.masksToBounds = true
 //        allergieTableViewllergieTableView.layer.cornerRadius = 10
         
-        let al = Allergia()
+        let s = Step2PazienteViewModel()
         
-        al.ottieniTutteAllergie{(allergie) in
+        s.ottieniTutteAllergie{(allergie) in
             
             guard let allergieRes = allergie else {
                 print("error")

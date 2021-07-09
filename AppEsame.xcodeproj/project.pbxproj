@@ -40,6 +40,7 @@
 		1CC63CA82649F2BD001AEDEA /* Step3PazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CA72649F2BD001AEDEA /* Step3PazienteViewController.swift */; };
 		1CC63CAB2649F38B001AEDEA /* RegistrazioneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CAA2649F38B001AEDEA /* RegistrazioneViewModel.swift */; };
 		1CC63CAD2649F4B7001AEDEA /* Errore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CAC2649F4B7001AEDEA /* Errore.swift */; };
+		1CC9FAB62698DDCD00109BD3 /* MedicoTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9FAB52698DDCD00109BD3 /* MedicoTabBarViewModel.swift */; };
 		1CDE415F264B48FA0077A163 /* Step4PazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE415E264B48FA0077A163 /* Step4PazienteViewController.swift */; };
 		1CE128FB2652EDEE00B9EE45 /* AllergiaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE128FA2652EDEE00B9EE45 /* AllergiaDB.swift */; };
 		1CE128FD2652EE1000B9EE45 /* Allergia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE128FC2652EE1000B9EE45 /* Allergia.swift */; };
@@ -191,6 +192,7 @@
 		1CC63CA72649F2BD001AEDEA /* Step3PazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step3PazienteViewController.swift; sourceTree = "<group>"; };
 		1CC63CAA2649F38B001AEDEA /* RegistrazioneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrazioneViewModel.swift; sourceTree = "<group>"; };
 		1CC63CAC2649F4B7001AEDEA /* Errore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errore.swift; sourceTree = "<group>"; };
+		1CC9FAB52698DDCD00109BD3 /* MedicoTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicoTabBarViewModel.swift; sourceTree = "<group>"; };
 		1CDE415E264B48FA0077A163 /* Step4PazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4PazienteViewController.swift; sourceTree = "<group>"; };
 		1CE128FA2652EDEE00B9EE45 /* AllergiaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergiaDB.swift; sourceTree = "<group>"; };
 		1CE128FC2652EE1000B9EE45 /* Allergia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergia.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 				9571BB602696049F0022B3F2 /* StatoSaluteViewModel.swift */,
 				9571BB63269604B10022B3F2 /* ProfiloMedicoViewModel.swift */,
 				9571BBA1269647D20022B3F2 /* TerapiaMedicoViewModel.swift */,
+				1CC9FAB52698DDCD00109BD3 /* MedicoTabBarViewModel.swift */,
 			);
 			path = Medico;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 				953BC330265558F1003F09E3 /* SintomiTableViewCell.swift in Sources */,
 				9571BB58269604610022B3F2 /* PrescriviViewModel.swift in Sources */,
 				9571BB7B269605860022B3F2 /* ProfiloPazienteViewModel.swift in Sources */,
+				1CC9FAB62698DDCD00109BD3 /* MedicoTabBarViewModel.swift in Sources */,
 				9571BB4F269604050022B3F2 /* SOSMedicoViewModel.swift in Sources */,
 				9571BBC2269654410022B3F2 /* AggiungiAllergieViewModel.swift in Sources */,
 				953BD72F265EE3B7006104D1 /* PatologiePazienteViewController.swift in Sources */,
