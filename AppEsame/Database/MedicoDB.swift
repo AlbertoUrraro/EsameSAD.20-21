@@ -32,7 +32,7 @@ class MedicoDB: UtenteDB{
     //Funzione get
     func getSpecializzazioni()->[String]{return self.specializzazioni}
     
-    func creaMedico(medicoDb: MedicoDB){
+    func creaMedico(medicoDb: MedicoDB)->String{
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
         ref = db!.collection("utente").addDocument(data: [
@@ -56,6 +56,7 @@ class MedicoDB: UtenteDB{
                 print("Document added with ID: \(ref!.documentID)")
             }
         }
+        return ref!.documentID
     }
     
     func ottieniMedicoDaEmail(emailDaCercare: String, finished: @escaping([MedicoDB]?) -> Void) {

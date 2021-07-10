@@ -26,8 +26,9 @@ class RegistrazioneViewModel{
         return idPaziente
     }
     
-    func creaMedico(medico: Medico){
-        medicoModel.creaMedico(medico: medico)
+    func creaMedico(medico: Medico)->String{
+        let idMedico = medicoModel.creaMedico(medico: medico)
+        return idMedico
     }
     
     public static func validaStep1Registrazione(nome: String, cognome: String, codiceFiscale: String, telefono: String, email: String, password: String, ripetiPasword: String)->Errore{
@@ -88,6 +89,16 @@ class RegistrazioneViewModel{
                 let richiesta = Richiesta(id: "", idPaziente: idPaziente, idMedico: medico, stato: false)
                 r.creaRichiesta(richiesta: richiesta)
             }
+            
+            let utente = Utente()
+            utente.setId(id: idPaziente)
+            utente.setUid(id: authResult?.user.uid ?? "")
+            utente.setNome(nome: pazienteStep3.getNome())
+            utente.setCognome(cognome: pazienteStep3.getCognome())
+            utente.setTipo(tipo: pazienteStep3.getTipo())
+            utente.setEmail(email: pazienteStep3.getEmail())
+            utente.setCitta(citta: pazienteStep3.getCitta())
+            DBManager.shared.setUserDefaultUtenteLoggato(utente: utente)
         }
         
     }
@@ -102,7 +113,17 @@ class RegistrazioneViewModel{
             medico.setUid(id: authResult?.user.uid ?? "")
             medico.setSpecializzazioni(specializzazioni: specializzazioniSelezionate)
             
-            rvm.creaMedico(medico: medico)
+            let idMedico = rvm.creaMedico(medico: medico)
+            
+            let utente = Utente()
+            utente.setId(id: idMedico)
+            utente.setUid(id: authResult?.user.uid ?? "")
+            utente.setNome(nome: medicoStep1.getNome())
+            utente.setCognome(cognome: medicoStep1.getCognome())
+            utente.setTipo(tipo: medicoStep1.getTipo())
+            utente.setEmail(email: medicoStep1.getEmail())
+            utente.setCitta(citta: medicoStep1.getCitta())
+            DBManager.shared.setUserDefaultUtenteLoggato(utente: utente)
         }
     }
     
