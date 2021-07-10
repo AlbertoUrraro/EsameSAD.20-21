@@ -12,15 +12,19 @@ class SintomiViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var sintomiTableView: UITableView!
 
     
-    var sintomi = ["mal di gola", "mal di testa", "febbre", "tosse"]
+    var sintomiVet: [String] = []
+    var sintomiSelezionati: [String] = []
+    var tag : [Int] = []
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sintomi.count
+        return sintomiVet.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = sintomiTableView.dequeueReusableCell(withIdentifier: "sintomocell", for: indexPath) as! SintomiTableViewCell
         cell.initcell()
-        cell.nomeSintomo.text = sintomi[indexPath.row]
+        cell.nomeSintomo.text = sintomiVet[indexPath.row]
         return cell
     }
     
@@ -29,6 +33,22 @@ class SintomiViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         let avantiButton = UIBarButtonItem(title: "Avanti", style: .bordered, target: self, action: #selector(avanti(sender:)))
            self.navigationItem.rightBarButtonItem  = avantiButton
+    
+        let s = SintomiViewModel()
+        
+        s.ottieniTuttiSintomi{(sintomi) in
+            
+            guard let sintomiRes = sintomi else {
+                print("error")
+                return
+            }
+            for sintomo in sintomiRes{
+                self.sintomiVet.append(sintomo.getDescrizione())
+            }
+            self.sintomiTableView.reloadData()
+            
+        }
+    
     }
     
     @objc func avanti(sender: Any){

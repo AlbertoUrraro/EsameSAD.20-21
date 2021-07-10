@@ -19,16 +19,18 @@ class StatoSaluteDB{
     var data: String = ""
     var ora: String = ""
     var parametriVitali:[String] = []
+    var sintomi: [String] = []
     
     let db = DBManager.shared.db
     
     //Costruttore
-    init(id:String, idPaziente:String, data: String, ora: String, parametriVitali:[String]){
+    init(id:String, idPaziente:String, data: String, ora: String, parametriVitali:[String], sintomi:[String]){
         self.id = id
         self.idPaziente = idPaziente
         self.data = data
         self.ora = ora
         self.parametriVitali = parametriVitali
+        self.sintomi = sintomi
     }
     
     //Costruttore vuoto
@@ -41,6 +43,7 @@ class StatoSaluteDB{
     func setData(data: String){self.data = data}
     func setOra(ora: String){self.ora = ora}
     func setParametriVitali(parametriVitali: [String]){self.parametriVitali = parametriVitali}
+    func setSintomi(sintomi: [String]){self.sintomi = sintomi}
     
     
     //Funzioni get
@@ -49,6 +52,7 @@ class StatoSaluteDB{
     func getData()->String{return self.data}
     func getOra()->String{return self.ora}
     func getParametriVitali()->[String]{return self.parametriVitali}
+    func getSintomi()->[String]{return self.sintomi}
     
     
     func creaStatoSalute(statoSaluteDb: StatoSaluteDB){
@@ -59,6 +63,7 @@ class StatoSaluteDB{
             "data": statoSaluteDb.getData(),
             "ora": statoSaluteDb.getOra(),
             "parametriVitali": statoSaluteDb.getParametriVitali(),
+            "sintomi": statoSaluteDb.getSintomi(),
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -84,9 +89,10 @@ class StatoSaluteDB{
                 let data_ = data["data"] as? String ?? ""
                 let ora = data["ora"] as? String ?? ""
                 let parametriVitali = data["parametriVitali"] as? [String] ?? []
+                let sintomi = data["sintomi"] as? [String] ?? []
                 
                 
-                let statoSalute = StatoSaluteDB(id: id, idPaziente: idPaziente, data: data_, ora: ora, parametriVitali: parametriVitali)
+                let statoSalute = StatoSaluteDB(id: id, idPaziente: idPaziente, data: data_, ora: ora, parametriVitali: parametriVitali, sintomi: sintomi)
                 
                 return statoSalute
                 
