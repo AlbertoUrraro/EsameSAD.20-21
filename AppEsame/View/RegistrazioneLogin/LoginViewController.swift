@@ -9,6 +9,7 @@ import UIKit
 //import FirebaseDatabase
 import LocalAuthentication
 import FirebaseUI
+import GoogleSignIn
 
 
 class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegate {
@@ -18,7 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
     @IBOutlet weak var accedi: UIButton!
     @IBOutlet weak var loginFaceId: UIButton!
     
-    
+    @IBOutlet weak var Googlebutton: GIDSignInButton!
     
     
     
@@ -48,9 +49,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
         if(DBManager.shared.id != ""){
             loginFaceId.isHidden = false
         }
-        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
+    @IBAction func entracongoogle(_ sender: GIDSignInButton) {
+        self.appLogin(email: self.email.text!, password: self.password.text!)
+    }
     
     
     @IBAction func accedi(_ sender: Any) {
