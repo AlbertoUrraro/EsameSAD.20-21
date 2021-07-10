@@ -15,6 +15,7 @@
 import Foundation
 
 class TerapiaFarmacologica{
+    
     //Dichiarazione variabili
     var id: String = ""
     var istruzioni: String = ""
@@ -53,6 +54,14 @@ class TerapiaFarmacologica{
     func getIntervalloOrario()->[Int]{return self.intervalloOrario}
     
     
+    func creaTerapiaFarmacologica(terapiaFarmacologica: TerapiaFarmacologica)->String{
+        
+        let terapiaFarmacologicaDb = TerapiaFarmacologicaDB(id: terapiaFarmacologica.getId(), istruzioni: terapiaFarmacologica.getIstruzioni(), ricetta: terapiaFarmacologica.getRicetta(), farmaci: terapiaFarmacologica.getFarmaci(), intervalloOrario: terapiaFarmacologica.getIntervalloOrario())
+        
+        let  idTerapiaFarmacologica = terapiaFarmacologicaDB.creaTerapiaFarmacologica(terapiaFarmacologicaDb: terapiaFarmacologicaDb)
+        return idTerapiaFarmacologica
+    }
+    
     
     func ottieniTerapiaFarmacologicaDaId(idDaCercare: String, finished: @escaping(TerapiaFarmacologica?) -> Void) {
         
@@ -78,8 +87,5 @@ class TerapiaFarmacologica{
         }
     }
     
-    func creaTerapiaFarmacologica(terapiaFarmacologica: TerapiaFarmacologica)->String{
-        let  idTerapiaFarmacologica = terapiaFarmacologicaDB.creaTerapiaFarmacologica(terapiaFarmacologica: terapiaFarmacologica)
-        return idTerapiaFarmacologica
-    }
+    
 }

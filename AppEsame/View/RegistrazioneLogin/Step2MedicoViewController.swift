@@ -53,7 +53,7 @@ class Step2MedicoViewController: UIViewController,UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let s = Specializzazione()
+        let s = Step2MedicoViewModel()
         
         s.ottieniTutteSpecializzazioni{(specializzazioni) in
             

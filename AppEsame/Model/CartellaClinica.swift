@@ -10,6 +10,7 @@ import Foundation
 
 class CartellaClinica{
     
+    //Dichiarazione variabili
     var id: String = ""
     var idUtente: String = ""
     var patologie: [String] = []
@@ -50,7 +51,11 @@ class CartellaClinica{
     func getOperazioni()->[String]{return self.operazioni}
     
     func creaCartellaClinica(cartellaClinica: CartellaClinica)->String{
-        let  idCartellaClinica = cartellaClinicaDB.creaCartellaClinica(cartellaClinica: cartellaClinica)
+        
+        let cartellaClinicaDb = CartellaClinicaDB(id: cartellaClinica.getId(), idUtente: cartellaClinica.getIdUtente(), patologie: cartellaClinica.getPatologie(), allergie: cartellaClinica.getPatologie(), operazioni: cartellaClinica.getOperazioni())
+        
+        
+        let  idCartellaClinica = cartellaClinicaDB.creaCartellaClinica(cartellaClinicaDb: cartellaClinicaDb)
         return idCartellaClinica
     }
     

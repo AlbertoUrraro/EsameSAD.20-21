@@ -18,6 +18,8 @@
 		1C43DCCA264F08FB001998F9 /* PatologiaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43DCC9264F08FB001998F9 /* PatologiaDB.swift */; };
 		1C43DCCC264F1515001998F9 /* SintomoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43DCCB264F1515001998F9 /* SintomoDB.swift */; };
 		1C5922BC266137FB00F5A98F /* RichiestaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5922BB266137FB00F5A98F /* RichiestaDB.swift */; };
+		1C62A45526998CD400ABE9FB /* StatoSalute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62A45426998CD400ABE9FB /* StatoSalute.swift */; };
+		1C62A45726998EB500ABE9FB /* StatoSaluteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62A45626998EB500ABE9FB /* StatoSaluteDB.swift */; };
 		1C975110268883140064DABA /* Rubrica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C97510F268883140064DABA /* Rubrica.swift */; };
 		1C975112268884850064DABA /* RubricaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C975111268884850064DABA /* RubricaDB.swift */; };
 		1C9751142688EA680064DABA /* Contatto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9751132688EA680064DABA /* Contatto.swift */; };
@@ -40,6 +42,9 @@
 		1CC63CA82649F2BD001AEDEA /* Step3PazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CA72649F2BD001AEDEA /* Step3PazienteViewController.swift */; };
 		1CC63CAB2649F38B001AEDEA /* RegistrazioneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CAA2649F38B001AEDEA /* RegistrazioneViewModel.swift */; };
 		1CC63CAD2649F4B7001AEDEA /* Errore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63CAC2649F4B7001AEDEA /* Errore.swift */; };
+		1CC9FAB62698DDCD00109BD3 /* MedicoTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9FAB52698DDCD00109BD3 /* MedicoTabBarViewModel.swift */; };
+		1CC9FAB82699028700109BD3 /* ParametroVitale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9FAB72699028700109BD3 /* ParametroVitale.swift */; };
+		1CC9FABA2699062700109BD3 /* ParametroVitaleDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9FAB92699062700109BD3 /* ParametroVitaleDB.swift */; };
 		1CDE415F264B48FA0077A163 /* Step4PazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE415E264B48FA0077A163 /* Step4PazienteViewController.swift */; };
 		1CE128FB2652EDEE00B9EE45 /* AllergiaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE128FA2652EDEE00B9EE45 /* AllergiaDB.swift */; };
 		1CE128FD2652EE1000B9EE45 /* Allergia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE128FC2652EE1000B9EE45 /* Allergia.swift */; };
@@ -169,6 +174,8 @@
 		1C43DCC9264F08FB001998F9 /* PatologiaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatologiaDB.swift; sourceTree = "<group>"; };
 		1C43DCCB264F1515001998F9 /* SintomoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SintomoDB.swift; sourceTree = "<group>"; };
 		1C5922BB266137FB00F5A98F /* RichiestaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiestaDB.swift; sourceTree = "<group>"; };
+		1C62A45426998CD400ABE9FB /* StatoSalute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatoSalute.swift; sourceTree = "<group>"; };
+		1C62A45626998EB500ABE9FB /* StatoSaluteDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatoSaluteDB.swift; sourceTree = "<group>"; };
 		1C97510F268883140064DABA /* Rubrica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rubrica.swift; sourceTree = "<group>"; };
 		1C975111268884850064DABA /* RubricaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubricaDB.swift; sourceTree = "<group>"; };
 		1C9751132688EA680064DABA /* Contatto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contatto.swift; sourceTree = "<group>"; };
@@ -191,6 +198,9 @@
 		1CC63CA72649F2BD001AEDEA /* Step3PazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step3PazienteViewController.swift; sourceTree = "<group>"; };
 		1CC63CAA2649F38B001AEDEA /* RegistrazioneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrazioneViewModel.swift; sourceTree = "<group>"; };
 		1CC63CAC2649F4B7001AEDEA /* Errore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errore.swift; sourceTree = "<group>"; };
+		1CC9FAB52698DDCD00109BD3 /* MedicoTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicoTabBarViewModel.swift; sourceTree = "<group>"; };
+		1CC9FAB72699028700109BD3 /* ParametroVitale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametroVitale.swift; sourceTree = "<group>"; };
+		1CC9FAB92699062700109BD3 /* ParametroVitaleDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametroVitaleDB.swift; sourceTree = "<group>"; };
 		1CDE415E264B48FA0077A163 /* Step4PazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4PazienteViewController.swift; sourceTree = "<group>"; };
 		1CE128FA2652EDEE00B9EE45 /* AllergiaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergiaDB.swift; sourceTree = "<group>"; };
 		1CE128FC2652EE1000B9EE45 /* Allergia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergia.swift; sourceTree = "<group>"; };
@@ -328,20 +338,22 @@
 			isa = PBXGroup;
 			children = (
 				1C28ABF3264DD7DE00F86CFD /* DBManager.swift */,
+				1C1F25D92663CB82001B2DEC /* UtenteDB.swift */,
 				1C28ABF5264DD7E400F86CFD /* PazienteDB.swift */,
 				1C28ABF7264DE12900F86CFD /* MedicoDB.swift */,
 				1C43DCC9264F08FB001998F9 /* PatologiaDB.swift */,
+				1C975117268CD4210064DABA /* FarmacoDB.swift */,
+				1C5922BB266137FB00F5A98F /* RichiestaDB.swift */,
 				1C43DCCB264F1515001998F9 /* SintomoDB.swift */,
 				1CE128FA2652EDEE00B9EE45 /* AllergiaDB.swift */,
-				1C5922BB266137FB00F5A98F /* RichiestaDB.swift */,
-				1C1F25D92663CB82001B2DEC /* UtenteDB.swift */,
 				1C38154D2666A96E00A8CBFB /* OperazioneDB.swift */,
 				1C3815512666C1EF00A8CBFB /* SpecializzazioneDB.swift */,
 				1C975111268884850064DABA /* RubricaDB.swift */,
 				1C9751152688EC990064DABA /* ContattoDB.swift */,
-				1C975117268CD4210064DABA /* FarmacoDB.swift */,
 				1C97511D268CE0230064DABA /* TerapiaFarmacologicaDB.swift */,
 				1C975121268E629A0064DABA /* CartellaClinicaDB.swift */,
+				1CC9FAB92699062700109BD3 /* ParametroVitaleDB.swift */,
+				1C62A45626998EB500ABE9FB /* StatoSaluteDB.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -485,6 +497,7 @@
 				9571BB602696049F0022B3F2 /* StatoSaluteViewModel.swift */,
 				9571BB63269604B10022B3F2 /* ProfiloMedicoViewModel.swift */,
 				9571BBA1269647D20022B3F2 /* TerapiaMedicoViewModel.swift */,
+				1CC9FAB52698DDCD00109BD3 /* MedicoTabBarViewModel.swift */,
 			);
 			path = Medico;
 			sourceTree = "<group>";
@@ -560,6 +573,8 @@
 				1C9751132688EA680064DABA /* Contatto.swift */,
 				1C97511B268CDD970064DABA /* TerapiaFarmacologica.swift */,
 				1C97511F268CE4B30064DABA /* CartellaClinica.swift */,
+				1CC9FAB72699028700109BD3 /* ParametroVitale.swift */,
+				1C62A45426998CD400ABE9FB /* StatoSalute.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -759,6 +774,7 @@
 				953BC330265558F1003F09E3 /* SintomiTableViewCell.swift in Sources */,
 				9571BB58269604610022B3F2 /* PrescriviViewModel.swift in Sources */,
 				9571BB7B269605860022B3F2 /* ProfiloPazienteViewModel.swift in Sources */,
+				1CC9FAB62698DDCD00109BD3 /* MedicoTabBarViewModel.swift in Sources */,
 				9571BB4F269604050022B3F2 /* SOSMedicoViewModel.swift in Sources */,
 				9571BBC2269654410022B3F2 /* AggiungiAllergieViewModel.swift in Sources */,
 				953BD72F265EE3B7006104D1 /* PatologiePazienteViewController.swift in Sources */,
@@ -806,6 +822,7 @@
 				953BC3362655601F003F09E3 /* ParametriTableViewCell.swift in Sources */,
 				95F25195265009B8008CDB3C /* SpecializzazioneTableViewCell.swift in Sources */,
 				9571BB78269605740022B3F2 /* SOSPazienteViewModel.swift in Sources */,
+				1CC9FAB82699028700109BD3 /* ParametroVitale.swift in Sources */,
 				1C97512426939E7D0064DABA /* PazienteViewModel.swift in Sources */,
 				952E2346265C3AF7006FAC1E /* TerapiaViewController.swift in Sources */,
 				953BD732265EE3C5006104D1 /* OperazioniPazienteViewController.swift in Sources */,
@@ -848,6 +865,8 @@
 				9571BB412695E4B50022B3F2 /* HomePazienteViewModel.swift in Sources */,
 				1C9751162688EC990064DABA /* ContattoDB.swift in Sources */,
 				95A633F22694416E004CDA38 /* ClampedValue.swift in Sources */,
+				1C62A45526998CD400ABE9FB /* StatoSalute.swift in Sources */,
+				1CC9FABA2699062700109BD3 /* ParametroVitaleDB.swift in Sources */,
 				95C55B502669754300BF503C /* StoricoTerapieTableViewCell.swift in Sources */,
 				95CF84AA26499EC7006D6517 /* Richiesta.swift in Sources */,
 				95A633F32694416E004CDA38 /* DSFStepperView+textfield.swift in Sources */,
@@ -875,6 +894,7 @@
 				95CF849626499E00006D6517 /* Utente.swift in Sources */,
 				9571BBA5269648CA0022B3F2 /* StoricoTerapiePazienteViewController.swift in Sources */,
 				9571BB94269606E10022B3F2 /* SpecializzazioniViewModel.swift in Sources */,
+				1C62A45726998EB500ABE9FB /* StatoSaluteDB.swift in Sources */,
 				95A966662690B603001C8708 /* PDFCreator.swift in Sources */,
 				955D5E722652D26800996BC2 /* HomePazienteViewController.swift in Sources */,
 				95CFE0D6264D7F0300EFE631 /* MediciTableViewCell.swift in Sources */,
@@ -1035,8 +1055,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2V5JK75RUT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppEsame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1055,8 +1076,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2V5JK75RUT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppEsame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

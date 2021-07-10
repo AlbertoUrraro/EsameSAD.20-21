@@ -14,10 +14,10 @@ class MedicoTabBarController: UITabBarController {
         var richiesteCount = 0;
         Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { (t) in
             
-            let r = Richiesta()
+            let m = MedicoTabBarViewModel()
             DBManager.shared.getUserDefaultUtenteLoggato()
             
-            r.ottieniRichiesteDaIdMedico(idDaCercare: DBManager.shared.id, condizione: false){(richieste) in
+            m.ottieniRichiesteDaIdMedico(idDaCercare: DBManager.shared.id, condizione: false){(richieste) in
                 
                 guard let richiesteRes = richieste else {
                     print("error")

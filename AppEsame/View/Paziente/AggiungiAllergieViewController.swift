@@ -49,9 +49,9 @@ class AggiungiAllergieViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
   
-        let al = Allergia()
+        let a = AggiungiAllergieViewModel()
         
-        al.ottieniTutteAllergie{(allergie) in
+        a.ottieniTutteAllergie{(allergie) in
             
             guard let allergieRes = allergie else {
                 print("error")

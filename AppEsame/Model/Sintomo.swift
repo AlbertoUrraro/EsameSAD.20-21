@@ -39,7 +39,10 @@ class Sintomo{
     
     
     func creaSintomo(sintomo: Sintomo){
-        sintomoDB.creaSintomo(sintomo: sintomo)
+        
+        let sintomoDb = SintomoDB(id: sintomo.getId(), tipo: sintomo.getTipo(), descrizione: sintomo.getDescrizione())
+        
+        sintomoDB.creaSintomo(sintomoDb: sintomoDb)
     }
     
     

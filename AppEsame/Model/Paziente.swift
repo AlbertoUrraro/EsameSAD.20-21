@@ -54,7 +54,9 @@ class Paziente: Utente{
     
     
     func creaPaziente(paziente: Paziente)->String{
-        let  idPaziente = pazienteDB.creaPaziente(paziente: paziente)
+        let pazienteDb = PazienteDB(id: paziente.getId(), uid: paziente.getUid(), nome: paziente.getNome(), cognome: paziente.getCognome(), dataNascita: paziente.getDataNascita(), codiceFiscale: paziente.getCodiceFiscale(), telefono: paziente.getTelefono(), email: paziente.getEmail(), tipo: paziente.getTipo(), password: paziente.getPassword(), allergie: paziente.getAllergie(), patologie: paziente.getPatologie(), indirizzo: paziente.getIndirizzo(), citta: paziente.getCitta(), cap: paziente.getCap())
+       
+        let  idPaziente = pazienteDB.creaPaziente(pazienteDb: pazienteDb)
         return idPaziente
     }
     

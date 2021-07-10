@@ -44,7 +44,10 @@ class Richiesta{
     
     
     func creaRichiesta(richiesta: Richiesta){
-        richiestaeDB.creaRichiesta(richiesta: richiesta)
+        
+        let richiestaDb = RichiestaDB(id: richiesta.getId(), idPaziente: richiesta.getIdPaziente(), idMedico: richiesta.getIdMedico(), stato: richiesta.getStato())
+        
+        richiestaeDB.creaRichiesta(richiestaDb: richiestaDb)
     }
 
     

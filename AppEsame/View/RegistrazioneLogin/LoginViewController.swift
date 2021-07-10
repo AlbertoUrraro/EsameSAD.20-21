@@ -121,7 +121,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
                     
                     // Move to the main thread because a state update triggers UI changes.
                     DispatchQueue.main.async { [unowned self] in
-                        self.performSegue(withIdentifier: "LoginPaziente", sender: self)
+                        if(DBManager.shared.tipo == "Paziente"){
+                            self.performSegue(withIdentifier: "LoginPaziente", sender: self)
+                        } else if(DBManager.shared.tipo == "Medico"){
+                            self.performSegue(withIdentifier: "LoginMedico", sender: self)
+                        }
+                        
                     }
                 } else {
                     print(error?.localizedDescription ?? "Autenticazione fallita")

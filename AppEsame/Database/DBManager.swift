@@ -17,11 +17,12 @@ class DBManager{
     var db : Firestore?
     
     //per user default
-    var id = ""
-    var nome = ""
-    var cognome = ""
-    var email = ""
-    var citta = ""
+    var id:String = ""
+    var nome:String = ""
+    var cognome:String = ""
+    var email:String = ""
+    var citta:String = ""
+    var tipo: String = ""
     private init(){}
     
     public func openConnection(){
@@ -37,12 +38,14 @@ class DBManager{
         self.cognome = utente.getCognome()
         self.email = utente.getEmail()
         self.citta = utente.getCitta()
+        self.tipo = utente.getTipo()
         
         userDefault.setValue(self.id, forKey: "id")
         userDefault.setValue(self.nome, forKey: "nome")
         userDefault.setValue(self.cognome, forKey: "cognome")
         userDefault.setValue(self.email, forKey: "email")
         userDefault.setValue(self.citta, forKey: "citta")
+        userDefault.setValue(self.tipo, forKey: "tipo")
     }
     
     public func getUserDefaultUtenteLoggato(){
@@ -52,6 +55,7 @@ class DBManager{
         self.cognome = userDefault.object(forKey: "cognome") as? String ?? ""
         self.email = userDefault.object(forKey: "email") as? String ?? ""
         self.citta = userDefault.object(forKey: "citta") as? String ?? ""
+        self.tipo = userDefault.object(forKey: "tipo") as? String ?? ""
         
     }
     

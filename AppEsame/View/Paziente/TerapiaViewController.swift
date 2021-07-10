@@ -12,14 +12,14 @@ class TerapiaViewController: UIViewController, UITableViewDelegate, UITableViewD
     var descrizione = ["1 bustina", "1 pillola", "Mezza bustina"]
     var ore = [1,2,1]
     var giorni = [1,1,1]
-  
+ 
     @IBOutlet weak var terapiaTableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return medicinali.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = terapiaTableView.dequeueReusableCell(withIdentifier: "terapiacell", for: indexPath) as! TerapiaTableViewCell
+        let cell = terapiaTableView.dequeueReusableCell(withIdentifier: "terapia_cell", for: indexPath) as! TerapiaTableViewCell
         cell.initcell(ore: ore[indexPath.row], giorni:giorni[indexPath.row],totMedicinali: medicinali.count)
         cell.nomeMedicinale.text = medicinali[indexPath.row]
         cell.descrizioneMedicinale.text = descrizione[indexPath.row]
