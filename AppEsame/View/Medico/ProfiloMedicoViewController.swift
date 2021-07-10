@@ -53,12 +53,6 @@ class ProfiloMedicoViewController:  UIViewController, UITableViewDelegate, UICol
    
     
     
-    
-    
-    
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return info[section].count
     }
