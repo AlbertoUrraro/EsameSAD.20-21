@@ -18,6 +18,8 @@
 		1C43DCCA264F08FB001998F9 /* PatologiaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43DCC9264F08FB001998F9 /* PatologiaDB.swift */; };
 		1C43DCCC264F1515001998F9 /* SintomoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43DCCB264F1515001998F9 /* SintomoDB.swift */; };
 		1C5922BC266137FB00F5A98F /* RichiestaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5922BB266137FB00F5A98F /* RichiestaDB.swift */; };
+		1C62A45526998CD400ABE9FB /* StatoSalute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62A45426998CD400ABE9FB /* StatoSalute.swift */; };
+		1C62A45726998EB500ABE9FB /* StatoSaluteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62A45626998EB500ABE9FB /* StatoSaluteDB.swift */; };
 		1C975110268883140064DABA /* Rubrica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C97510F268883140064DABA /* Rubrica.swift */; };
 		1C975112268884850064DABA /* RubricaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C975111268884850064DABA /* RubricaDB.swift */; };
 		1C9751142688EA680064DABA /* Contatto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9751132688EA680064DABA /* Contatto.swift */; };
@@ -172,6 +174,8 @@
 		1C43DCC9264F08FB001998F9 /* PatologiaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatologiaDB.swift; sourceTree = "<group>"; };
 		1C43DCCB264F1515001998F9 /* SintomoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SintomoDB.swift; sourceTree = "<group>"; };
 		1C5922BB266137FB00F5A98F /* RichiestaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiestaDB.swift; sourceTree = "<group>"; };
+		1C62A45426998CD400ABE9FB /* StatoSalute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatoSalute.swift; sourceTree = "<group>"; };
+		1C62A45626998EB500ABE9FB /* StatoSaluteDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatoSaluteDB.swift; sourceTree = "<group>"; };
 		1C97510F268883140064DABA /* Rubrica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rubrica.swift; sourceTree = "<group>"; };
 		1C975111268884850064DABA /* RubricaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubricaDB.swift; sourceTree = "<group>"; };
 		1C9751132688EA680064DABA /* Contatto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contatto.swift; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 				1C97511D268CE0230064DABA /* TerapiaFarmacologicaDB.swift */,
 				1C975121268E629A0064DABA /* CartellaClinicaDB.swift */,
 				1CC9FAB92699062700109BD3 /* ParametroVitaleDB.swift */,
+				1C62A45626998EB500ABE9FB /* StatoSaluteDB.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -569,6 +574,7 @@
 				1C97511B268CDD970064DABA /* TerapiaFarmacologica.swift */,
 				1C97511F268CE4B30064DABA /* CartellaClinica.swift */,
 				1CC9FAB72699028700109BD3 /* ParametroVitale.swift */,
+				1C62A45426998CD400ABE9FB /* StatoSalute.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -859,6 +865,7 @@
 				9571BB412695E4B50022B3F2 /* HomePazienteViewModel.swift in Sources */,
 				1C9751162688EC990064DABA /* ContattoDB.swift in Sources */,
 				95A633F22694416E004CDA38 /* ClampedValue.swift in Sources */,
+				1C62A45526998CD400ABE9FB /* StatoSalute.swift in Sources */,
 				1CC9FABA2699062700109BD3 /* ParametroVitaleDB.swift in Sources */,
 				95C55B502669754300BF503C /* StoricoTerapieTableViewCell.swift in Sources */,
 				95CF84AA26499EC7006D6517 /* Richiesta.swift in Sources */,
@@ -887,6 +894,7 @@
 				95CF849626499E00006D6517 /* Utente.swift in Sources */,
 				9571BBA5269648CA0022B3F2 /* StoricoTerapiePazienteViewController.swift in Sources */,
 				9571BB94269606E10022B3F2 /* SpecializzazioniViewModel.swift in Sources */,
+				1C62A45726998EB500ABE9FB /* StatoSaluteDB.swift in Sources */,
 				95A966662690B603001C8708 /* PDFCreator.swift in Sources */,
 				955D5E722652D26800996BC2 /* HomePazienteViewController.swift in Sources */,
 				95CFE0D6264D7F0300EFE631 /* MediciTableViewCell.swift in Sources */,
