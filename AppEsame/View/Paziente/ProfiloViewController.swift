@@ -30,7 +30,7 @@ class ProfiloViewController : UIViewController, UITableViewDelegate, UICollectio
         
         immagineProfilo.image = UIImage(named: "user")
         self.immagineProfilo.layoutIfNeeded()
-        immagineProfilo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        //immagineProfilo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         immagineProfilo.layer.cornerRadius = immagineProfilo.bounds.size.height/2
     
         immagineProfilo.contentMode = .scaleToFill
