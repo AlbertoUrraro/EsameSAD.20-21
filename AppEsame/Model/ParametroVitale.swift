@@ -61,11 +61,13 @@ class ParametroVitale{
     func getEmergenza()->Bool{return self.emergenza}
     func getPriorita()->Int{return self.priorita}
     
-    func creaParametroVitale(parametroVitale: ParametroVitale){
+    func creaParametroVitale(parametroVitale: ParametroVitale)->String{
         
         let parametroVitaleDb = ParametroVitaleDB(id: parametroVitale.getId(), nome: parametroVitale.getNome(), valore: parametroVitale.getValore(), sogliaMinima: parametroVitale.getSogliaMinima(), sogliaMassima: parametroVitale.getSogliaMassima(), data: parametroVitale.getData(), ora: parametroVitale.getOra(), emergenza: parametroVitale.getEmergenza(), priorita: parametroVitale.getPriorita())
         
-        parametroVitaleDB.creaParametroVitale(parametroVitaleDb: parametroVitaleDb)
+        let idParam = parametroVitaleDB.creaParametroVitale(parametroVitaleDb: parametroVitaleDb)
+        
+        return idParam
     }
     
     

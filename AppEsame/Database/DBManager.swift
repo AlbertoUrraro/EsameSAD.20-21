@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
+import UIKit
 
 
 class DBManager{
@@ -23,6 +24,8 @@ class DBManager{
     var email:String = ""
     var citta:String = ""
     var tipo: String = ""
+    var stepperParametri: [CGFloat] = []
+    
     private init(){}
     
     public func openConnection(){

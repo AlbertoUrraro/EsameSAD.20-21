@@ -66,7 +66,7 @@ class ParametroVitaleDB{
     func getPriorita()->Int{return self.priorita}
     
     
-    func creaParametroVitale(parametroVitaleDb: ParametroVitaleDB){
+    func creaParametroVitale(parametroVitaleDb: ParametroVitaleDB)->String{
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
         ref = db!.collection("parametroVitale").addDocument(data: [
@@ -85,6 +85,8 @@ class ParametroVitaleDB{
                 print("Document added with ID: \(ref!.documentID)")
             }
         }
+        
+        return ref!.documentID
     }
     
     
