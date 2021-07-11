@@ -26,7 +26,7 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
         guard let controller = self.resultSearchController else {
                    return 0
         }
-        var numero = 0
+  
         if controller.isActive {
             return self.nomeFiltrato.count
            
@@ -98,7 +98,7 @@ class HomeMedicoViewController: UIViewController, UITableViewDelegate, UITableVi
     func filtraContenuti(testoCercato: String, scope: String = "Tutti") {
           print("sto filtrando i contenuti")
         nomeFiltrato.removeAll(keepingCapacity: true)
-          for x in nome {
+          for x in nomeCognome {
               var justOne = false
             if((x.range(of:testoCercato.localizedUppercase) != nil) && justOne == false) {
                           print("aggiungo \(x) alla listaFiltrata")

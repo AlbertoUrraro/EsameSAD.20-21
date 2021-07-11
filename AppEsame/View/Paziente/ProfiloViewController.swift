@@ -29,8 +29,10 @@ class ProfiloViewController : UIViewController, UITableViewDelegate, UICollectio
         profiloTableView.dataSource = self
         
         immagineProfilo.image = UIImage(named: "user")
-        //immagineProfilo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        immagineProfilo.layer.cornerRadius = immagineProfilo.bounds.height/2
+        self.immagineProfilo.layoutIfNeeded()
+        immagineProfilo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        immagineProfilo.layer.cornerRadius = immagineProfilo.bounds.size.height/2
+    
         immagineProfilo.contentMode = .scaleToFill
         immagineProfilo.layer.borderWidth = 3
         immagineProfilo.layer.borderColor = UIColor.black.cgColor
