@@ -53,7 +53,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
     }
     
     @IBAction func entracongoogle(_ sender: GIDSignInButton) {
-        self.appLogin(email: self.email.text!, password: self.password.text!)
+        let errore = LoginViewModel.validaLogin(email: self.email.text!, password: self.password.text!)
+        
+        if(errore.getErrore()){
+            //Popup di errore
+            let alertLogin = UIAlertController(title: "Errore", message: errore.getDescrizione(), preferredStyle: UIAlertController.Style.alert)
+            alertLogin.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (act) in
+                //Eventuale azione
+            }))
+            self.present(alertLogin,animated: true, completion: nil)
+        } else {
+            print("Accedo all'app")
+            //            performSegue(withIdentifier: "LoginPaziente", sender: self)
+            self.appLogin(email: self.email.text!, password: self.password.text!)
+
+        
+        }
+        
+        
     }
     
     
