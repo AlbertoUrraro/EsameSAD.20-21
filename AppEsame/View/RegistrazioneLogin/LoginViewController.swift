@@ -9,6 +9,7 @@ import UIKit
 //import FirebaseDatabase
 import LocalAuthentication
 import FirebaseUI
+import GoogleSignIn
 
 
 class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegate {
@@ -18,7 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
     @IBOutlet weak var accedi: UIButton!
     @IBOutlet weak var loginFaceId: UIButton!
     
-    
+    @IBOutlet weak var Googlebutton: GIDSignInButton!
     
     
     
@@ -48,9 +49,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
         if(DBManager.shared.id != ""){
             loginFaceId.isHidden = false
         }
-        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
+    @IBAction func entracongoogle(_ sender: GIDSignInButton) {
+        self.appLogin(email: self.email.text!, password: self.password.text!)
+    }
     
     
     @IBAction func accedi(_ sender: Any) {
@@ -121,7 +125,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FUIAuthDelegat
                     
                     // Move to the main thread because a state update triggers UI changes.
                     DispatchQueue.main.async { [unowned self] in
-                        self.performSegue(withIdentifier: "LoginPaziente", sender: self)
+                        if(DBManager.shared.tipo == "Paziente"){
+                            self.performSegue(withIdentifier: "LoginPaziente", sender: self)
+                        } else if(DBManager.shared.tipo == "Medico"){
+                            self.performSegue(withIdentifier: "LoginMedico", sender: self)
+                        }
+                        
                     }
                 } else {
                     print(error?.localizedDescription ?? "Autenticazione fallita")

@@ -11,10 +11,11 @@ import FirebaseCore
 import FirebaseFirestore
 import LocalAuthentication
 import FirebaseUI
+import GoogleSignIn
 
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate,GIDSignInDelegate {
 
     var window: UIWindow?
 
@@ -23,8 +24,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         
         UNUserNotificationCenter.current().delegate = self
+        
+        GIDSignIn.sharedInstance()?.clientID = "919447109061-vr5n0tumhvkekc3nd4kn1e3i9k8a4il1.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance()?.delegate = self
        
         return true
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        print("Email Utente:\(user.profile.email ?? "No Email")")
+    }
+   
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
     }
     
     //    This step will allow your app to show Push Notification even when your app is in foreground

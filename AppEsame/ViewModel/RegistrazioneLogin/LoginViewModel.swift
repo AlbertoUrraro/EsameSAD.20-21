@@ -50,21 +50,13 @@ class LoginViewModel{
                     }))
                     view.present(alertLogin,animated: true, completion: nil)
                 } else {
-//                    if (password == utentiRes[0].getPassword()){
                         if(utentiRes[0].getTipo() == "Paziente"){
                             view.performSegue(withIdentifier: "LoginPaziente", sender: self)
                         } else {
                             view.performSegue(withIdentifier: "LoginMedico", sender: self)
                         }
                         DBManager.shared.setUserDefaultUtenteLoggato(utente: utentiRes[0])
-//                    } else {
-//                        //Popup di errore
-//                        let alertLogin = UIAlertController(title: "Errore", message: "Password errata!", preferredStyle: UIAlertController.Style.alert)
-//                        alertLogin.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (act) in
-//                            //Eventuale azione
-//                        }))
-//                        view.present(alertLogin,animated: true, completion: nil)
-//                    }
+
                     
                 }
                 

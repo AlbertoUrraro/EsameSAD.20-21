@@ -10,6 +10,7 @@ import Foundation
 
 class Rubrica{
     
+    //Dichiarazione variabili
     var id: String = ""
     var idUtente: String = ""
     var contatti:[String] = []
