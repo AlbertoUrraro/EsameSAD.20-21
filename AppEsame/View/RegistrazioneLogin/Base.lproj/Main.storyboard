@@ -138,7 +138,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARE YOUR HEALTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTf-Db-yhV">
-                                <rect key="frame" x="97.333333333333329" y="125.99999999999999" width="195.66666666666669" height="23.333333333333329"/>
+                                <rect key="frame" x="97" y="125.99999999999999" width="196" height="23.333333333333329"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.55863171820000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -150,10 +150,21 @@
                                     <constraint firstAttribute="height" constant="20" id="wey-bz-f6Z"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hq-4B-0zf">
-                                <rect key="frame" x="170" y="604" width="51" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Face ID"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBd-rT-LEU" customClass="GIDSignInButton">
+                                <rect key="frame" x="83" y="526" width="137" height="45"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="137" id="7L4-5J-JlB"/>
+                                    <constraint firstAttribute="height" constant="45" id="CtG-OS-ntl"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hq-4B-0zf">
+                                <rect key="frame" x="256" y="526" width="51" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="Pws-WY-sae"/>
+                                    <constraint firstAttribute="width" constant="51" id="qqp-Wf-WKX"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="icons8-face-id-100"/>
                                 <connections>
                                     <action selector="loginFaceID:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zwd-k0-2vQ"/>
                                 </connections>
@@ -170,6 +181,8 @@
                             <constraint firstItem="Yqo-f4-JgU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7aY-AC-fb3"/>
                             <constraint firstItem="LOi-oM-lzW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="8Yu-uB-eq5"/>
                             <constraint firstItem="Yqo-f4-JgU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A07-LJ-MXn"/>
+                            <constraint firstItem="PBd-rT-LEU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="BS4-wI-H9q"/>
+                            <constraint firstItem="3hq-4B-0zf" firstAttribute="top" secondItem="8si-Ew-HLu" secondAttribute="bottom" constant="8" id="CPt-Zp-uuE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HIe-Jh-iZV" secondAttribute="bottom" constant="38.670000000000002" id="EPQ-TR-5qP"/>
                             <constraint firstItem="LOi-oM-lzW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="116" id="Fdd-XA-cBI"/>
                             <constraint firstItem="tHs-mj-Zug" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="Giw-YX-jOV"/>
@@ -192,6 +205,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RuN-Lb-8iI" secondAttribute="trailing" constant="60" id="j8S-ms-yca"/>
                             <constraint firstItem="HIe-Jh-iZV" firstAttribute="leading" secondItem="22N-Cl-JkJ" secondAttribute="trailing" constant="2" id="jDc-Ih-vIs"/>
                             <constraint firstItem="8si-Ew-HLu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="nmG-dj-kiJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PBd-rT-LEU" secondAttribute="trailing" constant="170" id="nwH-9g-06v"/>
                             <constraint firstItem="p4d-n0-fF7" firstAttribute="top" secondItem="iHI-nO-Yuk" secondAttribute="bottom" constant="9.3300000000000001" id="ozw-Ac-cN7"/>
                             <constraint firstItem="22N-Cl-JkJ" firstAttribute="centerY" secondItem="HIe-Jh-iZV" secondAttribute="centerY" id="pRF-nf-xP9"/>
                             <constraint firstItem="tHs-mj-Zug" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="293" id="pRj-3v-OJa"/>
@@ -199,12 +213,15 @@
                             <constraint firstItem="Yqo-f4-JgU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rQc-5l-RO4"/>
                             <constraint firstItem="22N-Cl-JkJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="rUi-Sf-HGM"/>
                             <constraint firstItem="8si-Ew-HLu" firstAttribute="top" secondItem="pnx-0l-ihC" secondAttribute="bottom" constant="117" id="wAU-cD-jeR"/>
+                            <constraint firstItem="3hq-4B-0zf" firstAttribute="leading" secondItem="PBd-rT-LEU" secondAttribute="trailing" constant="36" id="woV-yM-jGg"/>
+                            <constraint firstItem="PBd-rT-LEU" firstAttribute="top" secondItem="8si-Ew-HLu" secondAttribute="bottom" constant="8" id="ysG-XH-rX7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ySx-iT-mku">
                         <barButtonItem key="backBarButtonItem" title="  " id="3YB-UV-DhA"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="Googlebutton" destination="PBd-rT-LEU" id="RZD-dJ-aAA"/>
                         <outlet property="accedi" destination="8si-Ew-HLu" id="KqS-YA-as6"/>
                         <outlet property="email" destination="pdO-ma-MDo" id="BJo-IL-Gi4"/>
                         <outlet property="loginFaceId" destination="3hq-4B-0zf" id="lLs-ZE-hls"/>
@@ -216,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-108" y="95"/>
+            <point key="canvasLocation" x="-109.23076923076923" y="94.549763033175353"/>
         </scene>
         <!--medicocontroller-->
         <scene sceneID="AMA-vY-30f">
@@ -1114,6 +1131,7 @@
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="circle.circle.fill" catalog="system" width="128" height="121"/>
         <image name="email" width="341.33334350585938" height="234.66667175292969"/>
+        <image name="icons8-face-id-100" width="100" height="100"/>
         <image name="logo2" width="150" height="108.66666412353516"/>
         <image name="padlock" width="256" height="341.33334350585938"/>
         <image name="person.crop.circle.badge.checkmark" catalog="system" width="128" height="113"/>
