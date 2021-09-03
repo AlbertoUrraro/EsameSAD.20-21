@@ -7,6 +7,10 @@ target 'AppEsame' do
 
   # Pods for AppEsame
 
+inherit! :search_paths
+    target "AppEsameTests"
+    target "AppEsameUITests"
+
 # add the Firebase pod for Google Analytics
 pod 'Firebase/Analytics'
 pod 'Firebase/Firestore'
