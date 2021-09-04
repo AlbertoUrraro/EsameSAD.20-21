@@ -639,9 +639,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="9QU-9m-3X7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="9QU-9m-3X7">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <prototypes>
@@ -726,6 +725,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ncz-eW-tzT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9QU-9m-3X7" firstAttribute="leading" secondItem="ncz-eW-tzT" secondAttribute="leading" id="8cA-w0-8hZ"/>
+                            <constraint firstItem="9QU-9m-3X7" firstAttribute="bottom" secondItem="ncz-eW-tzT" secondAttribute="bottom" id="VBD-Sb-mBV"/>
+                            <constraint firstItem="9QU-9m-3X7" firstAttribute="centerX" secondItem="HVY-AI-40l" secondAttribute="centerX" id="Ve8-db-C2o"/>
+                            <constraint firstItem="9QU-9m-3X7" firstAttribute="top" secondItem="ncz-eW-tzT" secondAttribute="top" id="pdx-ac-kj3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="u8P-pY-qXL">
                         <barButtonItem key="backBarButtonItem" title="  " id="rgC-u4-aIq"/>
