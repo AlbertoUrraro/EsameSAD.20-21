@@ -96,40 +96,7 @@ class Paziente: Utente{
         }
     }
     
-    func ottieniPazienteDaId(idDaCercare: String, finished: @escaping(Paziente?) -> Void) {
-        
-        pazienteDB.ottieniPazienteDaId(idDaCercare: idDaCercare){(pazienti) in
-            
-            guard let pazientiRes = pazienti else {
-                print("error")
-                return
-            }
-            let  res = pazientiRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
-            let id = res.getId()
-            let uid = res.getUid()
-            let nome = res.getNome()
-            let cognome = res.getCognome()
-            let dataNascita = res.getDataNascita()
-            let codiceFiscale = res.getCodiceFiscale()
-            let telefono = res.getTelefono()
-            let email = res.getEmail()
-            let tipo = res.getTipo()
-            let password = res.getPassword()
-            let allergie = res.getAllergie()
-            let patologie = res.getPatologie()
-            let indirizzo = res.getIndirizzo()
-            let citta = res.getCitta()
-            let cap = res.getCap()
-            
-            
-            
-            let paziente = Paziente(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
-            
-            
-            //            }
-            finished(paziente)
-        }
-    }
+    
     
     
     func ottieniPazienteDaUid(uidDaCercare: String, finished: @escaping([Paziente]?) -> Void) {
@@ -167,5 +134,117 @@ class Paziente: Utente{
             finished(pazientiArr)
         }
     }
+    
+    func ottieniCartellaClinicaDaIdUtente(idDaCercare: String, finished: @escaping([CartellaClinica]?) -> Void) {
+        
+        pazienteDB.ottieniCartellaClinicaDaIdUtente(idDaCercare: idDaCercare){(cartelleCliniche) in
+            
+            guard let cartelleClinicheRes = cartelleCliniche else {
+                print("error")
+                return
+            }
+            let cartelleClinicheArr = cartelleClinicheRes.map{(res) ->CartellaClinica in
+                
+                let id = res.getId()
+                let idUtente = res.getIdUtente()
+                let allergie = res.getAllergie()
+                let patologie = res.getPatologie()
+                let operazioni = res.getOperazioni()
+                
+                
+                
+                
+                
+                let cartellaClinica = CartellaClinica(id: id, idUtente: idUtente, patologie: patologie, allergie: allergie, operazioni: operazioni)
+                
+                return cartellaClinica
+                
+            }
+            finished(cartelleClinicheArr)
+        }
+    }
+    
+    func ottieniTerapiaFarmacologicaDaId(idDaCercare: String, finished: @escaping(TerapiaFarmacologica?) -> Void) {
+        
+        pazienteDB.ottieniTerapiaFarmacologicaDaId(idDaCercare: idDaCercare){(terapieFarmacologiche) in
+            
+            guard let terapieFarmacologicheRes = terapieFarmacologiche else {
+                print("error")
+                return
+            }
+            let  res = terapieFarmacologicheRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
+            let id = idDaCercare
+            let istruzioni = res.getIstruzioni()
+            let ricetta = res.getRicetta()
+            let farmaci = res.getFarmaci()
+            let intervalloOrario = res.getIntervalloOrario()
+            
+            
+            
+            let terapiaFarmacologica = TerapiaFarmacologica(id: id, istruzioni: istruzioni, ricetta: ricetta, farmaci: farmaci, intervalloOrario: intervalloOrario)
+            
+            
+            finished(terapiaFarmacologica)
+        }
+    }
+    
+    func ottieniStatoSaluteDaId(idDaCercare: String, finished: @escaping(StatoSalute?) -> Void) {
+        
+        pazienteDB.ottieniStatoSaluteDaId(idDaCercare: idDaCercare){(statiSalute) in
+            
+            guard let statiSaluteRes = statiSalute else {
+                print("error")
+                return
+            }
+            let  res = statiSaluteRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
+            let id = idDaCercare
+            let idPaziente = res.getIdPaziente()
+            let data = res.getData()
+            let ora = res.getOra()
+            let parametriVitali = res.getParametriVitali()
+            let sintomi = res.getSintomi()
+            
+            
+            let statoSalute = StatoSalute(id: id, idPaziente: idPaziente, data: data, ora: ora, parametriVitali: parametriVitali, sintomi: sintomi)
+            
+            finished(statoSalute)
+        }
+    }
+    
+    
+    func creaCartellaClinica(cartellaClinica: CartellaClinica)->String{
+        
+        let cartellaClinicaDb = CartellaClinicaDB(id: cartellaClinica.getId(), idUtente: cartellaClinica.getIdUtente(), patologie: cartellaClinica.getPatologie(), allergie: cartellaClinica.getPatologie(), operazioni: cartellaClinica.getOperazioni())
+        
+        
+        let  idCartellaClinica = pazienteDB.creaCartellaClinica(cartellaClinicaDb: cartellaClinicaDb)
+        return idCartellaClinica
+    }
+    
+    
+    func ottieniCartellaClinicaDaId(idDaCercare: String, finished: @escaping(CartellaClinica?) -> Void) {
+        
+        pazienteDB.ottieniCartellaClinicaDaId(idDaCercare: idDaCercare){(cartelleCliniche) in
+            
+            guard let cartelleClinicheRes = cartelleCliniche else {
+                print("error")
+                return
+            }
+            let  res = cartelleClinicheRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
+            let id = idDaCercare
+            let idUtente = res.getIdUtente()
+            let patologie = res.getPatologie()
+            let allergie = res.getAllergie()
+            let operazioni = res.getOperazioni()
+            
+            
+            
+            let cartellaClinica = CartellaClinica(id: id, idUtente: idUtente, patologie: patologie, allergie: allergie, operazioni: operazioni)
+            
+            finished(cartellaClinica)
+        }
+    }
+    
+    
     
 }

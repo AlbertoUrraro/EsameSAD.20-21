@@ -202,4 +202,38 @@ class Medico: Utente{
         }
     }
     
+    func creaTerapiaFarmacologica(terapiaFarmacologica: TerapiaFarmacologica)->String{
+        
+        let terapiaFarmacologicaDb = TerapiaFarmacologicaDB(id: terapiaFarmacologica.getId(), istruzioni: terapiaFarmacologica.getIstruzioni(), ricetta: terapiaFarmacologica.getRicetta(), farmaci: terapiaFarmacologica.getFarmaci(), intervalloOrario: terapiaFarmacologica.getIntervalloOrario())
+        
+        let  idTerapiaFarmacologica = medicoDB.creaTerapiaFarmacologica(terapiaFarmacologicaDb: terapiaFarmacologicaDb)
+        return idTerapiaFarmacologica
+    }
+    
+    func ottieniRichiesteDaIdMedico(idDaCercare: String,condizione: Bool, finished: @escaping([Richiesta]?) -> Void) {
+        
+        medicoDB.ottieniRichiesteDaIdMedico(idDaCercare: idDaCercare, condizione: condizione){(richieste) in
+            
+            guard let richiesteRes = richieste else {
+                print("error")
+                return
+            }
+            let richiesteArr = richiesteRes.map{(result) ->Richiesta in
+                
+                let id = result.getId()
+                let idPaziente = result.getIdPaziente()
+                let idMedico  = result.getIdMedico()
+                let stato = result.getStato()
+                
+                
+                
+                let richiesta = Richiesta(id: id, idPaziente: idPaziente, idMedico: idMedico, stato: stato)
+                
+                return richiesta
+                
+            }
+            finished(richiesteArr)
+        }
+    }
+    
 }

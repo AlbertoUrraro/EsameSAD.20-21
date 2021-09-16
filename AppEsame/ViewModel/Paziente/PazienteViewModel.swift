@@ -12,6 +12,7 @@ class PazienteViewModel{
     
     //variabile collegamento al model
     var pazienteModel = Paziente()
+    var statoSaluteModel = StatoSalute()
     
     init(){}
     
@@ -39,7 +40,7 @@ class PazienteViewModel{
     
     func ottieniPazienteDaId(idDaCercare: String, finished: @escaping(Paziente?) -> Void) {
         
-        pazienteModel.ottieniPazienteDaId(idDaCercare: idDaCercare){(pazienti) in
+        statoSaluteModel.ottieniPazienteDaId(idDaCercare: idDaCercare){(pazienti) in
             
             guard let pazientiRes = pazienti else {
                 print("error")

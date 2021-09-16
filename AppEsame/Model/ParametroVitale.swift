@@ -71,31 +71,6 @@ class ParametroVitale{
     }
     
     
-    func ottieniParametroVitaleDaId(idDaCercare: String, finished: @escaping(ParametroVitale?) -> Void) {
-        
-        parametroVitaleDB.ottieniParametroVitaleDaId(idDaCercare: idDaCercare){(parametriVitali) in
-            
-            guard let parametriVitaliRes = parametriVitali else {
-                print("error")
-                return
-            }
-            let  res = parametriVitaliRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
-            let id = idDaCercare
-            let nome = res.getNome()
-            let valore = res.getValore()
-            let sogliaMinima = res.getSogliaMinima()
-            let sogliaMassima = res.getSogliaMassima()
-            let data = res.getData()
-            let ora = res.getOra()
-            let emergenza = res.getEmergenza()
-            let priorita = res.getPriorita()
-            
-            
-            let parametroVitale = ParametroVitale(id: id, nome: nome, valore: valore, sogliaMinima: sogliaMinima, sogliaMassima: sogliaMassima, data: data, ora: ora, emergenza: emergenza, priorita:  priorita)
-            
-            
-            finished(parametroVitale)
-        }
-    }
+    
     
 }

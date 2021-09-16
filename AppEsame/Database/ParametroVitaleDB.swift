@@ -90,33 +90,5 @@ class ParametroVitaleDB{
     }
     
     
-    func ottieniParametroVitaleDaId(idDaCercare: String, finished: @escaping([ParametroVitaleDB]?) -> Void) {
-        db!.collection("parametroVitale").document(idDaCercare).getDocument { (queryResult, err) in
-            guard let result = queryResult?.data() else {
-                print("No documents")
-                return
-            }
-            
-            let parametriVitali = result.map{ (queryResult) -> ParametroVitaleDB in
-                let data = result
-                
-                let id = idDaCercare
-                let nome = data["nome"] as? String ?? ""
-                let valore = data["valore"] as? Float ?? 0
-                let sogliaMinima = data["sogliaMinima"] as? Float ?? 0
-                let sogliaMassima = data["sogliaMassima"] as? Float ?? 0
-                let data_ = data["data"] as? String ?? ""
-                let ora = data["ora"] as? String ?? ""
-                let emergenza = data["emergenza"] as? Bool ?? false
-                let priorita = data["priorita"] as? Int ?? 0
-                
-                
-                let parametroVitale = ParametroVitaleDB(id: id, nome: nome, valore: valore, sogliaMinima: sogliaMinima, sogliaMassima: sogliaMassima, data: data_, ora: ora, emergenza: emergenza, priorita: priorita)
-                
-                return parametroVitale
-                
-            }
-            finished(parametriVitali)
-        }
-    }
+    
 }

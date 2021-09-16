@@ -74,30 +74,117 @@ class StatoSaluteDB{
     }
     
     
-    func ottieniStatoSaluteDaId(idDaCercare: String, finished: @escaping([StatoSaluteDB]?) -> Void) {
-        db!.collection("statoSalute").document(idDaCercare).getDocument { (queryResult, err) in
+
+    
+    
+    func ottieniPazienteDaId(idDaCercare: String, finished: @escaping([PazienteDB]?) -> Void) {
+        db!.collection("utente").document(idDaCercare).getDocument { (queryResult, err) in
             guard let result = queryResult?.data() else {
                 print("No documents")
                 return
             }
             
-            let statiSalute = result.map{ (queryResult) -> StatoSaluteDB in
+            let pazienti = result.map{ (queryResult) -> PazienteDB in
                 let data = result
                 
                 let id = idDaCercare
-                let idPaziente = data["idPaziente"] as? String ?? ""
-                let data_ = data["data"] as? String ?? ""
-                let ora = data["ora"] as? String ?? ""
-                let parametriVitali = data["parametriVitali"] as? [String] ?? []
-                let sintomi = data["sintomi"] as? [String] ?? []
+                let uid = data["uid"] as? String ?? ""
+                let nome = data["nome"] as? String ?? ""
+                let cognome = data["cognome"] as? String ?? ""
+                let dataNascita = data["dataNascita"] as? String ?? ""
+                let codiceFiscale = data["codiceFiscale"] as? String ?? ""
+                let telefono = data["telefono"] as? String ?? ""
+                let email = data["email"] as? String ?? ""
+                let tipo = data["tipo"] as? String ?? ""
+                let password = data["password"] as? String ?? ""
+                let allergie = data["allergie"] as? [String] ?? []
+                let patologie = data["patologie"] as? [String] ?? []
+                let indirizzo = data["indirizzo"] as? String ?? ""
+                let citta = data["citta"] as? String ?? ""
+                let cap = data["cap"] as? String ?? ""
                 
+                let paziente = PazienteDB(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
                 
-                let statoSalute = StatoSaluteDB(id: id, idPaziente: idPaziente, data: data_, ora: ora, parametriVitali: parametriVitali, sintomi: sintomi)
-                
-                return statoSalute
+                return paziente
                 
             }
-            finished(statiSalute)
+            finished(pazienti)
+        }
+    }
+    
+    
+    func ottieniTutteAllergie(finished: @escaping([AllergiaDB]?) -> Void) {
+        db!.collection("allergia").getDocuments() { (queryResult, err) in
+            guard let result = queryResult?.documents else {
+                print("No documents")
+                return
+            }
+            
+            let allergie = result.map{ (queryResult) -> AllergiaDB in
+                let data = queryResult.data()
+                
+                let id = queryResult.documentID
+                let titolo = data["titolo"] as? String ?? ""
+                
+                let allergia = AllergiaDB(id: id, titolo: titolo)
+                
+                return allergia
+                
+            }
+            finished(allergie)
+        }
+    }
+    
+    func ottieniTuttiSintomi(finished: @escaping([SintomoDB]?) -> Void) {
+        db!.collection("sintomo").getDocuments() { (queryResult, err) in
+            guard let result = queryResult?.documents else {
+                print("No documents")
+                return
+            }
+            
+            let sintomi = result.map{ (queryResult) -> SintomoDB in
+                let data = queryResult.data()
+                
+                let id = queryResult.documentID
+                let tipo = data["tipo"] as? String ?? ""
+                let descrizione = data["descrizione"] as? String ?? ""
+                
+                let sintomo = SintomoDB(id: id, tipo: tipo,descrizione: descrizione)
+                
+                return sintomo
+                
+            }
+            finished(sintomi)
+        }
+    }
+    
+    func ottieniParametroVitaleDaId(idDaCercare: String, finished: @escaping([ParametroVitaleDB]?) -> Void) {
+        db!.collection("parametroVitale").document(idDaCercare).getDocument { (queryResult, err) in
+            guard let result = queryResult?.data() else {
+                print("No documents")
+                return
+            }
+            
+            let parametriVitali = result.map{ (queryResult) -> ParametroVitaleDB in
+                let data = result
+                
+                let id = idDaCercare
+                let nome = data["nome"] as? String ?? ""
+                let valore = data["valore"] as? Float ?? 0
+                let sogliaMinima = data["sogliaMinima"] as? Float ?? 0
+                let sogliaMassima = data["sogliaMassima"] as? Float ?? 0
+                let data_ = data["data"] as? String ?? ""
+                let ora = data["ora"] as? String ?? ""
+                let emergenza = data["emergenza"] as? Bool ?? false
+                let priorita = data["priorita"] as? Int ?? 0
+                
+                
+                let parametroVitale = ParametroVitaleDB(id: id, nome: nome, valore: valore, sogliaMinima: sogliaMinima, sogliaMassima: sogliaMassima, data: data_, ora: ora, emergenza: emergenza, priorita: priorita)
+                
+                return parametroVitale
+                
+            }
+            finished(parametriVitali)
         }
     }
     

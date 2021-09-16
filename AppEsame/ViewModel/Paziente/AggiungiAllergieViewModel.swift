@@ -12,13 +12,14 @@ class AggiungiAllergieViewModel{
     
     //variabile collegamento al model
     var allergiaModel = Allergia()
+    var statoSaluteModel = StatoSalute()
     
     init(){}
     
     
     func ottieniTutteAllergie(finished: @escaping([Allergia]?) -> Void) {
         
-        allergiaModel.ottieniTutteAllergie(){(allergie) in
+        statoSaluteModel.ottieniTutteAllergie(){(allergie) in
             
             guard let allergieRes = allergie else {
                 print("error")

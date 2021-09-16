@@ -69,28 +69,5 @@ class Sintomo{
         }
     }
     
-    func ottieniTuttiSintomi(finished: @escaping([Sintomo]?) -> Void) {
-        
-        
-        sintomoDB.ottieniTuttiSintomi{(sintomi) in
-            
-            guard let sintomiRes = sintomi else {
-                print("error")
-                return
-            }
-            let sintomiArr = sintomiRes.map{(result) ->Sintomo in
-                
-                let id = result.getId()
-                let tipo = result.getTipo()
-                let descrizione = result.getDescrizione()
-                
-                
-                let sintomo = Sintomo(id: id, tipo: tipo, descrizione: descrizione)
-                
-                return sintomo
-                
-            }
-            finished(sintomiArr)
-        }
-    }
+    
 }

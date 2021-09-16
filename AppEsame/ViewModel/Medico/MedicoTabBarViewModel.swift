@@ -12,13 +12,14 @@ class MedicoTabBarViewModel{
     
     //variabili collegamento al model
     var richistaModel = Richiesta()
+    var medicoModel = Medico()
     
     init(){}
     
     
     func ottieniRichiesteDaIdMedico(idDaCercare: String,condizione: Bool, finished: @escaping([Richiesta]?) -> Void) {
         
-        richistaModel.ottieniRichiesteDaIdMedico(idDaCercare: idDaCercare,condizione: condizione){(richieste) in
+        medicoModel.ottieniRichiesteDaIdMedico(idDaCercare: idDaCercare,condizione: condizione){(richieste) in
             
             guard let richiesteRes = richieste else {
                 print("error")

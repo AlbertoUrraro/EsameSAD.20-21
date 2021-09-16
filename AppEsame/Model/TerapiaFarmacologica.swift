@@ -54,38 +54,10 @@ class TerapiaFarmacologica{
     func getIntervalloOrario()->[Int]{return self.intervalloOrario}
     
     
-    func creaTerapiaFarmacologica(terapiaFarmacologica: TerapiaFarmacologica)->String{
-        
-        let terapiaFarmacologicaDb = TerapiaFarmacologicaDB(id: terapiaFarmacologica.getId(), istruzioni: terapiaFarmacologica.getIstruzioni(), ricetta: terapiaFarmacologica.getRicetta(), farmaci: terapiaFarmacologica.getFarmaci(), intervalloOrario: terapiaFarmacologica.getIntervalloOrario())
-        
-        let  idTerapiaFarmacologica = terapiaFarmacologicaDB.creaTerapiaFarmacologica(terapiaFarmacologicaDb: terapiaFarmacologicaDb)
-        return idTerapiaFarmacologica
-    }
+   
     
     
-    func ottieniTerapiaFarmacologicaDaId(idDaCercare: String, finished: @escaping(TerapiaFarmacologica?) -> Void) {
-        
-        terapiaFarmacologicaDB.ottieniTerapiaFarmacologicaDaId(idDaCercare: idDaCercare){(terapieFarmacologiche) in
-            
-            guard let terapieFarmacologicheRes = terapieFarmacologiche else {
-                print("error")
-                return
-            }
-            let  res = terapieFarmacologicheRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
-            let id = idDaCercare
-            let istruzioni = res.getIstruzioni()
-            let ricetta = res.getRicetta()
-            let farmaci = res.getFarmaci()
-            let intervalloOrario = res.getIntervalloOrario()
-            
-            
-            
-            let terapiaFarmacologica = TerapiaFarmacologica(id: id, istruzioni: istruzioni, ricetta: ricetta, farmaci: farmaci, intervalloOrario: intervalloOrario)
-            
-            
-            finished(terapiaFarmacologica)
-        }
-    }
+    
     
     
 }

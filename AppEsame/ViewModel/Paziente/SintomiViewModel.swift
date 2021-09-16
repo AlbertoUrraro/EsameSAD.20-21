@@ -12,12 +12,13 @@ class SintomiViewModel{
     
     //variabile collegamento al model
     var sintomoModel = Sintomo()
+    var statoSaluteModel = StatoSalute()
     
     init(){}
     
     func ottieniTuttiSintomi(finished: @escaping([Sintomo]?) -> Void) {
         
-        sintomoModel.ottieniTuttiSintomi(){(sintomi) in
+        statoSaluteModel.ottieniTuttiSintomi(){(sintomi) in
             
             guard let sintomiRes = sintomi else {
                 print("error")

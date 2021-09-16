@@ -54,28 +54,6 @@ class Allergia{
         }
     }
     
-    func ottieniTutteAllergie(finished: @escaping([Allergia]?) -> Void) {
-        
-        
-        allergiaDB.ottieniTutteAllergie{(allergie) in
-            
-            guard let allergieRes = allergie else {
-                print("error")
-                return
-            }
-            let allergieArr = allergieRes.map{(result) ->Allergia in
-                
-                let id = result.getId()
-                let titolo = result.getTitolo()
-                
-                
-                let allergia = Allergia(id: id, titolo: titolo)
-                
-                return allergia
-                
-            }
-            finished(allergieArr)
-        }
-    }
+    
     
 }

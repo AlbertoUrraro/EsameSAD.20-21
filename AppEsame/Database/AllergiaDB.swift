@@ -58,26 +58,6 @@ class AllergiaDB{
         }
     }
     
-    func ottieniTutteAllergie(finished: @escaping([AllergiaDB]?) -> Void) {
-        db!.collection("allergia").getDocuments() { (queryResult, err) in
-            guard let result = queryResult?.documents else {
-                print("No documents")
-                return
-            }
-            
-            let allergie = result.map{ (queryResult) -> AllergiaDB in
-                let data = queryResult.data()
-                
-                let id = queryResult.documentID
-                let titolo = data["titolo"] as? String ?? ""
-                
-                let allergia = AllergiaDB(id: id, titolo: titolo)
-                
-                return allergia
-                
-            }
-            finished(allergie)
-        }
-    }
+    
     
 }

@@ -6,3 +6,25 @@
 //
 
 import Foundation
+
+
+class TerapiaPazienteViewModel{
+    
+    var pazienteModel = Paziente()
+    
+    
+    func visualizzaStoricoTerapie(idPaziente: String, finished: @escaping(TerapiaFarmacologica?) -> Void) {
+        
+        pazienteModel.ottieniTerapiaFarmacologicaDaId(idDaCercare: idPaziente){(terapie) in
+            
+            guard let terapieRes = terapie else {
+                print("error")
+                return
+            }
+            
+            let terapia = terapieRes
+            
+            finished(terapia)
+        }
+    }
+}

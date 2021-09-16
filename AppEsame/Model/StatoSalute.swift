@@ -61,26 +61,116 @@ class StatoSalute{
     }
     
     
-    func ottieniStatoSaluteDaId(idDaCercare: String, finished: @escaping(StatoSalute?) -> Void) {
+    
+    
+    func ottieniPazienteDaId(idDaCercare: String, finished: @escaping(Paziente?) -> Void) {
         
-        statoSaluteDB.ottieniStatoSaluteDaId(idDaCercare: idDaCercare){(statiSalute) in
+        statoSaluteDB.ottieniPazienteDaId(idDaCercare: idDaCercare){(pazienti) in
             
-            guard let statiSaluteRes = statiSalute else {
+            guard let pazientiRes = pazienti else {
                 print("error")
                 return
             }
-            let  res = statiSaluteRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
+            let  res = pazientiRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
+            let id = res.getId()
+            let uid = res.getUid()
+            let nome = res.getNome()
+            let cognome = res.getCognome()
+            let dataNascita = res.getDataNascita()
+            let codiceFiscale = res.getCodiceFiscale()
+            let telefono = res.getTelefono()
+            let email = res.getEmail()
+            let tipo = res.getTipo()
+            let password = res.getPassword()
+            let allergie = res.getAllergie()
+            let patologie = res.getPatologie()
+            let indirizzo = res.getIndirizzo()
+            let citta = res.getCitta()
+            let cap = res.getCap()
+            
+            
+            
+            let paziente = Paziente(id: id,uid: uid, nome: nome, cognome: cognome, dataNascita: dataNascita, codiceFiscale: codiceFiscale, telefono: telefono, email: email, tipo: tipo, password: password, allergie: allergie, patologie: patologie, indirizzo: indirizzo, citta: citta, cap: cap)
+            
+            
+            //            }
+            finished(paziente)
+        }
+    }
+    
+    func ottieniParametroVitaleDaId(idDaCercare: String, finished: @escaping(ParametroVitale?) -> Void) {
+        
+        statoSaluteDB.ottieniParametroVitaleDaId(idDaCercare: idDaCercare){(parametriVitali) in
+            
+            guard let parametriVitaliRes = parametriVitali else {
+                print("error")
+                return
+            }
+            let  res = parametriVitaliRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
             let id = idDaCercare
-            let idPaziente = res.getIdPaziente()
+            let nome = res.getNome()
+            let valore = res.getValore()
+            let sogliaMinima = res.getSogliaMinima()
+            let sogliaMassima = res.getSogliaMassima()
             let data = res.getData()
             let ora = res.getOra()
-            let parametriVitali = res.getParametriVitali()
-            let sintomi = res.getSintomi()
+            let emergenza = res.getEmergenza()
+            let priorita = res.getPriorita()
             
             
-            let statoSalute = StatoSalute(id: id, idPaziente: idPaziente, data: data, ora: ora, parametriVitali: parametriVitali, sintomi: sintomi)
+            let parametroVitale = ParametroVitale(id: id, nome: nome, valore: valore, sogliaMinima: sogliaMinima, sogliaMassima: sogliaMassima, data: data, ora: ora, emergenza: emergenza, priorita:  priorita)
             
-            finished(statoSalute)
+            
+            finished(parametroVitale)
+        }
+    }
+    
+    func ottieniTuttiSintomi(finished: @escaping([Sintomo]?) -> Void) {
+        
+        
+        statoSaluteDB.ottieniTuttiSintomi{(sintomi) in
+            
+            guard let sintomiRes = sintomi else {
+                print("error")
+                return
+            }
+            let sintomiArr = sintomiRes.map{(result) ->Sintomo in
+                
+                let id = result.getId()
+                let tipo = result.getTipo()
+                let descrizione = result.getDescrizione()
+                
+                
+                let sintomo = Sintomo(id: id, tipo: tipo, descrizione: descrizione)
+                
+                return sintomo
+                
+            }
+            finished(sintomiArr)
+        }
+    }
+    
+    func ottieniTutteAllergie(finished: @escaping([Allergia]?) -> Void) {
+        
+        
+        statoSaluteDB.ottieniTutteAllergie{(allergie) in
+            
+            guard let allergieRes = allergie else {
+                print("error")
+                return
+            }
+            let allergieArr = allergieRes.map{(result) ->Allergia in
+                
+                let id = result.getId()
+                let titolo = result.getTitolo()
+                
+                
+                let allergia = Allergia(id: id, titolo: titolo)
+                
+                return allergia
+                
+            }
+            finished(allergieArr)
         }
     }
     

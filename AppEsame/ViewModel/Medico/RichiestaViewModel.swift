@@ -13,6 +13,8 @@ class RichiestaViewModel{
     //variabili collegamento al model
     var pazienteModel = Paziente()
     var richistaModel = Richiesta()
+    var statoSaluteModel = StatoSalute()
+    var medicoModel = Medico()
     
     init(){}
     
@@ -27,7 +29,7 @@ class RichiestaViewModel{
     
     func ottieniPazienteDaId(idDaCercare: String, finished: @escaping(Paziente?) -> Void) {
         
-        pazienteModel.ottieniPazienteDaId(idDaCercare: idDaCercare){(pazienti) in
+        statoSaluteModel.ottieniPazienteDaId(idDaCercare: idDaCercare){(pazienti) in
             
             guard let pazientiRes = pazienti else {
                 print("error")
@@ -42,7 +44,7 @@ class RichiestaViewModel{
     
     func ottieniRichiesteDaIdMedico(idDaCercare: String,condizione: Bool, finished: @escaping([Richiesta]?) -> Void) {
         
-        richistaModel.ottieniRichiesteDaIdMedico(idDaCercare: idDaCercare,condizione: condizione){(richieste) in
+        medicoModel.ottieniRichiesteDaIdMedico(idDaCercare: idDaCercare,condizione: condizione){(richieste) in
             
             guard let richiesteRes = richieste else {
                 print("error")

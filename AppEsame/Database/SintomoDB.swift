@@ -81,28 +81,7 @@ class SintomoDB{
         }
     }
     
-    func ottieniTuttiSintomi(finished: @escaping([SintomoDB]?) -> Void) {
-        db!.collection("sintomo").getDocuments() { (queryResult, err) in
-            guard let result = queryResult?.documents else {
-                print("No documents")
-                return
-            }
-            
-            let sintomi = result.map{ (queryResult) -> SintomoDB in
-                let data = queryResult.data()
-                
-                let id = queryResult.documentID
-                let tipo = data["tipo"] as? String ?? ""
-                let descrizione = data["descrizione"] as? String ?? ""
-                
-                let sintomo = SintomoDB(id: id, tipo: tipo,descrizione: descrizione)
-                
-                return sintomo
-                
-            }
-            finished(sintomi)
-        }
-    }
+   
     
 }
 

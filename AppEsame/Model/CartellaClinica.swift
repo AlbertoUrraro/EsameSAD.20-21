@@ -50,66 +50,8 @@ class CartellaClinica{
     func getAllergie()->[String]{return self.allergie}
     func getOperazioni()->[String]{return self.operazioni}
     
-    func creaCartellaClinica(cartellaClinica: CartellaClinica)->String{
-        
-        let cartellaClinicaDb = CartellaClinicaDB(id: cartellaClinica.getId(), idUtente: cartellaClinica.getIdUtente(), patologie: cartellaClinica.getPatologie(), allergie: cartellaClinica.getPatologie(), operazioni: cartellaClinica.getOperazioni())
-        
-        
-        let  idCartellaClinica = cartellaClinicaDB.creaCartellaClinica(cartellaClinicaDb: cartellaClinicaDb)
-        return idCartellaClinica
-    }
     
     
-    func ottieniCartellaClinicaDaId(idDaCercare: String, finished: @escaping(CartellaClinica?) -> Void) {
-        
-        cartellaClinicaDB.ottieniCartellaClinicaDaId(idDaCercare: idDaCercare){(cartelleCliniche) in
-            
-            guard let cartelleClinicheRes = cartelleCliniche else {
-                print("error")
-                return
-            }
-            let  res = cartelleClinicheRes[0] //Ottengo sempre un risultato unico perchè l'id è univoco
-            let id = idDaCercare
-            let idUtente = res.getIdUtente()
-            let patologie = res.getPatologie()
-            let allergie = res.getAllergie()
-            let operazioni = res.getOperazioni()
-            
-            
-            
-            let cartellaClinica = CartellaClinica(id: id, idUtente: idUtente, patologie: patologie, allergie: allergie, operazioni: operazioni)
-            
-            finished(cartellaClinica)
-        }
-    }
     
-    func ottieniCartellaClinicaDaIdUtente(idDaCercare: String, finished: @escaping([CartellaClinica]?) -> Void) {
-        
-        cartellaClinicaDB.ottieniCartellaClinicaDaIdUtente(idDaCercare: idDaCercare){(cartelleCliniche) in
-            
-            guard let cartelleClinicheRes = cartelleCliniche else {
-                print("error")
-                return
-            }
-            let cartelleClinicheArr = cartelleClinicheRes.map{(res) ->CartellaClinica in
-                
-                let id = res.getId()
-                let idUtente = res.getIdUtente()
-                let allergie = res.getAllergie()
-                let patologie = res.getPatologie()
-                let operazioni = res.getOperazioni()
-                
-                
-                
-                
-                
-                let cartellaClinica = CartellaClinica(id: id, idUtente: idUtente, patologie: patologie, allergie: allergie, operazioni: operazioni)
-                
-                return cartellaClinica
-                
-            }
-            finished(cartelleClinicheArr)
-        }
-    }
     
 }

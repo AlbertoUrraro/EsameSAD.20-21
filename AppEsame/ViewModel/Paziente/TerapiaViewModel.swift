@@ -13,7 +13,9 @@ class TerapiaViewModel{
     
     func calcolaNumeroNotifiche(giorni: Int, ore: Int)->Int{
         return(24*giorni)/ore
-}
+    }
+    
+
 
 }
 

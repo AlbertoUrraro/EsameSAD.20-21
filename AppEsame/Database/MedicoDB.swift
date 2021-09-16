@@ -196,4 +196,49 @@ class MedicoDB: UtenteDB{
         }
     }
     
+    func creaTerapiaFarmacologica(terapiaFarmacologicaDb: TerapiaFarmacologicaDB)->String{
+        // Add a new document with a generated ID
+        var ref: DocumentReference? = nil
+        ref = db!.collection("terapiaFarmacologica").addDocument(data: [
+            "istruioni": terapiaFarmacologicaDb.getIstruzioni(),
+            "ricetta": terapiaFarmacologicaDb.getRicetta(),
+            "farmaci": terapiaFarmacologicaDb.getFarmaci(),
+            "intervalloOrario": terapiaFarmacologicaDb.getIntervalloOrario(),
+            
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+                
+            }
+            
+        }
+        return ref!.documentID
+    }
+    
+    func ottieniRichiesteDaIdMedico(idDaCercare: String,condizione: Bool,  finished: @escaping([RichiestaDB]?) -> Void) {
+        db!.collection("richiesta").whereField("idMedico", isEqualTo: idDaCercare).whereField("stato", isEqualTo: condizione).getDocuments() { (queryResult, err) in
+            guard let result = queryResult?.documents else {
+                print("No documents")
+                return
+            }
+            let richieste = result.map{ (queryResult) -> RichiestaDB in
+                let data = queryResult.data()
+                
+                let id = queryResult.documentID
+                let idPaziente = data["idPaziente"] as? String ?? ""
+                let idMedico = data["idMedico"] as? String ?? ""
+                let stato = data["stato"] as? Bool ?? false
+                
+                
+                let richiesta = RichiestaDB(id: id, idPaziente: idPaziente, idMedico: idMedico, stato: stato)
+                
+                return richiesta
+                
+            }
+            finished(richieste)
+        }
+    }
+    
 }
